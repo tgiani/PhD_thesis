@@ -1,0 +1,290 @@
+\chapter{Basics of QCD}
+In the early '60s it was generally believed that a theory for the strong interaction could not be formulated
+within the framework of Quantum Field Theory (QFT) \cite{tHooft:1998qmr}.
+Despite the remarkable success of QED in describing phenomena such as the anomalous magnetic moment of the electron,
+the renormalization process was not completely understood yet and 
+renormalizable quantum field theories were still looked at with suspicion.
+%, and considered not suitable to describe the dynamics responsible for the composition of hadrons and hadronic reactions.  
+
+%
+The experimental observation of Bjorken scaling \cite{PhysRev.179.1547} in DIS experiment (SLAC 1960)
+suggested that the constituents of nucleons may be described as almost-free and point-like objects 
+when observed with high spatial resolution, leading to the formulation of the parton model \cite{PhysRevLett.23.1415}.
+Accordingly, the dynamic of  partonic systems should have the property of becoming weaker at shorter distances. 
+In 1973 asymptotic freedom of non-Abelian gauge field theories was discovered \cite{PhysRevLett.30.1346, PhysRevLett.30.1343},
+making possible to embed the partonic model ideas within the framework of a renormalizable QFT.
+%
+Soon after it was shown how non-Abelian gauge field theories are actually the only ones exhibiting such property
+in four dimensional space-time \cite{PhysRevLett.31.851} and Quantum Chromodynamics (QCD) emerged as a mathematically 
+consistent theory for the strong interaction.  
+
+%
+After its formulation, QCD has been successfully used to describe strong interactions processes observed at colliders, and
+nowadays it represents one of the cornerstone of the Standard Model. In this chapter we present
+a brief overview of QCD, recalling some basic features of the theory and introducing our notation. 
+For a more detailed treatment of the basics of QCD we refer to standard QFT and QCD textbook, such
+as Refs.~\cite{Ellis:1991qj,Muta:2010xua,Collins:1984xc}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Lagrangian and its symmetries}
+%
+Quantum Chromodynamics is a non-Abelian gauge theory based on the gauge group SU(3)$_\text{color}$.
+The classical Lagrangian of QCD, describing the interaction of $N_f$ massive spin-$\frac{1}{2}$ quarks
+and massless spin-$1$ gluons, is given by
+\begin{align}
+    \label{eq:QCD_lagrangian}
+    \mathcal{L}_{classical} = -\frac{1}{4}F^{A}_{\mu\nu}F^{A\mu\nu} + 
+    \sum_{k=1}^{N_f}\,{\overline{\psi}}^{\,k}_a\left(i\gamma^{\mu}D_{\mu} + m_k\right)_{ab}\psi^k_b\,,
+\end{align}
+with the field strength tensor and the covariant derivative defined as
+\begin{align}
+    \label{eq:field_strength_thensor}
+    &F^{A}_{\mu\nu} = \partial_{\mu} \mathcal{A}^A_{\nu} - \partial_{\nu} \mathcal{A}^A_{\mu} 
+    + g \, f^{ABC} \mathcal{A}^B_{\mu}\mathcal{A}^C_{\nu}\,, \\
+    \label{eq:covariant_derivateive}
+    &D_{\mu} = \partial_{\mu} - i\,g\,T^A \mathcal{A}^{A}_{\mu}\,.
+\end{align}
+The summation over $k$ runs over all the quark flavors, with
+each quark field $\psi^k_a$ belonging to the fundamental representation of the gauge group SU(3)$_\text{color}$ ($a=1,2,3$),
+while the gauge field $\mathcal{A}^A_{\mu}$, called gluon, belong to the adjoint representation
+($A=1,2,..,8$). The quantities $g$ and $f^{ABC}$ are the gauge coupling and the SU(3)$_\text{color}$ structure constants
+respectively, and $T^A$ are the eight gauge group generators, satisfying
+\begin{align}
+    \label{eq:algebra}
+    &\left[T^A,T^B\right] = i f^{ABC} T^C\,, \\
+    \label{eq:normalization_SU3_generators}
+    &\text{Tr}\left[T^A T^B\right] = T_R\, \delta^{AB}\,,
+\end{align}
+with the normalization of the generators conventionally chosen to be $T_R = 1/2$. 
+An explicit expression for the generators $T^A$ in the fundamental representation is given by
+$(T^A)_{ab} = 1/2\,\left(\lambda^A\right)_{ab}$ with $\lambda^A$ representing the eight 3-dimensional Gell-Mann matrices. 
+Given the equations above, the colour matrices obey
+\begin{align}
+    \label{eq:SU3_generators_relations}
+    &\sum_A T^A_{ab} T^A_{bc} = C_F\, \delta_{ac}\,,\\
+    &\sum_{C,D} T^A_{CD} T^B_{DC} = \sum_{C,D} f^{ACD} f^{BCD}  C_A\, \delta^{CD}\,,
+\end{align}
+with $C_F= 4/3$ and $C_A= 3$.
+
+%
+The classical Lagrangian of Eq.~\ref{eq:QCD_lagrangian} does not allow to formulate quantum
+perturbation theory in a consistent way: the problem cannot be avoided as long as
+we rely on a gauge invariant lagrangian, where the gauge field $\mathcal{A}^A_{\mu}$
+has the freedom to change according to gauge transformations.
+We can get rid of such freedom by putting constraints on the field $\mathcal{A}^A_{\mu}$, 
+known as \textit{gauge fixing conditions}, which in general can be expressed as
+\begin{align}
+    \label{eq:gauge_fixing}
+    G^{\mu}\mathcal{A}_{\mu}^A = B^A\,,
+\end{align}
+with $G^{\mu}$ and $B^A$ chosen in some convenient way. 
+Upon functional integration over the arbitrary quantity $B^A$, such condition is implemented 
+in the theory by adding to the classical Lagrangian the so-called gauge fixing term
+\begin{align}
+    \label{eq:Gauge_fixing_lorents}
+    \mathcal{L}_{gauge-fixing} = -\frac{1}{2\xi}\left(G^{\mu}\mathcal{A}_{\mu}^A\right)\,,
+\end{align}
+with $\xi$ representing an arbitrary parameters whose specific values defines the gauge.
+Different choices for the gauge fixing term can be done. Taking $G^{\mu}=\partial^{\mu}$ we obtain
+a class of covariant gauges. In this case the gauge fixing term must be supplemented by an additional term,
+known as \textit{ghost Lagrangian} \cite{Faddeev:1967fc},
+describing a complex scalar field $\eta^a$ (the Faddeev-Popov ghosts) obeying the Grassmann algebra and belonging to the adjoint
+representation of the gauge group
+\begin{align}
+    \label{eq:ghosts_lagrangian}
+    \mathcal{L}_{ghost} = \left(\partial_{\alpha}\eta^A\right)^* D^{\alpha}_{AB}\, \eta^B\, .
+\end{align}
+Perturbation theory can be formulated starting from the Lagrangian density
+\begin{align}
+    \label{eq:QCD_lagrangian_gauge_fixing}
+    \mathcal{L} = \mathcal{L}_{classical} + \mathcal{L}_{gauge-fixing} + \mathcal{L}_{ghost}\, .
+\end{align}
+Another possible gauge fixing term is the one giving the so called axial gauges, fixed
+in terms of a chosen vector $n$ such that $G^{\mu}=n^{\mu}$. In this case ghost fields decouples
+and can thus be ignored, but the explicit form of the gluon propagator turns out to be more complicated than 
+the one in the covariant gauges.
+
+The QCD Lagrangian has a number of important symmetries, both exact and approximate,
+which is worth recalling here.
+The classical Lagrangian given in Eq.~\ref{eq:QCD_lagrangian} is invariant under SU(3)$_{\text{color}}$
+gauge transformations. After gauge fixing gauge invariance is broken, but the resulting Lagrangian of 
+Eq.~\ref{eq:QCD_lagrangian_gauge_fixing} satisfied the BRST symmetry \cite{Becchi:1975nq, Tyutin:1975qk},
+which in turn guarantees the renormalizability of the theory.
+Other exact symmetries are the so called flavour symmetries, 
+which act through a global phase transformation of each quark field separately, giving
+the baryon number conservation. 
+%the conservation of the number of each of the different quark flavours. 
+Other flavour symmetries include the discrete global symmetries of parity and time reversal invariance.
+Finally charge-conjugation is also an exact symmetry of Eq.~\ref{eq:QCD_lagrangian_gauge_fixing}. 
+
+Assuming mass degeneracy for the up and down quarks, the U(1) global symmetry associated with quark number 
+can be extended to a global U(2) $=$ U(1) $\otimes$ SU(2). The new symmetry SU(2) is known as isospin symmetry.
+We can further enhanced the symmetry group to U(1) $\otimes$ SU(3) assuming the strange quark to be also 
+degenerate in mass with the up and the down\footnote{Such approximate flavour symmetry SU(3) is the basis of the Gell-Mann
+quark model \cite{GellMann:1964nj} which was proposed well before the birth of QCD.}.
+In the case of massless quarks, a chiral symmetry
+U(2)$_{L}$ $\otimes$ U(2)$_R$ $=$ SU(2)$_V$ $\otimes$ U(1)$_V$ $\otimes$  SU(2)$_A$ $\otimes$ U(1)$_A$ 
+holds, which however is spontaneously broken to SU(2)$_V$ $\otimes$ U(1)$_V$ $\otimes$ U(1)$_A$,
+with the subscripts $V$ and $A$ denoting the vector and axial combinations.
+The three pseudo-scalar Goldstone bosons resulting from chiral SU(2) breaking 
+to SU(2)$_V$ are identified with the three pions $\pi^+$, $\pi^-$ and $\pi^0$
+in the massless quark limit. 
+While the survived SU(2)$_V$ $\otimes$ U(1)$_V$ symmetry is identified with the isospin and baryon number 
+conservation mentioned previously, the remaining U(1)$_A$, despite not being spontaneously broken,
+appears to be lost in QCD. The study of what happens to this symmetry is known as the U(1)-problem.
+The axial symmetry U(1)$_A$ is actually broken at the quantum level, through the Adler-Bell-Jackiw anomaly,
+which induces a new term in the QCD Lagrangian proportional to 
+$\epsilon_{\alpha\beta\gamma\delta}\, \text{Tr}\, F^{\gamma\delta} F^{\alpha\beta}$ .
+This term would be responsible for a violation of CP in the strong sector and 
+its magnitude is given by the size of the parameter $\theta$, whose values is fixed to be in the range
+$\theta<10^{-9}$ by experimental measures. The unexplained smallness of such parameter is known as the strong CP-problem.
+Among the proposed solutions, the Peccei-Quinn mechanism was developed \cite{Peccei:1977ur}, proposing a dynamical explanation
+for the $\theta$ values through the introduction of additional particles called axions. 
+
+\comment{Add references}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The running coupling and asymptotic freedom}
+%
+In analogy with the QED fine structure constant,
+the QCD coupling constant is defined in terms of the gauge coupling as $\alpha_s = g^2/4\pi$.
+As a consequence of the renormalization process, the coupling acquires a dependence on the renormalization scale $\mu$,
+namely the arbitrary scale at which the subtraction of the UV poles is performed. 
+The resulting renormalization group equations read
+\begin{align}
+    \label{eq:renormalization_group_coupling}
+    Q^2\frac{\partial\alpha_s}{\partial Q^2} = \beta\left(\alpha_s\right)\,.
+\end{align}
+The $\beta$ function can be computed in perturbation theory as a power expansion in $\alpha_s$. 
+Nowadays results up to five loops have been computed \cite{Herzog:2017ohr}.
+At next-to-leading order it is given by
+\begin{align}
+    \label{eq:beta_function_expansion}
+    \beta\left(\alpha_s\right) = -\beta_0\,\alpha_s^2\left(1+ \beta_1 \alpha_s + \mathcal{O}\left(\alpha_s^2\right)\right)\,,
+\end{align}
+with
+\begin{align}
+    \label{eq:beta_function_coefficients}
+    \beta_0 = \frac{33 - 2 N_f}{12\pi}\,,\,\,\,\,\,
+    \beta_1 = \frac{153 -19 N_f}{2\pi\left(33-2 N_f\right)}\,.
+\end{align}
+Using the leading order expression for the $\beta$ in Eq.~\ref{eq:renormalization_group_coupling} we find the leading-log
+solution for the running coupling, relating its value at the generic scale $Q^2$ to the one at a reference scale
+$\mu^2$ 
+\begin{align}
+    \label{eq:ll_coupling}
+    \alpha_s\left(Q^2\right) = \frac{\alpha_s\left(\mu^2\right)}{1+\alpha_s\left(\mu^2\right)\beta_0\log\frac{Q^2}{\mu^2}}\,.
+\end{align}
+Given the positive sign of $\beta_0$, from Eq.~\ref{eq:ll_coupling} it is evident how, as the scale $Q^2$ becomes very large, 
+the coupling $\alpha_s\left(Q^2\right)$ decreases to zero. This property, which characterizes non-Abelian gauge theories 
+like QCD, is known as asymptotic freedom and the theory is then said to be asymptotically free.
+%and it opens the way to compute high energy scattering processes as an expansion in the coupling.
+It is customary to introduce a dimensionful parameter, usually denoted as $\Lambda_{\text{QCD}}$, representing the energy 
+scale at which the perturbative series of the coupling would diverge.
+\begin{align}
+    \label{eq:lambda_QCD}
+    \frac{1}{\alpha_s\left(\Lambda_{\text{QCD}^2}\right)} = 0\,.
+\end{align}
+Its specific value will depend on the choice of the renormalization scheme, on the order
+of the $\beta$ function power expansion and on the number of active flavour entering the theory.
+Qualitatively it represents the scale at which the interaction becomes strong and the perturbative description breaks down.
+
+\comment{Add something about quarks mass and active flavour?}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Perturbative and non-Perturbative approaches}
+%The property of asymptotic freedom allows to compute high energy scattering processes as
+%an expansion in the coupling, allowing a perturbative treatment of QCD.
+The property of asymptotic freedom allows a perturbative treatment of QCD: 
+perturbation theory can be seen as a systematic way of approximating the solution 
+of a quantum field theory keeping the error under control.
+Starting from the Lagrangian given in Eq.~\ref{eq:QCD_lagrangian_gauge_fixing},
+it can be written as the sum between the free Lagrangian $\mathcal{L}_0$, describing free fermion and gauge fields, 
+plus an interaction term $\mathcal{L}_I$, containing all the terms proportional to the gauge coupling $g$.
+When considering high enough energy scales, all the terms proportional to the gauge coupling $g$
+appearing in the lagrangian can be treated as perturbative interactions, so that the corresponding
+contribution in the action can be expanded in a power series of the coupling.
+   
+%
+Although its success in describing high energy processes, there are situations
+in which perturbation theory cannot be applied: in the case of QCD, at low energy the coupling
+becomes large, and a power expansion in the coupling is no longer possible. 
+It is therefore important to have a non-perturbative formulation of QCD, based on the classical Lagrangian 
+of Eq.~\ref{eq:QCD_lagrangian}.
+The framework of lattice QFT represents one of the most studied and developed systematic approaches to study quantum
+field theories in non-perturbative regimes.
+
+%
+In lattice QFT the path integral of the theory is defined on a discrete and finite Euclidean space-time,
+characterized by a finite volume and lattice spacing $a$, and directly evaluated through Monte-Carlo simulations.
+The full Lorents invariance of the continuum Minkowski space-time is reduced to the hypercubic group, 
+but the lattice version of theory is built in such a way to preserve gauge invariance.
+
+%
+In order to write a discrete version of QCD, we need to construct an action for the gauge fields and for quark fields.
+In the case of the gauge filed, the action can be written in terms of gauge links $U_{\mu}$, obtaining the so called Wilson action
+\begin{align}
+    \label{eq:Wilson_action}
+    &S_G\left(U_{\mu}\right) = 
+    \frac{\beta}{N}\sum_{x\in \Lambda^4}\sum_{\mu>\nu}\text{Re}\left(1-P_{\mu\nu}\left(x\right)\right)\,, \\
+    &P_{\mu\nu}\left(x\right) = U_{\mu}\left(x\right)U_{\nu}\left(x+a\hat{\mu}\right)
+    U_{\mu}\left(x+a\hat{\nu}\right)^{\dagger}U_{\nu}\left(x\right)^{\dagger}\,,
+\end{align}
+where $\beta$ is a constant of the theory. It can be shown that in the continuum limit Eq.~\ref{eq:Wilson_action}
+recovers the Euclidean Yang-Mills action.
+Considering the fermionic fields, it can be shown how a naive discretization of the Dirac action
+\begin{align}
+    \label{eq:naive_Dirac}
+    S_{\text{Dirac}}\left[\psi,\bar{\psi}\right] = 
+    a^4\sum_{x\in\Lambda^4}\bar{\psi}\left(x\right)\left(\bar{\slashed{\delta}} + m\right) \psi\left(x\right)
+\end{align}
+would lead to a theory
+with the wrong continuum limit, describing 16 independent fermion states all having the same energy.
+This is a consequence of a general property of fermionic actions known as the Nielsen-Ninomiya no-go theorem.
+A possible solution was proposed by Wilson, through the addition of another term to the fermionic action
+to remove the unwanted states
+\begin{align}
+    \label{eq:fermions_wilson_action}
+    S_W\left[\psi,\bar{\psi}\right] = S_{\text{Dirac}}\left[\psi,\bar{\psi}\right] 
+    - \frac{a^5}{2}\sum_{x\in\Lambda^4}\bar{\psi}\left(x\right)\tilde{\delta}^2 \psi\left(x\right)\,.
+\end{align}
+The addition of the Wilson term in the action solves the doubling problem, however it explicitly breaks
+chiral symmetry, leading to a more complex UV structure of the theory.
+
+%
+The expectation value of a generic observable $O\left[\psi,\bar{\psi},A_{\mu}\right]$ can then be evaluated
+through the path integral
+\begin{align} 
+    \label{eq:lattice_path_integral}
+    \langle O\rangle = \frac{1}{Z}\,\int D\psi\, D\bar{\psi}\,DU_{\mu}\,
+    O\left[\psi,\bar{\psi},U_{\mu}\right]e^{-S[\psi,\bar{\psi},U_{\mu}]}\,,
+\end{align}
+$S$ being the total action of the theory.
+The fermion fields appear in the action as a bilinear term $\bar{\psi} M\left(U_{\mu}\right) \psi$,
+so that the functional integrals over $\psi$ and $\bar{\psi}$ bar can be performed analytically getting
+\begin{align}
+    \label{eq:integrated_path_integral}
+    \langle O\rangle = \frac{1}{Z}\int DU_{\mu}\,\text{det}M\left(U_{\mu}\right)
+    O_{\text{Wick}}\left[U_{\mu}\right]e^{-S_G[U_{\mu}]}\,,
+\end{align}
+where $O_{\text{Wick}}$ denotes the functional obtained from $O$ performing the Wick contractions 
+of the quark fields.
+The quantity
+\begin{align}
+    \label{eq:prob_distribution}
+    \frac{1}{Z}\,\text{det}M\left(U_{\mu}\right)e^{-S_G[U_{\mu}]}\,,
+\end{align}
+can be interpreted as a probability distribution\footnote{This is only true when $\text{det}M >0$. In a continuum theory it 
+can be shown that this is true thanks to chiral symmetry, as long as we consider non-zero masses.
+On the lattice the situation can be more complicated: in the case of Wilson fermions for example chiral symmetry is lost,
+and the determinant is positive only when the bare masses are bigger than the critical mass.}, and an estimation
+for $\langle O \rangle$ up to a $\mathcal{O}\left(1/\sqrt{N}\right)$ statistical error can be obtained by drawing
+N samples $U_{\mu}^{(i)}$ from it and computing
+\begin{align}
+    \label{eq:average_O_lattice}
+    \langle O \rangle = \frac{1}{N}\sum_{i=0}^N \, O\left[U_{\mu}^{(i)}\right]\,.
+\end{align}    
