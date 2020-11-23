@@ -202,11 +202,11 @@ Qualitatively it represents the scale at which the interaction becomes strong an
 The property of asymptotic freedom allows a perturbative treatment of QCD: 
 perturbation theory can be seen as a systematic way of approximating the solution 
 of a quantum field theory keeping the error under control.
-Starting from the Lagrangian given in Eq.~\ref{eq:QCD_lagrangian_gauge_fixing},
-it can be written as the sum between the free Lagrangian $\mathcal{L}_0$, describing free fermion and gauge fields, 
+The Lagrangian given in Eq.~\ref{eq:QCD_lagrangian_gauge_fixing}
+can be written as the sum between the free Lagrangian $\mathcal{L}_0$, describing free fermions and gauge fields, 
 plus an interaction term $\mathcal{L}_I$, containing all the terms proportional to the gauge coupling $g$.
 When considering high enough energy scales, all the terms proportional to the gauge coupling $g$
-appearing in the lagrangian can be treated as perturbative interactions, so that the corresponding
+appearing in the Lagrangian can be treated as perturbative interactions, so that the corresponding
 contribution in the action can be expanded in a power series of the coupling.
    
 %
@@ -216,7 +216,8 @@ becomes large, and a power expansion in the coupling is no longer possible.
 It is therefore important to have a non-perturbative formulation of QCD, based on the classical Lagrangian 
 of Eq.~\ref{eq:QCD_lagrangian}.
 The framework of lattice QFT represents one of the most studied and developed systematic approaches to study quantum
-field theories in non-perturbative regimes.
+field theories in non-perturbative regimes. In the following we recall the basic ideas underlying the formulation of 
+QCD on an Euclidean lattice, referring to standard textbooks as Refs.~[] for more details.
 
 %
 In lattice QFT the path integral of the theory is defined on a discrete and finite Euclidean space-time,
@@ -242,10 +243,10 @@ Considering the fermionic fields, it can be shown how a naive discretization of 
     S_{\text{Dirac}}\left[\psi,\bar{\psi}\right] = 
     a^4\sum_{x\in\Lambda^4}\bar{\psi}\left(x\right)\left(\bar{\slashed{\delta}} + m\right) \psi\left(x\right)
 \end{align}
-would lead to a theory
-with the wrong continuum limit, describing 16 independent fermion states all having the same energy.
-This is a consequence of a general property of fermionic actions known as the Nielsen-Ninomiya no-go theorem.
-A possible solution was proposed by Wilson, through the addition of another term to the fermionic action
+would lead to a theory with the wrong continuum limit, describing 16 independent fermion states all having the same energy.
+This is the so-called \textit{doubling problem}, and it is a consequence of a more general property of 
+fermionic actions known as the Nielsen-Ninomiya no-go theorem~\cite{Nielsen:1981hk}.
+A possible solution to the doubling problem was proposed by Wilson~\cite{PhysRevD.10.2445}, through the addition of another term to the fermionic action
 to remove the unwanted states
 \begin{align}
     \label{eq:fermions_wilson_action}
@@ -287,4 +288,6 @@ N samples $U_{\mu}^{(i)}$ from it and computing
 \begin{align}
     \label{eq:average_O_lattice}
     \langle O \rangle = \frac{1}{N}\sum_{i=0}^N \, O\left[U_{\mu}^{(i)}\right]\,.
-\end{align}    
+\end{align} 
+
+\comment{Add something about numerics/simulations}
