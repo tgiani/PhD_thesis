@@ -178,7 +178,7 @@ In this section, starting from the parton model ideas, we briefly recall how to 
 (NLO) QCD corrections.
 As we are going to see, when considering QCD corrections two important things happen.
 First Bjorken scaling is broken, namely the structure functions acquire a non trivial scale dependence.
-Second, when considering gluons emissions from the initial state particles, infrared collinear singularities,
+Second, when considering gluons emissions from the initial state particles, infrared collinear singularities
 arise. The universal factorization of such collinear poles and the subsequent renormalization of parton distribution functions
 represent the main conceptual point of factorization in high energy processes, and 
 will be discussed in the following.  
@@ -207,12 +207,12 @@ The full result has the following form
 \begin{align}
     \label{eq:1_loop_dis}
     \hat{F}\left(x,Q^2\right) = e^2\left[\delta\left(1-x\right) 
-    + \frac{\alpha_s}{2\pi}\left(P\left(x\right)\log\frac{Q^2}{Q_0^2} + R\left(x\right) \right)  \right]\,,
+    + \alpha_s\left(P\left(x\right)\log\frac{Q^2}{Q_0^2} + R\left(x\right) \right)  \right]\,,
 \end{align}
 with
 \begin{align}
     \label{eq:splitting_function}
-    P\left(x\right) = C_F\left[\frac{1+x^2}{\left(1-x\right)_+} + \frac{3}{2}\delta\left(1-x\right)\right]\,.
+    P\left(x\right) = \frac{C_F}{2\pi}\left[\frac{1+x^2}{\left(1-x\right)_+} + \frac{3}{2}\delta\left(1-x\right)\right]\,.
 \end{align}
 Two observations can be done. Firstly, as anticipated above, beyond leading order
 Bjorken scaling is broken by logarithms of $Q^2$, and the structure function acquires a $Q^2$ dependence.
@@ -232,7 +232,7 @@ we end up with a contribution of the form
 \begin{align}
     \label{eq:collinear_div}
     \hat{F}_{q\, \gamma \rightarrow q\,g}\left(x,Q^2\right) =
-    \int^{\,Q^2}\frac{dk_{\perp}^2}{k_{\perp}^2}\, \frac{\alpha_s}{2\pi}P\left(x\right) + ...\,,
+    \int^{\,Q^2}\frac{dk_{\perp}^2}{k_{\perp}^2}\, \alpha_s\, P\left(x\right) + ...\,,
     %\sim \alpha_s\left(Q^2\right)\,\log\frac{Q^2}{Q_0^2}\,,
 \end{align}
 where the ellipses stand for finite regular terms.
@@ -271,9 +271,9 @@ the infrared divergent partonic structure function can then be written as
 with
 \begin{align}
     &\Gamma\left(y,\mu_F\right) = \delta\left(1-y\right) 
-    + \frac{\alpha_s}{2\pi}\left[P\left(y\right)\log\frac{\mu_F^2}{Q_0^2} + \Gamma_{finite}\left(y\right)\right]\,, \\
+    + \alpha_s\left[P\left(y\right)\log\frac{\mu_F^2}{Q_0^2} + \Gamma_{finite}\left(y\right)\right]\,, \\
     &\hat{F}_{\text{reg}}\left(\eta,\frac{Q}{\mu_F}\right) = \delta\left(1-\eta\right)  
-    + \frac{\alpha_s}{2\pi}
+    + \alpha_s
     \left[P\left(\eta\right)\log\frac{Q^2}{\mu_F^2}+ R\left(\eta\right) - \Gamma_{finite}\left(\eta\right) \right]\,.  
 \end{align}
 The new scale $\mu_F$ introduced above, often referred to as factorization scale, separates long and short distance 
@@ -523,34 +523,163 @@ As mentioned above the bilocal operator products of Eq.~\ref{eq::barepdf} requir
 The corresponding renormalization group equations are the Altarelli-Parisi equations fo PDFs.
 Considering on-shell incoming partons, a straightforward 1-loop computation gives
 \begin{align}
-    \label{eq:1-loop_partonic_pdf}
+    \label{eq:1-loop_bare_partonic_pdf}
     f^{\bare}_{a/b}\left(x,\epsilon\right) = \delta_{ab}\,\delta\left(1-x\right)
-    + \left[\frac{1}{\epsilon_{UV}}-\frac{1}{\epsilon_{IR}}\right]\frac{\alpha_s}{\pi}P_{a/b}^{(1)}\left(x\right)
+    + \alpha_s\left[\frac{1}{\epsilon_{UV}}-\frac{1}{\epsilon_{IR}}\right] P_{a/b}^{(1)}\left(x\right)
     + \mathcal{O}\left(\alpha_s^2\right)\,.
 \end{align}
+To obtain such result, one has to work in dimensional regularization to regularize both UV and infrared
+divergences. 
 Working in $\overline{MS}$ the UV pole $1/\epsilon_{UV}$ is removed through renormalization,
-and we are left with the renormalized partonic PDFs. Such object, despite being UV finite, does contain IR poles.
+and we are left with the renormalized partonic PDFs
+\begin{align}
+    \label{eq:1-loop_renormalized_partonic_pdf}
+    f_{a/b}\left(x,\epsilon\right) = \delta_{ab}\,\delta\left(1-x\right)
+    + \alpha_s\left(-\frac{1}{\epsilon}\right) P_{a/b}^{(1)}\left(x\right)
+    + \mathcal{O}\left(\alpha_s^2\right)\,.
+\end{align}
+Such object, despite being UV finite, does contain 
+infrared poles.
 
 %
 We can now see how the formal approach followed here recovers the picture given in the previous section.
-Taking as example the case of DIS structure function, we can apply Eq.~ to the case of incoming partons
+Taking as example the case of DIS structure function, we can apply Eq.~\ref{eq:dis_qcd} to the case of an 
+incoming parton $b$\footnote{An important property of the hard coefficient functions is that they 
+depend only on the parton type $a$ and not on the specific hadron $H$, 
+so that they can be computed with the simplest choice of external parton.}
 \begin{align}
     \label{eq:partonic_structure_function}
-    \hat{F}_{a} = \sum_b\int_x^1\,\frac{d\xi}{\xi}\,f_{b/a}\left(\xi,\epsilon\right)
-    H_b\left(\frac{x}{\xi},\frac{Q}{\mu}, \alpha_s, \epsilon\right).
+    \hat{F}_{b}\left(x,\epsilon\right) = 
+    \sum_a \int_x^1\frac{d\xi}{\xi}\,C_a\left(\frac{x}{\xi}, \alpha_s\right)f_{a/b}\left(\xi,\epsilon\right)
+    +\mathcal{O}\left(\frac{\Lambda_{QCD}}{Q}\right)\,.
 \end{align}
-Consider the power expansions for $\hat{F}_{a}$ and $H_b$ and using the 1-loop expression for the
-renormalized partonic PDF \comment{add them} we get
+Considering the coefficient functions power expansions given in Eq.~\eqref{eq:coeff_functions_expansion}
+and an analogue expansion for $\hat{F}_{a}$ $C_b$, using the 1-loop expression for the
+renormalized partonic PDF of Eq.~\eqref{eq:1-loop_renormalized_partonic_pdf} we get
 \begin{align}
     \label{eq:IR_subtraction_from_formal_definition}
-    &H^{(0)}_a = \hat{F}^{(0)}\,,\\
-    &H^{(1)}_a = \hat{F}^{(1)} + \frac{1}{2\epsilon}\sum_b\int_x^1 \frac{d\xi}{\xi}P_{a/b}^{(1)}\left(\xi\right)
-    G_b\left(\frac{x}{\xi},\frac{Q}{\mu}, \alpha_s\right)\,.
+    &C^{(0)}_b\left(x\right) = \hat{F}_b^{(0)}\left(x\right)\,,\\
+    &C^{(1)}_b\left(x\right) = \hat{F}_b^{(1)}\left(x,\epsilon\right) + \frac{1}{\epsilon}\sum_a\int_x^1 \frac{d\xi}{\xi}P_{a/b}^{(1)}\left(\xi\right)
+    \hat{F}_a^{(0)}\left(\frac{x}{\xi}\right)\,,
 \end{align}
-Therefore we find back the prescription introduced in the previous section: in order to compute
+which recovers the prescription introduced in the previous section: in order to compute
 the hard scattering cross sections, one should calculate the structure function at the parton level and subtract
-from it certain IR terms divergent terms proportional to the splitting kernel and the Born cross section.
+from it certain infrared divergent terms proportional to the splitting kernel and the Born cross section.
 Such terms, identified as collinear emissions in the previous sections, here are computed in a process independent
 way starting directly from the formal definition of PDFs.
+Another way of stating this, is that the infrared subtraction kernel $\Gamma$ introduced in Eq.~\eqref{eq::IRsubtraction}
+corresponds to the parton level renormalized PDF of Eq.~\eqref{eq:1-loop_renormalized_partonic_pdf}. For a proof
+of this at every order in perturbation theory see for example \cite{Collins:1980ui}.
+
 
 \subsection{DGLAP evolution equations}
+\label{sec:DGLAP}
+As stated in Eq.~\ref{eq:RenormPDF} the operator defining parton distribution functions requires
+renormalization. As a consequence renormalized PDFs acquire a scale dependence.
+Including in the discussion also the gluon PDF, the corresponding renormalization group equations read
+\begin{align}
+    \mu^2\frac{\partial}{\partial\mu^2}
+    \begin{pmatrix}
+        q_i\left(x,\mu^2\right) \\  
+        g\left(x,\mu^2\right)
+    \end{pmatrix}
+    =
+    \alpha_s\sum_{q_i,\bar{q}_i}\int_x^1 \frac{d\xi}{\xi} 
+    \begin{pmatrix}
+        P_{q_i q_j}\left(\frac{x}{\xi},\alpha_s\right) & P_{q_i g}\left(\frac{x}{\xi},\alpha_s\right) \\
+        P_{g q_j}\left(\frac{x}{\xi},\alpha_s\right)   & P_{g g}\left(\frac{x}{\xi},\alpha_s\right) 
+    \end{pmatrix}
+    \begin{pmatrix}
+        q_j\left(x,\mu^2\right) \\  
+        g\left(x,\mu^2\right)
+    \end{pmatrix}
+\end{align}
+with each splitting function computable in perturbation theory
+\begin{equation}
+    \begin{split}
+    &P_{q_i q_j}\left(x,\alpha_s\right) = \delta_{ij}P^{(0)}_{qq}\left(x\right) 
+    + \alpha_s P^{(1)}_{q_i q_j}\left(x\right) + ... \\
+    &P_{q g}\left(x,\alpha_s\right) = P^{(0)}_{qg}\left(x\right) 
+    + \alpha_s P^{(1)}_{q g}\left(x\right) + ... \\
+    &P_{g q}\left(x,\alpha_s\right) = P^{(0)}_{gq}\left(x\right) 
+    + \alpha_s P^{(1)}_{gq}\left(x\right) + ... \\
+    &P_{g g}\left(x,\alpha_s\right) = P^{(0)}_{gg}\left(x\right) 
+    + \alpha_s P^{(1)}_{gg}\left(x\right) + ... 
+    \end{split}
+\end{equation}
+It is convenient to re-express the DGLAP equations choosing a PDFs basis which maximally diagonalize them 
+In order to do this the aforementioned evolution basis is particularly useful.
+Denoting 
+\begin{align}
+    q^{\pm}_i = q_i \pm \bar{q}_i\,,
+\end{align}
+and considering the flavours $u, d, s, c, b, t$ the non-singlet sector is defined by the valence distributions
+\begin{align}
+    V_i = q_i^-
+\end{align} 
+and the $T_i$ combinations, defined as
+\begin{align}
+    T_3 = u^+ - d^+\,,\,\,\,\,\,\,T_8 = u^+ + d^+ -2s^+\,,\,\,\,\,\,\,T_{15} = u^+ + d^+ + s^+ -3c^+\,,\,\,\,\,\,\, \\
+    T_{24} = u^+ + d^+ + s^+ + c^+ -4b^+\,,\,\,\,\,\,\, T_{35} = u^+ + d^+ + s^+ + c^+ + b^+ - 5 t^+\,. 
+\end{align}
+Each non-singlet distribution will then satisfy an independent evolution equation, given by 
+\begin{align}
+    \label{eq:DGLAP_NS}
+    \mu^2\frac{d}{d\mu^2}q^{NS}\left(x,\mu^2\right) 
+    = \int_{\xi}^1\frac{d\xi}{\xi}P\left(\xi,\alpha_s\right)
+    q^{NS}\left(\frac{x}{\xi},\mu^2\right)\,.
+\end{align}
+The spitting function $P$ for $V_i$ and $T_i$ distributions is given by $P^-$ and $P^+$ respectively,
+which at leading order are
+\begin{align}
+    P^{-(0)}\left(x\right) = P^{+(0)}\left(x\right) = \frac{C_F}{2\pi}\left(\frac{1+z^2}{1-z}\right)_+ \,.
+\end{align}
+Working in the evolution basis, the only distribution which couples to the gluon is the so called
+singlet combination, defined as
+\begin{align}
+    \Sigma\left(x,\mu^2\right) = \sum_i \left(q_i\left(x,\mu^2\right)+\bar{q}_i\left(x,\mu^2\right)\right)
+\end{align}
+\begin{align}
+    \mu^2\frac{\partial}{\partial\mu^2}
+    \begin{pmatrix}
+        \Sigma\left(x,\mu^2\right) \\  
+        g\left(x,\mu^2\right)
+    \end{pmatrix}
+    =
+    \alpha_s\int_x^1 \frac{d\xi}{\xi} 
+    \begin{pmatrix}
+        P_{q q}\left(\frac{x}{\xi},\alpha_s\right) & P_{q g}\left(\frac{x}{\xi},\alpha_s\right) \\
+        P_{g q}\left(\frac{x}{\xi},\alpha_s\right)   & P_{g g}\left(\frac{x}{\xi},\alpha_s\right) 
+    \end{pmatrix}
+    \begin{pmatrix}
+        \Sigma\left(x,\mu^2\right) \\  
+        g\left(x,\mu^2\right)
+    \end{pmatrix}
+\end{align}
+with the leading order splitting function given by
+\begin{align}
+    &P_{qq}^{(0)}\left(x\right) = \frac{C_F}{2\pi}\left[\frac{1+x^2}{\left(1-x\right)_+} 
+    + \frac{3}{2}\delta\left(1-x\right)\right]\,,\nonumber \\
+    &P_{gg}^{(0)}\left(x\right) = \frac{C_A}{\pi}\left[\frac{x}{\left(1-x\right)_+}
+    + \frac{1-x}{x} + x\left(1-x\right)\right] 
+    +\delta\left(1-x\right)\frac{\left(11C_A - 2n_f T_R\right)}{12\pi}\,, \nonumber \\
+    &P_{gq}^{(0)}\left(x\right) = \frac{C_F}{2\pi}\left[\frac{1+\left(1-x\right)^2}{x}\right]\,, \nonumber \\
+    &P_{qg}^{(0)}\left(x\right) = \frac{n_f}{2\pi}\left[x^2+\left(1-x\right)^2\right]\,.
+\end{align}
+Because of charge conjugation invariance and $SU(n_f)$ flavour symmetry splitting functions are independent on the quark
+flavour and are the same for quarks and antiquarks. 
+Also, leading order splitting function have a nice physical interpretation as probability distributions.
+Following Ref.~\cite{ALTARELLI1977298}, Eq.~\ref{eq:DGLAP_NS} can be written as
+\begin{align}
+    q^{NS}&\left(x,\mu^2\right) + dq^{NS}\left(x,\mu^2\right) = \nonumber\\
+    &\int_0^1 dy\int_0^1 dz\,\delta\left(zy-x\right) q^{NS}\left(y,\mu^2\right) 
+    \left[\delta\left(z-1\right) + \alpha_s\, P\left(z\right) d \log\frac{\mu^2}{\mu_0^2}\right]\,.
+\end{align}
+The quantity in square brackets can then be interpreted as the probability density of finding a quark
+inside another quark, with a fraction $z$ of the parent momentum. The quantity $\alpha_s P\left(z\right)$
+is then the variation of such probability density per logarithmic unit of the energy. The interpretation
+of splitting function as probability densities implies that they are positivite for $x<1$ and allows to compute
+them starting from the QCD vertices for $q\rightarrow q\,g$, $g\rightarrow q\bar{q}$ and $g\rightarrow gg$.  
+
+
+\comment{Add solution to DGLAP for nonsinglet as in the qPDF paper.}
