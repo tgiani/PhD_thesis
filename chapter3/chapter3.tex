@@ -339,22 +339,122 @@ and the FK table becomes a rank-4 tensor,
     \label{eq:DY_obs}
     \mathcal{O}^{\text{DY}} = \left[\text{FK}\right]_{i\alpha j\beta}\mathcal{L}_{i\alpha j\beta}\,.
 \end{align}
+
+%
 After computing the value for all the observables entering the fit, the data are split into training and 
 validation sets, the $\chi^2$ function of the training set is minimized using gradient descent.
-The stopping is implemented according using cross-validation, as described in Sec.~\ref{sec:minimization}.
+The stopping is implemented using cross-validation, as described in Sec.~\ref{sec:minimization}.
 
 %
 \comment{Add a short paragraph about hyperopt}
 
 \subsection{Fit basis}
+\label{sec:fitbasis}
+The parton distributions used to define the FK tables are the thirteen PDFs
+\begin{align}
+	\label{eq::fkdistributions}
+	q_i = \Sigma, g, V, V_3, V_8, V_{15}, V_{24}, V_{35}, T_3, T_8, T_{15}, T_{24}, T_{35}.
+\end{align}
+Eight of these are parametrized, while the remaining ones, involving heavy quarks,
+are determined by perturbative evolution\footnote{When QED corrections are considered in the analysis,
+the photon PDF $\gamma$ is also included and independently parameterized.}     
+As mentioned before, the {\tt n3fit} environment allows for different fit basis choices. In other 
+words, the user can choose which distributions should be independently parameterized. 
 
-\subsection{Positivity}
+%
+The two most natural choices are the so called \textit{evolution} and \textit{flavour} basis.
+%In the former the flavours are split into independent singlet ($g$ and $\Sigma$) and nonsinglet ($V$ and $T$) sectors
+The former is defined by the eight dimensional subset of \eqref{eq::fkdistributions} given by 
+\begin{align}
+    \label{eq:evolution_basis}
+    q_k = \left[g, \Sigma, V, V_3, V_8, T_3, T_8, T_{15} \right]\,,
+\end{align}
+while in the latter, the neural network outputs   
+up, down, strange and charm quark and antiquark distributions (for charm we consider $c=\bar{c}$) plus the gluon
+\begin{align}
+    \label{eq:flavour_basis}
+	\tilde{q}_k = \left[g, u, \bar{u}, d, \bar{d}, s, \bar{s}, c\right]\,.
+\end{align} 
+When running a fit, the eight PDFs of the chosen basis are first supplemented with the perturbative heavy quarks
+distributions and then rotated back into the FK table basis of Eq.~\eqref{eq::fkdistributions}.
+
+%
+The final result of a PDFs determination should be independent on the specific basis used in the fit
+and only determined by experimental data and general physical constraints.
+The way in which the latter are implemented in the fit can vary depending on the basis,
+and might define different final methodologies, which in turn could be more or less convenient
+in terms of numerical performances. It is therefore interesting to study different possible
+fit basis choices, discussing the differences in performances and methodologies and verifying that,
+at least in the kinematic regions where experimental data are available, the 
+fit results are independent on the specific PDFs initially parameterized.
+
+
+\subsection{Theoretical constraints}
+\label{sec:theory_constraints}
+
+As mentioned above, there are several theoretical conditions that can be used to further constrain PDFs.
+In the following we address each of them, discussing the way they are implemented when considering
+different fit bases.
+
+%
+\paragraph{Sum rules.}
+Energy conservation and the valence structure of the proton imply momentum and valence sum rules
+given by 
+\begin{align}
+    \label{eq:momentum_sumrule}
+    \int_0^1 dx\, x\left(g\left(x\right) + \Sigma\left(x\right)\right) = 1\,. 
+\end{align}
+and
+\begin{align}
+    \label{eq:valence_sumrules}
+    \int_0^1& dx\, V\left(x\right) = \int_0^1 dx\, V_8\left(x\right) = 3\,,   \,\,\,
+    \int_0^1 dx\, V_3\left(x\right) = 1\,.
+\end{align} 
+These are implemented in the fit multiplying the distributions $V$, $V_3$, $V_8$ and $g$ by suitable normalization factors
+$A_V$, $A_{V_3}$, $A_{V_8}$ and $A_g$ defined as
+\begin{align}
+    A_V = A_{V_8} = \frac{3}{\int_0^1 dx\, V\left(x\right)}\,,\,\,
+    A_{V_3} = \frac{1}{\int_0^1 dx\, V_3\left(x\right)}\,,\,\,
+    A_g = \frac{1 - \int_0^1 dx\, x \Sigma\left(x\right)}{\int_0^1 dx\, x g\left(x\right)}\,,
+\end{align} 
+so that Eqs.~\eqref{eq:momentum_sumrule}, \eqref{eq:valence_sumrules} are automatically
+satisfied.
+Such multiplication happens after rotating the fit basis back into Eq.~\eqref{eq::fkdistributions},
+so that the procedure remains the same independently on the choice of the fit basis.
+
+
+\paragraph{Large- and small-$x$ behaviour.} 
+The large-$x$ behaviour of the PDFs has to be consistent with the elastic limit, namely the condition
+$q_i\left(x=1\right)=0$ has to be satisfied by all the distributions of both the flavour and evolution basis.
+This can be easily implemented in the fit by supplementing the neural network parametrization of 
+each flavour by the preprocessing factor $\left(1-x\right)^{\beta_i}$, just like in the NNPDF methodology
+described before.
+The use of an additional polynomial factor $x^{-\alpha_i}$, controlling the small-$x$ behaviour of each flavour,
+only makes sense when working in the evolution basis. In this case, each flavour is either a singlet or nonsinglet
+distribution, and as such its small-$x$ behaviour can be classified as integrable (nonsinglet) or not integrable (singlet)
+in $x=0$: a parametrization like the one given in Eq.~\eqref{eq::paramEvol} can be used, with $\alpha$
+randomized in intervals such that $\alpha<1$ in the former case and $\alpha>1$ in the latter.
+%
+On the other hand, when working in the flavour basis each distribution (except the gluon) has both a singlet 
+and a nonsinglet component, which makes impossible to use a polynomial expression 
+to describe in a consistent way its small-$x$ behaviour. Because of this, when working in the flavour basis
+only a large-$x$ preprocessing is implemented, so that each distribution of Eq.~\eqref{eq:flavour_basis} is
+parameterized as
+\begin{align}
+    x\,\tilde{q}_j\left(x, Q_0^2\right) = \left(1-x\right)^{\beta_{j}}\text{NN}_{j}\left(x\right)\,,
+\end{align}
+with $\text{NN}_{j}\left(x\right)$ denoting the corresponding neural network output, just as in Eq.~\eqref{eq::paramEvol}.
+
+
+
+\paragraph{Positivity.}
 As recalled in the previous chapter, PDFs are renormalization scheme dependent quantities.
 Despite at LO they can be interpreted as probabilities distributions, when considering QCD corrections
 such naive picture doesn't hold any more. This in general prevents PDFs from being positive definite objects.
-However, independently from the PDFs sign, cross sections for high-energy processes have to be positive.
-Such positivity constraint on physical observables might have a non-negligible
-impact on the PDFs themself, especially in those kinematic regions where no experimental
+However, regardless of the PDFs sign and shapes, cross sections for high-energy processes have to be positive,
+which means that fit solutions leading to negative cross-sections have to be discarded.
+This condition might have a non-negligible impact on the PDFs themself, 
+especially in those kinematic regions where no experimental
 data are available: functional forms giving negative cross sections cannot be 
 physical solutions of the problem, and therefore should be discarded.  
 In the old {\tt c++} code such requirement is implemented through the use of Lagrange multipliers, 
@@ -374,8 +474,251 @@ This result has been accounted for in {\tt n3fit}, where positivity is imposed a
 In the following we describe how this is implemented in the code, and we assess the impact of such constraints
 on the large-$x$ region of the PDFs.
 
-\subsection{Integrability}
+%
+For each distribution $\tilde{q}_k$ which has to be positive, namely for all the PDFs defining the
+flavour basis of Eq.~\eqref{eq:flavour_basis}, we add to the total $\chi^2$ a contribution defined as  
+\begin{align}
+	\label{eq:chi2pos_k}
+	\chi^2_{k,pos} = \Lambda_k \,\sum_i \,\text{Elu}_{\alpha}\left(-\tilde{q}_k\left(x_i,Q^2\right)\right)\,,
+\end{align}
+with $Q^2 = 5\, \text{GeV}^2$, $x_i$ given by 10 points logarithmically spaced between $5\cdot10^{-7}$ and $10^{-1}$ and 10 points
+linearly spaced between $0.1$ and $0.9$. The Elu function is defined as 
+\begin{align}
+	\label{eq:Elu}
+	\text{Elu}_{\alpha}\left(t\right) = 
+	\begin{cases}
+		t \,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\text{if}\,\,\,\, t>0 \\
+		\alpha\left(e^t-1\right)\,\,\,\,\,\,\,\text{if}\,\,\,\, t<0
+	\end{cases}\,,
+\end{align} 
+with $\alpha=10^{-7}$. 
+When the distribution $q_k\left(x_i, Q^2\right)$ is negative, the total $\chi^2$ will receive a positive contribution
+(a penalty) proportional to the corresponding Lagrange multipliers $\Lambda_k$. 
+Therefore, during the minimization of $\chi^2_{tot}$ solutions corresponding to positive distributions $q_k$
+will be favoured. Note that such implementation works with both the evolution and flavour basis, the only 
+difference being the linear transformation mapping the network outputs to the positive distributions to be 
+used in Eq.~\eqref{eq:chi2pos_k}.
+
+\paragraph{Integrability.}
+Given the lack of data in the small-$x$ region, when $x<10^{-4}$ the PDFs are left largely unconstrained. 
+Because of the redundant parameterization employed in the NNPDF methodology, this will result in 
+an artificially big PDFs error in the small-$x$ region.
+This is an important feature a reliable PDFs set should have: in those kinematic regions where experimental data
+are missing, the PDFs error should increase accordingly.
+There are however some physical considerations that can be made to further constrain PDFs at small-$x$, 
+which can be used to reduce the huge error band in this kinematic region. 
+In order to have well defined momentum and valence sum rules the distributions $V, V_3, V_8, xg, x\Sigma$ 
+have to be integrable when $x$ decrease to zero.
+Moreover, in order to have well defined Gottfried sum rules, also the integral of $T_3$ and $T_8$ over the interval
+$\left(0,1\right)$ has to be finite. 
+
+This means that, denoting as $q\left(x,Q_0^2\right)$ a generic integrable PDF at the fitting scale, as $x$ decreases to zero
+such distribution cannot raise faster than $1/x$. In other words the following limit has to be verified
+\begin{align}
+    \label{eq:integrability}
+    \lim_{x\rightarrow 0} xq\left(x,Q_0^2\right) = 0\,.
+\end{align}
+
+%
+Despite the simplicity of Eq.~\eqref{eq:integrability} it is important to note that, 
+from a numerical point of view, its practical implementation in a generic fit basis is a delicate matter.
+For numerical implementations in a fit, it is convenient to consider a different definition.
+%numerical integration of the PDFs between $\left(0,1\right)$ could still give a finite answer even if 
+%Eq.~\eqref{eq:integrability} is not satisfied; on the other hand, there is no unique and straightforward way to implemented
+%such constraint in the PDFs parameterization.
+%
+We define the distribution $q$ to be integrable if, for a given set of points $x^{(i)}_{\text{integ}}$ in the small-$x$ region,
+the function $xq\left(x\right)$ evaluated in these points is much smaller than its peak value,
+\begin{align}
+    \label{eq:integ_def}
+    \sum_i|xq|_{x=x^{(i)}_{\text{integ}}} \ll xq|_{x=x_{\text{peak}}}\,,
+\end{align}
+with $x_{\text{peak}}$ denoting the point where the distribution $xq$ reaches its maximum value.
+Eq.~\eqref{eq:integ_def} can be rewritten introducing a numerical parameter $f_q$ of order $10^{-1}$
+\begin{align}
+    \label{eq:integ_def_2}
+    \sum_i|xq|_{x=x^{(i)}_{\text{integ}}} < f_q*xq|_{x=x_{\text{peak}}}\,.
+\end{align}
+Despite Eq.~\eqref{eq:integ_def_2} is not mathematically equivalent to Eq.~\eqref{eq:integrability},
+ the idea is that,
+if satisfied for small enough $x$ values $x^{(i)}_{\text{integ}}$, the function $xq\left(x\right)$ will 
+decrease to zero as $x$ keeps getting smaller. Also, unlike Eq.~\eqref{eq:integrability}, the condition given
+in Eq.~\eqref{eq:integ_def_2} can be easily verified replica by replica, so that not-integrable replicas can be discarded.
+
+%
+In a similar way to what done for positivity we can impose integrability. For each distributions $q_k$ which has to satisfy integrability we
+add to the total $\chi^2$ a new bit defined as  
+\begin{align}
+	\label{eq:chi2integ_k}
+	\chi^2_{k,integ} = \Lambda_k \,\sum_i \,\left[x_i\,q_k\left(x_i,Q^2\right)\right]^2\,,
+\end{align}
+In this way, the fit will favour configurations with smaller values of $|x_i\,q_k\left(x_i,Q^2\right)|$, and should 
+therefore produce distributions with integrable small-$x$ behaviour. The points $x_i$ are chosen in different ways depending
+on the specific distribution and fit basis we are considering. 
+
+
+\subsection{Results}
+In the previous section we describe how theoretical constraints are implemented in the fit.
+In particular we saw how, when imposing positivity and integrability,
+the total experimental $\chi^2$ has to be supplemented by additional contributions
+proportional to Lagrange multipliers, so that the total $\chi^2$ which is actually minimized
+during the fit is 
+\begin{align}
+	\label{eq:chi2pos_integ}
+	\chi^2_{tot} = \chi^2_{exp} + \sum_k\, \chi^2_{k,\text{pos}} + \sum_l\, \chi^2_{l,\text{integ}}
+\end{align}
+with the indices $k$ and $l$ running on the positive and integrable distributions
+and $\chi^2_{k,\text{pos}}$, $\chi^2_{l,\text{integ}}$ defined in Eqs.~\eqref{eq:chi2pos_k}, \eqref{eq:chi2integ_k}.
+
+%
+In this section, considering the NNPDF31 NLO dataset, we present results produced with the new {\tt n3fit} methodology,
+focusing on the effects positivity and integrability constraints have on the final result.
+Our point here is to show the effects of such theoretical constraints on a given baseline which doesn't 
+include them.
+Such analysis, together with a detailed comparison with NNPDF31 and an extended version
+of the baseline dataset, will be part of the NNPFD4.0 release paper.
+
+%
+When working in the evolution basis the small-$x$ behaviour is largely controlled by the preprocessing
+polynomial factor. Integrability (as defined in Eq.~\eqref{eq:integ_def_2})
+can then be satisfied mainly by choosing the corresponding preprocessing exponents in an interval which ensures integrability.
+Additionally, the lagrange multiplier term given in Eq.~\eqref{eq:chi2integ_k} is added to the
+total $\chi^2$ using a single small-$x$ point $x=10^{-9}$. These choices have been proved to
+produce replicas which mostly satisfy Eq.~\eqref{eq:integ_def_2}. 
+
+%
+In Tab.~\ref{tab:experiments_chi2} we provide values of $\chi^2/N_{\text{dat}}$ for an {\tt n3fit } global fit,
+reporting results also for each experiment included in the analysis.
+These are compared to their {\tt n3fit} counterpart produced without positivity and integrability constraints. 
+Inspection of this table shows how the fit quality is basically unaffected by the introduction of the
+theoretical constraints, with a slight improvement in the total $\chi^2$.
+ 
+%
+In Fig.~\ref{fig:distances} we show the distance between the two fits, quantifying the effect of theoretical
+constraints at the PDFs level.
+Considering a set of $N_{\text{rep}}$ replicas $q_i$ of a given parton distribution $q$, the estimator for 
+the expected true value of $q$ is given by
+\begin{align}
+    \langle q \rangle = \frac{1}{N_{\text{rep}}}\sum_{i=1}^{N_{\text{rep}}}q_i\,.
+\end{align}
+The square distance between two estimates for the expected true value obtained from two different fits
+is given by \cite{Ball:2010de}
+\begin{align}
+    d^2\left(\langle q^{(1)} \rangle, \langle q^{(2)} \rangle\right) = 
+    \frac{\left(\langle q^{(1)} \rangle - \langle q^{(2)} \rangle\right)^2}{\sigma^2\left[\langle q^{(1)} \rangle\right]
+    + \sigma^2\left[\langle q^{(2)} \rangle\right]}\,,
+\end{align}
+with the variance of the mean given by 
+\begin{align}
+    \sigma^2\left[\langle q^{(k)} \rangle\right] = \frac{1}{N_{\text{rep}}}\sigma^2\left[q^{(k)}\right]\,,
+\end{align}
+with $\sigma^2\left[q^{(k)}\right]$ the variance of the variable $q^{(k)}_i$
+\begin{align}
+    \label{eq:}
+    \sigma^2\left[q^{(k)}\right] = \frac{1}{N_{\text{rep}}-1}\sum_{i=1}^{N_{\text{rep}}}
+    \left(q^{(k)}_i - \langle q^{(k)} \rangle\right)^2\,.
+\end{align}
+According to this definitions, $ d \simeq 1 $ corresponds to statistically equivalent fits, while, considering 
+a fit with $N_{\text{rep}} = 100$ replicas , 
+$d \simeq 10 $ corresponds to a difference of one-sigma in units of the corresponding variance.
+While in the small-$x$ region the difference between the two fits remains below 
+one-sigma, in the medium- and large-$x$ regions we find differences of up to
+two-sigmas for the flavours $\bar{s}$, $\bar{u}$, $\bar{d}$, $u$ and $c$, 
+which are plotted in linear scale in Fig.~\ref{fig:pdfs_plots}.
+Inspection of these plots show an important reduction of the PDFs error for the flavours $\bar{s}$, $\bar{u}$, $\bar{d}$,
+and a change in the PDFs shape and central value to satisfy the new positivity constraints, which affects also the distributions
+$c$ and $u$.
+
+%
+We conclude that overall after the inclusion of theoretical constraints the fit provides an equivalent,
+or slightly better, description of the input data. However there are important differences at the level of the PDFs,
+whose replicas are globally shifted in order to satisfy positivity, resulting in a general decreasing in the PDFs error.
+
+
+
+  \begin{table}[htbp!]
+    \centering
+    \input{tables/chi2_evol.tex}
+    \caption{The values of $\chi^2/N_{\rm dat}$ for each experiment included in the global fit, before and
+    after the inclusion of positivity and integrability constraints.}
+    \label{tab:experiments_chi2}
+  \end{table}
+
+  \begin{figure}[t!]
+    \begin{center}
+        \includegraphics[width=0.49\linewidth]{normalize_basespecs0_pdfscalespecs0_distspecs0_plot_pdfdistances.pdf}
+        \includegraphics[width=0.49\linewidth]{normalize_basespecs0_pdfscalespecs1_distspecs0_plot_pdfdistances.pdf}
+        \caption{Distance plots} 
+        \label{fig:distances} 
+    \end{center}
+  \end{figure}
+
+  \begin{figure}[t!]
+    \begin{center}
+        \includegraphics[width=0.49\linewidth]{sbar.pdf}
+        \includegraphics[width=0.49\linewidth]{ubar.pdf}
+        \includegraphics[width=0.49\linewidth]{dbar.pdf}
+        \includegraphics[width=0.49\linewidth]{u.pdf}
+        \includegraphics[width=0.49\linewidth]{c.pdf}
+        \caption{PDFs plots} 
+        \label{fig:pdfs_plots} 
+    \end{center}
+  \end{figure}
 
 \subsection{Fit basis independence}
-\label{sec:fitbasis}
+As described in Sec.~\ref{sec:fitbasis}, different choices for the specific PDFs which are independently
+parameterized are possible.
+In this section we present results for a fit run in the flavour basis, using the hyperoptimized methodology
+determined for the evolution basis and imposing the theoretical constraints as described previously.
+
+%
+As mentioned in Sec.~\ref{sec:theory_constraints}, when working in the flavour basis 
+no small-$x$ preprocessing is used. This implies that the small-$x$ behaviour of the PDFs, which is unconstrained 
+by experimental data, can only be controlled through lagrange multipliers.
+Because of this reason, for integrable distributions more stringent constraints are used than those implemented
+for the evolution basis. In particular, in order to get replicas satisfying Eq.~\eqref{eq:integ_def_2},
+the lagrange multiplier terms given in Eq.~\eqref{eq:chi2integ_k} is built using the three small-$x$
+points $x_i = 10^{-5}, 10^{-4}, 10^{-3}$. 
+
+%
+The fit quality present a mild deterioration, with a total $\chi^2$ equal to 1.23, 
+to be compared with the value 1.15 from Tab.~\ref{tab:experiments_chi2}.
+The resulting PDFs plotted in the evolution basis are reported in Fig.~\ref{fig:pdfs_plots_flav_vs_evol}, 
+where they are compared with the evolution basis fit presented in the previous section.
+We find good agreement in both the data and small-$x$ region. In the former case, the PDFs are constrained from experimental
+data, and our results shows how, as expected, as long as data are present,
+different choices for the fit basis do no change the fit result. In the latter, the PDFs shape is controlled
+by the physical conditions provided by positivity, integrability and sum rules. Our results shows how, by taking 
+such constraints into account, equivalent results can be achieved also outside of the data region.
+
+%
+In order to determine the best methodology, one should fix the input dataset and the fit basis. Once this is done,
+an hyperoptimization scan can be run on the hyperparameter defining the final methodology 
+(neural network architecture, minimization algorithm, positivity and integrability parameters ...).
+The methodology used to produce the results presented here has been hyperoptimized in the evolution basis,
+which will be used in the final NNPDF4.0 release. This is likely to explain the small difference in the fit quality
+between the evolution and flavour basis fit. In particular it is worth recalling that no small-$x$ preprocessing
+is used for the latter, which as a consequence present a lower number of free parameters.
+If results in the flavour basis were used to do actual phenomenology, an additional hyperparameters scan
+should be run, to ensure the best possible performance of the methodology. 
+Here we have shown how, without explicitly doing an additional hyperoptimization, the {\tt n3fit} environment still
+allows to obtain a good fit using a different basis, providing as a proof of concept an example of basis independence.
+
+
+\begin{figure}[t!]
+    \begin{center}
+        \includegraphics[width=0.49\linewidth]{plot_pdfs_Sigma_flav_vs_evol.pdf}
+        \includegraphics[width=0.49\linewidth]{plot_pdfs_g_flav_vs_evol.pdf}
+        \includegraphics[width=0.49\linewidth]{plot_pdfs_V_flav_vs_evol.pdf}
+        \includegraphics[width=0.49\linewidth]{plot_pdfs_V3_flav_vs_evol.pdf}
+        \includegraphics[width=0.49\linewidth]{plot_pdfs_V8_flav_vs_evol.pdf}
+        \includegraphics[width=0.49\linewidth]{plot_pdfs_T3_flav_vs_evol.pdf}
+        \includegraphics[width=0.49\linewidth]{plot_pdfs_T8_flav_vs_evol.pdf}
+        \includegraphics[width=0.49\linewidth]{plot_pdfs_T15_flav_vs_evol.pdf}
+        \caption{PDFs plots} 
+        \label{fig:pdfs_plots_flav_vs_evol} 
+    \end{center}
+  \end{figure}
+
+
 
