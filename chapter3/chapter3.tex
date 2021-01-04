@@ -1,4 +1,5 @@
 \chapter{Global fits of Parton Distribution Functions} 
+\label{ch:nnpdf_methodology}
 As seen in the previous chapter, factorization theorems allow for a separation between contributions 
 related to different distance scales: while short distance
 effects can be obtained through the computation of partonic matrix elements within perturbation theory, 
@@ -9,7 +10,7 @@ However the dependence on $x$ would be computable only solving QCD in a nonpertu
 by computing the proton wave function from first principles. We will come back to 
 this point in Chapter~\ref{ch:lattice}, when considering lattice QCD observables.
 In this Chapter we will discuss the general approach adopted to extract the $x$ dependence of the PDFs
-from a discrete set of data, using as basic ingredient the factorization theorems for hadronic observables
+from a discrete set of experimental data, using as basic ingredient the factorization theorems for hadronic observables
 discussed before.
 
 %
@@ -17,8 +18,8 @@ The general problem is to determine a set of unknown functions given
 a collection of data instances. Such kind of task has a long history in data science and AI literature, 
 and might be classified as a pattern recognition problem \cite{Forte:2020yip}.
 However the specific problem of PDFs determination has some additional peculiarities that we need to keep in mind.
-First, PDFs are continuos functions, which makes our problem intrinsically ill-defined, since a continuous real function
-$q\left(x,Q_0^2\right)$ cannot be determine from a discrete set of data.
+First, PDFs are continuos functions, which makes our problem intrinsically ill-defined: a continuous real function
+$q\left(x,Q_0^2\right)$ cannot be determine from a discrete set of data, no matter how large such set is.
 Second, the data are not instances of the functions we are trying to determine, but they are related to 
 them through factorization theorems: each point is determined combining a certain subset of PDFs in a non-linear way,
 and integrating over a certain range of $x$, as stated in Eq.~\eqref{eq:hadron_hadron}. 
@@ -41,7 +42,7 @@ about uncertainties and correlations are taken into account when making predicti
 In this chapter we discuss how all these issue have been addressed within the NNPDF collaboration
 starting from 2002 \cite{Forte:2002fg}, revising the Monte Carlo replicas generation, the neural networks parameterization
 and the minimization procedure. Such methodology has been used to produce the last public NNPDF PDFs set \cite{Ball:2017nwa}
-, and a number of studies which will be described in Chapter~\ref{sec:phenomenology} have been performed within the private
+. A number of studies which will be described in Chapter~\ref{sec:phenomenology} have been performed within the private
 {\tt c++ } implementation of this framework.
 
 %
