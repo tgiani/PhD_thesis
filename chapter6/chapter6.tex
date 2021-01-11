@@ -1,2 +1,252 @@
 \chapter{Fitting the b-quark PDF as a massive-b scheme}
 \label{ch:bottom}
+
+It has been recently shown~\cite{Ball:2017nwa} that for accurate
+phenomenology at the LHC it is advantageous to treat the charm parton
+distribution (PDF) on the same footing as light-quark PDFs, namely, to
+parametrize it and extract it from data, rather than to take it
+as radiatively generated from the gluon using  perturbative matching
+conditions. This is likely to be
+due to the fact that matching conditions are only known to
+the lowest nontrivial order, which may well be subject to large higher
+order
+corrections, as revealed by the strong dependence of results on the
+choice of matching scale. On top of this, of course,
+the starting low-scale heavy quark
+PDFs could in principle also have a
+non-perturbative ``intrinsic''
+component~\cite{Brodsky:1980pb,PhysRevD.23.2745}. It is important to note  that
+whether or not the heavy quark PDF has a nonperturbative component,
+and whether it is advantageous to parametrize the heavy quark PDF are
+separate issues: in fact in Ref.~\cite{Ball:2017nwa} it was shown that
+the main phenomenological
+advantage in parametrizing and fitting the charm PDF comes from a region in
+which any nonperturbative contribution to charm is likely to be
+extremely small. 
+
+The case of the bottom quark PDF is, in this respect, particularly
+interesting. On the one hand, one may think that that the problem of
+large higher order corrections to the matching conditions is alleviated
+in this case by the larger value of the mass. However, on the other
+hand, there is a more subtle consideration. Namely, there are $b$-initiated
+hadron collider processes --- some of which
+are especially relevant for new physics searches --- such as Higgs production in
+bottom fusion, for which $b$ quark mass effects might be
+non-negligible~\cite{Maltoni:2012pa,Lim:2016wjo,Bagnaschi:2018dnh}. This
+suggests the use of a scheme in which the $b$ quark is
+treated as a 
+massive final-state parton --- hence not endowed with a
+PDF. In such a scheme
+the $b$-induced process necessarily
+starts at a higher perturbative order than in  a scheme in which
+there exists a $b$ PDF, because the $b$ production process is included in the
+hard matrix element. As a consequence, the computation of the
+$b$-induced process itself is more difficult and it can typically
+only be performed with a lower perturbative accuracy than in a scheme
+in which the $b$ quark is a massless parton.
+
+The problem is somewhat
+alleviated if the massive-scheme and massless-scheme
+computations are combined, with the $b$-PDF in the massless scheme assumed to be
+produced by perturbative matching conditions.  We  henceforth refer to
+such a computational 
+framework as ``matched-$b$''. However, in a matched-$b$ framework the
+massive computation is still beset by the need to start at high
+perturbative order.
+As a possible way out, the use of a ``massive five flavor scheme'' has
+been suggested recently~\cite{Krauss:2017wmx,Figueroa:2018chn}, in
+which there is a $b$ PDF (hence five flavors), yet $b$ quark mass
+effects are included (possibly, at least in part, also in parton showering).
+The use of an independently parametrized $b$ quark PDF
+within a framework in which massive and massless computations are
+combined
+offers a simpler way of dealing with the same
+problem. We  refer to this as a ``parametrized $b$''
+computational framework.
+Such an approach has been developed for electroproduction in
+Refs.~\cite{Ball:2015tna,Ball:2015dpa}, and it has been used in order
+to produce PDF sets with parametrized
+charm~\cite{Ball:2016neh,Ball:2017nwa}, including the recent NNPDF3.1
+set. Because the only data currently used for PDF determination in which 
+heavy quark mass effects have  a significant impact are deep-inelastic
+scattering data close  to the charm production threshold, in these
+references only electroproduction was considered and only the
+parametrization of the charm was studied.
+
+In these previous studies, an independently parametrized heavy quark PDF is
+included in the so-called FONLL  method~\cite{Cacciari:1998it},
+which allows for the
+matching of a scheme in which the heavy quark mass is included but the
+heavy quark decouples from QCD evolution equations, and a massless
+scheme in which the heavy quark mass is neglected, but the heavy quark
+PDF couples to perturbative evolution.
+In this parametrized heavy quark version of the FONLL scheme, the heavy
+quark PDF is present both in the massive and massless scheme, though
+decoupled from evolution in the massive scheme; unlike in conventional
+matched heavy quark computations
+in which the number of PDFs is different, with one more
+PDF in the massless scheme. The rationale for FONLL
+with a parametrized heavy quark is to simultaneously include heavy quark
+mass effects at lower scales and
+the resummation of collinear mass logarithms in the heavy quark PDFs at
+higher scales. This has the important byproduct that one
+ends up with a computational framework in which there are heavy quarks in
+the initial state even in the scheme in which mass effects are
+retained.
+
+Therefore, in a parametrized-$b$ FONLL framework, problems
+related to the fact that the relevant processes in a massive scheme start
+at higher order is thus completely
+evaded, since the heavy quark 
+PDF is always present. Mass effects are then included to finite
+perturbative order, along with the resummation of mass logarithms, though
+(unlike in some  ``massive five-flavor scheme'') mass corrections to
+resummed perturbative evolution are not included. On the other hand,
+any possible nonperturbative corrections to the $b$ PDF, including,
+say, the effective value of the $b$ mass at which the matching should
+happen, are then included in the PDF itself and thus extracted from
+the data.
+
+In this chapter, following Ref.~\cite{Forte:2019hjc}, we explicitly construct the parametrized-$b$ FONLL method, by
+generalizing to hadronic processes the construction 
+of Refs.~\cite{Ball:2015tna,Ball:2015dpa} of FONLL  with
+parametrized heavy quark PDF. We specifically consider the
+application to Higgs production in bottom fusion. This process has
+been computed at the matched level both using the FONLL
+method~\cite{Forte:2015hba,Forte:2016sja} and EFT-based
+methods~\cite{Bonvini:2015pxa,Bonvini:2016fgf}, with the respective results
+benchmarked in
+Ref.~\cite{deFlorian:2016spz} and found to be in good agreement with
+each other. All these computations were performed
+in a matched-$b$ approach, in which the $b$ PDF  is absent in the
+massive (four-flavor) scheme, and determined by matching condition in
+the massless (five-flavor) scheme. Here we  take this process as
+a prototype for the use of a parametrized-$b$  scheme
+for hadron-collider processes.
+
+First, we discuss how the counting of perturbative orders changes
+in the presence of a parametrized-$b$ PDF, and redefine suitable
+matched schemes based on this new counting. We  then work out the
+generalization to hadronic processes of FONLL with
+parametrized heavy quark PDF of Refs.~\cite{Ball:2015tna,Ball:2015dpa},
+we discuss in which sense it effectively provides an alternative to the
+massive five-flavor scheme, and then we work out explicit expressions for
+Higgs production in bottom fusion to the matched next-to-leading order
+- next-to leading log (NLO-NLL) level and NLO-NNLL level. We 
+finally compare
+predictions obtained within this approach with some plausible choices
+of the $b$-quark PDF to those obtained in the approach of
+Refs.~\cite{Forte:2015hba,Forte:2016sja}, and argue that results with
+similar or better phenomenological accuracy can be obtained in a much
+simpler way within this new approach.
+
+\section{The FONLL scheme with parametrized heavy quark PDF
+  in hadronic collisions}
+\label{sec:FONLL-HI}
+
+Even though we have the general goal of constructing a parametrized-$b$
+FONLL scheme for hadronic processes, we  always specifically refer to Higgs
+production in gluon fusion, in order to have  a concrete reference
+case, and  test scenario. We recall that the FONLL
+method matches two calculations of the same process
+performed in two different renormalization schemes: a massive scheme
+in which the heavy quark mass is retained, but the heavy quark
+decouples from the running of $\alpha_s$ and from QCD evolution
+equations, and a massless scheme in which the heavy quark contributes
+to the running of $\alpha_s$ and QCD evolution
+equations, but the heavy quark mass is neglected.
+In the computation of a hard process at scale $Q^2$, in the former scheme
+mass effects $O\left(\frac {m_b^2}{Q^2}\right)$
+are retained, but mass logarithms $\ln\frac{Q^2}{m_b^2}$
+ are only
+kept to finite order in $\alpha_s$ (where $m_b$ denotes generically
+the mass of the heavy quark). In the latter scheme, mass effects
+are neglected but mass logarithms are resummed to all orders in
+$\alpha_s$. Hence by matching the two calculations one retains
+accuracy both at low scales where quark mass effects are important, and
+at high scales where mass logarithms are large.
+
+The general idea of the FONLL method is to realize that these are just
+two different renormalization schemes: the massive scheme is a
+decoupling scheme, and the massless scheme is a minimal subtraction
+scheme. So the two calculations can be simply matched by re-expressing
+both in the same renormalization scheme, and then subtracting common
+contributions. In practice, this is done by expressing the massive
+scheme computation in terms of the PDFs and $\alpha_s$ of the
+massless scheme, and then adding to it the difference $\sigma ^{\rm
+  d}$
+between the massless calculation and the massless limit of the
+massive one. Schematically
+\begin{align}\label{eq:fonlldef}
+&  \sigma^{\text{FONLL}} = \sigma^{\rm massive} +\sigma ^{\rm d}\\
+&\qquad \sigma ^{\rm d}=\sigma^{\rm massless}-\sigma^{\rm massive,\,0}.\label{eq:fonlldiff}
+\end{align}
+This corresponds to replacing all the terms in the massless
+computation which are included to finite order in $\alpha_s$ in the
+massive computation with their massive counterpart.
+
+In the simplest (original) version of  FONLL, as discussed
+in Ref.~\cite{Cacciari:1998it} for $b$ production in hadronic
+collisions, and in Ref.~\cite{Forte:2010ta} for deep-inelastic
+scattering, in the massive scheme there is no heavy quark PDF, and the
+ heavy quark can only appear as a final-state particle. In the
+ massless scheme the heavy quark PDF is determined by matching
+ conditions in terms of the light quarks and the gluon. These
+ conditions match the massless scheme at a scale $\mu$ such that the
+ heavy quark PDF only appears for scales above $\mu$. Specifically,
+ at order $O(\alpha_s)$, the heavy quark PDF just vanishes
+ at the scale 
+ $\mu=m_b$
+ and it is
+ generated by perturbative evolution at higher scales, while at
+ $O(\alpha^2_s)$ it has a nontrivial gluon-induced matching condition
+ at all scales.
+
+ When introducing a parametrized PDF both the massive and massless
+ scheme computations change. The massless scheme changes, somewhat
+ trivially,
+ in that the
+ heavy quark PDF, at the matching scale, instead of being given by a
+ matching condition,  is freely parametrized. The massive scheme
+ changes nontrivially in that there is now a heavy quark PDF also in
+ this scheme, 
+only it does not evolve with the scale.  The
+ consequences of this were worked out in
+ Refs.~\cite{Ball:2015tna,Ball:2015dpa} in the case of
+ electroproduction, and we study them here for hadroproduction for the
+ first time.
+
+ \begin{figure}[tbp]
+    \centering{
+      \begin{minipage}{0.32\linewidth}
+        \begin{tikzpicture}[line width=0.9 pt, scale=1.1]
+          \draw[particle] (-1.5,1.25) -- (0,0) node[pos=0.0,below]{$b$}; ;
+          \draw[antiparticle] (-1.5,-1.25) -- (0,0) node[pos=0.0,above]{$\bar{b}$};
+          \draw[scalar] (0,0) -- (1.5,0) node[midway,below=0.1cm] {$H$} ;
+        \end{tikzpicture}
+      \end{minipage}
+      \begin{minipage}{0.32\linewidth}
+        \begin{tikzpicture}[line width=0.9 pt, scale=1]
+          \draw[particle] (-1.5,1.0) -- (0,1.) node[pos=0.,below] {$b$};
+          \draw[antiparticle] (-1.5,-1.) -- (0,-1.) node[pos=0.0,above] {$\bar{b}$};
+          \draw[particle] (0,1) -- (0.,-1);
+          \draw[gluon] (0.,-1) -- (1.5,-1) node[pos=.9,above=5pt] {$g$};
+          \draw[scalar] (0.,1) -- (1.5,1) node[pos=.9,below] {$H$};
+        \end{tikzpicture}
+      \end{minipage}
+      \begin{minipage}{0.32\linewidth}
+        \begin{tikzpicture}[line width=0.9 pt, scale=1]
+          \draw[particle] (-1.5,1.0) -- (0,1.) node[pos=0.,below] {$b$};
+          \draw[gluon] (-1.5,-1.) -- (0,-1.) node[pos=0.1,above=3pt] {$g$};
+          \draw[particle] (0,1) -- (0.,-1);
+          \draw[particle] (0.,-1) -- (1.5,-1) node[pos=.9,above] {$b$};
+          \draw[scalar] (0.,1) -- (1.5,1) node[pos=.9,below] {$H$};
+        \end{tikzpicture}
+      \end{minipage}
+    }
+    \caption{Feynman diagrams for the leading (left) and next-to-leading order real emission
+      contributions to  Higgs production in bottom fusion which are present
+      in the massive scheme when the $b$ quark PDF is independently
+      parametrized, but absent otherwise.}
+    \label{fig:massive-4fs}
+  \end{figure}

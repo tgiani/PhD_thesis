@@ -1,0 +1,234 @@
+\usepackage{
+  pgf,
+  tikz}
+\usetikzlibrary{
+  arrows,
+  trees,
+  scopes,
+  decorations.text,
+  decorations.pathreplacing,
+  decorations.pathmorphing,
+  decorations.markings,
+  positioning,
+  calc,
+  patterns,
+  intersections,
+  shapes,
+  fadings
+}
+
+\usetikzlibrary{trees}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+
+\tikzset{
+  photon/.style=
+  {
+    decorate,
+    decoration={snake},
+    draw=black
+  },
+  particle/.style=
+  {
+    very thick,
+    draw=black,
+    postaction={decorate},
+    decoration=
+    {
+      markings,
+      mark=at position .5 with {\arrow[draw=black]{>}}
+    }
+  },
+  antiparticle/.style=
+  {
+    very thick,
+    draw=black,
+    postaction={decorate},
+    decoration=
+    {
+      markings,
+      mark=at position .5 with {\arrow[draw=black]{<}}
+    }
+  },
+  gluon/.style=
+  {
+    decorate,
+    draw=black,
+    decoration=
+    {coil,
+      amplitude=4pt,
+      segment length=5pt
+    }
+  },
+  scalar/.style=
+  {
+    densely dashed,
+    draw=black
+  }
+ }
+
+% \tikzset{
+%   ch_scalar/.style=
+%   {
+%     densely dashed,
+%     thick,
+%     draw=mLightBrown,
+%     postaction={decorate},
+%     decoration=
+%     {
+%       markings,
+%       mark=at position .6 with {\arrow[thick,draw=black]{>}}
+%     }
+%   },
+%   majorana/.style=
+%   {
+%     draw=mLightBrown
+%   },
+%   posit/.style=
+%   {
+%     rectangle,
+%     outer sep=0,
+%     inner sep=0,
+%   },
+%   dirac/.style=
+%   {
+%     draw=mLightBrown,
+%     postaction={decorate},
+%     decoration=
+%     % {
+%     %   markings,
+%     %   mark=at position .6 with {\arrow[thick,draw=black]{>}}
+%     % }
+%   },
+%   vector/.style=
+%   {
+%     draw=mLightBrown,
+%     decorate,
+%     decoration={snake,amplitude=1.5pt,segment length=3pt}
+%   },
+%   rev_dirac/.style=
+%   {
+%     draw=mLightBrown,
+%     postaction={decorate},
+%     decoration=
+%     {
+%       markings,
+%       mark=at position .6 with {\arrow[thick,draw=black]{<}}
+%     }
+%   },
+%   me_quark/.style=
+%   {
+%     draw=mLightBrown,
+%     line width=0.6
+%   },
+%   ps_quark/.style=
+%   {
+%     draw=black
+%   },
+%   scalar/.style=
+%   {
+%     densely dashed,
+%     thick,
+%     draw=black,
+%   },
+%   gluon/.style=
+%   {
+%     decorate,
+%     draw=black,
+%     line width=0.6,
+%     decoration={coil,amplitude=1.8,segment length=2}
+%   },
+%   me_gluon/.style=
+%   {
+%     decorate,
+%     draw=mLightBrown,
+%     line width=0.6,
+%     decoration={coil,amplitude=1.8,segment length=2}
+%   },
+%   ps_gluon/.style=
+%   {
+%     decorate,
+%     draw=black,
+%     decoration={coil,amplitude=1.8,segment length=2}
+%   },
+%   mi_gluon/.style=
+%   {
+%     decorate,
+%     draw=black,
+%     decoration={coil,amplitude=1.8,segment length=2}
+%   },
+%   mi_quark/.style=
+%   {
+%     fill=black,
+%   },
+%   pdf_line/.style=
+%   {
+%     draw=\pdfcol,
+%     double,
+%   },
+%   ps_blob/.style=
+%   {
+%     circle,
+%     draw=black,
+%     fill=black,
+%     inner sep=0,
+%     outer sep=0.5,
+%     minimum size=1
+%   },
+%   pdf_blob/.style=
+%   {
+%     circle,
+%     outer color=transparent!70,
+%     inner color=transparent!20,
+%     inner sep=1,
+%     outer sep=0,
+%     text=mLightBrown,
+%   },
+%   vertex/.style=
+%   {
+%     anchor=center,
+%     circle,
+%     draw=black,
+%     fill=black,
+%     inner sep=0,
+%     outer sep=0.5,
+%     minimum size=1
+%   }
+% }
+
+% \makeatletter
+% \def\parsecomma#1,#2\endparsecomma{\def\page@x{#1}\def\page@y{#2}}
+% \tikzdeclarecoordinatesystem{page}{
+%     \parsecomma#1\endparsecomma
+%     \pgfpointanchor{current page}{north east}
+%     % Save the upper right corner
+%     \pgf@xc=\pgf@x%
+%     \pgf@yc=\pgf@y%
+%     % save the lower left corner
+%     \pgfpointanchor{current page}{south west}
+%     \pgf@xb=\pgf@x%
+%     \pgf@yb=\pgf@y%
+%     % Transform to the correct placement
+%     \pgfmathparse{(\pgf@xc-\pgf@xb)/2.*\page@x+(\pgf@xc+\pgf@xb)/2.}
+%     \expandafter\pgf@x\expandafter=\pgfmathresult pt
+%     \pgfmathparse{(\pgf@yc-\pgf@yb)/2.*\page@y+(\pgf@yc+\pgf@yb)/2.}
+%     \expandafter\pgf@y\expandafter=\pgfmathresult pt
+% }
+% \makeatother
+% % For every picture that defines or uses external nodes, you'll have
+% % to apply the 'remember picture' style. To avoid some typing, we'll
+% % apply the style to all pictures.
+% \tikzstyle{every picture}+=[remember picture, overlay]
+
+% % By default all math in TikZ nodes are set in inline mode. Change this to
+% % displaystyle so that we don't get small fractions.
+% %\everymath{\displaystyle}
+
+% %\tikzstyle{na} = [baseline=-.5ex]
+
+% \definecolor{mLightBrown}{HTML}{EB811B}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "bbh-intrinsic"
+%%% End: 
