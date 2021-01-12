@@ -1,0 +1,393 @@
+\chapter{bbh appendix}
+\section{Massive coefficient functions}
+\label{sec:app-coeff}
+In this Appendix we summarize  the computation of the
+coefficient functions in the massive scheme and of their massless
+limit up to $O(\alpha_s)$. The NLO corrections are computed using
+the extension of
+Catani-Seymour subtraction for massive initial states developed
+in Ref.~\cite{Dittmaier:1999mb} and extended to QCD
+in Ref.~\cite{Krauss:2017wmx}. This way of preforming the computation 
+has the main advantage of following closely that of the
+five-flavor massive scheme, so that a direct comparison is much easier to
+at the analytic level. Indeed, strictly speaking because of
+Eq.~(\ref{eq:genfonll}) the massless limit is not needed. However, we
+have computed it explicitly in order to check that it matches the
+massless-scheme result (thereby verifying Eq.~(\ref{eq:canc})
+explicitly), and also in order to produce Fig.~\ref{fig:mub-var},
+which provides a further consistency check. Another advantage of this
+way of performing the computation (though we do not use it here) is
+that it allows for the computation of
+the fully differential cross section in this scheme. 
+
+\subsection{Leading order}
+The leading order partonic cross section for the production of a Higgs
+boson, accounting for the mass of the initial state $b$ and $\bar{b}$,
+is given by
+\begin{equation}
+  \label{eq:bbh-lo}
+  \hat{\sigma}_{0}(xs) = \left( \frac{g_{b\bar{b}H}^2\,\beta_0\,\pi}{6}
+  \right)\delta(xs -m_H^2) = \sigma_0 \,x\,\delta\left( x-\frac{m_H^2}{s} \right)
+\end{equation}
+where 
+\begin{equation}
+  \label{eq:s0}
+  \sigma_0 = \frac{g_{b\bar{b}H}^2 \,\beta_0 \, \pi}{6\,m_H^2}\,,
+  \quad {\rm and}\quad  \beta_0 = \sqrt{1-\frac{4\,m_b^2}{m_H^2}}\,.
+\end{equation}
+where $g_{b\bar{b}H}$ is the coupling of the $b$ quark to the Higgs
+boson, obtained as the mass of the quark divided by vacuum expectation
+value of the Higgs sector:
+\begin{equation}
+  g_{b\bar{b}H} = \frac{m_b}{v}\,.
+\end{equation}
+In the following we will also use the notation
+\begin{equation}
+  {\cal B}(x) \equiv \hat{\sigma}_{0}(xs)\,,\quad {\rm and} \quad
+  {\cal B} \equiv \hat{\sigma}_{0}(s)\,.
+\end{equation}
+
+\subsection{Next-to-leading order: $b\bar{b}$-channel}
+The next to leading order corrections to the Higgs production in
+bottom quark fusion consist in virtual corrections (${\cal V}$) to the
+left diagram of Fig.~\ref{fig:massive-4fs}, as well as of real
+emission corrections (${\cal R}$) , represented by the central diagram of
+Fig.~\ref{fig:massive-4fs}.
+Both this contributions are separately divergent when the additional
+gluon, real or virtual, becomes soft, though the final result remains
+finite. In order to handle these soft divergences we employ the
+subtraction scheme defined in~\cite{Krauss:2017wmx}. This implies that
+we need two more ingredients: a subtraction term, ${\cal S}$, and its
+integral over the gluon phase space, ${\cal I} = \int{\rm d}\Phi_g{\cal S}$.
+Our final result is then given by:
+\begin{equation}
+  \hat{\sigma}_{\rm NLO} = \int{\rm d}\Phi_1 {\cal B} +{\cal V}+{\cal
+    I}+  \int{\rm d}\Phi_2 {\cal R} -{\cal S}\,.
+\end{equation}
+
+\subsubsection{Real corrections, and subtraction term}
+The real emission partonic differential cross section, is given by
+\begin{equation}
+ \int {\rm d} \Phi_{2}  {\cal R} =\int {\rm d} \Phi_{2}  \left| \overline{{\cal M}}_{b\bar{b}Hg} \right|(s,t,u)\,,
+\end{equation}
+where 
+\begin{equation}
+  {\rm d} \Phi_{2}=\frac{1}{32\,\pi\,\beta\,s} {\rm d}\cos\theta\,
+  \Theta(1+\cos\theta )\,\Theta(1-\cos\theta)\, , \quad{\rm and}\quad
+  \beta=\sqrt{1-\frac{4\,m_b^2}{s}}\,,
+\end{equation}
+and
+\begin{equation}
+  \label{eq:real}
+  \begin{split}
+    \left| \overline{{\cal M}}_{b\bar{b}Hg} \right|(s,t,u) = &
+    \frac{4}{3}\pi g_{b\bar{b}H}^2C_F\alpha_s
+    \left\{
+      \left( s-m_H^2\right)\left[ \frac{1}{m_b^2-t}
+        + \frac{1}{m_b^2-u}\right]
+    \right.\\
+    &
+    \left.+ (m_H^2-4\,m_b^2)
+      \left[
+        \frac{2\left( s-2\,m_b^2 \right)}{(m_b^2-t)(m_b^2-u)} -
+        \frac{2\,m_b^2}{(m_b^2-t)^2} -
+        \frac{2\,m_b^2}{(m_b^2-u)^2}
+      \right]
+    \right\}\,.
+  \end{split}
+\end{equation}
+The Mandelstam variables in terms of scalar
+products and $\cos\theta$ are given by
+\begin{equation}
+  \left\{
+    \begin{split}
+      t &= m_b^2 - \frac{s-m_H^2}{2}\left( 1-\beta\,\cos\theta\right)\\
+      u &= m_b^2 - \frac{s-m_H^2}{2}\left( 1+\beta\,\cos\theta\right) 
+    \end{split}
+  \right.\,.
+\end{equation}
+
+In order to remove the soft divergence which appears in the  $s\rightarrow
+m_H^2$ limit we need to construct a suitable  subtraction term. Using
+the relevant 
+equations in Ref.~\cite{Krauss:2017wmx} we find
+\begin{equation}
+  \label{eq:sub}
+  {\cal S} =
+  \frac{2}{3}\,\pi \,\alpha_s\,C_F\,g_{b\bar{b}H}^2\,\beta_0^2\,m_H^2
+  \frac{1}{\tilde{x}}
+  \left[\frac{2}{m_b^2-t}\left( P_{qq}(\tilde{x})-\frac{2\,\tilde{x}\,m_b^2}{m_b^2-t} \right)
+    +\frac{2}{m_b^2-u}\left( P_{qq}(\tilde{x})-\frac{2\,\tilde{x}\,m_b^2}{m_b^2-u} \right)\right]
+\end{equation}
+where
+\begin{equation}
+  \tilde{x} = \frac{m_H^2-2\,m_b^2}{s-2\,m_b^2}\,.
+\end{equation}
+
+Combining Eqs.~(\ref{eq:real}) and~(\ref{eq:sub}) and factoring
+the trivial $\frac{\alpha_s\,C_F\,\sigma_0}{\pi}$ dependence we get
+\begin{equation}
+  \begin{split}
+    \frac{\alpha_s\,C_F\,\sigma_0}{\pi}
+    \int{\rm d}\Phi_2 \left[{\cal R} -{\cal S}\right] & =
+    \frac{\alpha_s\,C_F\,\sigma_0}{\pi}\frac{m_b^2}{2}
+    \int_{-1}^1{\rm d}\cos\theta
+    \left[\frac{s\,(s-m_H^2)^2}{(m_H^2-2\,m_b^2)(m_b^2-t)(m_b^2-u)}
+    \right]\\
+    & = -\frac{\alpha_s\,C_F\,\sigma_0}{\pi}
+    \frac{1}{\beta_0}\left(\frac{ 1-\beta^2 }{\beta^2}\right)
+    \frac{x}{\left( 1 - 2\,x - \beta^2\right)}\ln d\,,
+  \end{split}
+\end{equation}
+where we defined
+\begin{equation}
+  d \equiv \frac{1+\beta}{1-\beta}\,,
+  \quad {\rm and}\quad x\equiv \frac{m_H^2}{s}\,.
+\end{equation}
+
+\subsubsection{Virtual corrections, and integrated subtraction term}
+QCD virtual corrections to the Born process in this simple case
+completely factorize in a vertex form factor:
+\begin{equation}
+  {\cal V} = \frac{\alpha_s\,C_F}{\pi}{\cal B}\,\delta_g\,,
+\end{equation}
+with
+\begin{equation}
+  \delta_g = -1 - L_{\lambda} +
+  \frac{(1-\beta_0^2)}{\beta_0} \ln d_0 
+  - \frac{1+\beta_0^2}{2\,\beta_0}\left[-\ln d_0\,L_{\lambda} + \ln^2d_0+{\rm Li}_2\left(
+      1-\frac{1}{d_0} \right) -\frac{\pi^2}{2} \right]\,,
+\end{equation}
+where
+\begin{equation}
+  L_{\lambda} \equiv \frac{1}{\epsilon} + \ln\frac{4\,\pi\,\mu_R^2}{m_b^2}
+  +{\cal O}(\epsilon^2)\,.
+\end{equation}
+
+The integrated subtraction term ${\cal I}$ is obtained by
+integrating  ${\cal S}$, Eq.~(\ref{eq:sub}),  over the phase space of
+the emitted gluon. This term can be separated into two pieces: a term
+proportional to 
+$\delta(1-x)$, which contains the singularity,
+and a plus distribution:
+\begin{equation}
+  {\cal I} = \delta(1-x)\,I + \left\{ {\cal G}(x) \right\}_+\,,
+\end{equation}
+where
+\begin{equation}
+  \begin{split}
+    I  = &2 +L_{\lambda}- \ln{\frac{(1+\beta_0^2)^2}{1-\beta_0^2}} +
+    \frac{1-3\,\beta_0^2}{4\beta_0}\ln d_0\\
+     &+\frac{1+\beta_0^2}{2\,\beta_0}
+    \left[
+      \frac{1}{2}\ln^2 d_0
+      -\ln d_0\,\ln {\frac{4\,\beta_0^2}{(1+\beta)^2}}
+      - L_{\lambda}\,\ln d_0 -1
+      +2\,{\rm Li}_2\left(\frac{1}{d_0} \right)-\frac{\pi^2}{3}
+    \right]\,,
+  \end{split}
+\end{equation}
+and
+\begin{equation}
+  \{{\cal G}(x)\}_+ =  {\left\{P_{qq}(x)\left[ \frac{1+\beta^2}{2\beta}
+        \ln{d} -1 \right] +
+      \left( 1-x \right)\right\}}_{+}\,.
+\end{equation}
+\subsubsection{Final formulae, mass and PDF renormalization}
+We now combine the various partial results obtained in the previous
+subsections  into the  full expression for the $b\bar{b}$-channel
+coefficient functions. First, however, we need to adjust 
+$b$-quark mass and the PDFs.
+Renormalization of the  $b$ mass leads to the   replacement
+\begin{equation}
+  g_{hb\bar{b}}^2 = g_{hb\bar{b}}^2(\mu_R^2) \left(
+    1-\frac{\alpha_s\,C_F}{\pi}\left(
+        \frac{3}{2}\ln\frac{m_b^2}{\mu_R^2}-2  \right) \right)\,.
+\end{equation}
+in $\sigma_0$, Eq.~\eqref{eq:s0}.
+
+The massive $b$ PDF is free of collinear singularities and thus it
+does
+not have to
+undergo subtraction: indeed it is scale independent.
+However, we must perform the change of
+renormalization scheme Eq.~\eqref{eq:change-of-scheme} which relates
+the massive and massless schemes.
+Up to ${\cal O}(\alpha_s)$ we get
+\begin{equation}
+  B_{b\bar{b}}\left(x,\mu_R^2,\mu_F^2 ,\mu_b^2\right) =
+  \,\left[ \sigma_0(\mu_R^2) \delta(1-x) + \alpha_s(\mu_R^2)
+    B_{b\bar{b}}^{(1)}\left(x,\mu_R^2,\mu_F^2 ,\mu_b^2\right) \right]
+  +{\cal O}(\alpha_s^2)
+\end{equation}
+where
+\begin{equation}
+  \begin{split}
+  B_{b\bar{b}}^{(1)}\left(x,\mu_R^2,\mu_F^2 ,\mu_b^2\right) =
+  \frac{\sigma_0(\mu_R^2)\,C_F}{\pi}&
+  \left\{
+    \left[
+      \frac{3}{2}\ln\frac{\mu_R^2}{\mu_b^2}+2 + I + \delta_g
+    \right]\delta(1-x) \right.\\
+  &\left.
+   + \int_0^1{\rm d}z \{{\cal G}(z) - 2\,K_{b\bar{b}}^{(1)}(z)\}_+z\,\delta(z-x)
+   +  \int{\rm d}\Phi_2 \left[{\cal R} -{\cal S}\right] \right\}\,.
+  \end{split}
+\end{equation}
+
+Performing the $z$ integration gives the final result
+\begin{equation}
+  \label{eq:b1-massive}
+  \begin{split}
+    B_{b\bar{b}}^{(1)}&\left(x,\mu_R^2,\mu_F^2 ,\mu_b^2\right) =
+    \frac{\sigma_0(\mu_R^2)\,C_F}{\pi}
+    \Biggl\{
+    \delta(1-x)
+    \left[
+      \xi -2 + \frac{3}{2}\left(\gamma_0\ln
+        \frac{(1+\beta)^2}{4} -\gamma_0\ln \frac{m_H^2}{m_b^2}+
+        \ln\frac{\mu_R^2}{\mu_F^2} \right)
+    \right]\\
+  +&\,4\,{\cal D}_1(1-x) 
+  +  2
+  \left[
+    \gamma\ln\frac{(1+\beta)^2}{4}+\gamma\ln\frac{m_H^2}{m_b^2}+
+    \ln{\frac{\mu_b^2}{\mu_F^2}}
+  \right]\,
+  {\cal D}_0(1-x)\\
+  -& (2 + x + x^2)\left[\gamma\ln\frac{(1+\beta)^2}{4}
+    +\gamma\ln\frac{m_H^2}{m_b^2}-\gamma\ln x+
+    \ln{\frac{\mu_b^2}{\mu_F^2}}
+    +2\ln(1-x)\right]+ x\,(1-x) \\
+  -&  \frac{2\,\gamma\,\ln x}{1-x} -
+    \frac{1}{\beta_0}\left(\frac{ 1-\beta^2}{\beta^2}\right)
+    \frac{x}{\left( 1 - 2\,x - \beta^2\right)}\ln d \Biggr\}\,,
+  \end{split} 
+\end{equation}
+where
+\begin{equation}
+  \xi = 1+\ln\left(\frac{1-\beta_0^2}{(1+\beta_0)^2}\right)+
+  \frac{\left(5-7\beta_0^2\right)}{4\,\beta_0}\ln d_0+
+  \frac{\left(\beta_0^2+1\right)}{\beta_0} \left( 2\,{\rm
+      Li}_2\left(\frac{1}{d_0}\right)+\frac{\pi ^2}{6} -\ln d_0
+    \ln\frac{4\beta_0^2} {(1+\beta_0^2)(1+\beta_0)}\right)\,,
+\end{equation}
+and
+\begin{equation}
+  \gamma = \frac{1+\beta^2}{2\,\beta}\,,\quad \gamma_0 =
+  \frac{1+\beta_0^2}{\,2\beta_0}\, \quad \text{ and }
+  \quad {\cal D}_n(x) ={\left( \frac{\ln^n(1-x)}{1-x} \right) }_{+}\,.
+\end{equation}
+
+\subsubsection{Massless limit}
+The massless limit of the $b\bar{b}$-channel can be computed directly
+from Eq.~\eqref{eq:b1-massive},
+by setting $\beta=1$ everywhere except in the logarithms, where
+one can use the simple expansion
+\begin{equation}
+  \label{eq:beta}
+  \beta \sim 1\,-\,\frac{2\,x\,m_b^2}{m_H^2} + {\cal O}\left( \frac{m_b^4}{m_H^4} \right)\,.
+\end{equation}
+We get
+\begin{equation}
+  \label{eq:b1-massless}
+  \begin{split}
+    B_{b\bar{b}}^{(1),(0)}&\left(x,\mu_R^2,\mu_F^2,\mu_b^2 \right) = 
+    \frac{\alpha_s \, C_F\,\sigma_0(\mu_R^2)}{\pi}
+    \Biggl\{
+      \delta(1-x)\left[ -1+ \frac{\pi^2}{3} + \frac{3}{2}
+          \ln\frac{\mu_R^2}{\mu_F^2} \right] +\,4\,{\cal
+        D}_1(1-x) \\
+      +&  2\left( 
+      \ln{\frac{m_H^2}{\mu_F^2}}+ \ln{\frac{\mu_b^2}{m_b^2}}\right)\,{\cal D}_0(1-x)
+      -\frac{2\ln x}{1-x} - (2 + x + x^2)\left[
+        \ln\frac{m_H^2}{\mu_F^2} +\ln{\frac{\mu_b^2}{m_b^2}} + \ln \frac{(1-x)^2}{x}\right]+ x\,(1-x)  \Biggr\}\,.
+  \end{split} 
+\end{equation}
+As it can be easily verified, this exactly corresponds to its massless
+scheme equivalent, which can be found in Eq.~(A6) of Ref.~\cite{Harlander:2003ai}.
+\subsection{Next-to-leading order: $bg$-channel}
+In the presence of initial-state massive quarks, the cross-section for
+the $bg$-channel is free of  soft or 
+collinear divergences, and no subtraction is accordingly
+necessary. Also in this case, however, we must  perform the scheme
+change Eq.~\eqref{eq:change-of-scheme}. We get
+\begin{equation}
+  \begin{split}
+    B_{bg}^{(1)}(x,\mu_R^2,\mu_F^2,\mu_b^2) & = \hat{\sigma}_{bg}(x,\mu_R^2)
+    - \alpha_s\,\int_0^1{\rm d}z\, K_{bg}^{(1)}(z,\mu_F^2)\sigma(zs)\,\\
+    & = \left. \hat{\sigma}_{bg}(x,\mu_R^2) - \frac{\alpha_s\,
+        T_R\,\sigma_0}{\pi}\left[ \frac{x}{2}\,P_{qg}(x)
+        \ln{\frac{\mu_F^2}{\mu_b^2}}\right]\,\right|_{x=\tfrac{m_H^2}{s}},
+  \end{split}
+\end{equation}
+where
+\begin{equation}
+  \hat{\sigma}_{bg}(x,\mu_R^2) = \int{\rm d}\Phi_2^{(b)}
+  \left| \overline{{\cal M}}_{bgHb} \right|^2(s,t,u)\,,
+\end{equation}
+and the subscript $(b)$ in $\Phi_2^{(b)}$ denotes the fact that now
+the phase-space has a massive $b$ instead of a massless gluon, in the
+final state. The color- and helicity-averaged square matrix element,
+can be obtained from Eq.~\eqref{eq:real} using crossing symmetry. In
+addition, we have to take into account that the gluon can have 8
+possible colors (as opposed to 3 for a quark),
+\begin{equation}
+  \left| \overline{{\cal M}}_{bgHb} \right|^2(s,t,u)=
+  - \frac{3}{8} \left| \overline{{\cal M}}_{b\bar{b}Hg} \right|^2(t,s,u)\,,
+\end{equation}
+where now the Mandelstam invariants are given by
+\begin{equation}
+  \left\{
+    \begin{split}
+      t &= 2\,m_b^2 +
+      \frac{s}{32}\left((5-\beta^2)(\beta^2+4\,x-5) -
+        (3+\beta^2)\,\Lambda\,\cos\theta\right)\\
+      u &= m_b^2 +\frac{s}{32}\left((5-\beta^2)(\beta^2+4\,x-5) +
+        (3+\beta^2)\,\Lambda\,\cos\theta\right), 
+    \end{split}
+  \right.\,
+\end{equation}
+where
+\begin{equation}
+  \Lambda = \sqrt{\left( 3+\beta^2 \right)^2 + 16 x^2 -
+    8\,x\,\left(5-\beta^2\right)}\,,
+\end{equation}
+while the phase-space ${\rm d}\Phi_2^{(b)}$ is given by
+\begin{equation}
+  {\rm d}\Phi_2^{(b)} = \frac{\Lambda\,x}{32\,\pi\,\left( 3+\beta^2
+    \right)\,m_H^2}\,{\rm d}\cos\theta\,
+  \Theta(1+\cos\theta )\,\Theta(1-\cos\theta)\,.
+\end{equation}
+
+Performing the $\cos\theta$ integration gives
+\begin{equation}
+  \begin{split}
+    \hat{\sigma}_{bg}(x,\mu_R^2) =&
+    \frac{\alpha_s\,T_R\,\sigma_0(\mu_R^2)}{\pi}\frac{  x}{16 \beta_0
+      \left(\beta^2+3\right)^3}\\
+    &\times\Biggl\{- 64 \left(9 \beta^4+(40
+     x-42) \beta^2 +8 x (4 x-9)+49\right){\rm arctanh}\left(\frac{\Lambda }{\beta^2+4
+       x-5}\right)   \\
+    &\frac{4096\,\Lambda\, \left(1-\beta^2 \right)
+      \left(\beta^2+x-1\right)} {\left(-\Lambda +\beta^2+4 x-5\right)
+      \left(\Lambda +\beta^2+4 x-5\right)} +
+    \Lambda\,\left(5-\beta^2\right) \left(\beta^4+(4 x+22) \beta^2+44 x-71\right)
+  \Biggr\}\,.
+  \end{split}
+\end{equation}
+
+\subsubsection{Massless limit}
+As in the case of the $b\bar{b}$ channel, taking the massless limit
+requires setting $\beta=1$ everywhere except in the logarithms where
+one can use Eq.~\eqref{eq:beta}, which gives
+\begin{equation}
+  \label{eq:mlimbg}
+  B_{bg}^{(1),(0)}(x,\mu_R^2,\mu_F^2,\mu_b^2) =
+  \frac{T_R}{\pi}\left\{  
+    \frac{x}{2}\,P_{qg}(x)\left[
+      \ln\left(\frac{(1-x)^2}{x}\right)+\ln\frac{m_H^2}{\mu_F^2}+
+      \ln{\frac{\mu_b^2}{m_b^2}} \right]-\frac{x}{4}(1-x)(3-7\,x) \right\}\,.
+\end{equation}
+Once again, one can explicitly check that this exactly corresponds to
+it massless limit counterpart, which can be found in Eq.~(A9) of Ref.~\cite{Harlander:2003ai}.

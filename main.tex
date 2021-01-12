@@ -43,7 +43,7 @@
 %						Settings -> Configure Kile... -> Tools -> Build -> build_pdflatex
 
 
-\graphicspath{{./chapter2/figs/}{./chapter3/figs/}{./chapter5/figs/}}
+\graphicspath{{./chapter2/figs/}{./chapter3/figs/}{./chapter5/figs/}{./chapter6/figs/}}
 
 \newcommand{\comment}[1]{\textbf{\textcolor{red!90!black}{[#1]}}}
 \newcommand{\lp}{\left(}
@@ -56,6 +56,8 @@
 \newcommand{\nst}{\mathrm{T}_3}
 \newcommand{\eg}{{\em e.g.}}
 \newcommand{\ie}{{\em i.e.}}
+\newcommand{\dd}{{\rm d}}
+\newcommand{\order}[1]{{\cal O}(#1)}
 \def \z{\zeta}
 % End preamble
 
@@ -85,6 +87,11 @@
 \input{chapter5/chapter5}
 \input{chapter6/chapter6}
 \input{chapter7/chapter7}
+
+\appendix
+\numberwithin{equation}{section}
+\setcounter{equation}{0}
+\input{appendix/bbh-appendix.tex}
 
 
 

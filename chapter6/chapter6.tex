@@ -147,7 +147,7 @@ simpler way within this new approach.
 Even though we have the general goal of constructing a parametrized-$b$
 FONLL scheme for hadronic processes, we  always specifically refer to Higgs
 production in gluon fusion, in order to have  a concrete reference
-case, and  test scenario. We recall that the FONLL
+case, and  test scenario. We recall that, \comment{as discussed in Chapter ..}, the FONLL
 method matches two calculations of the same process
 performed in two different renormalization schemes: a massive scheme
 in which the heavy quark mass is retained, but the heavy quark
@@ -250,3 +250,470 @@ only it does not evolve with the scale.  The
       parametrized, but absent otherwise.}
     \label{fig:massive-4fs}
   \end{figure}
+
+  \subsection{Perturbative ordering}
+\label{sec:pertord}
+
+
+Because there is now a $b$ PDF also in the massive scheme, the
+counting of perturbative orders in this scheme
+changes substantially. Specifically, for Higgs production in bottom
+fusion the diagrams of Fig.~\ref{fig:massive-4fs} are present only
+when the $b$ PDF is independently parametrized. This means that while 
+in the
+massive scheme the process in the matched-$b$ approach of
+Refs.~\cite{Forte:2015hba,Forte:2016sja}  starts at $O(\alpha_s^2)$,
+in a parametrized-$b$ approach it starts at 
+$O(\alpha_s^0)$. As discussed in detail in
+Refs.~\cite{Forte:2010ta,Forte:2015hba,Forte:2016sja},
+the FONLL method allows the  consistent combination of computations performed
+at different perturbative orders either in the massive or massless
+scheme: various combinations were defined and discussed  in
+Refs.~\cite{Forte:2015hba,Forte:2016sja} for Higgs production in
+bottom fusion.
+
+With the new counting of perturbative orders which is relevant for a
+parametrized-$b$ framework it is convenient to define some new
+combinations. We  consider in particular the combination of 
+the massive scheme $O(\alpha_s)$ computation  with the standard
+five-flavor scheme next-to-leading log (NLL) and
+next-to-next-to-leading log  computations. We  call these
+combinations respectively FONLL-AP (hence corresponding to NLO-NLL)
+and FONLL-BP (corresponding to  NLO-NNLL).
+
+
+\subsection{Parametrized-$b$ FONLL}
+\label{sec:parbfonll}
+
+The construction of the parametrized-$b$ FONLL for hadronic processes
+closely follows the corresponding construction for electroproduction,
+presented in Refs.~\cite{Ball:2015tna,Ball:2015dpa}, to which we refer
+for more details. In comparison to the matched-$b$ FONLL of
+Refs.~\cite{Forte:2015hba,Forte:2016sja} the massive scheme
+contribution to Eq.~(\ref{eq:fonlldef}) includes an extra contribution:
+\begin{align}
+  \label{eq:delta-i}
+  \sigma_{\text{FONLL}_P} &= \sigma_{\text{FONLL}_M} +
+  \delta\sigma_P\nonumber\\ 
+  \quad \quad \delta\sigma_P &= \sigma^{\rm massive}_{P} - \sigma^{{\rm
+      massive},0}_{P},
+\end{align}
+where $\sigma^{\rm massive}_{P}$ is the massive-scheme contribution to
+the given process with initial-state heavy quarks and $\sigma^{{\rm
+      massive},0}_{P}$ its massless limit (which subtract its double
+counting with the massless-scheme contribution). This massive scheme
+contribution has to be re-expressed in terms of massless-scheme PDFs,
+as explained in detail in
+Refs.~\cite{Cacciari:1998it,Forte:2010ta,Ball:2015tna,Ball:2015dpa,Forte:2015hba,Forte:2016sja}.
+
+For Higgs production in bottom fusion, up to NLO, this extra
+contribution is given by
+the real diagrams of Fig.~\ref{fig:massive-4fs}, supplemented
+by the corresponding virtual correction and thus it
+has the form
+\begin{equation}
+  \label{eq:xs4fs-i}
+  \begin{split}
+    \delta&\sigma_P^{\rm massive}\left(\frac{m_H^2}{m_b^2}\right) = 
+    2\,\int_{\tau_0}^1 \frac{\dd{x}}{x}\,
+    \int_{\frac{\tau_0}{x}}^1 \frac{\dd{y}}{y^2}\, \\
+    &f^{(4)}_b(x)\,f^{(4)}_{\bar{b}}\left(\frac{\tau_0}{xy}\right)
+    \biggl[\sigma_{b\bar{b}}^{(4),(0)}\left(y,\frac{m_H^2}{m_b^2}\right) +
+      \alpha_s\,\sigma_{b\bar{b}}^{(4),(1)}\left(y,\frac{m_H^2}{m_b^2}\right)
+    \biggr]\\
+    &
+    +
+    4\,\alpha_s\,f^{(4)}_b(x)\,f^{(4)}_g\left(\frac{\tau_0}{xy}\right)\,
+    \sigma_{bg}^{(4),(1)}\left(y,\frac{m_H^2}{m_b^2}\right)\,,
+  \end{split}
+\end{equation}
+where the subscript $P$ denotes the fact that this contribution is
+only present when the $b$ PDF is independently parametrized, and the
+superscript $(4)$ is used to denote the massive factorization scheme,
+as in Refs.~\cite{Forte:2015hba,Forte:2016sja}. Note that even though,
+with a parametrized $b$ there are five flavors also in
+the massive scheme, only the four lightest ones contribute to
+the running of $\alpha_s$ and perturbative evolution. The
+massive cross-sections $\sigma_{ij}^{(4),(k)}$ were computed e.g. in
+Ref.~\cite{Krauss:2017wmx} based on corresponding QED results from
+Ref.~\cite{Dittmaier:1999mb} and are collected in
+Appendix~\ref{sec:app-coeff} after scheme change as we discuss below.
+
+Note that in the matched-$b$ computation
+of Ref.~\cite{Forte:2015hba,Forte:2016sja} this
+process  in the massive scheme starts at $O(\alpha_s^2)$, hence up to NLO (with our new
+counting) the contribution given in Eq.~(\ref{eq:xs4fs-i}) is the only
+one to $\sigma^{\rm massive}$ Eq.~(\ref{eq:fonlldef}): so in actual fact
+in this case
+\begin{equation}
+   \sigma^{\rm massive,\,NLO}= \sigma^{\rm massive,\,NLO}_{P}.
+\end{equation}
+
+The expression of $\sigma^{\rm massive,\,NLO}$ suitable for use in the
+FONLL formula Eq.~(\ref{eq:fonlldef}) is obtained, as mentioned, by
+  re-expressing the massive scheme PDFs  and $\alpha_s$ in terms of massless-scheme
+  ones. For simplicity we assume that this is done at a matching scale
+  $\mu_b=m_b$.
+  The matching condition for $\alpha_s$ is, as well known,
+\begin{equation} \label{eq:amatch}
+  \alpha_s^{(4)}(Q^2) = \alpha^{(5)}_s(Q^2)\left[1\,-\alpha_s\,\frac{T_R}{2\,\pi}\,\log\frac{Q^2}{m_b^2} + \order{\alpha_s^2}\right]
+\end{equation}
+while to $O(\alpha_s)$ the only nontrivial matching condition is
+that for the $b$ PDF:
+\begin{equation}
+  \label{eq:b-pdf}
+  \begin{split}
+  f_b^{(4)}(x) = f^{(5)}_b(x,Q^2) - \alpha_s\int_x^1& \frac{\dd{z}}{z}
+  \biggl[ K_{bb}^{(1)}\left(z,Q^2\right)f^{(5)}_b\left(\frac{x}{z},Q^2\right) \\
+   &+ K_{bg}^{(1)}(z,Q^2)\,f_g^{(5)}\left(\frac{x}{z},Q^2\right)\biggr]+ \order{\alpha_s^2},
+  \end{split}
+\end{equation}
+where again the superscripts $(4)$ and  $(5)$  denote  respectively the massive-
+and massless-scheme expressions, and $K_{ij}$ are the matching
+coefficients
+\begin{equation}\label{eq:matching}
+  f_i^{(5)}(Q^2) = \sum_j K_{ij}(Q^2) \otimes f^{(4)}_j(Q^2),
+\end{equation}
+where the sum runs over all partons (including the heavy quark),
+and
+\begin{equation}\label{eq:kexp}
+  K_{ij}(Q^2)=\delta_{ij}\delta(1-z)+\sum_{n=1}\alpha^n_s(Q^2) K_{ij}^{(n)}(Q^2).
+\end{equation}
+Note
+that, of course, since there is a heavy quark PDF also in the massive
+scheme, $K_{ij}$ is a square matrix, so that, to $O(\alpha_s)$,
+$  K^{-1}_{ij}(Q^2)=\delta_{ij}-\alpha_s(Q^2) K_{ij}^{(1)}(Q^2)$.
+The matching function 
+ $K^{(1)}_{bb}$ was calculated in Ref.~\cite{Buza:1996wv}. Its explicit
+expression is given for ease of reference in Appendix~\ref{sec:app-splitting} together with
+that of the splitting functions
+$P_{ij}$. 
+
+Substituting Eq.s~(\ref{eq:amatch}-\ref{eq:b-pdf}) in
+Eq.~(\ref{eq:xs4fs-i}) we get the desired expression for the
+massive-scheme cross section:
+\begin{equation}
+  \label{massive:1}
+  \begin{split}
+  \sigma_P^{\rm
+    massive}\left(\frac{m_H^2}{m_b^2}\right)&=
+  \int_{\tau_H}^{1} \frac{dx}{x}\int_{\frac{\tau_H}{x}}^{1}
+  \frac{dy}{y^2} \\
+  &\sum_{ij=b,g}f_{i}^{(5)}(x,Q^2)f_j^{(5)}
+  \left(\frac{\tau_H}{x y},Q^2\right)
+  B_{ij}\left(y,\alpha_s^{(5)}(Q^2),
+    \frac{Q^2}{m_b^2}\right),
+  \end{split}
+\end{equation}
+where to $O(\alpha_s)$ the non-vanishing coefficients are 
+\begin{align}
+  \label{eq:change-of-scheme}
+  B_{b\bar{b}}^{(0)}\left(y,\frac{m_H^2}{m_b^2}\right)  
+    & = \sigma_{b\bar{b}}^{(4),(0)}\left(y,\frac{m_H^2}{m_b^2}\right) \\
+  B_{b\bar{b}}^{(1)}\left(y,\frac{m_H^2}{m_b^2}\right)
+    & = \sigma_{b\bar{b}}^{(4),(1)}\left(y,\frac{m_H^2}{m_b^2}\right) \nonumber\\ 
+    & - 2\,\sigma_0
+      \int_{y}^{1}{\rm d} z \,z\,\delta(z-y)\,
+      K_{bb}^{(1)}\left(z,\ln\frac{m_H^2}{m_b^2}\right)\\
+  B_{bg}^{(1)}\left(y,\frac{m_H^2}{m_b^2}\right)
+    & = \sigma_{bg}^{(4),(1)}\left(y,\frac{m_H^2}{m_b^2}\right) \nonumber \\
+    &  -\sigma_0
+      \int_{y}^{1}{\rm d} z \,z\,\delta(z-y)\,
+      K_{bg}^{(1)}\left(z,\ln\frac{m_H^2}{m_b^2}\right)\,,
+\end{align}
+whose explicit expressions are collected, as mentioned, in Appendix~\ref{sec:app-coeff}.
+
+In order to construct the FONLL expression Eq.~(\ref{eq:fonlldef}), the
+massive scheme contribution must be combined with the difference term
+$\sigma ^{\rm d}$ Eq.~(\ref{eq:fonlldiff}). However, it is easy to
+check that, just like in the case of
+electroproduction\cite{Ball:2015tna,Ball:2015dpa},
+this term, which is subleading when using matched $b$, vanishes
+identically with parametrized $b$. This is due to the
+fact that the massless limit of the massive-scheme calculation only
+differs from the massless-scheme calculation because of the resummation
+of mass logarithms $\ln\frac{Q^2}{m_b^2}$ beyond the accuracy of the
+massive-scheme result (so at $O(\alpha_s^2)$ and beyond, in our
+case). However, when re-expressing the massive-scheme calculation in
+terms of massless-scheme PDFs the evolution of the $b$-PDF is only
+removed up to the same accuracy as that of the massive scheme
+calculation. This is seen explicitly in Eq.~(\ref{eq:b-pdf}), in which
+mass logarithms  $\ln\frac{Q^2}{m_b^2}$ are only removed up to
+$O(\alpha_s)$. Therefore, the higher order logarithms remain unsubtracted in
+the expression of $f_b^{(5)} (x,Q^2)$ and thus cancel exactly between
+$\sigma^{\rm massless}$ and $\sigma^{\rm massive,\,0}$.
+
+The FONLL
+result thus reduces to the expression Eq.~(\ref{massive:1}):
+\begin{equation}\label{eq:canc}
+\sigma^{\text{FONLL-AP}}=\sigma_P^{\rm
+  massive}\left(\frac{m_H^2}{m_b^2}\right).
+\end{equation}
+We can thus write the FONLL result in the form
+\begin{equation}\label{eq:genfonll}
+\sigma^{\text{FONLL-AP}}= \sum_{i,j}\sum_{l,m} \sigma^{\rm massive}_{ij}\left(\frac{m_h^2}{m^2_b}\right)\otimes
+ K^{-1}_{il}\otimes f_{l}^{\left(5\right)}\left(Q^2\right)K^{-1}_{jm}\otimes f_{m}^{\left(5\right)}\left(Q^2\right),
+\end{equation}
+where $ K^{-1}_{il}$ is the inverse of the matching matrix defined in
+Eq.~(\ref{eq:amatch}), perturbatively defined order by order according
+to Eq.~(\ref{eq:kexp}). This is
+of course  well defined with a parametrized $b$ because
+$K_{ij}$ is  a square matrix. As discussed in detail in
+Refs.~\cite{Ball:2015tna,Ball:2015dpa} the effect of the inverse
+matching matrices in Eq.~(\ref{eq:genfonll}) is to remove collinear
+logarithms related to the evolution of the $b$ PDF from the massless scheme
+PDFs $f_{i}^{\left(5\right)}$, since these are already included in the
+massive-scheme matrix cross-section  $\sigma^{\rm massive}_{ij}$,
+where they would appear as mass logarithms $\ln\frac{Q^2}{m_b^2}$
+in the large $Q^2$ limit (in actual facts here $Q^2=m_H^2$). As a
+consequence, the result Eq.~(\ref{eq:genfonll}) is completely
+independent of the matching scale $m_b$ (i.e. the scale at which the
+$b$ PDF is parametrized), as it must be, given that once
+the $b$ PDF is parametrized there is no matching scale left.
+We will check this cancellation explicitly (see 
+Fig.~\ref{fig:mub-var} below).
+
+Equation~(\ref{eq:genfonll}) shows that FONLL effectively acts
+as a massive five-flavor scheme, in which standard five-flavor PDFs
+are combined with the massive-scheme cross-section, with massive
+quarks included in the initial state: it is in fact akin to 
+five-flavor scheme of Ref.~\cite{Krauss:2017wmx}, though in this
+reference mass effects are also included in parton showering, which we
+do not consider here. In FONLL as corrections are consistently
+included to the order at which the massive-scheme cross-section is
+computed, with collinear and mass logarithms resummed to the logarithmic
+order to which PDFs are used. The structure of the result
+Eq.~(\ref{eq:genfonll}) is universal, and so are the PDFs which appear
+in it. Therefore, to the extent that the  PDF is correctly fitted,
+mass corrections (i.e. all terms suppressed by powers of $m_b/Q$) are
+then fully included  up to the order of the massive-scheme
+calculation:   $O(\alpha_s)$ for FONLL-AP and FONLL-BP. Of course
+these latter corrections are not unversal and will have to be computed
+separately for each process.
+
+As mentioned, the FONLL framework
+allows for the combination of massive- and massless-scheme
+computations performed at arbitrary, independent accuracy. We discuss
+specifically the two cases defined in Sect.~\ref{sec:pertord}, FONLL-AP and
+FONLL-BP. In FONLL-AP, the massive-scheme partonic cross sections 
+ $\sigma_{ij}^{\rm massive}$ are computed up to NLO
+(i.e. $O(\alpha_s)$), while the PDFs are evolved using 
+NLO (more properly, NLL) evolution equations. Hence, in this case
+Eq.~(\ref{eq:genfonll}), with  $\sigma_{ij}^{\rm massive}$ computed up
+to $O(\alpha_s)$ (i.e. including the diagrams of
+Fig.~\ref{fig:massive-4fs}), and NLO PDFs.  
+
+
+In FONLL-BP, the
+massive-scheme computation is still performed up to NLO, but now the
+massless-scheme computation is performed up to NNLO. This has two
+consequences. The first is that NNLO PDFs are now used. The other is
+that hard cross-sections are now computed up to NNLO i.e. up to
+$O(\alpha^2_s)$. Because massive terms are included only up to
+$O(\alpha_s)$, Eq.~(\ref{eq:genfonll}) must now be supplemented by a
+purely massless $O(\alpha^2_s)$ contribution:
+\begin{equation}\label{eq:fonll-bp}
+\sigma^{\text{FONLL-BP}}=\sigma^{\text{FONLL-AP}}+\sum_{l,m}
+\sigma^{(5),(2)}_{lm}\otimes
+f_{l}^{\left(5\right)}\left(Q^2\right)f_{m}^{\left(5\right)}\left(Q^2\right), 
+\end{equation}
+where $\sigma^{\text{FONLL-AP}}$ is given by
+Eq.~(\ref{eq:genfonll}). Note that because the matching functions
+$K_{ij}^{-1}$ are 
+used to re-express the massive-flavor scheme cross-section in the
+massless scheme, they are accordingly  computed to the same accuracy as
+the massive-scheme partonic cross-section itself: so here
+to $O(\alpha_s)$. The difference term $\sigma^{\rm d}$
+Eq.~(\ref{eq:fonlldiff}) always vanishes identically. It is clear
+that the computation is considerably streamlined in comparison to the
+standard FONLL framework of Refs.~\cite{Forte:2015hba,Forte:2016sja}.
+
+\section{Higgs production in $b$ fusion}
+\label{sec:results}
+
+
+We now present explicit results for Higgs production in $b$-quark fusion
+within the FONLL-AP and FONLL-BP scheme, and compare them to previous
+results of Refs.~\cite{Forte:2015hba,Forte:2016sja}.
+Results presented in this section are obtained using
+the following set-up.
+For the calculation of the 5F scheme coefficient functions,
+we use the interface to the {\verb bbh@nnlo }
+code~\cite{Harlander:2002wh}
+as implemented in the public {\tt bbhfonll} code~\cite{code}.
+The subtraction terms needed for the FONLL-B calculation of
+Refs.~\cite{Forte:2015hba,Forte:2016sja} 
+is obtained using  {\tt bbhfonll}. The standard contributions
+to the 4F scheme are computed
+using the MG5\_aMC@NLO package~\cite{Alwall:2014hca,Wiesemann:2014ioa},
+while we have implemented the new terms $\delta\sigma_P^{\rm massive}$
+Eq.~(\ref{eq:xs4fs-i})
+and their
+massless limit in a new version of  {\tt bbhfonll}, following
+the expressions reported in Appendix~\ref{sec:app-coeff}, and is
+available at
+\begin{center}
+\url{https://gitlab.com/dnapoletano/bbh-intrinsic-public}.
+\end{center}
+Both codes use the LHAPDF~\cite{Buckley:2014ana} package.
+
+We use the  NNPDF3.1 NNLO set of parton distributions with
+$\alpha_s(M_z)=0.118$~\cite{Ball:2017nwa}. For a first default
+comparison we just use the vanilla NNPDF3.1 set, including the $b$
+PDF. From the point of view of a computational framework in which the
+$b$ PDF is fitted,
+this can be thought of as the $b$ PDF that one would get if initial
+PDFs were parametrized at $Q_0=m_b$, and the fitted $b$ PDF were to
+turn out to be exactly equal to that given by the matching condition
+at this scale. Furthermore, in order
+to get a feeling for effects related to the size of
+the $b$-PDF we then consider, for the sake of argument, a $b$ PDF
+equal to that which would be obtained by using the matching condition
+at $\mu_b = 2/3 m_b$ or $\mu_b = 1/2 m_b$, and then evolving up to
+$Q=m_b$ where the initial PDF is given.
+% \begin{figure}[ht]
+%   \centering
+%   \includegraphics[width=0.49\linewidth]{figs/mur_var_pdf4lhc_.pdf}
+%   \includegraphics[width=0.49\linewidth]{figs/muf_var_pdf4lhc_.pdf}
+%   \caption{Same as Fig.~\ref{fig:scale-var} but computed with the
+%     PDF4LHC set.
+%   }
+%   \label{fig:scale-var-pdf4lhc}
+% \end{figure}
+
+
+%Our reference PDF set is the NNPDF31\_nnlo\_as\_0118~\cite{Ball:2017nwa},
+%and, for consistency, in our calculation we set $m_b=4.92$~GeV.
+%Starting from this set, we construct our intrinsic $b$ component
+%by lowering the $b$-quark threshold to either $\mu_b = 2/3 m_b$ or $\mu_b = 1/2% m_b$.
+%We obtain these modified set using the APFEL evolution library~\cite{Bertone:20%13vaa}.
+%In the rest, results for the standard PDF case are shown with a solid
+%line, while the $\kappa = 2/3$ and the $\kappa = 1/2$ cases are plotted in dash%ed lines
+%of decreasing line-widths.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{mub_var.pdf}
+  \caption{Cancellation of the dependence on the matching scale in the
+  FONLL-AP and FONLL-BP schemes.}
+  \label{fig:mub-var}
+\end{figure}
+First, as a consistency check, in Fig.~\ref{fig:mub-var} we verify that
+indeed the dependence on $\mu_b$ cancels when constructing the FONLL
+result with parametrized $b$ according to Eq.~(\ref{eq:delta-i}). In
+this figure the massive-scheme result has been constructed using a
+fixed  $b$ PDF (that which corresponds to the standard matching
+condition at $\mu_b=m_b$) and then re-expressing results in terms of
+the massive scheme PDFs  and $\alpha_s$ in terms of massless-scheme
+ones. This is done using Eq.~(\ref{eq:matching}), which contains the
+matching coefficients $K_{ij}$ which depend on the matching scale
+$\mu_b$, and thus the massive-scheme result becomes
+$\mu_b$-dependent.
+However, this dependence cancels exactly in the final
+FONLL result.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.49\linewidth]{mur_var_nnpdf_.pdf}
+  \includegraphics[width=0.49\linewidth]{muf_var_nnpdf_.pdf}
+  \caption{Renormalization (left) and factorization (right) scale
+    variation of the cross-section for Higgs production in bottom
+    fusion. The pure five-flavor scheme computation is compared to the
+  FONLL-AP and FONLL-BP results presented here and to the FONLL-B
+  result of Ref.~\cite{Forte:2015hba}. For the pure five flavor
+  NNLO and the  FONLL-BP three curves are shown, corresponding to 
+  three choices of initial $b$ PDF (see text).
+  }
+  \label{fig:scale-var}
+\end{figure}
+
+
+In Fig.~\ref{fig:scale-var} we show the factorization and
+renormalization scale dependence of the cross-section computed in
+various schemes, with the other scale kept fixed at the
+preferred~\cite{Forte:2015hba,Forte:2016sja} value
+$\mu=\frac{m_H+2m_b}{4}$.
+Specifically, we compare results obtained using the FONLL-AP and
+FONLL-BP schemes discussed above, the pure five-flavor scheme , and
+the FONLL-B result of Ref.~\cite{Forte:2016sja}, all using the same
+PDFs (including the $b$ PDF) as discussed above. For the pure
+five-flavor scheme and for FONLL-BP we also show
+the three curves corresponding to the three different choices for the
+$b$ PDF discussed above, with a corresponding band:
+the central, thick, solid line represents the default $\mu_b=m_b$
+choice, while the edges of the band are drawn with dot-dash curves
+with decreasing thickness, with the thicker of the two corresponding
+to $\mu_b=2\frac{m_b}{3}$, and the other two $\mu_b=\frac{m_b}{2}$.
+
+Note that the
+FONLL-BP computation Eq.~(\ref{eq:fonll-bp}) and the FONLL-B
+result~\cite{Forte:2016sja} are directly comparable: indeed, they both
+include the five-flavor scheme computation up to NNLO, and combine it
+with the first
+two orders of the massive-scheme computation. The difference is that
+in FONLL-B in the massive-scheme computation refers to the process
+$gg\to b\bar b H$, while in FONLL-BP it refers to  $b\bar b \to H$. If
+the $b$ PDF is the same as given by perturbative matching, the
+difference is then only that, in the latter case, only mass effects
+related to the $b\bar b$ which fuses into the Higgs are included,
+while in the former, also those related to the further unobserved
+$b\bar b$ pair are present. In a realistic situation, in which FONLL-BP is used
+while parametrizing and fitting the $b$ PDF these mass effects should
+be reabsorbed in the fitted $b$ PDF. In our comparisons, they 
+appear as a certain enhancement of FONLL-BP in comparison to FONLL-B
+due to the opening of phase space. 
+
+
+Otherwise, the qualitative features of the comparison between FONLL
+and the pure five-flavor scheme remain essentially the same as discussed
+in Ref.~\cite{Forte:2016sja}: FONLL is quite close to the
+five-flavor scheme, with mass effects a non-negligible, but small,
+positive correction. Indeed, the difference between
+FONLL-AP and FONLL-BP, i.e., the impact of NNLO corrections in the
+five-flavor scheme, is much more significant than that of mass corrections.
+The impact of varying the $b$ PDF by
+an amount which is comparable to a reasonable variation of the
+matching scale is clearly comparable to that of the mass
+corrections. This provides evidence for the fact that fitting the $b$
+PDF is likely to have a significant impact on precision phenomenology.
+
+
+Note that results for the FONLL-B
+scheme differ at the percent level from those of 
+Ref.~\cite{Forte:2016sja} because there a different PDF set and $m_b$
+value were used,
+for the sake of benchmarking with
+Ref.~\cite{Bonvini:2015pxa,Bonvini:2016fgf}. This further highlights
+the fact that the size of effects due to the $b$ PDF is comparable to
+that of mass corrections.
+
+\section{Conclusions}
+\label{sec:conclusions}
+
+In summary, we have shown how the FONLL matching of massive- and
+massless-scheme treatment of computations involving heavy quarks can
+be generalized to the case in which the heavy quark PDF is freely
+parametrized for hadronic processes. We have show that this
+effectively provides us with a massive heavy quark scheme, in which
+the heavy quark is endowed with a standard PDF satisfying QCD
+evolution equations, yet it is treated as massive in hard matrix
+elements. A first application to Higgs production in bottom fusion
+shows that effects related to the $b$ PDF are quite likely to be
+comparable to mass corrections: both are small, but non-negligible
+corrections to a purely massless NNLO calculation in which the $b$ PDF
+is obtained from perturbative matching conditions. Determining the $b$
+PDF from data is thus likely to be necessary for a description of
+$b$-induced hadron collider processes at percent or sub-percent accuracy.
+
+As a direction for further study, it should be noticed that extending
+our results to NNLO --- thereby allowing the construction of a
+FONLL-CP result, in the terminology of Sect.~\ref{sec:pertord}
+(NNLO+NNLL) --- is beyond current knowledge. Indeed, starting at NNLO
+the cancellation between real and virtual
+corrections is no longer trivial, and is spoiled by
+massive quarks in the initial
+state~\cite{Doria:1980ak,Catani:1985xt}. Hence, such an extension
+would require conceptual advances in the understanding of QCD
+factorization in the presence of massive quarks, which are left for
+future studies. \comment{Add sentence about Caola's paper and SF email.}
+
