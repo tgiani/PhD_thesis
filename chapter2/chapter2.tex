@@ -684,4 +684,65 @@ them starting from the QCD vertices for $q\rightarrow q\,g$, $g\rightarrow q\bar
 
 \comment{Add solution to DGLAP for nonsinglet as in the qPDF paper.}
 
-\section{Factorization and heavy quarks}
+\section{Heavy quarks}
+Considering a process in perturbative QCD involving heavy quarks\footnote{considering a process characterized by an hard scale $Q^2$,
+we define a quark to be heavy if $m_h^2\gg Q^2$, with $m_h$ the quark mass. 
+This definition is usually applied to the charm, bottom and top quarks.}, the corresponding cross section
+can be computed  in different renormalization schemes. In a standard minimal subtraction scheme, like $\overline{MS}$,
+heavy quarks are treated on the same footing
+as light flavours. 
+In practise this means that 
+the heavy quarks are endowed with a PDF and the $\beta$ function depends on the total number $n_f$ 
+of both light and heavy flavours. 
+Alternatively, in a decoupling scheme heavy quarks are treated as massive particles 
+which fully decouple from QCD evolution equations, 
+so that only the $n_l$ light quarks contribute to the DGLAP and running of $\alpha_s$.
+In the first case, often denoted as massless scheme, collinear logarithms of $Q^2/m_h^2$
+are resummed through DGLAP equations and reabsorbed in the corresponding PDF, but corrections
+suppressed by powers of $m_h^2/Q^2$ are neglected.
+In the second option, denoted as massive scheme, collinear logarithms are only included to fix order, but the 
+full mass dependence is retained.
+While a minimal subtraction scheme is more precise at high scales $Q^2 \gg m_h^2$, where unresummed collinear logarithms
+would spoil perturbation theory, a decoupling scheme is more advantageous close to the threshold, where mass
+corrections might be non negligible.
+Heavy quarks schemes are all based on the idea of combining these two computations, each of which is more accurate 
+in a certain kinematic region, into one which is accurate at all scales.
+Some of the possible options available from the literature are 
+the ACOT \cite{Aivazis:1993pi, Aivazis:1993kh, Tung:2001mv}, S-ACOT \cite{Kramer:2000hn} and TR \cite{Thorne:1997ga} schemes.
+In the following we will briefly recall the main features of the so-called FONLL scheme, which will be used in
+Chapter~\ref{ch:bottom} to construct a new scheme which allows initial state heavy quarks in an hadronic process.
+
+%
+FONLL was initially introduce in Ref.~\cite{Cacciari:1998it} in the context of hadroproduction of heavy quarks, and subsequently 
+extended to DIS structure functions in Refs.~\cite{Forte:2010ta} and to hadronic processes in Ref.~\cite{Forte:2015hba}. 
+Assuming an hadronic process involving $n_l$ light flavours and only one massive quark, the corresponding
+cross section in the massless $n_l+1$-flavour scheme is given by
+\begin{align}
+    \label{eq:massless}
+    \sigma^{(n_l+1)} = \int \int dx_1 dx_2\, \sum_{ij}&\, 
+    f^{(n_l+1)}_i\left(x_1,\mu^2\right)f^{(n_l+1)}_j\left(x_2,\mu^2\right) \nonumber \\
+    &\times\hat{\sigma}^{(n_l+1)}_{ij}\left(x_1,x_2,\alpha_s^{(n_l+1)}\right)\,.
+\end{align}
+The sum in Eq.~\ref{eq:massless} runs over all the flavours, including the heavy ones, which are all treated in the
+$\overline{MS}$ scheme. The heavy quarks has an associated PDF and contribute to both the
+DGLAP evolution equation and to the running of $\alpha_s$, which is therefore denoted as $\alpha_s^{(n_L+1)}$. 
+For simplicity we have omitted the
+dependence on the factorization and renormalization scales in the hard cross section.
+The same cross section can be also computed in the massive $n_l$-flavours scheme as
+\begin{align}
+    \label{eq:massive}
+    \sigma^{(n_l)} = \int \int dx_1 dx_2\, \sum_{ij}&\, 
+    f^{(n_l)}_i\left(x_1,\mu^2\right)f^{(n_l)}_j\left(x_2,\mu^2\right) \nonumber \\
+    &\times\hat{\sigma}^{(n_l)}_{ij}\left(x_1,x_2,\frac{\mu^2}{m_h^2},\alpha_s^{(n_l)}\right)\,.
+\end{align}
+Unlike the case of the massless computation, here the sum is on light flavours only, there is no PDF corresponding
+to the heavy quark and the hard cross-section retains the explicit dependence on the heavy quark mass $m_h$.
+In order to match the two computation, Eqs.~\ref{eq:massless}, \ref{eq:massive} can be expressed in terms of 
+the massless schemes couplings and PDFs $\alpha_s^{(n_l+1)}$ and $f^{(n_l+1)}_i$ using 
+relations of the form
+\begin{align}
+    \alpha_s^{(n_l+1)}\left(\mu^2\right) = 
+    \alpha_s^{(n_l)}\left(\mu^2\right) 
+    + \sum_{i=2}^{\infty} c_i\left(L\right) \left(\alpha_s^{(n_l)}\left(m_h^2\right)\right)^i\,,
+\end{align}
+
