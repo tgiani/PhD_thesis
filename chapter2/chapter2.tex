@@ -685,15 +685,16 @@ them starting from the QCD vertices for $q\rightarrow q\,g$, $g\rightarrow q\bar
 \comment{Add solution to DGLAP for nonsinglet as in the qPDF paper.}
 
 \section{Heavy quarks}
-Considering a process in perturbative QCD involving heavy quarks\footnote{considering a process characterized by an hard scale $Q^2$,
+\label{sec:fonll}
+Considering a process in perturbative QCD involving heavy quarks\footnote{considering a process 
+characterized by an hard scale $Q^2$,
 we define a quark to be heavy if $m_h^2\gg Q^2$, with $m_h$ the quark mass. 
-This definition is usually applied to the charm, bottom and top quarks.}, the corresponding cross section
+This definition is usually applied to the charm, bottom and top quarks.}, the corresponding cross-section
 can be computed  in different renormalization schemes. In a standard minimal subtraction scheme, like $\overline{MS}$,
 heavy quarks are treated on the same footing
 as light flavours. 
-In practise this means that 
-the heavy quarks are endowed with a PDF and the $\beta$ function depends on the total number $n_f$ 
-of both light and heavy flavours. 
+In practise this means two things: first, they are endowed with a PDF and second 
+the $\beta$ function depends on the total number $n_f$ of both light and heavy flavours. 
 Alternatively, in a decoupling scheme heavy quarks are treated as massive particles 
 which fully decouple from QCD evolution equations, 
 so that only the $n_l$ light quarks contribute to the DGLAP and running of $\alpha_s$.
@@ -703,10 +704,10 @@ suppressed by powers of $m_h^2/Q^2$ are neglected.
 In the second option, denoted as massive scheme, collinear logarithms are only included to fix order, but the 
 full mass dependence is retained.
 While a minimal subtraction scheme is more precise at high scales $Q^2 \gg m_h^2$, where unresummed collinear logarithms
-would spoil perturbation theory, a decoupling scheme is more advantageous close to the threshold, where mass
+would spoil perturbation theory, a decoupling scheme is more accurate close to the threshold, where mass
 corrections might be non negligible.
 Heavy quarks schemes are all based on the idea of combining these two computations, each of which is more accurate 
-in a certain kinematic region, into one which is accurate at all scales.
+in a certain kinematic region, in order to get a single result which is accurate at all scales.
 Some of the possible options available from the literature are 
 the ACOT \cite{Aivazis:1993pi, Aivazis:1993kh, Tung:2001mv}, S-ACOT \cite{Kramer:2000hn}, TR \cite{Thorne:1997ga}
 and FONLL schemes.
@@ -715,9 +716,9 @@ extended to DIS structure functions in Refs.~\cite{Forte:2010ta} and to hadronic
 
 %
 In the following, using the notations of Refs.~\cite{Forte:2010ta,Forte:2015hba} we will briefly recall 
-the main features of the so-called FONLL scheme, which will be used in
+the main features of the FONLL scheme, which will be used in
 Chapter~\ref{ch:bottom} to construct a new method to deal with initial state heavy quarks in an hadronic process.
-Assuming an hadronic process involving $n_l$ light quarks $q$  and only one massive quark $h$,
+Assuming an hadronic process involving $n_l$ light quarks $q$  and only one massive quark $h$ of mass $m_h$,
 the corresponding cross section in the massless $(n_l+1)$-flavours scheme is given by
 \begin{align}
     \label{eq:massless}
@@ -725,12 +726,12 @@ the corresponding cross section in the massless $(n_l+1)$-flavours scheme is giv
     f_i^{(n_l+1)}\left(x_1,\mu^2\right)f_j^{(n_l+1)}\left(x_2,\mu^2\right) \nonumber \\
     &\times\hat{\sigma}^{(n_l+1)}_{ij}\left(x_1,x_2,\alpha_s^{(n_l+1)}\right)\,.
 \end{align}
-The sum in Eq.~\ref{eq:massless} runs over all the flavours, including the heavy ones, which are all treated in the
+The sum in Eq.~\ref{eq:massless} runs on both light and heavy flavours, which are all treated in the
 $\overline{MS}$ scheme. The heavy quark has an associated PDF and contributes to both the
-DGLAP evolution equation and to the running of $\alpha_s$, which is therefore denoted as $\alpha_s^{(n_L+1)}$. 
+DGLAP evolution equation and to the running of $\alpha_s$, which is therefore denoted as $\alpha_s^{(n_l+1)}$. 
 For simplicity we have omitted the
 dependence on the factorization and renormalization scales in the hard cross section.
-The same cross-section can be also computed in the massive $(n_l)$-flavours scheme as
+The same process can be computed in the massive $(n_l)$-flavours scheme as
 \begin{align}
     \label{eq:massive}
     \sigma^{(n_l)} = \int \int dx_1 dx_2\, \sum_{ij=g,q,\bar{q}}&\, 
@@ -739,30 +740,30 @@ The same cross-section can be also computed in the massive $(n_l)$-flavours sche
 \end{align}
 Unlike the case of the massless computation, here the sum is on light flavours only, there is no PDF corresponding
 to the heavy quark and the hard cross-section retains the explicit dependence on the heavy quark mass $m_h$.
-In order to match the two computation, Eqs.~\ref{eq:massless}, \ref{eq:massive} can be expressed in terms of 
-the massless schemes couplings and PDFs $\alpha_s^{(n_l+1)}$ and $f^{(n_l+1)}_i$ using 
-relations of the form
+In order to match the two computations, we express Eqs.~\ref{eq:massless}, \ref{eq:massive} in terms of 
+the massless schemes coupling $\alpha_s^{(n_l+1)}$ and light quarks PDFs $f^{(n_l+1)}_i$,
+$i = g,q,\bar{q}$ using relations of the form
 \begin{align}
     \label{eq:matching_alpha}
     &\alpha_s^{(n_l+1)}\left(\mu^2\right) = 
     \alpha_s^{(n_l)}\left(\mu^2\right) 
-    + \sum_{i=2}^{\infty} c_i\left(L\right) \left(\alpha_s^{(n_l)}\left(m_h^2\right)\right)^i\,, \\
+    + \sum_{k=2}^{\infty} c_k\left(L\right) \left(\alpha_s^{(n_l)}\left(m_h^2\right)\right)^k\,, \\
     \label{eq:matching_PDFs}
     &f_i^{(n_l+1)}\left(x_1,\mu^2\right) = \int_x^1 \frac{dy}{y} 
     \sum_{j=g,q,\bar{q}} K_{ij}\left(\frac{x}{y}, L, \alpha_s^{(n_l)}\left(\mu^2\right)\right) f_j^{(n_l)}\left(y,\mu^2\right)\,,
 \end{align}
-where $L = \log \mu^2/m_h^2$. The coefficients $c_i\left(L\right)$ are polynomial in $L$,
+where $i = g, q, \bar{q}, h, \bar{h}$ and $L = \log \mu^2/m_h^2$. The coefficients $c_k\left(L\right)$ are polynomial in $L$,
 and the functions $K_{ij}$ can be expressed as a power expansion in $\alpha_s$ with coefficients
 that are polynomial in $L$. The sum over $j$ in Eqs.~\ref{eq:matching_PDFs}
 runs over the $n_l$ light flavours and anti-flavour plus the gluon, therefore the first $2n_l+1$
 of these equations relate the light quarks and gluon PDFs in the two schemes and can be inverted in
 order to express the massive scheme PDFs in terms of the massless scheme ones. The last two equations
-allow to express the heavy quark PDF in the massless schemes in terms of the gluon and light flavours of the massive one,
+allow to express the heavy quark PDF in the massless schemes in terms of the gluon and light flavours PDFs of the massive one,
 under the assumption that the heavy quark PDF is generated perturbatively.
 %
 Inverting Eq.~\ref{eq:matching_alpha},~\ref{eq:matching_PDFs} and substituting in Eq.~\ref{eq:massive},
 one can obtain the expression of the massive scheme cross-section in terms of $\alpha_s^{(n_l+1)}$
-and $f_i^{(n_l+1)}$
+and $f_i^{(n_l+1)}$, $i = g,q,\bar{q}$
 \begin{align}
     \label{eq:massive_as_func_massless}
     \sigma^{(n_l)} = \int \int dx_1 dx_2\, \sum_{ij = g,q,\bar{q} }&\, 
@@ -770,7 +771,8 @@ and $f_i^{(n_l+1)}$
     &\times B_{ij}\left(x_1,x_2,\frac{\mu^2}{m_h^2},\alpha_s^{(n_l+1)}\right)\,.
 \end{align}
 From now on we can use Eq.~\ref{eq:massive_as_func_massless} to express the massive scheme results, avoiding
-any further reference to $\alpha_s^{n_l}$ and $f_i^{(n_l)}$.
+any further reference to $\alpha_s^{n_l}$ and $f_i^{(n_l)}$\footnote{Eqs.~\ref{eq:massive_as_func_massless}
+differs from the original massive scheme expression Eq.~\ref{eq:massive} by subleading terms.}.
 Using again Eqs.~\ref{eq:matching_PDFs} to express the massless scheme heavy quarks PDFs in terms of light-quark parton
 distributions, the massless scheme results Eq.~\ref{eq:massless} can be written entirely in terms of 
 light-quark PDFs
@@ -794,29 +796,27 @@ On the other hand, also the coefficient functions $B_i$ admit a fixed order expa
     B_{ij}\left(x_1,x_2,\frac{\mu^2}{m_h^2},\alpha_s^{(n_l+1)}\left(\mu^2\right)\right)
     = \sum_{p=0}^P \left(\alpha_s^{(n_l+1)}\left(\mu^2\right)\right)^p B_{ij}^p\left(x_1,x_2,\frac{\mu^2}{m_h^2}\right)\,.
 \end{align}
-In order to match the two results given in Eqs.~\ref{eq:massless_1},~\ref{eq:massive_1} 
+In order to match the two results given in Eqs.~\ref{eq:massless_1},~\ref{eq:massive_as_func_massless} 
 one should notice that the contributions to the massive scheme expression of Eq.~\ref{eq:massive_1}
 which do not vanish when $\mu^2 \gg m_h^2$, namely all the constant and logarithmic terms, 
 must also be present in the massless scheme computation.
-Denoting the $p$-th order contribution to the sum of these terms as $B_i^{(0),\,p}$, it can be defined 
-as
+The $p$-th order contribution to the sum of these terms $B_i^{(0),\,p}$ can be defined as
 \begin{align}
     \lim_{m_h\rightarrow 0}\left[B_{ij}^p\left(x_1,x_2,\frac{\mu^2}{m_h^2}\right)- 
     B_{ij}^{(0),\,p}\left(x_1,x_2,\frac{\mu^2}{m_h^2}\right)\right] = 0\,,
 \end{align}
-and since it has also to be present in the massless scheme computation 
-it will be given by
+and since it has also to be present in the massless scheme computation it will admit an expansion of the form
 \begin{align}
     \label{eq:expansionB0}
-    B_{ij}^{(0),\,p}\left(x_1,x_2,,\frac{\mu^2}{m_h^2}\right) = \sum_{k=0}^p  A_{ij}^{p-k,k}\left(x_1,x_2,\right)L^k\,.
+    B_{ij}^{(0),\,p}\left(x_1,x_2,,\frac{\mu^2}{m_h^2}\right) = \sum_{k=0}^p  A_{ij}^{(p-k),(k)}\left(x_1,x_2,\right)L^k\,.
 \end{align}
 The FONLL method can be expressed as follows: considering the massless scheme coefficients
 at a given perturbative order $p$ $A^{(p),(k)}_{ij}$ 
 appearing Eq.~\ref{eq:expansionA}, replace all the terms which are also present in the massless limit of the massive scheme
-$B^{(0),p}_{ij}$ Eq.~\ref{eq:expansionB0} with their fully massive expression $B^{p}_{ij}$.
+$B^{(0),p}_{ij}$ Eq.~\ref{eq:expansionB0} with their fully massive expression $B^{p}_{ij}$ appearing in Eq.~\ref{eq:massive_1}.
 This can be done in a systematic way defining the massless limit of the massive computation as
 \begin{align}
-    \label{eq:massive_as_func_massless}
+    \label{eq:massive_massless_limit}
     \sigma^{(n_l),(0)} = \int \int dx_1 dx_2\, \sum_{ij = g,q,\bar{q} }&\, 
     f_i^{(n_l+1)}\left(x_1,\mu^2\right)f_j^{(n_l+1)}\left(x_2,\mu^2\right) \nonumber \\
     &\times B^{(0)}_{ij}\left(x_1,x_2,\frac{\mu^2}{m_h^2},\alpha_s^{(n_l+1)}\right)\,,
@@ -830,6 +830,6 @@ and computing
     \sigma^{FONLL} = \sigma^{(n_l+1)} + \sigma^{(n_l)} - \sigma^{(n_l),(0)}\,.
 \end{align}
 In this way the mass suppressed terms which are not included in a massless computation, but which
-are known from the massive one, are included in the final results
-which also retains the all order resummation of collinear logarithms $L$ achieved 
-in a massless scheme, which would be lost in the massive scheme.
+are known from the massive one, are included in the final results.
+On the other hand the all order resummation of collinear logarithms $L$ achieved 
+in a massless scheme through DGLAP equations, which would be lost in the massive scheme, is now taken into account.
