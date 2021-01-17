@@ -1,16 +1,16 @@
 \chapter{Jets data}
 \label{ch:jets}
-In this Chapter we present a systematic analysis for the inclusion 
+In this Chapter, base on Ref.~\cite{AbdulKhalek:2020jut}, we present a systematic analysis for the inclusion 
 of jets cross-sections in a global parton distributions determination,
 assessing the impact of jets and dijets production measurements on the PDFs at various perturbative orders.
 
-\section{Jets observables and available experimental data}
+%
 Considering precision QCD studies, such as for example the determination of PDFs, 
 there is a number of unsettle theoretical issues regarding the choice of the most suitable jets observable
-to be used in the analysis. 
-On one hand, the simplest inclusive observable one could consider, 
-the single-inclusive jets cross-section~\cite{Ellis:1990ek,Aversa:1988fv}, turns out to be non-unitary,
-with a possible unitary alternative offered by the dijets cross-section which, despite appearing to be 
+to be considered. 
+On one hand, the simplest inclusive observable, 
+the single-inclusive jets cross-section~\cite{Ellis:1990ek,Aversa:1988fv}, turns out to be non-unitary.
+A possible alternative free from this issue is offered by the dijets cross-section which however, despite appearing to be 
 especially well suited for PDFs determination~\cite{Giele:1994xd}, at NLO displays a significant scale dependence. 
 Thanks to the recent NNLO computation for these observables, this last problem has essentially been settled,
 with the scale dependence of dijets cross-section being under control at NNLO.
@@ -23,5 +23,39 @@ of this observable are non-trivial.
 In this study we address these issues in the context of PDFs determination, studying the impact of both single-inclusive
 jets and dijets cross-sections with different scale choices in a global parton distributions fit. 
 This allows us to asses which observable and scale choice leads to better PDFs compatibility with other data, better fit quality,
-and more stringen constraint on the PDFs, and provides a guideline for the inclusion of jets observables in a future
+and more stringen constraint on the parton distributions, and provides a guideline for the inclusion of jets observables in a future
 global fit (NNPDF4.0).
+
+\section{Jets data from ATLAS and CMS}
+The ATLAS and CMS collaborations have performed a number of measurements of single-inclusive and 
+dijets cross sections, with center of mass energies ranging from $\sqrt{s}=2.76$ to $13$ TeV.
+In this work we will consider single-inclusive and dijets data at $\sqrt{s}=7$ and $8$ TeV,
+whose specific features are summarized in Table~\ref{tab:input_datasets}, where for each dataset we reported
+the centre of mass energy $\sqrt{s}$, the integrated luminosity $\mathcal{L}$, the jet radius $R$,
+the measured differential distribution and the number of datapoints $n_{\text{dat}}$.
+The relevant kinematic variables are defined as follows.
+For single-inclusive jets denote as $p_T$ and $y$ the transverse momentum and rapidity,
+while for dijets $m_{jj}$ is the invariant dijet mass, $y^*$ and $|y_{\text{mass}}|$ are the absolute rapidity difference
+and the maximum absolute rapidity of the two leading jets of the event, defined as $y^*=|y_1-y_2|/2$
+and $|y_{\text{mass}}|= \text{max}\left(|y_1|,|y_2|\right)$ respectively.
+Finally, considering the dijets triple differential distribution,
+$p_{T,\rm avg} = \left(p_{T_1}+p_{T_2}\right)/2$ is the average transverse momentum of the two leading jets and 
+$y_b = |y_1+y_2|/2$ is the boost of the dijets system.
+
+
+%-------------------------------------------------------------------------------
+\begin{table}[!t]
+    \centering
+    \scriptsize
+    \renewcommand{\arraystretch}{1.90}
+    \input{tables/input-datasets}
+    \vspace{0.3cm}
+    \caption{\small The LHC single-inclusive jet and dijet cross-section data
+       that will be used  in this study. For each dataset we indicate the experiment,
+       the measurement, the center of mass energy $\sqrt{s}$, the luminosity 
+       $\mathcal{L}$, the jet radius $R$, the measured distribution, the number of 
+       datapoints $n_{\rm dat}$ and the reference.}
+    \label{tab:input_datasets}
+\end{table}
+%-------------------------------------------------------------------------------
+    
