@@ -4,10 +4,9 @@ In this Chapter, base on Ref.~\cite{AbdulKhalek:2020jut}, we present a systemati
 of jets cross-sections in a global parton distributions determination,
 assessing the impact of jets and dijets production measurements on the PDFs at various perturbative orders.
 
-%
-Considering precision QCD studies, such as for example the determination of PDFs, 
-there is a number of unsettle theoretical issues regarding the choice of the most suitable jets observable
-to be considered. 
+% 
+There is a number of unsettle theoretical issues regarding the choice of the most suitable jets observable
+to be considered for precision QCD studies, such as for example the determination of PDFs,
 On one hand, the simplest inclusive observable, 
 the single-inclusive jets cross-section~\cite{Ellis:1990ek,Aversa:1988fv}, turns out to be non-unitary.
 A possible alternative free from this issue is offered by the dijets cross-section which however, despite appearing to be 
@@ -29,19 +28,65 @@ global fit (NNPDF4.0).
 \section{Jets data from ATLAS and CMS}
 The ATLAS and CMS collaborations have performed a number of measurements of single-inclusive and 
 dijets cross sections, with center of mass energies ranging from $\sqrt{s}=2.76$ to $13$ TeV.
-In this work we will consider single-inclusive and dijets data at $\sqrt{s}=7$ and $8$ TeV,
-whose specific features are summarized in Table~\ref{tab:input_datasets}, where for each dataset we reported
-the centre of mass energy $\sqrt{s}$, the integrated luminosity $\mathcal{L}$, the jet radius $R$,
+In this work we will consider single-inclusive and dijets data at $\sqrt{s}=7$ and $8$ TeV.
+%
+Whereas recent global PDFs determinations include some jets data, like for instance NNPDF3.1, which includes ATLAS and CMS 
+single-inclusive data with $\sqrt{s}=2.76$ and $7$ TeV, this is the first time that the full LHC-Run I jet dataset is being 
+considered. In particular dijets data have not been included in any other previous analysis.
+
+%
+The specific features of the data considered here are summarized in Table~\ref{tab:input_datasets}:
+for each dataset we reported the centre of mass energy $\sqrt{s}$, 
+the integrated luminosity $\mathcal{L}$, the jet radius $R$,
 the measured differential distribution and the number of datapoints $n_{\text{dat}}$.
 The relevant kinematic variables are defined as follows.
-For single-inclusive jets denote as $p_T$ and $y$ the transverse momentum and rapidity,
-while for dijets $m_{jj}$ is the invariant dijet mass, $y^*$ and $|y_{\text{mass}}|$ are the absolute rapidity difference
+For single-inclusive jets we denote as $p_T$ and $y$ the transverse momentum and rapidity.
+For dijets, $m_{jj}$ is the invariant dijet mass, $y^*$ and $|y_{\text{max}}|$ are the absolute rapidity difference
 and the maximum absolute rapidity of the two leading jets of the event, defined as $y^*=|y_1-y_2|/2$
-and $|y_{\text{mass}}|= \text{max}\left(|y_1|,|y_2|\right)$ respectively.
+and $|y_{\text{max}}|= \text{max}\left(|y_1|,|y_2|\right)$ respectively.
 Finally, considering the dijets triple differential distribution,
 $p_{T,\rm avg} = \left(p_{T_1}+p_{T_2}\right)/2$ is the average transverse momentum of the two leading jets and 
 $y_b = |y_1+y_2|/2$ is the boost of the dijets system.
 
+%
+The ATLAS 7 TeV data for single-inclusive jet, given as distributions differential in transverse momentum 
+$p_T$ and rapidity $y$, cover the kinematic range $100\,\, \text{GeV} \leq p_T \leq 1.992\,\, \text{TeV}$,
+$0 \leq |y| \leq 3$, while the ATLAS 8 TeV data cover the same range in rapidity but with an extended transverse momentum
+kinematic coverage $70\,\, \text{GeV} \leq p_T \leq 2.5\,\, \text{TeV}$.
+In our default fit we include only the central rapidity bin ($y_{jet} \leq 0.5$) of ATLAS 7 TeV, 
+for ease of comparison with the NNPDF3.1 analysis of Ref.~, where the same choice was adopted due to
+the difficulty in achieving a good description of the complete set of rapidity bins using
+the default experimental covariance matrix\footnote{In Refs.~\cite{Ball:2017nwa,Nocera:2017zge} this choice was validated,
+showing how PDFs determined from each rapidity bin in turn are indistinguishable.}.
+The CMS 7 TeV data are available for $100\,\, \text{GeV} \leq p_T \leq 2.0\,\, \text{TeV}$,
+$0 \leq |y| \leq 2.5$, and the CMS 8 TeV cover the extended
+ranges $74\,\, \text{GeV} \leq p_T \leq 2.5\,\, \text{TeV}$ and $0 \leq |y| \leq 3.0$.
+
+%
+Moving to dijets cross-sections, in the case of ATLAS 7 TeV the measurements are double-differential in
+$m_{jj}$ and $|y^*|$, with
+$260\,\,\text{GeV}\leq m_{jj} \leq 4.27\,\,\text{TeV}$ and $0 \leq y^* \leq 3.0$, while for CMS 7 TeV
+the distributions are differential in  $m_{jj}$ and $|y_{\text{max}}|$, with
+$200\,\,\text{GeV}\leq m_{jj} \leq 5\,\,\text{TeV}$ and $0 \leq |y_{\text{max}}| \leq 2.5$.  
+Finally the CMS 8 TeV data are triple-differential in $p_{T,\rm avg}$, $y_b$ and $y^*$ with
+ranges $133\,\,\text{GeV} \leq p_{T,\rm avg} \leq 1.78\,\,\text{TeV}$ and $0\leq y_b,\,y^* \leq 3$.
+Note that ATLAS dijets measurements are currently available at 7 and 13 TeV bit not at 8 TeV.
+
+%
+In addition to the datasets listed in Table~\ref{tab:input_datasets} ATLAS and CMS have performed
+measurements at $\sqrt{s}=13$ TeV for both single-inclusive jet~\cite{Aaboud:2017wsi,Khachatryan:2016wdh}
+and dijets~\cite{Aaboud:2017wsi,Sirunyan:2020uoj}. These however have smaller integrated luminosities, for this reason
+we do not include these datasets in the analysis. 
+%
+Finally several measurements for multijets production are also available, with ATLAS providing differential distributions for
+three jets cross-sections at 7 TeV~\cite{Aad:2014rma} and four jets cross-sections at 8 TeV~\cite{Aad:2015nda} 
+and CMS for three jets at 7 TeV~\cite{CMS:2014mna}.
+However theoretical predictions for these observables are currently available only up to NLO, and therefore they will
+not be considered here.
+
+%
+For all the measurements considered here, the complete set of systematic uncertainties and correlations available from
+{\tt HepData} have been used.
 
 %-------------------------------------------------------------------------------
 \begin{table}[!t]
@@ -59,3 +104,36 @@ $y_b = |y_1+y_2|/2$ is the boost of the dijets system.
 \end{table}
 %-------------------------------------------------------------------------------
     
+
+
+\section{Theoretical calculations}
+In this section we present the main features of the theoretical calculations used to perform
+our phenomenological study, discussing scale choices and QCD corrections up to NNLO.
+\comment{I would exclude discussion of EW corrections, maybe I could put in an appendix}
+
+%
+As mentioned at the beginning of this chapter, even when considering NNLO predictions
+the single-inclusive jet cross-sections are in general
+rather sensible to the choice of central scale.
+Three possible choice are given by the individual jet transverse momentum $p_T$, 
+the leading jet transverse momentum $p_{T,1}$ and the scalar sum of the transverse momenta of all the partons
+in the event 
+\begin{align}
+    \hat{H}_T = \sum_{i\in\text{partons}} p_{T,i}\,.
+\end{align}
+Predictions obtained from different scales choices may differ,even at NNLO, by amounts which are comparable to their
+scale dependence.
+In Ref.~\cite{Currie:2018xkj} the scales $\mu = \hat{H}_T $ and $\mu = 2p_T$ were singled out as optimal choices,
+according to a number of criteria, such as perturbative convergence and scale uncertainty as error estimate.
+Here we will consider results for $\mu = \hat{H}_T$, which will be compared to those found using $\mu=p_T$,
+which was the baseline choice adopted in previous NNPDF dterminations.
+
+%
+Turning to dijets observables, also here different scale choices are possible. As mentioned before, at NLO theoretical predictions
+computed with different choices differ significantly, however the problem is alleviated at NNLO, with $\mu = m_{jj}$
+emerging as preferred choice \comment{Refs}. This scale will be adopted here. 
+
+
+
+
+\section{Results}
