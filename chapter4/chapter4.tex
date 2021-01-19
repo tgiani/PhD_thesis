@@ -107,7 +107,7 @@ For all the measurements considered here, the complete set of systematic uncerta
 
 
 \section{Theoretical calculations}
-In this section we present the main features of the theoretical calculations used to perform
+In this section we present the main aspects of the theoretical calculations used to perform
 our phenomenological study, discussing scale choices and QCD corrections up to NNLO.
 \comment{I would exclude discussion of EW corrections, maybe I could put in an appendix}
 
@@ -115,15 +115,15 @@ our phenomenological study, discussing scale choices and QCD corrections up to N
 As mentioned at the beginning of this chapter, even when considering NNLO predictions
 the single-inclusive jet cross-sections are in general
 rather sensible to the choice of central scale.
-Three possible choice are given by the individual jet transverse momentum $p_T$, 
+Three possible choices are given by the individual jet transverse momentum $p_T$, 
 the leading jet transverse momentum $p_{T,1}$ and the scalar sum of the transverse momenta of all the partons
 in the event 
 \begin{align}
     \hat{H}_T = \sum_{i\in\text{partons}} p_{T,i}\,.
 \end{align}
-Predictions obtained from different scales choices may differ,even at NNLO, by amounts which are comparable to their
+Predictions obtained from different scales choices may differ, even at NNLO, by amounts which are comparable to their
 scale dependence.
-In Ref.~\cite{Currie:2018xkj} the scales $\mu = \hat{H}_T $ and $\mu = 2p_T$ were singled out as optimal choices,
+In Ref.~\cite{Currie:2018xkj} the scales $\mu = \hat{H}_T $ and $\mu = 2p_T$ were singled out as optimal ones,
 according to a number of criteria, such as perturbative convergence and scale uncertainty as error estimate.
 Here we will consider results for $\mu = \hat{H}_T$, which will be compared to those found using $\mu=p_T$,
 which was the baseline choice adopted in previous NNPDF dterminations.
@@ -131,9 +131,122 @@ which was the baseline choice adopted in previous NNPDF dterminations.
 %
 Turning to dijets observables, also here different scale choices are possible. As mentioned before, at NLO theoretical predictions
 computed with different choices differ significantly, however the problem is alleviated at NNLO, with $\mu = m_{jj}$
-emerging as preferred choice \comment{Refs}. This scale will be adopted here. 
+emerging as preferred choice~\cite{Currie:2017eqf,Currie:2018oxh}, which therefore will be adopted here. 
 
+%
+As detailed in Chapter~\ref{ch:nnpdf_methodology}, the partonic matrix elements entering a PDFs fit
+have to be precomputed in such a way that the numerical convolution with generic input PDFs can be approximated by mean
+of interpolation techniques. 
+To this purpose we use {\tt NLOJET++}~\cite{Nagy:2001fj} interfaced to {\tt F{\small AST}NLO}~\cite{Wobisch:2011ij}.
+The computation is performed using the scale choices described above and is validated against the {\tt NNLOJET} computation.
+This fast interpolation grids are then combined with PDF evolution kernel using {\tt APFEL{\small GRID}}~\cite{Bertone:2016lga}
+to obtain FK tables, as described in Eq.~\ref{eq:DY_obs}.
+However fast interpolation grids to be used as input for {\tt APFEL{\small GRID}} are available only at NLO.
+We therefore implement NNLO QCD corrections by supplementing the NLO grids with QCD $K$-factors as detailed in the following.
+We computed exact NNLO QCD predictions using {\tt NNLOJET}~\cite{Gehrmann-DeRidder:2019ibf} and we define the 
+corresponding $K$-factors as
+\begin{align}
+    \label{eq:QCD_kfactors}
+    K^{\text{QCD}}_{\text{NNLO}} = \frac{\sum_{ij}\hat{\sigma}_{ij}^{\text{NNLO}}\otimes \mathcal{L}_{ij}^{\text{NNLO}}}
+    {\sum_{ij}\hat{\sigma}_{ij}^{\text{NLO}}\otimes \mathcal{L}_{ij}^{\text{NNLO}}}\,,
+\end{align}
+where the sum runs over partonic subchannels, $\hat{\sigma}_{ij}$ are partonic matrix elements and $\mathcal{L}$
+the corresponding parton luminosity, computed in both the numerator and denominator using NNPDF3.1 NNLO as a fixed input 
+PDF set.
+NNLO grids for the relevant cross-sections are then obtained from the corresponding NLO grids through the multiplicative
+prescription
+\begin{align}
+    \label{eq:NNLO_kfactors}
+    \frac{d^2\sigma}{dp_T dy}\Bigg|_{NNLO} = \frac{d^2\sigma}{dp_T dy}
+    \Bigg|_{\rm NLO_{QCD}} \times K_{\rm NNLO}^{\rm QCD}(p_T,y,\sqrt{s})\, .
+\end{align}
+The first term on the right-hand side is the output of the NLO computation, given in terms of fast interpolation grids,
+while the second term is the bin-by-bin QCD $K$-factors computing according to Eq.~\ref{eq:QCD_kfactors}. 
+The result is validated against the full NNLO result from {\tt NNLOJET}. In general QCD $K$-factors might be affected by 
+point-to-point fluctuations due to underlying numerical uncertainties affecting the NNLO computation,
+therefore they are provided with a Monte Carlo uncertainty, estimated as described in Ref.~\cite{Ridder:2016rzm}.
+This uncertainty is added in quadrature to the experimental one when performing the PDFs fit, fully uncorrelated datapoint 
+by datapoint.
+For illustration purpose, NNLO QCD $K$-factors for the central rapidity bins $0\leq |y| \leq 0.5$
+of thevATLAS 7 TeV single-inclusive jet and of the CMS 8 TeV dijet distributions are displayed 
+in Fig.~\ref{fig:kfactqcd_werrors} as functions of $p_T$, together with the corresponding Monte Carlo uncertainties.
+In both cases the NNLO QCD $K$-factors increase monotonically with $p_T$ from about $5\%$ to about $20\%$ for single-inclusive
+jets, and from about $3\%$ to $15\%$ for dijets. 
+\begin{figure}[!t]
+    \centering
+    \includegraphics[scale=0.44]{kfactqcd_incljets_atlas7_HTp_R06-rap1-werrors-hist.png}
+    \includegraphics[scale=0.44]{kfactqcd_dijets_cms8_mjj_R07-rap1-werrors-hist.png}
+    \caption{The NNLO QCD $K$-factors for the central rapidity bins of the ATLAS 
+       7~TeV single-inclusive jets (left) and CMS 8~TeV dijets (right), with
+       the Monte Carlo numerical uncertainties shown as filled bands around the 
+       central result.}
+\label{fig:kfactqcd_werrors} 
+\end{figure}
 
 
 
 \section{Results}
+
+\begin{table}[!t]
+    \renewcommand*{\arraystretch}{1.60}
+    \scriptsize
+    \centering
+    \input{tables/fits.tex}
+    \vspace{0.3cm}
+    \caption{The PDF determinations discussed in this study and their
+      IDs. Each row corresponds to a different choice of input jet dataset or fit
+      settings (listed in the first column), and each column corresponds
+      to a different theory accuracy (listed in the first row).
+      The ID encodes the process used (j for single-inclusive
+      jets and d for dijets); the data used (a for all, 7 or 8 for the
+      7~TeV or 8~TeV datasets); the perturbative accuracy (n for QCD NNLO); and the choice of scale (pt when
+      $\mu=p_T^{\rm jet}$).
+      In this and subsequent tables and plots
+      ``jets'' is short for single-inclusive jets.}
+    \label{tab:listfits}
+\end{table}
+
+\begin{table}[t]
+    \renewcommand*{\arraystretch}{1.60}
+    \scriptsize
+    \centering
+    \input{tables/chi2_jets.tex}
+    \vspace{0.3cm}
+    \caption{The $\chi^2$ per datapoint for all fits of
+      Table~\ref{tab:listfits} including single-inclusive jet data, with default settings.
+      Results are shown
+      for all datasets, aggregated by process type. For jets data, results are
+      shown both for the sets included in each fit, and also for those not
+      included, enclosed in square brackets. Combined results are also shown
+      for all single-inclusive jet and for all dijet data, both for
+      the full set, and for those included in each fit.
+      The number of datapoints in each
+      dataset is also shown.}
+    \label{tab:chi2s}
+\end{table}
+
+\begin{table}[t]
+    \renewcommand*{\arraystretch}{1.60}
+    \scriptsize
+    \centering
+    \input{tables/chi2_dijets.tex}
+    \vspace{0.3cm}
+    \caption{Same as Table~\ref{tab:chi2s}, but now for dijets. The
+      baseline is repeated for ease of reference.}
+    \label{tab:chi2sD}
+\end{table}
+
+\begin{table}[!t]
+    \renewcommand*{\arraystretch}{1.60}
+    \scriptsize
+    \centering
+    \input{tables/chi2_suppl.tex}
+    \vspace{0.3cm}
+    \caption{Same as Table~\ref{tab:chi2s} for
+      fits performed with alternative choices of central
+      scale. Now only $\chi^2$ values
+      for jet data are shown. Results for the fits with default settings
+      \#j7 and \#j7n  already shown  in Table~\ref{tab:chi2s} are included
+      for ease of reference.}
+    \label{tab:chi2_suppl}
+\end{table}
