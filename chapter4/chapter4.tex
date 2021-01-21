@@ -421,13 +421,6 @@ between data for these two observables.
 %
 Also, unlike the case of single-inclusive jet data, no tension is observed between dijets data and the baseline dataset,
 whose $\chi^2$ is left almost unchanged.
-
-%
-In Fig.~\ref{fig:dijet_data_total} we show the distances between fits \#bn and \#danw: again only
-the gluon PDF is affected by the inclusion of the jets data, with the regions $0.06\lesssim x \lesssim 0.4$
-being the most affected.  
-
-
 \begin{figure}[!t]
     \centering
     \includegraphics[scale=0.44]{distance_danw_bn}
@@ -435,6 +428,28 @@ being the most affected.
     \caption{Same as Fig.~\ref{fig:jet_data_total}, but now for dijets.}
     \label{fig:dijet_data_total}
 \end{figure}
+
+%
+In the left panel of Fig.~\ref{fig:dijet_data_total} we show the distances between fits \#bn and \#danw: again only
+the gluon PDF is affected by the inclusion of the jets data, with the regions $x\simeq 0.01$ and $0.06\lesssim x \lesssim 0.4$
+being the most affected.
+Looking at the gluon PDF plot in the right panel of Fig.~\ref{fig:dijet_data_total}, we observe a suppression in the former region
+by about $2\%$, corresponding to a down shift of the central value by about one sigma, and an enhancement by about $10\%$
+in the latter, around $x\sim 0.3$, corresponding to an up shift of the central value by more than one sigma.
+%
+These features are qualitatively similar to those observed in Sec.~\ref{sec:single_jet} upon inclusion of single-inclusive jet
+data, but somewhat more pronounced.    
+
+%
+We can study the relative impact of different datasets by studying results for the fits \#j7nw and \#j88nw, where 
+either 7 TeV or 8 TeV data only are included.
+By inspection of Fig.~\ref{fig:dijet_data_partial} we see how the impact of the two datasets 
+on the gluon error and central value is qualitatively the same, and therefore qualitatively equivalent to the one of the 
+full dijets dataset, with the 8 TeV data having a stronger impact.
+From Table~\ref{tab:chi2sD} we observe how the fit quality is equally good for the two fits.
+However the fit including 8 TeV data leads to a similar description of all the dijets data, including those which are
+not included in either fits, to the one given by the one where all dijets data are included.
+So once again we conclude that the 8 TeV data provide the dominant contribution.
     %-------------------------------------------------------------------------------
     \begin{figure}[!t]
     \centering
@@ -444,6 +459,54 @@ being the most affected.
     \label{fig:dijet_data_partial}
 \end{figure}
 
+\subsection{Single-inclusive jets vs. dijets}
+Having assessed the impact on PDFs of jet and dijets dataset separately, we now compare results.
 
+%
+The effect on PDFs of the inclusion of jet and dijet in the NNPDF3.1 global dataset is qualitatively the same:
+they only affect the gluon, by leading to an enhancement of its central value in the region
+$0.1\lesssim x \lesssim 0.4$, and to a  
+suppression in the region $0.01\lesssim x \lesssim 0.1$. The suppression
+is by about  1\%, while the enhancement at the peak, localized at  $x\simeq 0.3$, is  by about 2.5\%
+for single-inclusive jets, but stronger, by about 7.5\% for dijets.
+These features are clearly visible in Fig.~\ref{fig:jet_dijet_1} (right), where the gluon PDF is plotted
+for the fits \#janw (single-inclusive jet only), \#danw (dijets only) and the baseline \#bn (no jets data).
+
+%
+As for the gluon PDF uncertainty, from the left panel of Fig.~\ref{fig:jet_dijet_1} it is clear how
+the inclusion of either single-inclusive jet or dijets leads to a reduction of the error, with a stronger
+reduction observed in the case of single-inclusive jets. In this respect it should be observed that
+regarding dijets data only CMS 8 TeV data are currently available, while in the case of single-inclusive jets 8 TeV 
+measurements from both ATLAS and CMS are available. The constraining power of dijets datasets 
+is therefore more limited.
+
+%
+As for compatibility with the global NNPDF3.1 datasets, the inclusion of jets data does not lead to a deterioration
+of the description of the rest of the data in comparison to the baseline fit, as we can see looking at the $\chi^2$
+values reported in Tables~\ref{tab:chi2s},~\ref{tab:chi2sD}.
+The only exception is the ATLAS top rapidity distribution, which seems to be in tension with the ATLAS 8 TeV single-inclusive
+jet data.
+
+%
+Finally, concerning fit quality, the quality of the two fits \#janw and \#danw is comparable, though slightly better
+for the latter ($\chi^2=1.65$ vs. $\chi^2=1.88$). Also, the quality of the fit to dijets 
+when single-inclusive jets are fitted and conversely are almost identical ($\chi^2=2.10$ for dijets when fitting
+single-inclusive jets vs. $\chi^2=2.06$ for single-inclusive jets when fitting dijets) and, as observed before,
+better then what we get for the baseline.
+This confirms full consistency between the two datsets, with a marginal preference for dijets.
+
+
+\begin{figure}[!t]
+    \centering
+    \includegraphics[scale=0.44]{jet_dijet_2}
+    \includegraphics[scale=0.44]{jet_dijet_1}\\
+    \caption{Same as Fig.~\ref{fig:jet_data_total}, but now comparing the
+      fits with  all single-inclusive jet data (\#janw), and that with all
+      dijet data (\#danw) and highest theory accuracy (NNLO QCD+ EW) and
+      default settings. In the gluon comparison (right) results are
+      displayed as a ratio to the baseline with no jet data included (also
+      shown for reference).}
+    \label{fig:jet_dijet_1}
+    \end{figure}
 
 
