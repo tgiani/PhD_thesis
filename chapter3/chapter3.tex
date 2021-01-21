@@ -52,6 +52,7 @@ In particular, we will discuss in detail the implementation of $\overline{MS}$ P
 the integrability of the nonsinglet sector and the fit basis independence.
 
 \section{NNPDF methodology}
+\label{sec:nnpdf_meth}
 
 The NNPDF methodology is based on a Monte Carlo determination of the PDFs error, combined
 with a neural network parameterization of the unknown PDFs. So far numerical minimization algorithm
@@ -559,6 +560,7 @@ on the specific distribution and fit basis we are considering.
 
 
 \subsection{Results}
+\label{sec:results_nnpdf}
 In the previous section we describe how theoretical constraints are implemented in the fit.
 In particular we saw how, when imposing positivity and integrability,
 the total experimental $\chi^2$ has to be supplemented by additional contributions
@@ -578,6 +580,29 @@ Our point here is to show the effects of such theoretical constraints on a given
 include them.
 Such analysis, together with a detailed comparison with NNPDF31 and an extended version
 of the baseline dataset, will be part of the NNPFD4.0 release paper.
+
+%
+This dataset includes: fixed-target neutral-current 
+(NC) DIS structure function data from NMC~\cite{Arneodo:1996kd,Arneodo:1996qe}, 
+SLAC~\cite{Whitlow:1991uw} and BCDMS~\cite{Benvenuti:1989rh}; charged-current 
+(CC) DIS structure function data from CHORUS~\cite{Onengut:2005kv} and 
+NuTeV~\cite{Goncharov:2001qe,Mason:2006qa}; HERA data from their combined 
+measurements~\cite{Abramowicz:2015mha}, including charm-production cross 
+sections~\cite{Abramowicz:1900rp} and $b$-tagged structure 
+functions~\cite{Aaron:2009af,Abramowicz:2014zub}; fixed-target Drell-Yan data 
+from E866~\cite{Webb:2003ps,Webb:2003bj,Towell:2001nh} and 
+E605~\cite{Moreno:1990sf}; collider Drell-Yan data from 
+CDF~\cite{Aaltonen:2010zza} and D0~\cite{Abazov:2007jy,
+Abazov:2013rja,D0:2014kma}; and Drell-Yan, inclusive gauge boson, and top-pair
+production data from 
+ATLAS~\cite{Aad:2013iua,Aad:2014qja,Aad:2011dm,Aaboud:2016btc,Aad:2015auj,
+Aad:2014kva,Aaboud:2016pbd,Aad:2015mbv}, CMS~\cite{Chatrchyan:2012xt,
+Chatrchyan:2013mza,Chatrchyan:2013tia,Khachatryan:2016pev,Khachatryan:2015oaa,
+Khachatryan:2016mqs,Khachatryan:2015uqb,Khachatryan:2015oqa} 
+and LHCb~\cite{Aaij:2012vn,Aaij:2012mda,Aaij:2015gna,Aaij:2015zlq}. 
+In total this baseline dataset contains $n_{\rm dat}=4287$ \comment{you have to check this, 
+You tooke this list from the jets paper, but there you have 3813 datapoints.} datapoints,
+see Ref.~\cite{Ball:2017nwa} for more details.
 
 %
 When working in the evolution basis the small-$x$ behaviour is largely controlled by the preprocessing
