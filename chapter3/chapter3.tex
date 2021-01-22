@@ -561,7 +561,7 @@ on the specific distribution and fit basis we are considering.
 
 \subsection{Results}
 \label{sec:results_nnpdf}
-In the previous section we describe how theoretical constraints are implemented in the fit.
+In the previous section we have described how theoretical constraints are implemented in the fit.
 In particular we saw how, when imposing positivity and integrability,
 the total experimental $\chi^2$ has to be supplemented by additional contributions
 proportional to Lagrange multipliers, so that the total $\chi^2$ which is actually minimized
@@ -574,14 +574,15 @@ with the indices $k$ and $l$ running on the positive and integrable distribution
 and $\chi^2_{k,\text{pos}}$, $\chi^2_{l,\text{integ}}$ defined in Eqs.~\eqref{eq:chi2pos_k}, \eqref{eq:chi2integ_k}.
 
 %
-In this section, considering the NNPDF31 NLO dataset, we present results produced with the new {\tt n3fit} methodology,
+In this section we present results produced with the new {\tt n3fit} methodology,
 focusing on the effects positivity and integrability constraints have on the final result.
 Our point here is to show the effects of such theoretical constraints on a given baseline which doesn't 
 include them.
-Such analysis, together with a detailed comparison with NNPDF31 and an extended version
+Such analysis, together with a detailed comparison with NNPDF3.1 and an extended version
 of the baseline dataset, will be part of the NNPFD4.0 release paper.
 
 %
+Here we will consider the NNPDF3.1 dataset, presented and discussed in Ref.~\cite{Ball:2017nwa}.
 This dataset includes: fixed-target neutral-current 
 (NC) DIS structure function data from NMC~\cite{Arneodo:1996kd,Arneodo:1996qe}, 
 SLAC~\cite{Whitlow:1991uw} and BCDMS~\cite{Benvenuti:1989rh}; charged-current 
@@ -600,9 +601,12 @@ Aad:2014kva,Aaboud:2016pbd,Aad:2015mbv}, CMS~\cite{Chatrchyan:2012xt,
 Chatrchyan:2013mza,Chatrchyan:2013tia,Khachatryan:2016pev,Khachatryan:2015oaa,
 Khachatryan:2016mqs,Khachatryan:2015uqb,Khachatryan:2015oqa} 
 and LHCb~\cite{Aaij:2012vn,Aaij:2012mda,Aaij:2015gna,Aaij:2015zlq}. 
-In total this baseline dataset contains $n_{\rm dat}=4287$ \comment{you have to check this, 
-You tooke this list from the jets paper, but there you have 3813 datapoints.} datapoints,
-see Ref.~\cite{Ball:2017nwa} for more details.
+In total this baseline dataset contains $n_{\rm dat}=4287$
+datapoints, see Ref.~\cite{Ball:2017nwa} for more details.
+
+\comment{You took this list from the jets paper, but there you have 3813 datapoints.
+The difference is that in the jet paper the baseline doe not include jets data which are included in NNPDF31. You
+have checked this looking at the runcards} 
 
 %
 When working in the evolution basis the small-$x$ behaviour is largely controlled by the preprocessing
@@ -622,31 +626,7 @@ theoretical constraints, with a slight improvement in the total $\chi^2$.
 %
 In Fig.~\ref{fig:distances} we show the distance between the two fits, quantifying the effect of theoretical
 constraints at the PDFs level.
-Considering a set of $N_{\text{rep}}$ replicas $q_i$ of a given parton distribution $q$, the estimator for 
-the expected true value of $q$ is given by
-\begin{align}
-    \langle q \rangle = \frac{1}{N_{\text{rep}}}\sum_{i=1}^{N_{\text{rep}}}q_i\,.
-\end{align}
-The square distance between two estimates for the expected true value obtained from two different fits
-is given by \cite{Ball:2010de}
-\begin{align}
-    d^2\left(\langle q^{(1)} \rangle, \langle q^{(2)} \rangle\right) = 
-    \frac{\left(\langle q^{(1)} \rangle - \langle q^{(2)} \rangle\right)^2}{\sigma^2\left[\langle q^{(1)} \rangle\right]
-    + \sigma^2\left[\langle q^{(2)} \rangle\right]}\,,
-\end{align}
-with the variance of the mean given by 
-\begin{align}
-    \sigma^2\left[\langle q^{(k)} \rangle\right] = \frac{1}{N_{\text{rep}}}\sigma^2\left[q^{(k)}\right]\,,
-\end{align}
-with $\sigma^2\left[q^{(k)}\right]$ the variance of the variable $q^{(k)}_i$
-\begin{align}
-    \label{eq:}
-    \sigma^2\left[q^{(k)}\right] = \frac{1}{N_{\text{rep}}-1}\sum_{i=1}^{N_{\text{rep}}}
-    \left(q^{(k)}_i - \langle q^{(k)} \rangle\right)^2\,.
-\end{align}
-According to this definitions, $ d \simeq 1 $ corresponds to statistically equivalent fits, while, considering 
-a fit with $N_{\text{rep}} = 100$ replicas , 
-$d \simeq 10 $ corresponds to a difference of one-sigma in units of the corresponding variance.
+
 While in the small-$x$ region the difference between the two fits remains below 
 one-sigma, in the medium- and large-$x$ regions we find differences of up to
 two-sigmas for the flavours $\bar{s}$, $\bar{u}$, $\bar{d}$, $u$ and $c$, 
@@ -681,18 +661,15 @@ whose replicas are globally shifted in order to satisfy positivity, resulting in
 
   \begin{figure}[t!]
     \begin{center}
-        \includegraphics[width=0.49\linewidth]{sbar.pdf}
-        \includegraphics[width=0.49\linewidth]{ubar.pdf}
-        \includegraphics[width=0.49\linewidth]{dbar.pdf}
-        \includegraphics[width=0.49\linewidth]{u.pdf}
-        \includegraphics[width=0.49\linewidth]{c.pdf}
+        \includegraphics[width=0.49\linewidth]{plot_pdfs_V.pdf}
+        \includegraphics[width=0.49\linewidth]{plot_pdfs_V3.pdf}
+        \includegraphics[width=0.49\linewidth]{plot_pdfs_V8.pdf}
+        \includegraphics[width=0.49\linewidth]{plot_pdfs_T8.pdf}
         \caption{PDFs plots} 
         \label{fig:pdfs_plots} 
     \end{center}
   \end{figure}
 
-\comment{Show linear plos in evolution basis (also for the distances), showing how the larger effects sre for valence distributions.
-Plot distributions at 10 GeV to abtain smoother plots, aslo for distance plots}
 
 \subsection{Fit basis independence}
 As described in Sec.~\ref{sec:fitbasis}, different choices for the specific PDFs which are independently

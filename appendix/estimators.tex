@@ -1,4 +1,29 @@
 \chapter{Statistical estimators}
 \section{PDF distance}
+Considering a set of $N_{\text{rep}}$ replicas $q_i$ of a given parton distribution $q$, the estimator for 
+the expected true value of $q$ is given by
+\begin{align}
+    \langle q \rangle = \frac{1}{N_{\text{rep}}}\sum_{i=1}^{N_{\text{rep}}}q_i\,.
+\end{align}
+The square distance between two estimates for the expected true value obtained from two different fits
+is given by \cite{Ball:2010de}
+\begin{align}
+    d^2\left(\langle q^{(1)} \rangle, \langle q^{(2)} \rangle\right) = 
+    \frac{\left(\langle q^{(1)} \rangle - \langle q^{(2)} \rangle\right)^2}{\sigma^2\left[\langle q^{(1)} \rangle\right]
+    + \sigma^2\left[\langle q^{(2)} \rangle\right]}\,,
+\end{align}
+with the variance of the mean given by 
+\begin{align}
+    \sigma^2\left[\langle q^{(k)} \rangle\right] = \frac{1}{N_{\text{rep}}}\sigma^2\left[q^{(k)}\right]\,,
+\end{align}
+with $\sigma^2\left[q^{(k)}\right]$ the variance of the variable $q^{(k)}_i$
+\begin{align}
+    \label{eq:}
+    \sigma^2\left[q^{(k)}\right] = \frac{1}{N_{\text{rep}}-1}\sum_{i=1}^{N_{\text{rep}}}
+    \left(q^{(k)}_i - \langle q^{(k)} \rangle\right)^2\,.
+\end{align}
+According to this definitions, $ d \simeq 1 $ corresponds to statistically equivalent fits, while, considering 
+a fit with $N_{\text{rep}} = 100$ replicas , 
+$d \simeq 10 $ corresponds to a difference of one-sigma in units of the corresponding variance.
 
 \section{$\phi$ estimator}
