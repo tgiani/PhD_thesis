@@ -1,12 +1,13 @@
 \chapter{Jets data}
 \label{ch:jets}
-In this Chapter, base on Ref.~\cite{AbdulKhalek:2020jut}, we present a systematic analysis for the inclusion 
+In this Chapter, based on Ref.~\cite{AbdulKhalek:2020jut}, we present a systematic analysis for the inclusion 
 of jets cross-sections in a global parton distributions determination,
-assessing the impact of jets and dijets production measurements on the PDFs at various perturbative orders.
+assessing the impact of jets and dijets production measurements on the PDFs, using the recent NNLO QCD computations
+supplemented by EW corrections.
 
 % 
 There is a number of unsettle theoretical issues regarding the choice of the most suitable jets observable
-to be considered for precision QCD studies, such as for example the determination of PDFs,
+to be considered for precision QCD studies, such as for example the determination of PDFs.
 On one hand, the simplest inclusive observable, 
 the single-inclusive jets cross-section~\cite{Ellis:1990ek,Aversa:1988fv}, turns out to be non-unitary.
 A possible alternative free from this issue is offered by the dijets cross-section which however, despite appearing to be 
@@ -19,11 +20,12 @@ showing how the perturbative behaviour, the scale dependence~\cite{Currie:2018xk
 of this observable are non-trivial.  
 
 %
-In this study we address these issues in the context of PDFs determination, studying the impact of both single-inclusive
-jets and dijets cross-sections with different scale choices in a global parton distributions fit. 
-This allows us to asses which observable and scale choice leads to better PDFs compatibility with other data, better fit quality,
-and more stringen constraint on the parton distributions, and provides a guideline for the inclusion of jets observables in a future
-global fit (NNPDF4.0).
+In this study we address these issues in the context of PDFs determination. We study the impact of both single-inclusive
+jets and dijets cross-sections in a global parton distributions fit and we
+asses which observable leads to better PDFs compatibility with other data, better fit quality,
+and more stringent constraint on the parton distributions. 
+With this study we aim to provide a guideline for the inclusion of jets observables in a future global fit,
+like for example NNPDF4.0.
 
 \section{Jets data from ATLAS and CMS}
 \label{sec:jets_data}
@@ -327,6 +329,7 @@ and those which are not.
 Finally in Table.~\ref{tab:chi2_suppl} we report $\chi^2$ values for fits performed with alternative choices of central
 scale. In all these Tables, values reported in square brackets are refer to points not included in the corresponding fit.
 
+\iffalse
 \begin{table}[!t]
     \renewcommand*{\arraystretch}{1.60}
     \scriptsize
@@ -341,6 +344,7 @@ scale. In all these Tables, values reported in square brackets are refer to poin
       for ease of reference.}
     \label{tab:chi2_suppl}
 \end{table}
+\fi
 
 \subsection{Single-inclusive jets}
 \label{sec:single_jet}
@@ -360,7 +364,7 @@ of order one, with the only exception for 8 TeV ATLAS data, for which we get $\c
 It is interesting to note that the inclusion of singe-inclusive jet data leads also to an improvement 
 of the description of dijets data, for which \#janw shows better $\chi^2$ than the baseline fit \#bn.
 %   
-We observe a mild deterioration of the $\chi^2$ for to pair processes, with a value of 1.14 to be compared to
+We observe a mild deterioration of the $\chi^2$ for to pair processes, with a value of 1.25 to be compared to
 1.05 of the baseline. A closer investigation shows that this comes from the deterioration in the description 
 of the ATLAS top pair rapidity distributions, whose $\chi^2$ per datapoint increases from 1.22 to 2.01.
 
@@ -401,12 +405,6 @@ how these datasets are those driving the impact of single-inclusive jet data on 
       $Q=100$ GeV. All results are shown as ratios to the baseline.}
     \label{fig:jet_data_partial}
 \end{figure}
-
-\subsection{Impact of higher-order QCD and EW corrections}
-
-\subsection{Impact of teh choice of scales}
-
-\subsection{Impact of the choice of correlation models}
 
 \subsection{Dijets}
 We now turn to PDFs in which dijets data rather than single-inclusive jet data have been included.
@@ -460,10 +458,10 @@ So once again we conclude that the 8 TeV data provide the dominant contribution.
 \end{figure}
 
 \subsection{Single-inclusive jets vs. dijets}
-Having assessed the impact on PDFs of jet and dijets dataset separately, we now compare results.
+Having assessed the impact on PDFs of jet and dijets datasets separately, we now compare results.
 
 %
-The effect on PDFs of the inclusion of jet and dijet in the NNPDF3.1 global dataset is qualitatively the same:
+The effect on PDFs of the inclusion of jet and dijets in the NNPDF3.1 global dataset is qualitatively the same:
 they only affect the gluon, by leading to an enhancement of its central value in the region
 $0.1\lesssim x \lesssim 0.4$, and to a  
 suppression in the region $0.01\lesssim x \lesssim 0.1$. The suppression
@@ -476,25 +474,29 @@ for the fits \#janw (single-inclusive jet only), \#danw (dijets only) and the ba
 As for the gluon PDF uncertainty, from the left panel of Fig.~\ref{fig:jet_dijet_1} it is clear how
 the inclusion of either single-inclusive jet or dijets leads to a reduction of the error, with a stronger
 reduction observed in the case of single-inclusive jets. In this respect it should be observed that
-regarding dijets data only CMS 8 TeV data are currently available, while in the case of single-inclusive jets 8 TeV 
-measurements from both ATLAS and CMS are available. The constraining power of dijets datasets 
-is therefore more limited.
+ATLAS dijet measurements are not yet available at 8 TeV, while single-inclusive jet measurements are available both from
+ATLAS and CMS. The constraining power of dijets datasets is therefore more limited.
 
 %
 As for compatibility with the global NNPDF3.1 datasets, the inclusion of jets data does not lead to a deterioration
 of the description of the rest of the data in comparison to the baseline fit, as we can see looking at the $\chi^2$
 values reported in Tables~\ref{tab:chi2s},~\ref{tab:chi2sD}.
-The only exception is the ATLAS top rapidity distribution, which seems to be in tension with the ATLAS 8 TeV single-inclusive
+The only exception is the ATLAS top rapidity distribution, which, as mentioned before,
+seems to be in tension with the ATLAS 8 TeV single-inclusive
 jet data.
 
 %
-Finally, concerning fit quality, the quality of the two fits \#janw and \#danw is comparable, though slightly better
+Concerning fit quality, the quality of the two fits \#janw and \#danw is comparable, though slightly better
 for the latter ($\chi^2=1.65$ vs. $\chi^2=1.88$). Also, the quality of the fit to dijets 
 when single-inclusive jets are fitted and conversely are almost identical ($\chi^2=2.10$ for dijets when fitting
 single-inclusive jets vs. $\chi^2=2.06$ for single-inclusive jets when fitting dijets) and, as observed before,
 better then what we get for the baseline.
-This confirms full consistency between the two datsets, with a marginal preference for dijets.
+This confirms full consistency between the two datasets, with a marginal preference for dijets.
 
+%
+Finally we note how the fit inclusive dijets data is somewhat more internally consistent than the one including
+single-inclusive jets: the $\chi^2$ per datapoint is slightly better (1.22 vs. 1.28) and the $\chi^2$ for individual
+dataset is generally better, in particular for top production data
 
 \begin{figure}[!t]
     \centering
@@ -509,4 +511,18 @@ This confirms full consistency between the two datsets, with a marginal preferen
     \label{fig:jet_dijet_1}
     \end{figure}
 
-
+\subsection{Summary}
+In this chapter we have presented a phenomenological investigation of inclusive jet
+production measurements at LHC in the context of global PDFs determination, exploiting recent NNLO QCD 
+theoretical calculations supplemented by EW corrections,
+and studying for the first time the impact of the inclusive dijets observables.
+We have found full consistency between the impact on parton distributions of dijets and single-inclusive jet data,
+thus establishing the viability of the dijets observable in constraining PDFs.
+In a comparative assessment of single-inclusive jets vs. dijets we have found how, given the currently available data,
+the latter has a more marked impact on the central value of the gluon, 
+while the former leads to a more significant reduction of the PDF error. We have also shown evidence of some tension
+between some single-inclusive jet datasets and the rest of the global dataset, which might be explained by the less stable
+perturbative behaviour of this observable.
+Finally we have shown how, both for single-inclusive jets and dijets, the more recent 8 TeV data have a more significant
+impact than the previous 7 TeV data. We therefore expect that the future availability of more precise measurements
+from LHC Run-II at 13 TeV data will improve further our knowledge of the gluon PDF.   
