@@ -19,7 +19,7 @@ in four dimensional space-time \cite{PhysRevLett.31.851} and Quantum Chromodynam
 consistent theory for the strong interaction.  
 
 %
-After its formulation, QCD has been successfully used to describe strong interactions processes observed at colliders, and
+After its formulation, QCD has been successfully used to describe strong interaction processes observed at colliders, and
 nowadays it represents one of the cornerstone of the Standard Model. In this chapter we present
 a brief overview of QCD, recalling some basic features of the theory and introducing our notation. 
 For a more detailed treatment of the basics of QCD we refer to standard QFT and QCD textbook, such
@@ -69,7 +69,7 @@ with $C_F= 4/3$ and $C_A= 3$.
 
 %
 The classical Lagrangian of Eq.~\ref{eq:QCD_lagrangian} does not allow to formulate quantum
-perturbation theory in a consistent way: the problem cannot be avoided as long as
+perturbation theory in a consistent way. The problem cannot be avoided as long as
 we rely on a gauge invariant lagrangian, where the gauge field $\mathcal{A}^A_{\mu}$
 has the freedom to change according to gauge transformations.
 We can get rid of such freedom by putting constraints on the field $\mathcal{A}^A_{\mu}$, 
@@ -111,8 +111,8 @@ The classical Lagrangian given in Eq.~\ref{eq:QCD_lagrangian} is invariant under
 gauge transformations. After gauge fixing gauge invariance is broken, but the resulting Lagrangian of 
 Eq.~\ref{eq:QCD_lagrangian_gauge_fixing} satisfied the BRST symmetry \cite{Becchi:1975nq, Tyutin:1975qk},
 which in turn guarantees the renormalizability of the theory.
-Other exact symmetries are the so called flavour symmetries, 
-which act through a global phase transformation of each quark field separately, giving
+The so called flavour symmetries are also exact symmetries of QCD, 
+acting through a global phase transformation of each quark field separately and giving
 the baryon number conservation. 
 %the conservation of the number of each of the different quark flavours. 
 Other flavour symmetries include the discrete global symmetries of parity and time reversal invariance.
@@ -155,7 +155,7 @@ namely the arbitrary scale at which the subtraction of the UV poles is performed
 The resulting renormalization group equations read
 \begin{align}
     \label{eq:renormalization_group_coupling}
-    Q^2\frac{\partial\alpha_s}{\partial Q^2} = \beta\left(\alpha_s\right)\,.
+    \mu^2\frac{\partial\alpha_s}{\partial \mu^2} = \beta\left(\alpha_s\right)\,.
 \end{align}
 The $\beta$ function can be computed in perturbation theory as a power expansion in $\alpha_s$. 
 Nowadays results up to five loops have been computed \cite{Herzog:2017ohr}.
@@ -191,7 +191,54 @@ Its specific value will depend on the choice of the renormalization scheme, on t
 of the $\beta$ function power expansion and on the number of active flavour entering the theory.
 Qualitatively it represents the scale at which the interaction becomes strong and the perturbative description breaks down.
 
-\comment{Add something about quarks mass and active flavour?}
+\section{Quark masses}
+The quark masses represent another parameter of the Lagrangian Eq.~\ref{eq:QCD_lagrangian}.
+Just like the coupling constant because of the renormalization process they also acquire a
+dependence on a renormalization scale $\mu$ given by 
+\begin{align}
+    \label{eq:renormalization_mass}
+    \mu^2\frac{\partial m }{\partial \mu^2} = - \gamma_m\left(\alpha_s\right)m\left(\mu^2\right)\,.
+\end{align}
+The quantity $\gamma_m$ is the mass anomalous dimension which can computed in perturbation theory as
+a power expansion in $\alpha_s$
+\begin{align}
+    \gamma_m\left(\alpha_s\right) = c\,\alpha_s\left(1+c'\alpha_s + ...\right)\,,
+\end{align}
+with the explicit expression of the coefficients depending on the specific renormalization scheme.
+
+%
+Considering a dimensionless physical observable $R = R\left(Q^2/\mu^2, \alpha_s\left(\mu^2\right),m\left(\mu^2\right)/Q \right)$,
+setting the renormalization scale equal to the physical scale $\mu=Q$ and assuming its first $N$ derivatives in $m=0$ to be finite
+we can write
+\begin{align}
+    \label{eq:R_mass_dependence}
+    R&\left(1, \alpha_s\left(Q^2\right),m\left(Q^2\right)/Q \right) \sim
+    R\left(1, \alpha_s\left(Q^2\right),0 \right)\nonumber \\
+    & + \sum_{n=1}^{N}\frac{1}{n!}\left[\frac{m\left(Q^2\right)}{Q^2}\right]^n R^{(n)}\left(1,\alpha_s\left(Q^2\right),0\right)\,.
+\end{align}
+where $R^{(n)}$ denotes the derivative of $R$ with respect its third argument. 
+Given the fact that Eq.~\ref{eq:renormalization_mass} leads to a change of the renormalized mass with $Q$ 
+which is at most logarithmic, from Eq.~\ref{eq:R_mass_dependence} it is clear how, when considering 
+high energy scales $Q \gg m$, the mass dependence can be dropped.
+%
+On the other hand, when the mass of the quark is much greater of the relevant scale $Q$ it can be shown 
+that the heavy quark mass correction to $R$ are suppressed by powers of $m$, and therefore they can be ignored when
+$Q \ll m$. The $n_l$ active flavour introduced in the previous section are the light quarks whose mass is much smaller than
+the physical scale $Q^2$.
+
+%
+Considering a single heavy quark with mass $m$, two values $\alpha_s^{(n_l+1)}$ and $\alpha_s^{(n_l)}$ 
+measured in the two domains $Q \gg m$ and $Q \ll m$ respectively,
+are usually matched requiring 
+continuity of the coupling $\alpha_s\left(Q^2\right)$ at $Q=m$, getting a matching equation of the form
+\begin{align}
+    \alpha_s^{(n_l+1)}\left(\mu^2\right) = 
+    \alpha_s^{(n_l)}\left(\mu^2\right) 
+    + \sum_{k=2}^{\infty} c_k\left(L\right) \left(\alpha_s^{(n_l)}\left(m_h^2\right)\right)^k\,,
+\end{align}
+with the coefficients $c_k\left(L\right)$  polynomial in $L=\log Q^2/m^2$.
+\comment{see Ferrera notes on quarks mass and make connection with FONLL section}
+
 
 
 
