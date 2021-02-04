@@ -188,10 +188,12 @@ scale at which the perturbative series of the coupling would diverge.
     \frac{1}{\alpha_s\left(\Lambda_{\text{QCD}^2}\right)} = 0\,.
 \end{align}
 Its specific value will depend on the choice of the renormalization scheme, on the order
-of the $\beta$ function power expansion and on the number of active flavour entering the theory.
+of the $\beta$ function power expansion and on the number of active flavours\footnote{the notion of active flavours will
+be discussed in Sec.~\ref{sec:quark_masses}} entering the theory.
 Qualitatively it represents the scale at which the interaction becomes strong and the perturbative description breaks down.
 
 \section{Quark masses}
+\label{sec:quark_masses}
 The quark masses represent another parameter of the Lagrangian Eq.~\ref{eq:QCD_lagrangian}.
 Just like the coupling constant because of the renormalization process they also acquire a
 dependence on a renormalization scale $\mu$ given by 
@@ -204,12 +206,15 @@ a power expansion in $\alpha_s$
 \begin{align}
     \gamma_m\left(\alpha_s\right) = c\,\alpha_s\left(1+c'\alpha_s + ...\right)\,,
 \end{align}
-with the explicit expression of the coefficients depending on the specific renormalization scheme.
+with the explicit expression of the coefficients depending on the choice of the renormalization scheme.
 
 %
-Considering a dimensionless physical observable $R = R\left(Q^2/\mu^2, \alpha_s\left(\mu^2\right),m\left(\mu^2\right)/Q \right)$,
-setting the renormalization scale equal to the physical scale $\mu=Q$ and assuming its first $N$ derivatives in $m=0$ to be finite
-we can write
+In order to study the impact of the quarks mass on a generic physical observable $R$, let's consider
+the situation in which we have only one quark with mass $m$.
+Writing $R = R\left(Q^2/\mu^2, \alpha_s\left(\mu^2\right),m\left(\mu^2\right)/Q \right)$ 
+and setting the renormalization scale equal to the physical scale $\mu=Q$,
+if we assume the first $N$ derivatives of $R$ to be finite in $m=0$ 
+we can write the expansion
 \begin{align}
     \label{eq:R_mass_dependence}
     R&\left(1, \alpha_s\left(Q^2\right),m\left(Q^2\right)/Q \right) \sim
@@ -219,46 +224,52 @@ we can write
 where $R^{(n)}$ denotes the derivative of $R$ with respect its third argument. 
 Given the fact that Eq.~\ref{eq:renormalization_mass} leads to a change of the renormalized mass with $Q$ 
 which is at most logarithmic, from Eq.~\ref{eq:R_mass_dependence} it is clear how, when considering 
-high energy scales $Q \gg m$, the mass dependence can be dropped.
+high energy scales $Q \gg m$, the mass dependence can be dropped, and the quark can be considered massless.
 %
 On the other hand, when the mass of the quark is much greater of the relevant scale $Q$ it can be shown 
 that the heavy quark mass correction to $R$ are suppressed by powers of $m$, and therefore they can be ignored when
-$Q \ll m$. The $n_l$ active flavour introduced in the previous section are the light quarks whose mass is much smaller than
-the physical scale $Q^2$.
+$Q \ll m$. 
+%
+The $n_l$ active flavour introduced in the previous section are the light quarks whose mass is much smaller than
+the physical scale $Q$.
 
 %
-Considering a single heavy quark with mass $m$, two values $\alpha_s^{(n_l+1)}$ and $\alpha_s^{(n_l)}$ 
+Considering the situation in which we have $n_l$ light quarks (i.e. quarks whose mass is much smaller than $Q$)
+and a single heavy quark with mass $m$, the two values $\alpha_s^{(n_l+1)}$ and $\alpha_s^{(n_l)}$ 
 measured in the two domains $Q \gg m$ and $Q \ll m$ respectively,
-are usually matched requiring 
-continuity of the coupling $\alpha_s\left(Q^2\right)$ at $Q=m$, getting a matching equation of the form
+are usually matched requiring  the coupling $\alpha_s\left(Q^2\right)$
+to be continuos at $Q=m$, getting a matching equation of the form
 \begin{align}
     \alpha_s^{(n_l+1)}\left(\mu^2\right) = 
     \alpha_s^{(n_l)}\left(\mu^2\right) 
-    + \sum_{k=2}^{\infty} c_k\left(L\right) \left(\alpha_s^{(n_l)}\left(m_h^2\right)\right)^k\,,
+    + \sum_{k=2}^{\infty} c_k\left(L\right) \left(\alpha_s^{(n_l)}\left(m^2\right)\right)^k\,,
 \end{align}
 with the coefficients $c_k\left(L\right)$  polynomial in $L=\log Q^2/m^2$.
-\comment{see Ferrera notes on quarks mass and make connection with FONLL section}
-
+Depending on the specific energy scale of interest,
+one can perform the computation of a generic physical observable considering either $n_l$ or $n_l + 1$ active flavours,
+each choice being more convenient in a given kinematic region. 
+In Sec.~\ref{sec:fonll} we will see a practical way in which such computations can be combined in a unique result which
+is accurate at every energy scale.
+\comment{See also Ferrera's notes on quarks mass}
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Perturbative and non-Perturbative approaches}
-%The property of asymptotic freedom allows to compute high energy scattering processes as
-%an expansion in the coupling, allowing a perturbative treatment of QCD.
-The property of asymptotic freedom allows a perturbative treatment of QCD: 
-perturbation theory can be seen as a systematic way of approximating the solution 
-of a quantum field theory keeping the error under control.
+The property of asymptotic freedom allows to compute high energy scattering processes as
+an expansion in the coupling, allowing a perturbative treatment of QCD.
 The Lagrangian given in Eq.~\ref{eq:QCD_lagrangian_gauge_fixing}
 can be written as the sum between the free Lagrangian $\mathcal{L}_0$, describing free fermions and gauge fields, 
-plus an interaction term $\mathcal{L}_I$, containing all the terms proportional to the gauge coupling $g$.
-When considering high enough energy scales, all the terms proportional to the gauge coupling $g$
-appearing in the Lagrangian can be treated as perturbative interactions, so that the corresponding
+plus an interaction term $\mathcal{L}_I$, containing all the terms proportional to the gauge coupling $g$:
+at high energy $g$ becomes small, and all these terms 
+can be treated as perturbative interactions, so that the corresponding
 contribution in the action can be expanded in a power series of the coupling.
-   
+
 %
-Although its success in describing high energy processes, there are situations
-in which perturbation theory cannot be applied: in the case of QCD, at low energy the coupling
+In general, perturbation theory can be seen as a systematic way of approximating the solution 
+of a quantum field theory keeping the error under control.
+Although its success in describing high energy processes, it is not a full solution of the theory, 
+and there are situations in which it cannot be applied: in the case of QCD, at low energy the coupling
 becomes large, and a power expansion in the coupling is no longer possible. 
 It is therefore important to have a non-perturbative formulation of QCD, based on the classical Lagrangian 
 of Eq.~\ref{eq:QCD_lagrangian}.
@@ -269,8 +280,41 @@ QCD on an Euclidean lattice, referring to standard textbooks as Refs.~[] for mor
 %
 In lattice QFT the path integral of the theory is defined on a discrete and finite Euclidean space-time,
 characterized by a finite volume and lattice spacing $a$, and directly evaluated through Monte-Carlo simulations.
-The full Lorents invariance of the continuum Minkowski space-time is reduced to the hypercubic group, 
-but the lattice version of theory is built in such a way to preserve gauge invariance.
+The lattice can be defined as a cartesian product
+\begin{align}
+    \label{eq:lattice_def}
+    \Lambda^4\left(N\right) = a\Big([\![0, N_0-1 ]\!]\times[\![0, N_1-1 ]\!]\times[\![0, N_2-1 ]\!]
+    \times[\![0, N_3-1 ]\!] \Big)\,,
+\end{align}
+where $N$ is a four vector with integer components and $[\![0, n ]\!]$ is the set of all the integers $j$ such that
+$0 \le j \le n$. The integer $N_{\mu}$ represents the number of lattice sites in the $\mu$ direction, corresponding
+to a space-time extent $L_{\mu}= a N_{\mu}$. 
+From this definition it is clear how for each point $x_{\mu}$ belonging to the lattice there exist a four vector $j_{\mu}$ 
+with integer coordinates such that $x_{\mu} = a j_{\mu}$. 
+The zero-component $N_0$ is usually identified with the temporal extent
+$T = a N_0$, while the three remaining ones represent the spatial extent in the three spatial directions
+$L = a N_1 = a N_2 = a N_3$, which are usually assumed to be equal\footnote{The full Lorentz invariance of the continuum 
+Minkowski space-time is reduced to the hypercubic group, 
+however when considering gauge theories their lattice version is built in such a way to preserve gauge invariance.}. 
+
+Considering for simplicity a theory containing a single scalar field $\phi$,
+taking a generic correlation function in Minkowski space 
+\begin{align}
+    C_n^{(M)}\left(x_1,..., x_n\right) = 
+    \frac{1}{Z} \int \phi\left(x_1\right)...\phi\left(x_n\right)\exp\left(i S^{(M)}\left[\phi\right]\right)\,,
+\end{align}
+one can define the associated Euclidean correlation function
+by performing a Wick rotation $x_i = \left(x^0_i, \vec{x}_i\right) \rightarrow \bar{x}_i = \left(-i x^0_i, \vec{x}_i\right)$
+\begin{align}
+    C_n^{(E)}\left(x_1,..., x_n\right) &\equiv C_n^{(M)}\left(\bar{x}_1,..., \bar{x}_n\right) = \nonumber \\
+    &\frac{1}{Z} \int \phi\left(x_1\right)...\phi\left(x_n\right)\exp\left(- S^{(E)}\left[\phi\right]\right)\,,
+\end{align}
+where $S^{(E)}$ is the Euclidean action of the theory.
+Such Wick rotation effectively transform the Minkowski metric $\eta_{\mu\nu}$ into the positive Euclidean metric
+$\delta_{\mu\nu} = \text{diag}\left(1,1,1,1\right)$, and the functional integral defining the correlator can be estimated
+by averaging the fields product $\phi\left(x_1\right)...\phi\left(x_n\right)$ on the probability density 
+$D\phi \, \text{exp}\left(-S^{(E)}\left[\phi\right]\right)$ .
+
 
 %
 In order to write a discrete version of QCD, we need to construct an action for the gauge fields and for quark fields.
@@ -284,11 +328,16 @@ In the case of the gauge filed, the action can be written in terms of gauge link
 \end{align}
 where $\beta$ is a constant of the theory. It can be shown that in the continuum limit Eq.~\ref{eq:Wilson_action}
 recovers the Euclidean Yang-Mills action.
-Considering the fermionic fields, it can be shown how a naive discretization of the Dirac action
+
+%
+Considering the fermionic fields
+, defining the translation operator in the $\hat{\mu}$ direction as 
+$\tau_{\mu}f\left(x\right) = f\left(x+a\hat{\mu}\right)$, 
+it turns out that a naive discretization of the Dirac action
 \begin{align}
     \label{eq:naive_Dirac}
     S_{\text{Dirac}}\left[\psi,\bar{\psi}\right] = 
-    a^4\sum_{x\in\Lambda^4}\bar{\psi}\left(x\right)\left(\bar{\slashed{\delta}} + m\right) \psi\left(x\right)
+    a^4\sum_{x\in\Lambda^4}\bar{\psi}\left(x\right)\left(\frac{\gamma^{\mu}}{2a}\left(\tau_{\mu}-\tau_{-\mu}\right) + m\right) \psi\left(x\right)
 \end{align}
 would lead to a theory with the wrong continuum limit, describing 16 independent fermion states all having the same energy.
 This is the so-called \textit{doubling problem}, and it is a consequence of a more general property of 
@@ -298,10 +347,12 @@ to remove the unwanted states
 \begin{align}
     \label{eq:fermions_wilson_action}
     S_W\left[\psi,\bar{\psi}\right] = S_{\text{Dirac}}\left[\psi,\bar{\psi}\right] 
-    - \frac{a^5}{2}\sum_{x\in\Lambda^4}\bar{\psi}\left(x\right)\tilde{\delta}^2 \psi\left(x\right)\,.
+    - \frac{a^5}{2}\sum_{x\in\Lambda^4}\bar{\psi}\left(x\right)\tilde{\delta}^2 \psi\left(x\right)\,,
 \end{align}
+where $\tilde{\delta}^2 = a^{-2}\sum_{\mu}\left(1-\tau_{-\mu}\right)\left(\tau_{\mu}-1\right)$.
 The addition of the Wilson term in the action solves the doubling problem, however it explicitly breaks
 chiral symmetry, leading to a more complex UV structure of the theory.
+In Eqs.~\ref{eq:naive_Dirac}~,\ref{eq:fermions_wilson_action}
 
 %
 The expectation value of a generic observable $O\left[\psi,\bar{\psi},A_{\mu}\right]$ can then be evaluated
