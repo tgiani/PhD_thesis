@@ -47,9 +47,9 @@ of having a parton of kind $i$ inside the hadron $H$, carrying a fraction $\xi \
 %
 In the following we recall in more details how parton model ideas apply to the case of 
 DIS, setting the stage for a more complete 
-discussion of factorization in the next section, where the inclusion of QCD corrections will be discussed.  
+discussion of factorization which will be addressed in the next section. % discussing the inclusion of NLO QCD corrections.  
 DIS experiments are traditionally the main testing ground of perturbative QCD,
-having been the first processes were pointlike particles were seen inside the hadron, 
+having been the first processes where pointlike particles were seen inside the hadron, 
 thus motivating the formulation of the parton model. 
 They play a central role in any discussion regarding factorization and provide a simple experimental and theoretical framework to
 study the strong interaction.
@@ -96,7 +96,7 @@ a leptonic and an hadronic part
     \frac{d\sigma}{dx\,dQ^2} \propto \int \frac{d^3k'}{2E_{k'}\left(2\pi\right)^3}\, W^{\mu\nu}L_{\mu\nu}\,.
 \end{align}
 The leptonic tensor $L_{\mu\nu}$ can be easily computed within QED, while the hadronic one, containing 
-the inforation about the interaction between the virtual photon and the hadron, can be parameterized as 
+the information about the interaction between the virtual photon and the hadron, can be parameterized as 
 \begin{align}
     \label{eq:hadronic_tensor}
     W^{\mu\nu}\left(P,q\right) = 
@@ -194,16 +194,18 @@ with $\hat{F}_a$ representing the partonic level structure function for the scat
 quark off the virtual photon, and $q^{\bare}_{a/H}$ denoting the parton model PDFs
 \footnote{Although here we are introducing this formula starting from the ideas of the parton model, 
 Eq.~\eqref{eq:strcuture_function} can be proved in the Bjorken limit, and the bare PDF $q^{\bare}_{a/H}$ can be
-defined in terms of operator matrix element. We will get back to this point in the next sections}. 
+defined in terms of a bilocal operator matrix element. We will get back to this point in the next sections}. 
 Such formula is valid at leading-twist, namely further corrections of non-pertubative origin are suppressed by powers
 of $\Lambda_{QCD}/Q$.
 
 %
 From the previous section we know that at Born level $\hat{F}_a$ is proportional
-to a delta function $e^2\delta\left(1-x\right)$. Considering QCD correction of order $\alpha_s$,
-the additional diagram reported in Fig.~\ref{fig:NLO_QCD_DIS} have to be computed, 
-accounting for virtual and real corrections due to the emission of a single gluon.
-The full result has the following form
+to a delta function $e^2\delta\left(1-x\right)$. 
+Considering QCD correction of order $\alpha_s$
+initial and final states emissions of a single gluon, corresponding to Feynman diagrams of Fig.~\ref{fig:NLO_QCD_DIS}
+have to be computed. 
+Accounting also for the corresponding virtual corrections on the quark legs
+and for the gluon induced vertex correction, the full result has the following form
 \begin{align}
     \label{eq:1_loop_dis}
     \hat{F}\left(x,Q^2\right) = e^2\left[\delta\left(1-x\right) 
@@ -219,11 +221,13 @@ Bjorken scaling is broken by logarithms of $Q^2$, and the structure function acq
 Secondly, Eq.~\ref{eq:1_loop_dis} contains a logarithmic dependence on an infrared cutoff $Q_0^2$, pointing out 
 the presence of an infrared divergence.
 \begin{figure}[h]
-    \includegraphics[scale=0.2]{LO_dis.pdf}
-    \includegraphics[scale=0.2]{NLO_collinear.pdf}
-    \caption{NLO QCD corrections. Virtual and real corrections.}
+    \centering
+    \includegraphics[scale=0.2]{real_initial_DIS.pdf}
+    \includegraphics[scale=0.2]{real_final_DIS.pdf}
+    \caption{Real NLO QCD corrections.}
     \label{fig:NLO_QCD_DIS}
 \end{figure}
+
 %
 Working in a light-cone gauge, such logarithmic divergence can be traced back to the square of the amplitude associated
 to a gluon emission from the initial state quark.
@@ -243,6 +247,8 @@ Similarly, when considering multiple gluons emissions from initial state particl
 $\left(\alpha_s\left(Q^2\right)\,\log\frac{Q^2}{Q_0^2}\right)^n$ show up.
 Since all these terms are of order 1, if we accounted for only some of them we would spoil perturbation theory.
 In order to get a proper perturbative expansion such terms have to be resummed at all orders.
+Such resummation is achieved through factorization of collinear singularities into the parton model PDFs,
+as described in the next section.
 
 \subsection{Factorization of collinear singularities}
 The singularities described in the previous sections arises from the kinematic region where $k_{\perp}\rightarrow 0$,
@@ -257,7 +263,7 @@ low energy phenomena can be factorized in the parton distribution functions, lea
 cross sections free from collinear singularities.
 
 %
-Starting from the log divergent contribution appearing in Eq.~\eqref{eq:1_loop_dis}, we can introduce an
+Starting from the logarithmic divergent contribution appearing in Eq.~\eqref{eq:1_loop_dis}, we can introduce an
 additional unphysical scale $\mu_F$ and write
 $\log\frac{Q^2}{Q_0^2} = \log\frac{Q^2}{\mu_F^2} + \log\frac{\mu_F^2}{Q_0^2} $.
 Looking back at Eq.~\eqref{eq:strcuture_function},
@@ -277,8 +283,8 @@ with
     \left[P\left(\eta\right)\log\frac{Q^2}{\mu_F^2}+ R\left(\eta\right) - \Gamma_{finite}\left(\eta\right) \right]\,.  
 \end{align}
 The new scale $\mu_F$ introduced above, often referred to as factorization scale, separates long and short distance 
-contributions: everything which is below $\mu_F$ is considered to be in non perturbative regime 
-and is factorized in the kernel $\Gamma$, which therefore contains the infrared poles.
+contributions: everything which is below $\mu_F$ is considered to be in a non perturbative regime 
+and it is factorized in the kernel $\Gamma$, which therefore contains the infrared poles.
 The term $\Gamma_{finite}$ represents finite contributions that can be
 kept into the subtraction kernel rather than in the hard structure function. Its specific choice is what defines
 the renormalization scheme.  
@@ -316,8 +322,8 @@ singularities respectively.
 Once properly defined they can be computed order by order in perturbation theory as an expansion in the strong coupling
 \begin{align}
     \label{eq:coeff_functions_expansion}
-    C_a\left(x, \alpha_s\right) = C^{(0)}\left(x\right) + \alpha_s\, C^{(1)}\left(x\right) 
-    + \alpha_s^2\, C^{(2)}\left(x\right) + ...\,,
+    C_a\left(x, \alpha_s\right) = C_a^{(0)}\left(x\right) + \alpha_s\, C_a^{(1)}\left(x\right) 
+    + \alpha_s^2\, C_a^{(2)}\left(x\right) + ...\,,
 \end{align}
 where the first contribution (LO) recover the parton model predictions, the second one (NLO) corresponds to the QCD
 corrections discussed above and the coming ones (N$^{\text{n}}$NLO) will refer to higher order corrections.
@@ -351,12 +357,13 @@ where $\tau = \frac{Q^2}{s}$ and $s=\left(p_1+p_2\right)^2$.
 The two factorized expressions given in Eqs.~\eqref{eq:dis_qcd},~\eqref{eq:hadron_hadron}
 allow to connect cross sections for high-energy processes having hadrons in the initial states to hard scattering processes.
 The former can be measured in collider experiments, while the latter 
-can be computed in perturbation theory. The bit connecting perturbation theory with physical observables is given
-by parton distribution functions.
+can be computed in perturbation theory. The objects connecting perturbation theory with physical observables are
+the Parton Distribution Functions.
 The content of the factorization theorem is that all the dependence
-on low mass phenomena is entirely contained in the PDFs, which are therefore nonpertubative and universal objects:
-since they describe the internal structure of a given kind of hadron and have been decoupled from the short-distance details of
-the specific process we consider, the PDFs appearing in the case of DIS must be the same considered for 
+on low mass phenomena is entirely contained in the PDFs. Therefore, since they describe the internal structure 
+of a given kind of hadron and have been decoupled from the short-distance details of
+the specific process we consider, they are nonpertubative and universal objects.
+This means that the PDFs appearing in the case of DIS must be the same considered for 
 any other high-energy collisions.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -369,29 +376,16 @@ of the physical observable on low energy physics.
 %
 It is possible to give a rigorous operator definition of parton distributions,
 which can be applied beyond perturbation theory and makes manifest the universal nature of PDFs.
-In this section we briefly revise the formal definition of PDFs, their UV renormalization
-and renormalization group equation, recovering the same results as in the previous section following
-a different approach.
+The formalism and notations commonly used to describe PDFs in terms of QCD operators are usually quite different
+from those introduced in the previous section, which are commonly adopted for phenomenological applications.
+Since in this work we will present results for which both formalism are required,
+in this section we briefly revise the formal definition of PDFs, addressing their UV renormalization
+and renormalization group equation and making contact with the formalism and notations introduced in the previous section.
 
 \subsection{PDFs operator definition}
-\iffalse
-Going back to the hadronic tensor defined in Eq.~\ref{eq:hadronic_tensor}, it can be shown that,
-when working in the Bjorken limit, i.e.~large $Q$ and fixed $x$, $W^{\mu\nu}$ can be written as
-\begin{align}
-    \label{eq:factorization_hadronic_tensor}
-    W^{\mu\nu}\left(P,q\right) = \sum_a \int_x^1 \frac{d\xi}{\xi}f_{a/A}\left(\xi,\mu\right) 
-    H^{\mu\mu}_a \left(q,\xi P, \mu,\alpha_s\left(\mu\right)\right)\,\,+ \text{remainder}\,.
-\end{align} 
-The hard scattering coefficient  $H_a$ has two important properties. First it depends only on the parton type $a$
-and not on the specific hadron $A$, so that it can be computed with the simplest choice of external parton.
-Second it receives contributions only from momenta of order $Q$, so that it can be expressed as a power series in
-$\alpha_s\left(Q\right)$ with finite coefficients. The content of the factorization theorem is that,
-on the other hand, all the dependence
-on low mass phenomena is entirely contained in the functions $f_{a/A}$.
-\fi
-%
 Working in the Bjorken limit, it can be proved~\cite{Collins:1980ui,Collins:1981uw} that the bare unpolarized 
-quark PDF appearing in Eq.~\eqref{eq:strcuture_function} is given by 
+quark PDF appearing in Eq.~\eqref{eq:strcuture_function} is related to the light-cone Fourier transform 
+of a bilocal operator, given by
 \begin{align}
 	\label{eq::barepdf}                                                  
 	f_\mathrm{q}^\bare\lp x \rp = \int \frac{d\xi^-}{4\pi} e^{-ixP^+\xi^-} 
@@ -399,8 +393,9 @@ quark PDF appearing in Eq.~\eqref{eq:strcuture_function} is given by
 	U\lp\xi^-,0\rp \psi_\mathrm{q}^\bare\lp 0\rp  |\text{P}\rangle\, ,   
 \end{align}
 where $|\text{P}\rangle$ denotes a hadronic state with momentum $P^\mu = \lp
-P^0,0,0,P^z\rp$, and $P^{\pm}=\frac {\lp P^0 \pm P^z \rp}{ \sqrt{2}}$ are
-light-cone coordinates. The index $\mathrm{q}$ identifies the parton under
+P^0,0,0,P^z\rp$, $x$ belongs to the real interval $\left[-1,1\right]$ and $P^{\pm}=\frac {\lp P^0 \pm P^z \rp}{ \sqrt{2}}$ are
+light-cone coordinates. 
+The index $\mathrm{q}$ identifies the parton under
 investigation. For instance, in a theory where we only consider the four
 lightest quarks, we have $q=u,d,s,c$. The momentum carried by the parton is
 $k^\mu = x P^\mu$, $\psi_\mathrm{q}^\bare$ is the bare quark field operator and the
@@ -554,7 +549,7 @@ so that they can be computed with the simplest choice of external parton.}
     +\mathcal{O}\left(\frac{\Lambda_{QCD}}{Q}\right)\,.
 \end{align}
 Considering the coefficient functions power expansions given in Eq.~\eqref{eq:coeff_functions_expansion}
-and an analogue expansion for $\hat{F}_{a}$ $C_b$, using the 1-loop expression for the
+and an analogue expansion for $\hat{F}_{a}$, using the 1-loop expression for the
 renormalized partonic PDF of Eq.~\eqref{eq:1-loop_renormalized_partonic_pdf} we get
 \begin{align}
     \label{eq:IR_subtraction_from_formal_definition}
@@ -607,7 +602,7 @@ with each splitting function computable in perturbation theory
     + \alpha_s P^{(1)}_{gg}\left(x\right) + ... 
     \end{split}
 \end{equation}
-It is convenient to re-express the DGLAP equations choosing a PDFs basis which maximally diagonalize them 
+It is convenient to re-express the DGLAP equations choosing a PDFs basis which maximally diagonalize them. 
 In order to do this the aforementioned evolution basis is particularly useful.
 Denoting 
 \begin{align}
@@ -681,8 +676,93 @@ is then the variation of such probability density per logarithmic unit of the en
 of splitting function as probability densities implies that they are positivite for $x<1$ and allows to compute
 them starting from the QCD vertices for $q\rightarrow q\,g$, $g\rightarrow q\bar{q}$ and $g\rightarrow gg$.  
 
+%
+The QCD evolution equations can be solved computing an evolution kernel, which can be subsequently applied
+to PDFs at a given scale $Q_0$ to evolve them up to the final scale $Q$.
+In the following we briefly summarise how the QCD evolution equation can be solved for the
+nonsinglet sector, yielding such evolution kernel.
 
-\comment{Add solution to DGLAP for nonsinglet as in the qPDF paper.}
+Denoting the nonsiglet distributions $V_i$ and $T_i$ with $q^{(-)}$ and
+$q^{(+)} $ respectively, the QCD evolution equations can be written as
+\begin{align}
+    \mu^2\frac{\partial }{\partial \mu^2} q^{(\pm)}\left(x,\mu^2\right) = 
+    \frac{\alpha_s(\mu^2)}{2\pi}
+    \int_{x}^{1}\frac{d\xi}{\xi}\, 
+    P_{qq}^{(\pm)}\left(\frac{x}{\xi},\alpha_s(Q^2)\right)
+    q^{(\pm)}\left(\xi,\mu^2\right),
+\end{align}
+which in Mellin space becomes
+\begin{align}
+\label{eq::dglapmellin}
+    \mu^2\frac{\partial }{\partial \mu^2} q^{(\pm)}\left(N,\mu^2\right) = 
+    \gamma^{(\pm)}\left(N, \alpha_s\right) q^{(\pm)}\left(N,\mu^2\right)\, .
+\end{align}
+The distribution at the scale $\mu^2$ is obtained from the distribution at the
+scale $\mu_0^2$ by introducing the evolution operator $\Gamma$
+\begin{align}
+\label{eq::evolutionoperator}
+    q^{(\pm)}\left(N,\mu^2\right) = 
+    \Gamma^{(\pm)}\left(N,\alpha_s,\alpha_s^0\right)
+    q^{(\pm)}\left(N,\mu_0^2\right)\, ,
+\end{align}
+where $\alpha_s \equiv \alpha_s\left(\mu^2\right)$ and $\alpha_s^0 \equiv
+\alpha_s\left(\mu_0^2\right)$. Substituting Eq.~\eqref{eq::evolutionoperator} in
+Eq.~\eqref{eq::dglapmellin} and remembering that the dependence of $\Gamma$ on
+the scale $\mu$ is only through the coupling, we have
+\begin{align}
+\label{eq::Mdglap}
+    \beta\left(\alpha_s\right) \frac{\partial}{\partial\alpha_s}
+    \Gamma^{(\pm)}\left(N,\alpha_s,\alpha_s^0\right) = 
+    \gamma^{(\pm)}\left(N, \alpha_s\right)
+    \Gamma^{(\pm)}\left(N,\alpha_s,\alpha_s^0\right)\, .
+\end{align}
+%
+Considering for example {\tt NLO} evolution equations using 
+\begin{align}
+    & \beta\left(\alpha_s\right) = \frac{d\alpha_s}{d\log \mu^2} = 
+    -\alpha_s^2 \beta_0 -\alpha_s^3 \beta_1 + \mathcal{O}\lp \alpha_s^4 \rp  \\
+    & \gamma^{(\pm)}\left(N, \alpha_s\right) = 
+    \frac{\alpha_s}{4\pi} \gamma^{(\pm)}_0\left(N\right) + 
+    \left(\frac{\alpha_s}{4\pi}\right)^2 \gamma^{(\pm)}_1\left(N\right) + \mathcal{O}\lp \alpha_s^3 \rp\, ,
+\end{align}
+we can solve Eq.~\eqref{eq::Mdglap}; the Mellin space expression for the evolution
+kernel at {\tt NLO} is
+\begin{align}
+    \Gamma^{(\pm)}\left(N,\alpha_s,\alpha_s^0\right) = 
+    1 + \frac{\alpha_s -\alpha_s^0}{4\pi}
+    \left(\frac{\gamma^{(\pm)}_1 \left(N\right)}{2\beta_0} - 
+    \frac{\beta_1 \gamma^{(\pm)}_0\left(N\right)}{2\beta_0^2}\right)
+    \,.
+\end{align}
+%
+The solution in the $x$-space is obtained by computing the inverse Mellin
+transform of $\Gamma^{(\pm)}\left(N,\alpha_s,\alpha_s^0\right)$. Having
+analytically continued the function $\Gamma\left(N\right)$ to the complex plane,
+the inverse Mellin transform is obtained by computing the contour integral
+\begin{align}
+    \Gamma^{(\pm)}\left(x,\alpha_s,\alpha_s^0\right) = 
+    \int_C \frac{dN}{2\pi i}x^{-N}\, 
+    \Gamma^{(\pm)}\left(N,\alpha_s,\alpha_s^0\right)\, .
+\end{align}
+
+% \comment{TG: this part can probably be removed, giving just the reference to the old nnpdf publication..?}
+% We follow the approach implemented and validated in Ref.\cite{DelDebbio:2007ee}, reported here for completeness.
+% The contour integral is computed choosing the Talbot path
+% \begin{align}
+% N\left(\theta_k\right)= r\theta/\left(1/\tan\theta + i\right),\,\,\,\,\,\,\,\,-\pi < \theta <\pi,
+% \end{align}
+% and using the Fixed Talbot algorithm, getting the expression
+% \begin{align}
+% \Gamma\left(x\right)= \frac{r}{M}\left[\frac{1}{2}\Gamma\left(N=r\right)x^{-r}+\sum_{k=1}^{M-1}\text{Re}\left[x^{-N\left(\theta_k\right)}\Gamma\left(N\left(\theta_k\right)\right)\left(1+i\sigma\left(\theta_k\right)\right)\right],\right]
+% \end{align}
+% with
+% \begin{align}
+% &\sigma\left(\theta\right) = \theta + \left(\theta/\tan\theta-1\right)/\tan\theta \\
+% &\theta_k = \frac{k\pi}{M} \\
+% &r = 2M/(5 \log\frac{1}{x})
+% \end{align}
+% where M is taken equal to 16.
+
 
 \section{Heavy quarks}
 \label{sec:fonll}
