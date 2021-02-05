@@ -288,14 +288,14 @@ The lattice can be defined as a cartesian product
 \end{align}
 where $N$ is a four vector with integer components and $[\![0, n ]\!]$ is the set of all the integers $j$ such that
 $0 \le j \le n$. The integer $N_{\mu}$ represents the number of lattice sites in the $\mu$ direction, corresponding
-to a space-time extent $L_{\mu}= a N_{\mu}$. 
+to a space-time extent equal to $a N_{\mu}$. 
 From this definition it is clear how for each point $x_{\mu}$ belonging to the lattice there exist a four vector $j_{\mu}$ 
 with integer coordinates such that $x_{\mu} = a j_{\mu}$. 
 The zero-component $N_0$ is usually identified with the temporal extent
-$T = a N_0$, while the three remaining ones represent the spatial extent in the three spatial directions
-$L = a N_1 = a N_2 = a N_3$, which are usually assumed to be equal\footnote{The full Lorentz invariance of the continuum 
+$T = a N_0$, while the three remaining ones, assumed to be equal, represent the spatial extent in the three spatial directions
+$L = a N_1 = a N_2 = a N_3$. On such lattice the full Lorentz invariance of the continuum 
 Minkowski space-time is reduced to the hypercubic group, 
-however when considering gauge theories their lattice version is built in such a way to preserve gauge invariance.}. 
+however when considering gauge theories their lattice version is built in such a way to preserve gauge invariance. 
 
 Considering for simplicity a theory containing a single scalar field $\phi$,
 taking a generic correlation function in Minkowski space 
@@ -306,19 +306,21 @@ taking a generic correlation function in Minkowski space
 one can define the associated Euclidean correlation function
 by performing a Wick rotation $x_i = \left(x^0_i, \vec{x}_i\right) \rightarrow \bar{x}_i = \left(-i x^0_i, \vec{x}_i\right)$
 \begin{align}
+    \label{eq:euclidean_correlator}
     C_n^{(E)}\left(x_1,..., x_n\right) &\equiv C_n^{(M)}\left(\bar{x}_1,..., \bar{x}_n\right) = \nonumber \\
     &\frac{1}{Z} \int \phi\left(x_1\right)...\phi\left(x_n\right)\exp\left(- S^{(E)}\left[\phi\right]\right)\,,
 \end{align}
 where $S^{(E)}$ is the Euclidean action of the theory.
-Such Wick rotation effectively transform the Minkowski metric $\eta_{\mu\nu}$ into the positive Euclidean metric
-$\delta_{\mu\nu} = \text{diag}\left(1,1,1,1\right)$, and the functional integral defining the correlator can be estimated
+Such Wick rotation effectively transform the Minkowski metric $\eta_{\mu\nu} = \text{diag}\left(1,-1,-1,-1\right)$
+into the positive Euclidean metric $\delta_{\mu\nu} = \text{diag}\left(1,1,1,1\right)$.
+The functional integral of Eq.~\ref{eq:euclidean_correlator} can be estimated
 by averaging the fields product $\phi\left(x_1\right)...\phi\left(x_n\right)$ on the probability density 
 $D\phi \, \text{exp}\left(-S^{(E)}\left[\phi\right]\right)$ .
 
 
 %
-In order to write a discrete version of QCD, we need to construct an action for the gauge fields and for quark fields.
-In the case of the gauge filed, the action can be written in terms of gauge links $U_{\mu}$, obtaining the so called Wilson action
+In order to write a discrete version of QCD, we need to construct an action for the gauge field and one for the quark fields.
+In the case of the gauge field, the action can be written in terms of gauge links $U_{\mu}$, obtaining the so called Wilson action
 \begin{align}
     \label{eq:Wilson_action}
     &S_G\left(U_{\mu}\right) = 
@@ -330,8 +332,7 @@ where $\beta$ is a constant of the theory. It can be shown that in the continuum
 recovers the Euclidean Yang-Mills action.
 
 %
-Considering the fermionic fields
-, defining the translation operator in the $\hat{\mu}$ direction as 
+Considering the fermionic fields, defining the translation operator in the $\hat{\mu}$ direction as 
 $\tau_{\mu}f\left(x\right) = f\left(x+a\hat{\mu}\right)$, 
 it turns out that a naive discretization of the Dirac action
 \begin{align}
@@ -350,42 +351,51 @@ to remove the unwanted states
     - \frac{a^5}{2}\sum_{x\in\Lambda^4}\bar{\psi}\left(x\right)\tilde{\delta}^2 \psi\left(x\right)\,,
 \end{align}
 where $\tilde{\delta}^2 = a^{-2}\sum_{\mu}\left(1-\tau_{-\mu}\right)\left(\tau_{\mu}-1\right)$.
+In the presence of a gauge filed $U_{\mu}$, Eq.~\ref{eq:fermions_wilson_action} becomes 
+\begin{align}
+    S_W\left[\psi,\bar{\psi}, U_{\mu}\right] = a^4\sum_{x\in\Lambda^4}\bar{\psi}\left(x\right)\left(K\left[U_{\mu}\right] + m\right)\psi\left(x\right)\,,
+\end{align}
+where $K\left[U_{\mu}\right]$ is a suitable discretization for the covariant derivative which implements
+the Wilson prescription. 
 The addition of the Wilson term in the action solves the doubling problem, however it explicitly breaks
 chiral symmetry, leading to a more complex UV structure of the theory.
-In Eqs.~\ref{eq:naive_Dirac}~,\ref{eq:fermions_wilson_action}
 
 %
-The expectation value of a generic observable $O\left[\psi,\bar{\psi},A_{\mu}\right]$ can then be evaluated
+Once the Euclidean action has been defined, the expectation value of a generic observable 
+$O\left[\psi,\bar{\psi},A_{\mu}\right]$ can be evaluated
 through the path integral
 \begin{align} 
     \label{eq:lattice_path_integral}
     \langle O\rangle = \frac{1}{Z}\,\int D\psi\, D\bar{\psi}\,DU_{\mu}\,
-    O\left[\psi,\bar{\psi},U_{\mu}\right]e^{-S[\psi,\bar{\psi},U_{\mu}]}\,,
+    O\left[\psi,\bar{\psi},U_{\mu}\right]e^{-S[\psi,\bar{\psi},U_{\mu}]}\,.
 \end{align}
-$S$ being the total action of the theory.
-The fermion fields appear in the action as a bilinear term $\bar{\psi} M\left(U_{\mu}\right) \psi$,
-so that the functional integrals over $\psi$ and $\bar{\psi}$ bar can be performed analytically getting
+with 
+\begin{align}
+    S[\psi,\bar{\psi},U_{\mu}] = S_G\left(U_{\mu}\right) + S_W\left[\psi,\bar{\psi}, U_{\mu}\right]\,.
+\end{align}
+Since the fermionic action is quadratic,
+the functional integrals over $\psi$ and $\bar{\psi}$ can be performed analytically getting
 \begin{align}
     \label{eq:integrated_path_integral}
-    \langle O\rangle = \frac{1}{Z}\int DU_{\mu}\,\text{det}M\left(U_{\mu}\right)
+    \langle O\rangle = \frac{1}{Z}\int DU_{\mu}\,\text{det}\left(K+M\right)
     O_{\text{Wick}}\left[U_{\mu}\right]e^{-S_G[U_{\mu}]}\,,
 \end{align}
 where $O_{\text{Wick}}$ denotes the functional obtained from $O$ performing the Wick contractions 
-of the quark fields.
-The quantity
-\begin{align}
-    \label{eq:prob_distribution}
-    \frac{1}{Z}\,\text{det}M\left(U_{\mu}\right)e^{-S_G[U_{\mu}]}\,,
-\end{align}
-can be interpreted as a probability distribution\footnote{This is only true when $\text{det}M >0$. In a continuum theory it 
+of the quark fields. Note that this observable depends on the quark propagator $\left(K+M\right)^{-1}$,
+appearing for every $\psi\bar{\psi}$ contraction. Inverting the term $K+M$ in order to obtain the fermionic propagator
+represents the elementary computation in lattice QCD simulations.
+Assuming $\text{det}\left(K+M\right)>0$ \footnote{in a continuum theory it 
 can be shown that this is true thanks to chiral symmetry, as long as we consider non-zero masses.
 On the lattice the situation can be more complicated: in the case of Wilson fermions for example chiral symmetry is lost,
-and the determinant is positive only when the bare masses are bigger than the critical mass.}, and an estimation
+and the determinant is positive only when the bare masses are bigger than the critical mass.}, the quantity
+\begin{align}
+    \label{eq:prob_distribution}
+    \frac{1}{Z}\,\text{det}\left(K+M\right)e^{-S_G[U_{\mu}]}\,,
+\end{align}
+can be interpreted as a probability distribution and an estimation
 for $\langle O \rangle$ up to a $\mathcal{O}\left(1/\sqrt{N}\right)$ statistical error can be obtained by drawing
 N samples $U_{\mu}^{(i)}$ from it and computing
 \begin{align}
     \label{eq:average_O_lattice}
     \langle O \rangle = \frac{1}{N}\sum_{i=0}^N \, O\left[U_{\mu}^{(i)}\right]\,.
 \end{align} 
-
-\comment{Add something about numerics/simulations}
