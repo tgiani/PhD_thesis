@@ -2,7 +2,7 @@
 \label{ch:nnpdf_methodology}
 As seen in the previous chapter, factorization theorems allow for a separation between contributions 
 related to different distance scales: while short distance
-effects can be obtained through the computation of partonic matrix elements within perturbation theory, 
+effects can be obtained through the perturbative computation of partonic matrix elements, 
 long-distance contributions are collected in the universal PDFs $q\left(x,Q^2\right)$. As seen in Sec.~\ref{sec:DGLAP},
 knowing the functional form of the PDFs at a given initial scale $Q_0^2$, 
 their dependence on the energy scale can be computed by solving the DGLAP evolution equations.
@@ -10,7 +10,7 @@ However the dependence on $x$ would be computable only solving QCD in a nonpertu
 by computing the proton wave function from first principles. We will come back to 
 this point in Chapter~\ref{ch:lattice}, when considering lattice QCD observables.
 In this Chapter we will discuss the general approach adopted to extract the $x$ dependence of the PDFs
-from a discrete set of experimental data, using as basic ingredient the factorization theorems for hadronic observables
+from a discrete set of experimental data, using as basic ingredient the factorization theorems for high-energy processes
 discussed before.
 
 %
@@ -30,9 +30,9 @@ this fact have several practical and conceptual implications.
 Another important aspect concerning the problem of PDFs determination 
 is the need for results with well quantified uncertainties and correlations.
 Universality of PDFs allows one to extract them from a set of data for some specific high-energy processes
-and use the result to make predictions for different hadronic observables not included in the analysis.
+and use the result to make predictions for different observables not included in the analysis.
 In order for PDFs to be useful as an input to physics predictions one needs to account for the different
-sources of statistical and systematic uncertainties affecting the data entering the analysis, and
+sources of statistical and systematic uncertainties affecting the experimental data, and
 propagate them on the resulting PDFs.
 Ideally one would like to determine a representation 
 of the probability distribution for the unknown PDFs in the whole functional space, so that the full information
@@ -41,13 +41,14 @@ about uncertainties and correlations are taken into account when making predicti
 %
 In this chapter we discuss how all these issue have been addressed within the NNPDF collaboration
 starting from 2002 \cite{Forte:2002fg}, revising the Monte Carlo replicas generation, the neural networks parameterization
-and the minimization procedure. Such methodology has been used to produce the last public NNPDF PDFs set \cite{Ball:2017nwa}
-. A number of studies which will be described in Chapter~\ref{sec:phenomenology} have been performed within the private
+and the minimization procedure. Such methodology has been used to produce the last public NNPDF PDFs set NNPDF3.1 \cite{Ball:2017nwa}
+. The studies which will be described in Chapter~\ref{ch:jets} and Chapter~\ref{ch:th_error}, regarding the inclusion of jets data
+and the formulation of a theoretical error in a global PDFs determination, have been performed within the private
 {\tt c++ } implementation of this framework.
 
 %
 We will then describe how such methodology has been revised and extended 
-within the new {\tt n3fit} code, which will be used to produce the next NNPDF release, NNPDF4.0.
+within the new {\tt n3fit} code \cite{Carrazza:2019mzf}, which will be used to produce the next NNPDF release, NNPDF4.0.
 In particular, we will discuss in detail the implementation of $\overline{MS}$ PDFs positivity,
 the integrability of the nonsinglet sector and the fit basis independence.
 
@@ -55,7 +56,7 @@ the integrability of the nonsinglet sector and the fit basis independence.
 \label{sec:nnpdf_meth}
 
 The NNPDF methodology is based on a Monte Carlo determination of the PDFs error, combined
-with a neural network parameterization of the unknown PDFs. So far numerical minimization algorithm
+with a neural network parameterization of the unknown $x$-dependence of the PDFs. So far numerical minimization algorithm
 have been used, and overfitting has been avoided using a cross-validation technique.
 In the first part of this section we revise these general ideas, referring to the baseline {\tt c++} code which
 has been used to produce NNPDF3.1. 
@@ -115,15 +116,15 @@ replicas, so that for example
     \frac{1}{N_{rep}}\sum_{k=1}^{N_{rep}}\left(\mathcal{O}^{\,(k)} - \langle\mathcal{O}\rangle\right)^2\,.
 \end{align}
 
-The Monte Carlo method therefore propagates the error from the data to the PDFs set
-in a natural way, without the need of any assumption on the way error propagation happens.
+The Monte Carlo method allows to propagate the error from the data to the PDFs set
+in a natural way, using only the input experimental information and without the need of any further assumption.
 
 \subsection{Parameterization and Neural Networks}
 As mentioned above, the determination of a continuos function from a discrete set of data 
 is an intrinsically ill-defined problem, no matter how copious this set is. In order to overcome this
 issue a particular functional form for the $x$ dependence of the PDFs at a reference scale $Q_0$ is chosen,
 given in terms of a set of free parameters.
-The PDFs at all the other scales $Q$ are determined by solving perturbative evolution equations
+The PDFs at all the other scales $Q$ are determined by solving perturbative evolution equations 
 and the experimental data are used to determine the optimal values of the free parameters.
 
 %
@@ -195,12 +196,13 @@ and valence sum rules. The eight flavours independently parameterized in NNPDF3.
     \label{eq:nnpdf31IC_basis}
     q_j = \left[\Sigma, g, V, V_3, V_8, T_3, T_8, c^+ \right]\,,
 \end{align} 
-with the total charm is defined as $c^+ = c +\bar{c}$.
+with the total charm defined as $c^+ = c +\bar{c}$.
 \begin{figure}[htb]     
 	\begin{center}
-		\includegraphics[width=70mm]{nn.png}
+		\includegraphics[width=70mm]{nn.pdf}
 	\end{center}
-	\caption{Graphical representation of the neural network used in the NNPDF code.}
+    \caption{Graphical representation of the neural network used in the NNPDF code.
+    For each flavour one independent neural network is implemented.}
 	\label{nn}                 
 \end{figure}
 The preprocessing exponents $\alpha_i$ and $\beta_i$ are randomized, by choosing a different value for each replica
@@ -219,18 +221,18 @@ interval. This procedure is iterated until the range stops changing.
 \label{sec:minimization}
 The optimal fit is obtained by varying the parameters of $q_j\left(x,Q_0^2\right)$  in such a way that 
 some chosen figure of merit is minimized. 
-Since the experimental data are assumed to have a multigaussian
+Since most of the experimental data are assumed to have a multigaussian
 distribution, a standard choice for such an object is obtained by taking the standard $\chi^2_k $ for each individual 
 dataset $k$
 \begin{align}
     \label{eq:chi2}
     \chi^2_k 
-    =\sum_{ij}^{N_{dat}}\left(D_{ki}-T_{ki}\right)C_{ij}^{-1}\left(D_{kj}-T_{kj}\right)
+    =\sum_{ij}^{N_{dat}}\left(D_{ki}-T_{ki}\right)C_{ij}^{-1}\left(D_{kj}-T_{kj}\right)\,,
 \end{align}
 and then by building the quantity
 \begin{equation}
 \label{tot chi2}
-\chi^2=\sum_k \chi^2_k
+\chi^2=\sum_k \chi^2_k\,.
 \end{equation}
 Here $D_{ki}$ is the i-th experimental data point in the k-th dataset; $T_{ki}$ is the corresponding 
 theoretical prediction computed using the corresponding factorization theorem and 
@@ -250,9 +252,10 @@ Mutations with the lowest value of the figure of merit are selected and the proc
 Different variations of GA have been used in every NNPDF PDFs set, including NNPDF3.1.
 Another possible option which has been investigated is the CMA algorithm \cite{DBLP:journals/corr/Hansen16a},
 which has been used, for example, in a recent NNPDF determination of 
-fragmentation functions \cite{Bertone:2017tyb}. As we are going to discuss in the next section,
-numerical minimizer are no longer the best possible option. Nowadays several efficient deterministic
-methods are available, and an efficient deterministic minimization is more desirable. 
+fragmentation functions \cite{Bertone:2017tyb}. 
+Nowadays several efficient deterministic methods are available in a number of public libraries.
+As we are going to discuss in the next section, numerical minimizer are no longer the best possible options
+and an efficient deterministic minimization is more desirable. 
 
 %
 Independently from the specific minimization algorithm implemented, overfitting is avoided
@@ -267,57 +270,12 @@ computed over the validation data will reach a minimal value, and eventually it 
 increasing. This is a signal of overfitting, and the point in parameter space yielding the minimal
 value of the validation error is the one taken as the fit result.  
 
-
-
-\section{The n3fit environment}
-\label{sec:n3fit}
-The methodology described in the previous section has been completely revised and extended within the new
-{\tt n3fit} environment, first presented in \cite{Carrazza:2019mzf}.
-In this section we describe the {\tt n3fit} general features, focusing in particular
-on the implementation of PDFs positivity and integrability. 
-Also we will present some results regarding the problem of the fit basis independence, addressed for the first time
-within this environment.
-
-\subsection{Architecture and general structure}
-The {\tt n3fit} code is a python-based framework, written using an object-oriented approach and
-a number of external libraries. 
-Unlike the previous {\tt c++} code of the NNPDF methodology, 
-which is fully based on an in-house implementation of neural networks and minimization algorithms,
-in the new framework Keras and Tensorflow have been used to deal with them.
-This choice greatly simplifies the study of new architectures and techniques recently introduced
-in the machine learning literature, allowing for a systematic investigation of many of them, 
-and represents an important technological improvement with respect 
-to the previous code. 
-
-%
-The two main methodological changes in {\tt n3fit} concern the architecture and minimization algorithm:
-rather than using eight independent neural networks, each one giving as output a particular flavour, in
-the new environment a single net with an eight-dimensional output is used; additionally, gradient descent
-methods are implemented to replace the genetic algorithm described before.
-The new architecture allow to study and take into account cross-correlations between different PDFs,
-while the new gradient descent minimizers have been proved to produce more stable fits than those 
-obtained using the genetic algorithm.  
-
-%
-For each dataset entering the fit, a vector of $x$ values is given as input to the neural network and,
-as in the old methodology, before going through the intermediate layers it is split into $\left(x,\log x\right)$.
-The eight output nodes of the neural network provide the eight independent PDFs parameterized at 
-the reference scale $Q_0$. We denote such set of independent parton distributions as \textit{fit basis}.
-In NNPDF3.1, this is given by Eq.~\eqref{eq:nnpdf31IC_basis}. The new framework allows the user to choose between 
-different options: two standard choices are the so called evolution and flavour basis.
-While the former represents the equivalent of the one given in Eq.~\eqref{eq:nnpdf31IC_basis}, in
-the latter each quark, antiquark and the gluon are independently parameterized. 
-The choice of the fit basis should not affect the final results, however different choices might be more
-convenient from a methodological point of view, and different architecture setups might be required
-when changing the basis. We will extensively discuss these points in Sec.~\ref{sec:fitbasis}.
-Depending on our choice for the fit basis, each output can be supplemented with a suitable preprocessing
-polynomials, and with normalization factors to impose momentum and valence sum rules.
-
-%
+\subsection{Fast Kernel tables}
+\label{sec:FK_nnpdf}
 In order to get expressions for physical observables, PDFs have to be
 evolved up to the physical scale $Q$ of the hard processes and finally 
 combined with partonic matrix elements. These steps happen through two separate convolutions, first with
-the evolution kernel which solves DGLAP evolution equations and second with the hard cross sections.
+the evolution kernel, see Sec.~\ref{sec:DGLAP}, which solves DGLAP evolution equations and second with the hard cross sections.
 Such convolutions happen by mean of FastKernel tables, introduced and validated in Refs.~\cite{Ball:2010de,Bertone:2016lga}
 and used in any subsequent NNPDF analysis.
 Each PDFs is projected on a suitable basis functions
@@ -344,11 +302,66 @@ and the FK table becomes a rank-4 tensor,
 
 %
 After computing the value for all the observables entering the fit, the data are split into training and 
-validation sets, the $\chi^2$ function of the training set is minimized using gradient descent.
-The stopping is implemented using cross-validation, as described in Sec.~\ref{sec:minimization}.
+validation sets and the $\chi^2$ function of the training set is minimized.
+
+
+
+\section{The n3fit environment}
+\label{sec:n3fit}
+The methodology described in the previous section has been completely revised and extended within the new
+{\tt n3fit} environment, first presented in \cite{Carrazza:2019mzf}.
+In this section we describe the {\tt n3fit} general features, focusing in particular
+on the implementation of PDFs positivity and integrability. 
+Also we will present some results regarding the problem of the fit basis independence, addressed here for the first time
+within this environment.
+
+\subsection{Architecture and general structure}
+The {\tt n3fit} code is a python-based framework, written using an object-oriented approach and
+a number of external libraries. 
+Unlike the previous {\tt c++} code of the NNPDF methodology, 
+which is fully based on an in-house implementation of neural networks and minimization algorithms,
+in the new framework Keras~\cite{chollet2015keras} and Tensorflow~\cite{tensorflow2015-whitepaper} have been used to deal with them.
+This choice greatly simplifies the study of new architectures and techniques recently introduced
+in the machine learning literature, allowing for a systematic investigation of many of them, 
+and represents an important technological improvement with respect 
+to the previous code. 
 
 %
-\comment{Add a short paragraph about hyperopt}
+The two main methodological changes in {\tt n3fit} concern the architecture and minimization algorithm:
+rather than using eight independent neural networks, each one giving as output a particular flavour, in
+the new environment a single net with an eight-dimensional output is used; additionally, gradient descent
+methods are implemented to replace the genetic algorithm described before.
+The new architecture, graphically depicted in Fig.~\ref{fig:nn_n3fit}, allows to study and take into account 
+cross-correlations between different PDFs,
+while the new gradient descent minimizers have been proved to produce more stable fits than those 
+obtained using the genetic algorithm. 
+
+\begin{figure}[htb]     
+	\begin{center}
+		\includegraphics[width=70mm]{nn_n3fit.pdf}
+	\end{center}
+    \caption{Graphical representation of the neural network used in the {\tt n3fit} framework.
+    Each output nodes represents one of the independently parameterized flavours.}
+	\label{fig:nn_n3fit}                 
+\end{figure}
+
+%
+For each dataset entering the fit, a vector of $x$ values is given as input to the neural network and,
+as in the old methodology, before going through the intermediate layers it is split into $\left(x,\log x\right)$.
+The eight output nodes of the neural network provide the eight independent PDFs parameterized at 
+the reference scale $Q_0$. We denote such set of independent parton distributions as \textit{fit basis}.
+In NNPDF3.1, this is given by Eq.~\eqref{eq:nnpdf31IC_basis}. The new framework allows the user to choose between 
+different options: two standard choices are the so called evolution and flavour basis.
+While the former represents the equivalent of the one given in Eq.~\eqref{eq:nnpdf31IC_basis}, in
+the latter each quark, antiquark and the gluon are independently parameterized. 
+The choice of the fit basis should not affect the final results, however different choices might be more
+convenient from a methodological point of view, and different architecture setups might be required
+when changing the basis. We will extensively discuss these points in Sec.~\ref{sec:fitbasis}.
+Depending on our choice for the fit basis, each output can be supplemented with a suitable preprocessing
+polynomials, and with normalization factors to impose momentum and valence sum rules.
+
+%
+\comment{Add a short paragraph about hyperopt? Probably not..}
 
 \subsection{Fit basis}
 \label{sec:fitbasis}
@@ -358,8 +371,9 @@ The parton distributions used to define the FK tables are the thirteen PDFs
 	q_i = \Sigma, g, V, V_3, V_8, V_{15}, V_{24}, V_{35}, T_3, T_8, T_{15}, T_{24}, T_{35}.
 \end{align}
 Eight of these are parametrized, while the remaining ones, involving heavy quarks,
-are determined by perturbative evolution\footnote{When QED corrections are considered in the analysis,
-the photon PDF $\gamma$ is also included and independently parameterized.}     
+are determined by perturbative evolution, using the matching relations given in Eqs.~\eqref{eq:matching_PDFs}.
+When QED corrections are considered in the analysis,
+the photon PDF $\gamma$ is also included and independently parameterized.   
 As mentioned before, the {\tt n3fit} environment allows for different fit basis choices. In other 
 words, the user can choose which distributions should be independently parameterized. 
 
@@ -372,7 +386,7 @@ The former is defined by the eight dimensional subset of \eqref{eq::fkdistributi
     q_k = \left[g, \Sigma, V, V_3, V_8, T_3, T_8, T_{15} \right]\,,
 \end{align}
 while in the latter, the neural network outputs   
-up, down, strange and charm quark and antiquark distributions (for charm we consider $c=\bar{c}$) plus the gluon
+up, down, strange and charm quarks and antiquarks distributions (for charm we consider $c=\bar{c}$) plus the gluon
 \begin{align}
     \label{eq:flavour_basis}
 	\tilde{q}_k = \left[g, u, \bar{u}, d, \bar{d}, s, \bar{s}, c\right]\,.
@@ -450,7 +464,7 @@ with $\text{NN}_{j}\left(x\right)$ denoting the corresponding neural network out
 
 
 \paragraph{Positivity.}
-As recalled in the previous chapter, PDFs are renormalization scheme dependent quantities.
+As recalled in Chapter~\ref{ch:fact}, PDFs are renormalization scheme dependent quantities.
 Despite at LO they can be interpreted as probabilities distributions, when considering QCD corrections
 such naive picture doesn't hold any more. This in general prevents PDFs from being positive definite objects.
 However, regardless of the PDFs sign and shapes, cross sections for high-energy processes have to be positive,
@@ -494,7 +508,7 @@ linearly spaced between $0.1$ and $0.9$. The Elu function is defined as
 	\end{cases}\,,
 \end{align} 
 with $\alpha=10^{-7}$. 
-When the distribution $q_k\left(x_i, Q^2\right)$ is negative, the total $\chi^2$ will receive a positive contribution
+When the distribution $\tilde{q}_k\left(x_i, Q^2\right)$ is negative, the total $\chi^2$ will receive a positive contribution
 (a penalty) proportional to the corresponding Lagrange multipliers $\Lambda_k$. 
 Therefore, during the minimization of $\chi^2_{tot}$ solutions corresponding to positive distributions $q_k$
 will be favoured. Note that such implementation works with both the evolution and flavour basis, the only 
@@ -524,7 +538,8 @@ such distribution cannot raise faster than $1/x$. In other words the following l
 %
 Despite the simplicity of Eq.~\eqref{eq:integrability} it is important to note that, 
 from a numerical point of view, its practical implementation in a generic fit basis is a delicate matter.
-For numerical implementations in a fit, it is convenient to consider a different definition.
+For numerical implementations in a fit, it is convenient to consider a different condition, which in turn implies
+Eq.~\eqref{eq:integrability}.
 %numerical integration of the PDFs between $\left(0,1\right)$ could still give a finite answer even if 
 %Eq.~\eqref{eq:integrability} is not satisfied; on the other hand, there is no unique and straightforward way to implemented
 %such constraint in the PDFs parameterization.
@@ -556,13 +571,13 @@ add to the total $\chi^2$ a new bit defined as
 \end{align}
 In this way, the fit will favour configurations with smaller values of $|x_i\,q_k\left(x_i,Q^2\right)|$, and should 
 therefore produce distributions with integrable small-$x$ behaviour. The points $x_i$ are chosen in different ways depending
-on the specific distribution and fit basis we are considering. 
+on the specific distribution and fit basis we are considering., as detailed in the next section. 
 
 
 \subsection{Results}
 \label{sec:results_nnpdf}
 In the previous section we have described how theoretical constraints are implemented in the fit.
-In particular we saw how, when imposing positivity and integrability,
+In particular we have seen how, when imposing positivity and integrability,
 the total experimental $\chi^2$ has to be supplemented by additional contributions
 proportional to Lagrange multipliers, so that the total $\chi^2$ which is actually minimized
 during the fit is 
@@ -577,13 +592,15 @@ and $\chi^2_{k,\text{pos}}$, $\chi^2_{l,\text{integ}}$ defined in Eqs.~\eqref{eq
 In this section we present results produced with the new {\tt n3fit} methodology,
 focusing on the effects positivity and integrability constraints have on the final result.
 Our point here is to show the effects of such theoretical constraints on a given baseline which doesn't 
-include them.
-Such analysis, together with a detailed comparison with NNPDF3.1 and an extended version
-of the baseline dataset, will be part of the NNPFD4.0 release paper.
+include them. We will first present results obtained using the evolution basis, and in the
+next section we will repeat the exercise in the flavour basis, in order to check explicitly 
+fit basis independence.
+%Such analysis, together with a detailed comparison with NNPDF3.1 and an extended version
+%of the baseline dataset, will be part of the NNPFD4.0 release paper.
 
 %
-Here we will consider the NNPDF3.1 dataset, presented and discussed in Ref.~\cite{Ball:2017nwa}.
-This dataset includes: fixed-target neutral-current 
+The baseline dataset we will consider here is the one of the NNPDF3.1 PDFs set, presented and discussed in Ref.~\cite{Ball:2017nwa}.
+This includes: fixed-target neutral-current 
 (NC) DIS structure function data from NMC~\cite{Arneodo:1996kd,Arneodo:1996qe}, 
 SLAC~\cite{Whitlow:1991uw} and BCDMS~\cite{Benvenuti:1989rh}; charged-current 
 (CC) DIS structure function data from CHORUS~\cite{Onengut:2005kv} and 
@@ -621,45 +638,46 @@ In Tab.~\ref{tab:experiments_chi2} we provide values of $\chi^2/N_{\text{dat}}$ 
 reporting results also for each experiment included in the analysis.
 These are compared to their {\tt n3fit} counterpart produced without positivity and integrability constraints. 
 Inspection of this table shows how the fit quality is basically unaffected by the introduction of the
-theoretical constraints, with a slight improvement in the total $\chi^2$.
+theoretical constraints, with a slight improvement in the total $\chi^2$. Such mild improvement provides an
+additional confirmation of the validity of our theoretical constraints: despite these represent additional 
+conditions to be satisfied during the fit, they provide meaningful physical hints, making it easier to describe 
+the experimental data.
  
 %
 In Fig.~\ref{fig:distances} we show the distance between the two fits, quantifying the effect of theoretical
-constraints at the PDFs level.
-
+constraints at the PDFs level. For the definition of the distance between PDFs sets, see App.~\ref{app:estimators}.
 While in the small-$x$ region the difference between the two fits remains below 
 one-sigma, in the medium- and large-$x$ regions we find differences of up to
-two-sigmas for the flavours $\bar{s}$, $\bar{u}$, $\bar{d}$, $u$ and $c$, 
-which are plotted in linear scale in Fig.~\ref{fig:pdfs_plots}.
-Inspection of these plots show an important reduction of the PDFs error for the flavours $\bar{s}$, $\bar{u}$, $\bar{d}$,
-and a change in the PDFs shape and central value to satisfy the new positivity constraints, which affects also the distributions
-$c$ and $u$.
+two-sigmas. The evolution basis flavours $V$, $V_3$, $V_8$ and $T_8$ are plotted in linear scale in Fig.~\ref{fig:pdfs_plots}.
+Inspection of these plots show an important reduction of the PDFs error for the flavours $V$, $V_3$, $V_8$,
+and a change in the PDFs shape and central value to satisfy the new positivity constraints, which affects also the distribution
+$T_8$.
 
 %
 We conclude that overall after the inclusion of theoretical constraints the fit provides an equivalent,
 or slightly better, description of the input data. However there are important differences at the level of the PDFs,
-whose replicas are globally shifted in order to satisfy positivity, resulting in a general decreasing in the PDFs error.
+whose replicas are globally shifted in order to satisfy positivity, resulting in a general decreasing in the PDFs error,
+and in a non negligible change in their central value.
 
-
-
-  \begin{table}[htbp!]
+\begin{table}[htbp!]
     \centering
     \input{tables/chi2_evol.tex}
     \caption{The values of $\chi^2/N_{\rm dat}$ for each experiment included in the global fit, before and
-    after the inclusion of positivity and integrability constraints.}
+    after the inclusion of positivity and integrability constraints. Values are reported for fits in both the evolution and flavour 
+    basis.}
     \label{tab:experiments_chi2}
-  \end{table}
+\end{table}
 
-  \begin{figure}[t!]
+\begin{figure}[t!]
     \begin{center}
         \includegraphics[width=0.49\linewidth]{normalize_basespecs0_pdfscalespecs0_distspecs0_plot_pdfdistances.pdf}
         \includegraphics[width=0.49\linewidth]{normalize_basespecs0_pdfscalespecs1_distspecs0_plot_pdfdistances.pdf}
         \caption{Distance plots} 
         \label{fig:distances} 
     \end{center}
-  \end{figure}
+\end{figure}
 
-  \begin{figure}[t!]
+\begin{figure}[t!]
     \begin{center}
         \includegraphics[width=0.49\linewidth]{plot_pdfs_V.pdf}
         \includegraphics[width=0.49\linewidth]{plot_pdfs_V3.pdf}
@@ -668,47 +686,51 @@ whose replicas are globally shifted in order to satisfy positivity, resulting in
         \caption{PDFs plots} 
         \label{fig:pdfs_plots} 
     \end{center}
-  \end{figure}
+\end{figure}
 
 
 \subsection{Fit basis independence}
 As described in Sec.~\ref{sec:fitbasis}, different choices for the specific PDFs which are independently
 parameterized are possible.
-In this section we present results for a fit run in the flavour basis, using the hyperoptimized methodology
-determined for the evolution basis and imposing the theoretical constraints as described previously.
+In this section we present results for a fit run in the flavour basis, using the same methodology
+implemented for the evolution basis (same minimization algorithm and architecture parameters) 
+and imposing the theoretical constraints as described previously.
 
 %
 As mentioned in Sec.~\ref{sec:theory_constraints}, when working in the flavour basis 
 no small-$x$ preprocessing is used. This implies that the small-$x$ behaviour of the PDFs, which is unconstrained 
-by experimental data, can only be controlled through lagrange multipliers.
+by experimental data, can only be controlled through Lagrange multipliers.
 Because of this reason, for integrable distributions more stringent constraints are used than those implemented
 for the evolution basis. In particular, in order to get replicas satisfying Eq.~\eqref{eq:integ_def_2},
 the lagrange multiplier terms given in Eq.~\eqref{eq:chi2integ_k} is built using the three small-$x$
 points $x_i = 10^{-5}, 10^{-4}, 10^{-3}$. 
 
 %
-The fit quality present a mild deterioration, with a total $\chi^2$ equal to 1.23, 
-to be compared with the value 1.15 from Tab.~\ref{tab:experiments_chi2}.
+The fit quality is again basically unchanged, with a total $\chi^2$ which is slightly better than the corresponding 
+value in the evolution basis: $\chi_{\text{flav}}^2=1.13$ to be compared with the value $\chi_{\text{evol}}^2=1.15$ 
+from Tab.~\ref{tab:experiments_chi2}.
 The resulting PDFs plotted in the evolution basis are reported in Fig.~\ref{fig:pdfs_plots_flav_vs_evol}, 
 where they are compared with the evolution basis fit presented in the previous section.
-We find good agreement in both the data and small-$x$ region. In the former case, the PDFs are constrained from experimental
-data, and our results shows how, as expected, as long as data are present,
-different choices for the fit basis do no change the fit result. In the latter, the PDFs shape is controlled
-by the physical conditions provided by positivity, integrability and sum rules. Our results shows how, by taking 
-such constraints into account, equivalent results can be achieved also outside of the data region.
+The plots are shown in linear scale, in order to highlight the $x$-region where experimental data lay.
+By inspection of Fig.~\ref{fig:pdfs_plots_flav_vs_evol} it is clear that fit basis independence is achieved,
+showing how, as expected, as long as data are present and physical constraints given by positivity, integrability and sum rules
+consistently implemented, different choices for the fit basis do no change the final results.
+It is worth recalling that this result, even if expected, is not trivial. When we change fit basis a number
+of settings and parameters are changed at the same time. In particular, no small-$x$ preprocessing
+is used for the flavour basis, which as a consequence present a lower number of free parameters.
+The fact that we still get equivalent results provides a strong validation of the {\tt n3fit} environment.
 
 %
 In order to determine the best methodology, one should fix the input dataset and the fit basis. Once this is done,
-an hyperoptimization scan can be run on the hyperparameter defining the final methodology 
-(neural network architecture, minimization algorithm, positivity and integrability parameters ...).
-The methodology used to produce the results presented here has been hyperoptimized in the evolution basis,
-which will be used in the final NNPDF4.0 release. This is likely to explain the small difference in the fit quality
-between the evolution and flavour basis fit. In particular it is worth recalling that no small-$x$ preprocessing
-is used for the latter, which as a consequence present a lower number of free parameters.
+a scan of the hyperparameters defining the final methodology has to be performed 
+(neural network architecture, minimization algorithm, positivity and integrability parameters ...), in order to determine
+the corresponding values which allow the best fit.
+The methodology used to produce the results presented here has been optimized considering the evolution basis,
+which will be used in the final NNPDF4.0 release.  
 If results in the flavour basis were used to do actual phenomenology, an additional hyperparameters scan
 should be run, to ensure the best possible performance of the methodology. 
 Here we have shown how, without explicitly doing an additional hyperoptimization, the {\tt n3fit} environment still
-allows to obtain a good fit using a different basis, providing as a proof of concept an example of basis independence.
+allows to obtain a good fit using a different basis, providing a proof of concept of basis independence.
 
 
 \begin{figure}[t!]
