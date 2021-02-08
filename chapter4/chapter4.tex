@@ -1,17 +1,21 @@
 \chapter{Jets data}
 \label{ch:jets}
+The inclusion of new experimental data is the central element in any global PDFs determination.
+New data provide additional constrains on PDFs and allow to get more and more precise results. 
 In this Chapter, based on Ref.~\cite{AbdulKhalek:2020jut}, we present a systematic analysis for the inclusion 
-of jets cross-sections in a global parton distributions determination,
-assessing the impact of jets and dijets production measurements on the PDFs, using the recent NNLO QCD computations
-supplemented by EW corrections.
+of jets cross-sections in a global parton distributions determination.
+We will use this specific case to give an example of the general procedure which is usually followed 
+when considering new experimental data, using the recent NNLO QCD computations
+supplemented by EW corrections to assess the impact of jets and dijets production measurements on the PDFs. 
 
 % 
-There is a number of unsettle theoretical issues regarding the choice of the most suitable jets observable
-to be considered for precision QCD studies, such as for example the determination of PDFs.
+The choice of the most suitable jest observable to be considered in global PDFs determination and, more in general,
+for precision QCD studies presents a number of open theoretical issues, which makes the inclusion of
+jest data a particular interesting case.
 On one hand, the simplest inclusive observable, 
 the single-inclusive jets cross-section~\cite{Ellis:1990ek,Aversa:1988fv}, turns out to be non-unitary.
-A possible alternative free from this issue is offered by the dijets cross-section which however, despite appearing to be 
-especially well suited for PDFs determination~\cite{Giele:1994xd}, at NLO displays a significant scale dependence. 
+A possible alternative is offered by the dijets cross-section which however, despite appearing to be 
+unitary and especially well suited for PDFs determination~\cite{Giele:1994xd}, at NLO displays a significant scale dependence. 
 Thanks to the recent NNLO computation for these observables, this last problem has essentially been settled,
 with the scale dependence of dijets cross-section being under control at NNLO.
 On the other hand, the single-jet inclusive cross section
@@ -20,12 +24,20 @@ showing how the perturbative behaviour, the scale dependence~\cite{Currie:2018xk
 of this observable are non-trivial.  
 
 %
-In this study we address these issues in the context of PDFs determination. We study the impact of both single-inclusive
+In this study we address these issues from a phenomenological point of view in the context of PDFs determination. 
+We study the impact of both single-inclusive
 jets and dijets cross-sections in a global parton distributions fit and we
 asses which observable leads to better PDFs compatibility with other data, better fit quality,
 and more stringent constraint on the parton distributions. 
 With this study we aim to provide a guideline for the inclusion of jets observables in a future global fit,
 like for example NNPDF4.0.
+
+%
+The Chapter is structure as follows. In Sec.~\ref{sec:jets_data} we describe the data included in the analysis,
+together with their kinematic coverage; in Sec.~\ref{sec:jets_th} we briefly discuss the main aspects of the theoretical
+computation of jets observables, describing the scale choices and the way in which NNLO QCD predictions and EW corrections 
+are implemented in the fit; finally in Sec.~\ref{sec:jets_res} we present our results, consisting in a series of global
+PDFs fits where different jets observables are included.
 
 \section{Jets data from ATLAS and CMS}
 \label{sec:jets_data}
@@ -57,7 +69,7 @@ $p_T$ and rapidity $y$, cover the kinematic range $100\,\, \text{GeV} \leq p_T \
 $0 \leq |y| \leq 3$, while the ATLAS 8 TeV data cover the same range in rapidity but with an extended transverse momentum
 kinematic coverage $70\,\, \text{GeV} \leq p_T \leq 2.5\,\, \text{TeV}$.
 In our default fit we include only the central rapidity bin ($y_{jet} \leq 0.5$) of ATLAS 7 TeV, 
-for ease of comparison with the NNPDF3.1 analysis of Ref.~, where the same choice was adopted due to
+for ease of comparison with the NNPDF3.1 analysis of Ref.~\cite{Ball:2017nwa}, where the same choice was adopted due to
 the difficulty in achieving a good description of the complete set of rapidity bins using
 the default experimental covariance matrix\footnote{In Refs.~\cite{Ball:2017nwa,Nocera:2017zge} this choice was validated,
 showing how PDFs determined from each rapidity bin in turn are indistinguishable.}.
@@ -67,18 +79,18 @@ ranges $74\,\, \text{GeV} \leq p_T \leq 2.5\,\, \text{TeV}$ and $0 \leq |y| \leq
 
 %
 Moving to dijets cross-sections, in the case of ATLAS 7 TeV the measurements are double-differential in
-$m_{jj}$ and $|y^*|$, with
+$m_{jj}$ and $y^*$, with
 $260\,\,\text{GeV}\leq m_{jj} \leq 4.27\,\,\text{TeV}$ and $0 \leq y^* \leq 3.0$, while for CMS 7 TeV
 the distributions are differential in  $m_{jj}$ and $|y_{\text{max}}|$, with
 $200\,\,\text{GeV}\leq m_{jj} \leq 5\,\,\text{TeV}$ and $0 \leq |y_{\text{max}}| \leq 2.5$.  
 Finally the CMS 8 TeV data are triple-differential in $p_{T,\rm avg}$, $y_b$ and $y^*$ with
 ranges $133\,\,\text{GeV} \leq p_{T,\rm avg} \leq 1.78\,\,\text{TeV}$ and $0\leq y_b,\,y^* \leq 3$.
-Note that ATLAS dijets measurements are currently available at 7 and 13 TeV bit not at 8 TeV.
+Note that ATLAS dijets measurements are currently available at 7 and 13 TeV but not at 8 TeV.
 
 %
 In addition to the datasets listed in Table~\ref{tab:input_datasets} ATLAS and CMS have performed
 measurements at $\sqrt{s}=13$ TeV for both single-inclusive jet~\cite{Aaboud:2017wsi,Khachatryan:2016wdh}
-and dijets~\cite{Aaboud:2017wsi,Sirunyan:2020uoj}. These however have smaller integrated luminosities, for this reason
+and dijets~\cite{Aaboud:2017wsi,Sirunyan:2020uoj}. These however have smaller integrated luminosities and for this reason
 we do not include these datasets in the analysis. 
 %
 Finally several measurements for multijets production are also available, with ATLAS providing differential distributions for
@@ -110,6 +122,7 @@ For all the measurements considered here, the complete set of systematic uncerta
 
 
 \section{Theoretical calculations}
+\label{sec:jets_th}
 In this section we present the main aspects of the theoretical calculations used to perform
 our phenomenological study, discussing scale choices and QCD corrections up to NNLO.
 We also discuss EW corrections and the way in which they are combined with QCD predictions for the 
@@ -235,29 +248,31 @@ EW $K$-factors for the other distributions, not displayed here, present similar 
 
 
 \section{Results}
-In this section we present the main results of our study. These consist in a series of global PDF sets
+\label{sec:jets_res}
+In this section we present the main results of our study, consisting in a series of PDF sets
 in which the global NNPDF3.1 dataset described in Sec.~\ref{sec:results_nnpdf} has been supplemented with
 subsets of the jets and dijets data described in Sec.~\ref{sec:jets_data}.
-We consider a series of different scenarios where we vary the jet observable, the input data and the theory settings.
+We consider a series of different scenarios where we vary the jet observable and the input data. 
 Specifically we have performed fit including either single-inclusive or dijets data, in each case considering
-either the full dataset or the 7 TeV or 8 TeV data only. Different fits have been produced using 
-theory computations at pure NLO QCD, pure NNLO QCD and NNLO QCD supplemented by EW corrections.
-Finally, for single-inclusive jet data at 7 TeV, we have also produced fits varying the choice of the central scale,
-taking factorization and renormalization scales to be $\mu = \hat{H}_T$ as default and
-producing results for $\mu = p_T$ as well.
-For dijets we always consider $\mu = m_{jj}$. 
+either the full dataset or the 7 TeV or 8 TeV data only. 
+As described in the previous section we use NNLO QCD theoretical computations supplemented by EW corrections, 
+with the scale choice $\mu = \hat{H}_T$ for single-inclusive jet and $\mu = m_{jj}$ for dijets.
+%Different fits have been produced using 
+%theory computations at pure NLO QCD, pure NNLO QCD and NNLO QCD supplemented by EW corrections.
+%Finally, for single-inclusive jet data at 7 TeV, we have also produced fits varying the choice of the central scale,
+%taking factorization and renormalization scales to be $\mu = \hat{H}_T$ as default and
+%producing results for $\mu = p_T$ as well.
+%For dijets we always consider $\mu = m_{jj}$. 
 
 %
 In Table~\ref{tab:listfits} we report the full list of fits which will be discussed in the following, together 
 with an ID that will be used to identify them.
 The ID encodes the process used (j for single-inclusive
 jets and d for dijets); the data used (a for all, 7 or 8 for the
-7~TeV or 8~TeV datasets); the perturbative accuracy (n for QCD NNLO, w if EW corrections are included);
-and the choice of scale (pt when $\mu=p_T^{\rm jet}$).
-%
-Each row of corresponds to a different input datasets, while the columns identify different perturbative orders,
-corresponding to NLO QCD, NNLO QCD and NNLO QCD plus EW\footnote{By NLO and NNLO we mean that jets data have been
-consistently added with NLO or NNLO theory to the corresponding NLO and NNLO global fits.}.
+7~TeV or 8~TeV datasets); 
+finally n stands for the perturbative accuracy NNLO QCD and w reminds that EW corrections are included;
+Each row of corresponds to a different input datasets, with the fit \#bn representing the baseline, where no jets
+data are included. 
 
 %
 In all these fits the systematic uncertainties are implemented as fully correlated across bins of different kinematic 
@@ -277,15 +292,12 @@ to analyze results and compute various fit metrics and statistical estimators.
     \input{tables/fits.tex}
     \vspace{0.3cm}
     \caption{The PDF determinations discussed in this study and their
-      IDs. Each row corresponds to a different choice of input jet dataset or fit
-      settings (listed in the first column), and each column corresponds
-      to a different theory accuracy (listed in the first row).
+      IDs. Each row corresponds to a different choice of input jet dataset, 
+      specified in the first column.
       The ID encodes the process used (j for single-inclusive
       jets and d for dijets); the data used (a for all, 7 or 8 for the
-      7~TeV or 8~TeV datasets); the perturbative accuracy (n for QCD NNLO); and the choice of scale (pt when
-      $\mu=p_T^{\rm jet}$).
-      In this and subsequent tables and plots
-      ``jets'' is short for single-inclusive jets.}
+      7~TeV or 8~TeV datasets); the perturbative accuracy (n for QCD NNLO, w for EW corrections).
+      In this and subsequent tables and plots ``jets'' is short for single-inclusive jets.}
     \label{tab:listfits}
 \end{table}
 
@@ -323,36 +335,17 @@ to analyze results and compute various fit metrics and statistical estimators.
 %
 In Table~\ref{tab:chi2s} we report the $\chi^2$ values for all the fits with single-inclusive jet data listed in 
 Table~\ref{tab:listfits}, while in Table~\ref{tab:chi2sD} we report values for dijets fits.
+In both cases values reported in square brackets are referred to points not included in the corresponding fit. 
 We show the $\chi^2$ values for all the data in the global dataset, grouped by process type 
 (DIS NC, DIS CC, Drell-Yan, $Z\,\,p_T$, top pair) and for all jest data, both those included in the fit 
 and those which are not.
-Finally in Table.~\ref{tab:chi2_suppl} we report $\chi^2$ values for fits performed with alternative choices of central
-scale. In all these Tables, values reported in square brackets are refer to points not included in the corresponding fit.
-
-\iffalse
-\begin{table}[!t]
-    \renewcommand*{\arraystretch}{1.60}
-    \scriptsize
-    \centering
-    \input{tables/chi2_suppl.tex}
-    \vspace{0.3cm}
-    \caption{Same as Table~\ref{tab:chi2s} for
-      fits performed with alternative choices of central
-      scale. Now only $\chi^2$ values
-      for jet data are shown. Results for the fits with default settings
-      \#j7 and \#j7n  already shown  in Table~\ref{tab:chi2s} are included
-      for ease of reference.}
-    \label{tab:chi2_suppl}
-\end{table}
-\fi
+ 
 
 \subsection{Single-inclusive jets}
 \label{sec:single_jet}
 We first analyze results concerning the inclusion of single-inclusive jet data only.
 In Fig.~\ref{fig:jet_data_total} (left) we show the distances between the central values of the fits \#bn and \#janw, 
-namely the baseline not including any jets data and the one including all single-inclusive jet cross-sections 
-both with default settings and the most accurate theory (NNLO QCD, including EW
-corrections for jets).
+namely the baseline not including any jets data and the one including all single-inclusive jet cross-sections.
 From the distances plot it is clear how single-inclusive jet data have an impact only on the gluon distribution,
 the most affected regions being $x\simeq 0.05$, $0.1\lesssim x \lesssim 0.2$, and
 $0.3\lesssim x\lesssim 0.5$, with the gluon PDF changing by up to almost one sigma. 
@@ -364,7 +357,7 @@ of order one, with the only exception for 8 TeV ATLAS data, for which we get $\c
 It is interesting to note that the inclusion of singe-inclusive jet data leads also to an improvement 
 of the description of dijets data, for which \#janw shows better $\chi^2$ than the baseline fit \#bn.
 %   
-We observe a mild deterioration of the $\chi^2$ for to pair processes, with a value of 1.25 to be compared to
+We observe a mild deterioration of the $\chi^2$ for top pair processes, with a value of 1.25 to be compared to
 1.05 of the baseline. A closer investigation shows that this comes from the deterioration in the description 
 of the ATLAS top pair rapidity distributions, whose $\chi^2$ per datapoint increases from 1.22 to 2.01.
 
@@ -373,9 +366,8 @@ of the ATLAS top pair rapidity distributions, whose $\chi^2$ per datapoint incre
     \includegraphics[scale=0.45]{distance_janw_bn}
     \includegraphics[scale=0.45]{jet_data_1}\\
     \caption{ Comparison between the baseline fit with no jet data  (\#bn)
-      and the fit with all single-inclusive jet data included (\#janw), both with
-      default settings and the most accurate theory (NNLO QCD, including EW
-      corrections for jets). The distance (see text) between all PDFs
+      and the fit with all single-inclusive jet data included (\#janw).
+      The distance between all PDFs
       (left) and the ratio of the gluon PDF to the baseline (right) are shown at the scale
       $Q=100$~GeV. The shaded band is the 68\% confidence interval,
       while the dashed lines are the edge of one sigma interval.}
@@ -386,13 +378,21 @@ of the ATLAS top pair rapidity distributions, whose $\chi^2$ per datapoint incre
 We can asses the impact of different datasets considering fits with 7 TeV or 8 TeV data only, denoted as \#j7nw and \#j8nw
 respectively. From Table~\ref{tab:chi2s} we see how the unsatisfactory description of the 8 TeV ATLAS data persists even when 
 no 7 TeV data are included in the analysis, suggesting a possible problem with the dataset itself rather than 
-the presence of internal tension with the 7 TeV measurements. \comment{same for tension with baseline, which is even worse}
+the presence of internal tension with the 7 TeV measurements.
+A significant difference between 7 and 8 TeV datasets is that for the former only the central rapidity bin is included,
+as mentioned in Sec.~\ref{sec:jets_data}, while for the latter all the rapidity bins are included.
+This suggests that the 8 TeV data may also be affected by similar issues in the treatment of correlations 
+between rapidity bins as those observed in the 7 TeV case in Refs.~\cite{Ball:2017nwa}. This problem is addressed
+in App.~\ref{app:jets} where we will see that this is indeed the case.
+%
+Looking at the $\chi^2$ for top pair processes, we note how its deterioration with respect to the baseline value comes
+entirely from the inclusion of 8 TeV data.
 In Fig.~\ref{fig:jet_data_partial}
 we plot the gluon PDF and the corresponding error: for both the 7 TeV and 8 TeV data, the results show 
 an enhancement of the central gluon PDF at large-$x$ and a suppression at small-$x$, and a general reduction in the 
 PDF uncertainty, which is more marked in the case of the 8 TeV data. 
 In general, results obtained including 8 TeV data only are very close to those of the fit \#janw, showing
-how these datasets are those driving the impact of single-inclusive jet data on the final PDFs.
+how 8 TeV datasets provide the dominant contribution, driving the impact of single-inclusive jet data on the final PDFs.
 
 \begin{figure}[!t]
     \centering
@@ -408,8 +408,8 @@ how these datasets are those driving the impact of single-inclusive jet data on 
 
 \subsection{Dijets}
 We now turn to PDFs in which dijets data rather than single-inclusive jet data have been included.
-As done for the single-inclusive jet data, we start comparing the baseline \#bn, where no jets data are included,
-to \#danw, in which all dijets data are included using our optimal theory settings, i.e. NNLO QCD with EW corrections.
+As done for the single-inclusive jet data, we start comparing the baseline \#bn, where no jets data are considered,
+to \#danw, in which all dijets data are included using NNLO QCD computations with EW corrections.
 From Table~\ref{tab:chi2sD} we see how all the dijets datasets are fairly well described, with $\chi^2$ values for datapoint
 around $1.6$ for each individual dataset. Also, the inclusion of dijets data leads to an improvement in the description
 of single-inclusive jet data, consistently with what observed in Sec.~\ref{sec:single_jet}, where 
@@ -430,7 +430,7 @@ whose $\chi^2$ is left almost unchanged.
 %
 In the left panel of Fig.~\ref{fig:dijet_data_total} we show the distances between fits \#bn and \#danw: again only
 the gluon PDF is affected by the inclusion of the jets data, with the regions $x\simeq 0.01$ and $0.06\lesssim x \lesssim 0.4$
-being the most affected.
+being the ones showing the largest effects.
 Looking at the gluon PDF plot in the right panel of Fig.~\ref{fig:dijet_data_total}, we observe a suppression in the former region
 by about $2\%$, corresponding to a down shift of the central value by about one sigma, and an enhancement by about $10\%$
 in the latter, around $x\sim 0.3$, corresponding to an up shift of the central value by more than one sigma.
@@ -439,14 +439,15 @@ These features are qualitatively similar to those observed in Sec.~\ref{sec:sing
 data, but somewhat more pronounced.    
 
 %
-We can study the relative impact of different datasets by studying results for the fits \#j7nw and \#j88nw, where 
+We can study the relative impact of different datasets by studying results for the fits \#j7nw and \#j8nw, where 
 either 7 TeV or 8 TeV data only are included.
-By inspection of Fig.~\ref{fig:dijet_data_partial} we see how the impact of the two datasets 
+By inspection of Fig.~\ref{fig:dijet_data_partial}, where we plot the gluon PDF and the corresponding error,
+we see how the impact of the two datasets 
 on the gluon error and central value is qualitatively the same, and therefore qualitatively equivalent to the one of the 
 full dijets dataset, with the 8 TeV data having a stronger impact.
 From Table~\ref{tab:chi2sD} we observe how the fit quality is equally good for the two fits.
 However the fit including 8 TeV data leads to a similar description of all the dijets data, including those which are
-not included in either fits, to the one given by the one where all dijets data are included.
+not included in either fits, to the one given by \#danw, where all dijets data are included.
 So once again we conclude that the 8 TeV data provide the dominant contribution.
     %-------------------------------------------------------------------------------
     \begin{figure}[!t]
@@ -482,21 +483,20 @@ As for compatibility with the global NNPDF3.1 datasets, the inclusion of jets da
 of the description of the rest of the data in comparison to the baseline fit, as we can see looking at the $\chi^2$
 values reported in Tables~\ref{tab:chi2s},~\ref{tab:chi2sD}.
 The only exception is the ATLAS top rapidity distribution, which, as mentioned before,
-seems to be in tension with the ATLAS 8 TeV single-inclusive
-jet data.
+seems to be in tension with the 8 TeV single-inclusive jet data.
 
 %
-Concerning fit quality, the quality of the two fits \#janw and \#danw is comparable, though slightly better
-for the latter ($\chi^2=1.65$ vs. $\chi^2=1.88$). Also, the quality of the fit to dijets 
+Concerning fit quality, the quality of the two fits \#janw and \#danw to the corresponding jets data is comparable,
+though slightly better for the latter ($\chi^2=1.65$ vs. $\chi^2=1.88$). Also, the quality of the fit to dijets 
 when single-inclusive jets are fitted and conversely are almost identical ($\chi^2=2.10$ for dijets when fitting
 single-inclusive jets vs. $\chi^2=2.06$ for single-inclusive jets when fitting dijets) and, as observed before,
 better then what we get for the baseline.
 This confirms full consistency between the two datasets, with a marginal preference for dijets.
 
 %
-Finally we note how the fit inclusive dijets data is somewhat more internally consistent than the one including
+Finally we note how the fit including dijets data is somewhat more internally consistent than the one including
 single-inclusive jets: the $\chi^2$ per datapoint is slightly better (1.22 vs. 1.28) and the $\chi^2$ for individual
-dataset is generally better, in particular for top production data
+dataset is generally better, in particular for top production data.
 
 \begin{figure}[!t]
     \centering
@@ -504,15 +504,15 @@ dataset is generally better, in particular for top production data
     \includegraphics[scale=0.44]{jet_dijet_1}\\
     \caption{Same as Fig.~\ref{fig:jet_data_total}, but now comparing the
       fits with  all single-inclusive jet data (\#janw), and that with all
-      dijet data (\#danw) and highest theory accuracy (NNLO QCD+ EW) and
-      default settings. In the gluon comparison (right) results are
+      dijet data (\#danw).
+      In the gluon comparison (right) results are
       displayed as a ratio to the baseline with no jet data included (also
       shown for reference).}
     \label{fig:jet_dijet_1}
-    \end{figure}
+\end{figure}
 
-\subsection{Summary}
-In this chapter we have presented a phenomenological investigation of inclusive jet
+%
+To sum up, in this chapter we have presented a phenomenological investigation of inclusive jet
 production measurements at LHC in the context of global PDFs determination, exploiting recent NNLO QCD 
 theoretical calculations supplemented by EW corrections,
 and studying for the first time the impact of the inclusive dijets observables.

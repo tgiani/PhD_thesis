@@ -1,7 +1,42 @@
 \chapter{Jets data}
+\label{app:jets}
+\section{impact of the choice of correlation model}
+In this appendix we discuss the impact of different decorrelation models for the 8 TeV single-inclusive jet data
+from ATLAS.
+As discussed in Sec.~\ref{sec:single_jet}, these data appear to be fully consistent with the corresponding
+7 TeV ones, yet they show a poor $\chi^2$ when included in the global fit.
+The problem might be due to some issues in the covariance matrix of these data, in a similar way 
+to what discussed in Ref.~\cite{Harland-Lang:2017ytb} for 7 TeV dataset.
 
-\section{Impact of higher-order QCD and EW corrections}
+%
+To check whether or not this is indeed the case, starting from the default fit (\#janw) we produce two variants 
+by modifying the treatment of three (out of 659) correlated systematic uncertainties
+related to the jet energy scale, as suggested in Ref.~\cite{Aaboud:2017dvo}.
+Specifically, in the first variation, denoted as \#janw-8dec, these three uncertainties are completely decorrelated;
+in the second variation, denoted as \#janw-8pcor, they are partially decorrelated, splitting each uncertainty 
+into three components and decorrelating one of them.
+From Table.~ we see how, upon decorrelation the $\chi^2$ for ATLAS improves considerably, leaving the 
+values for the other datasets almost unaffected. Very similar results are obtained when fully or partially 
+decorrelating the relevant sources of systematics, thus validating the prescription of Ref.~\cite{Aaboud:2017dvo}.
+At the PDFs level the results are very stable, as we see by inspection of Fig.~, where the gluon PDF for 
+\#janw and \#janw-8dec are compared.
 
-\section{Impact of the choice of scales}
+%
+We conclude that the decorrelation models suggested in Ref.~\cite{Aaboud:2017dvo} solve the issue observed in
+Sec.~\ref{sec:jets_res}, leading to a good fit quality of the ATLAS single-inclusive jet data at 8 TeV without
+significant change in the PDFs.
 
-\section{Impact of the choice of correlation models}
+\begin{table}[!t]
+    \renewcommand*{\arraystretch}{1.60}
+    \scriptsize
+    \centering
+    \input{tables/chi2_suppl.tex}
+    \vspace{0.3cm}
+    \caption{Same as Table~\ref{tab:chi2s} for
+      fits performed with alternative choices of central
+      scale. Now only $\chi^2$ values
+      for jet data are shown. Results for the fits with default settings
+      \#j7 and \#j7n  already shown  in Table~\ref{tab:chi2s} are included
+      for ease of reference.}
+    \label{tab:chi2_suppl}
+\end{table}
