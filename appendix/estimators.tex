@@ -28,3 +28,33 @@ a fit with $N_{\text{rep}} = 100$ replicas ,
 $d \simeq 10 $ corresponds to a difference of one-sigma in units of the corresponding variance.
 
 \section{$\phi$ estimator}
+\label{app:phi}
+In Chapter~\ref{ch:th_error} we introduced the estimator $\phi$, defined as 
+\begin{align}
+    \label{eq:phi_app}
+    \phi = \sqrt{\langle \chi^2_{\text{exp}}\left[T^{(k)}\right] \rangle - \chi^2_{\text{exp}}\left[\langle T^{(k)} \rangle\right]}\,.
+\end{align}
+Here, following Ref.~\cite{Ball:2014uwa}, we show how such quantity measures the standard
+deviation over the replica sample in units of the data uncertainty.
+%
+Using the $\chi^2$ definition the first term of Eq.~\ref{eq:phi_app} can be written as
+\begin{align}
+    N_D \langle \chi^2_{\text{exp}}\left[T^{(k)}\right] \rangle = 
+     \sum_{IJ}& \langle T^{(k)}_I  C_{IJ}^{-1} T^{(k)}_J \rangle  -  \sum_{IJ} D_I C_{IJ}^{-1} \langle T^{(k)}_J  \rangle
+     \nonumber \\ &-  \sum_{IJ} \langle T^{(k)}_I \rangle C_{IJ}^{-1} D_J  
+     + \sum_{IJ} D_I C_{IJ}^{-1} D_J\,,
+\end{align}
+so that subtracting $\chi^2_{\text{exp}}\left[\langle T^{(k)} \rangle\right]$ we get
+\begin{align}
+    N_D \left(\langle \chi^2_{\text{exp}}\left[T^{(k)}\right] \rangle 
+    - \chi^2_{\text{exp}}\left[ \langle T^{(k)} \rangle \right]\right) =
+    \sum_{IJ}& \langle T^{(k)}_I  C_{IJ}^{-1} T^{(k)}_J \rangle 
+    - \sum_{IJ}& \langle T^{(k)}_I\rangle  C_{IJ}^{-1} \langle T^{(k)}_J \rangle
+\end{align}
+from which 
+\begin{align}
+    \phi^2 = \frac{1}{N_D}\sum_{IJ} C^{-1}_{IJ}T_{JI}\,,
+\end{align}
+i.e. the average over all the data points of the uncertainties and correlations of the theoretical
+predictions, $T_{IJ}$, normalized according to the corresponding uncertainties and correlations of the
+data as expressed through the covariance matrix $C_{I}$.
