@@ -73,14 +73,14 @@ The real emission partonic differential cross section, is given by
 where 
 \begin{equation}
   {\rm d} \Phi_{2}=\frac{1}{32\,\pi\,\beta\,s} {\rm d}\cos\theta\,
-  \Theta(1+\cos\theta )\,\Theta(1-\cos\theta)\, , \quad{\rm and}\quad
+  \Theta(1+\cos\theta )\,\Theta(1-\cos\theta)\, , \quad
   \beta=\sqrt{1-\frac{4\,m_b^2}{s}}\,,
 \end{equation}
 and
 \begin{equation}
   \label{eq:real}
   \begin{split}
-    \left| \overline{{\cal M}}_{b\bar{b}Hg} \right|(s,t,u) = &
+    \left| \overline{{\cal M}}_{b\bar{b}Hg} \right|&(s,t,u) = 
     \frac{4}{3}\pi g_{b\bar{b}H}^2C_F\alpha_s
     \left\{
       \left( s-m_H^2\right)\left[ \frac{1}{m_b^2-t}
@@ -111,14 +111,14 @@ In order to remove the soft divergence which appears in the  $s\rightarrow
 m_H^2$ limit we need to construct a suitable  subtraction term. Using
 the relevant 
 equations in Ref.~\cite{Krauss:2017wmx} we find
-\begin{equation}
+\begin{align}
   \label{eq:sub}
   {\cal S} =
   \frac{2}{3}\,\pi \,\alpha_s\,C_F\,g_{b\bar{b}H}^2\,\beta_0^2\,m_H^2
-  \frac{1}{\tilde{x}}
-  \left[\frac{2}{m_b^2-t}\left( P_{qq}(\tilde{x})-\frac{2\,\tilde{x}\,m_b^2}{m_b^2-t} \right)
-    +\frac{2}{m_b^2-u}\left( P_{qq}(\tilde{x})-\frac{2\,\tilde{x}\,m_b^2}{m_b^2-u} \right)\right]
-\end{equation}
+  \frac{1}{\tilde{x}}&
+  \biggl[\frac{2}{m_b^2-t}\left( P_{qq}(\tilde{x})-\frac{2\,\tilde{x}\,m_b^2}{m_b^2-t} \right) \nonumber \\
+    &+\frac{2}{m_b^2-u}\left( P_{qq}(\tilde{x})-\frac{2\,\tilde{x}\,m_b^2}{m_b^2-u} \right)\biggr]\,,
+\end{align}
 where
 \begin{equation}
   \tilde{x} = \frac{m_H^2-2\,m_b^2}{s-2\,m_b^2}\,.
@@ -152,12 +152,12 @@ completely factorize in a vertex form factor:
   {\cal V} = \frac{\alpha_s\,C_F}{\pi}{\cal B}\,\delta_g\,,
 \end{equation}
 with
-\begin{equation}
-  \delta_g = -1 - L_{\lambda} +
-  \frac{(1-\beta_0^2)}{\beta_0} \ln d_0 
-  - \frac{1+\beta_0^2}{2\,\beta_0}\left[-\ln d_0\,L_{\lambda} + \ln^2d_0+{\rm Li}_2\left(
+\begin{align}
+  \delta_g &= -1 - L_{\lambda} +
+  \frac{(1-\beta_0^2)}{\beta_0} \ln d_0 \nonumber\\
+  &- \frac{1+\beta_0^2}{2\,\beta_0}\left[-\ln d_0\,L_{\lambda} + \ln^2d_0+{\rm Li}_2\left(
       1-\frac{1}{d_0} \right) -\frac{\pi^2}{2} \right]\,,
-\end{equation}
+\end{align}
 where
 \begin{equation}
   L_{\lambda} \equiv \frac{1}{\epsilon} + \ln\frac{4\,\pi\,\mu_R^2}{m_b^2}
@@ -193,6 +193,7 @@ and
         \ln{d} -1 \right] +
       \left( 1-x \right)\right\}}_{+}\,.
 \end{equation}
+
 \subsubsection{Final formulae, mass and PDF renormalization}
 We now combine the various partial results obtained in the previous
 subsections  into the  full expression for the $b\bar{b}$-channel
@@ -214,17 +215,17 @@ However, we must perform the change of
 renormalization scheme Eq.~\eqref{eq:change-of-scheme} which relates
 the massive and massless schemes.
 Up to ${\cal O}(\alpha_s)$ we get
-\begin{equation}
-  B_{b\bar{b}}\left(x,\mu_R^2,\mu_F^2 ,\mu_b^2\right) =
-  \,\left[ \sigma_0(\mu_R^2) \delta(1-x) + \alpha_s(\mu_R^2)
-    B_{b\bar{b}}^{(1)}\left(x,\mu_R^2,\mu_F^2 ,\mu_b^2\right) \right]
+\begin{align}
+  B_{b\bar{b}}\left(x,\mu_R^2,\mu_F^2 ,\mu_b^2\right) &= 
+  \biggl[ \sigma_0(\mu_R^2) \delta(1-x) + \nonumber \\ &\alpha_s(\mu_R^2)
+    B_{b\bar{b}}^{(1)}\left(x,\mu_R^2,\mu_F^2 ,\mu_b^2\right) \biggr]
   +{\cal O}(\alpha_s^2)
-\end{equation}
+\end{align}
 where
 \begin{equation}
   \begin{split}
-  B_{b\bar{b}}^{(1)}\left(x,\mu_R^2,\mu_F^2 ,\mu_b^2\right) =
-  \frac{\sigma_0(\mu_R^2)\,C_F}{\pi}&
+  B_{b\bar{b}}^{(1)}&\left(x,\mu_R^2,\mu_F^2 ,\mu_b^2\right) =
+  \frac{\sigma_0(\mu_R^2)\,C_F}{\pi}
   \left\{
     \left[
       \frac{3}{2}\ln\frac{\mu_R^2}{\mu_b^2}+2 + I + \delta_g
@@ -239,8 +240,8 @@ Performing the $z$ integration gives the final result
 \begin{equation}
   \label{eq:b1-massive}
   \begin{split}
-    B_{b\bar{b}}^{(1)}&\left(x,\mu_R^2,\mu_F^2 ,\mu_b^2\right) =
-    \frac{\sigma_0(\mu_R^2)\,C_F}{\pi}
+    B_{b\bar{b}}^{(1)}&\left(x,\mu_R^2,\mu_F^2 ,\mu_b^2\right) = \\
+    &\frac{\sigma_0(\mu_R^2)\,C_F}{\pi}
     \Biggl\{
     \delta(1-x)
     \left[
@@ -265,13 +266,13 @@ Performing the $z$ integration gives the final result
   \end{split} 
 \end{equation}
 where
-\begin{equation}
-  \xi = 1+\ln\left(\frac{1-\beta_0^2}{(1+\beta_0)^2}\right)+
-  \frac{\left(5-7\beta_0^2\right)}{4\,\beta_0}\ln d_0+
-  \frac{\left(\beta_0^2+1\right)}{\beta_0} \left( 2\,{\rm
+\begin{align}
+  \xi &= 1+\ln\left(\frac{1-\beta_0^2}{(1+\beta_0)^2}\right)+
+  \frac{\left(5-7\beta_0^2\right)}{4\,\beta_0}\ln d_0 \nonumber \\
+  &+\frac{\left(\beta_0^2+1\right)}{\beta_0} \left( 2\,{\rm
       Li}_2\left(\frac{1}{d_0}\right)+\frac{\pi ^2}{6} -\ln d_0
     \ln\frac{4\beta_0^2} {(1+\beta_0^2)(1+\beta_0)}\right)\,,
-\end{equation}
+\end{align}
 and
 \begin{equation}
   \gamma = \frac{1+\beta^2}{2\,\beta}\,,\quad \gamma_0 =
@@ -296,11 +297,12 @@ We get
     \frac{\alpha_s \, C_F\,\sigma_0(\mu_R^2)}{\pi}
     \Biggl\{
       \delta(1-x)\left[ -1+ \frac{\pi^2}{3} + \frac{3}{2}
-          \ln\frac{\mu_R^2}{\mu_F^2} \right] +\,4\,{\cal
-        D}_1(1-x) \\
-      +&  2\left( 
+          \ln\frac{\mu_R^2}{\mu_F^2} \right] \\+&\,4\,{\cal
+        D}_1(1-x) 
+      +  2\left( 
       \ln{\frac{m_H^2}{\mu_F^2}}+ \ln{\frac{\mu_b^2}{m_b^2}}\right)\,{\cal D}_0(1-x)
-      -\frac{2\ln x}{1-x} - (2 + x + x^2)\left[
+      -\frac{2\ln x}{1-x}  \\
+      &- (2 + x + x^2)\left[
         \ln\frac{m_H^2}{\mu_F^2} +\ln{\frac{\mu_b^2}{m_b^2}} + \ln \frac{(1-x)^2}{x}\right]+ x\,(1-x)  \Biggr\}\,.
   \end{split} 
 \end{equation}
@@ -371,8 +373,8 @@ Performing the $\cos\theta$ integration gives
        x-5}\right)   \\
     &\frac{4096\,\Lambda\, \left(1-\beta^2 \right)
       \left(\beta^2+x-1\right)} {\left(-\Lambda +\beta^2+4 x-5\right)
-      \left(\Lambda +\beta^2+4 x-5\right)} +
-    \Lambda\,\left(5-\beta^2\right) \left(\beta^4+(4 x+22) \beta^2+44 x-71\right)
+      \left(\Lambda +\beta^2+4 x-5\right)} \\  
+    &+\Lambda\,\left(5-\beta^2\right) \left(\beta^4+(4 x+22) \beta^2+44 x-71\right)
   \Biggr\}\,.
   \end{split}
 \end{equation}
@@ -381,13 +383,13 @@ Performing the $\cos\theta$ integration gives
 As in the case of the $b\bar{b}$ channel, taking the massless limit
 requires setting $\beta=1$ everywhere except in the logarithms where
 one can use Eq.~\eqref{eq:beta}, which gives
-\begin{equation}
+\begin{align}
   \label{eq:mlimbg}
-  B_{bg}^{(1),(0)}(x,\mu_R^2,\mu_F^2,\mu_b^2) =
-  \frac{T_R}{\pi}\left\{  
+  B_{bg}^{(1),(0)}(x,\mu_R^2,\mu_F^2,\mu_b^2) &=
+  \frac{T_R}{\pi}\biggl\{  
     \frac{x}{2}\,P_{qg}(x)\left[
       \ln\left(\frac{(1-x)^2}{x}\right)+\ln\frac{m_H^2}{\mu_F^2}+
-      \ln{\frac{\mu_b^2}{m_b^2}} \right]-\frac{x}{4}(1-x)(3-7\,x) \right\}\,.
-\end{equation}
+      \ln{\frac{\mu_b^2}{m_b^2}} \right]\nonumber \\ &-\frac{x}{4}(1-x)(3-7\,x) \biggr\}\,.
+\end{align}
 Once again, one can explicitly check that this exactly corresponds to
 it massless limit counterpart, which can be found in Eq.~(A9) of Ref.~\cite{Harlander:2003ai}.
