@@ -1,14 +1,14 @@
 \chapter{Theory error}
 \section{Alternative points prescriptions}
-In Sec.~\ref{sec:scale_var} we construct the theory covariance matrix using the so-called 9-points prescription, 
+In Sec.~\ref{sec:scale_var} we have discussed how to construct the theory covariance matrix using the so-called 9-points prescription, 
 where the renormalization and factorization scales of a specific process are varied completely independently.
 In Ref.~\cite{AbdulKhalek:2019ihb} a series of alternative options are investigated, and the 9-points prescription is selected 
 as the most suitable one according to the validation procedure described in Sec.~\ref{sec:validation}.
-In this Appendix we present an alternative simpler choice for the 9-point prescription, denoted as 3-points prescription,
+In this Appendix we present an alternative simpler choice, denoted as 3-points prescription,
 studying how the fit and validation results change, and showing how the 9-points prescription is indeed a better option. 
 
 %
-In the three point prescription both the renormalization and factorization scales are varied coherently by a fixed amount about the
+In the 3-points prescription both the renormalization and factorization scales are varied coherently by a fixed amount about the
 central value.
 In other words, considering a single process we set $k_f=k_r$ and we only vary the single resulting scale, obtaining the
 2+1 points in the scales space shown in Fig.~\ref{fig:3-points}.
@@ -32,7 +32,7 @@ The resulting entries for the theory covariance matrix are
     \label{3S}
     S^{(\rm 3pt)}_{ij} = \frac{1}{2}\big\{ \Delta_i^{++}\Delta_j^{++}  + \Delta_i^{--}\Delta_j^{--}\big\} \, ,
 \end{align}
-whenever $i,j$ are point belonging to the same process $\pi$.
+where the indices $i,j$ label point belonging to the same process $\pi$.
 Considering two different processes $\pi_1$ and $\pi_2$ we set $k_f=k_{r_1}$ for $\pi_1$ and $k_f=k_{r_1}$ for $\pi_2$
 and then vary $k_{r_1}$ and $k_{r_2}$ independently. Note that in this way the correlation in the variation of $k_f$
 between $\pi_1$ and $\pi_2$ is necessarily ignored so that the variations for each process are entirely uncorrelated.
@@ -41,29 +41,31 @@ Eq.~\eqref{3S} is generalized to the off-diagonal entries of the theory covarian
     S^{(\rm 3pt)}_{i_1j_2} = 
     \frac{1}{4}\big\{\big(\Delta_{i_1}^{++} + \Delta_{i_1}^{--} \big) \big(\Delta_{j_2}^{++} + \Delta_{j_2}^{--} \big) \big\}\, .
 \end{equation}
+where the indices $i_1,j_2$ now label point belonging to the processes $\pi_1$ and $\pi_2$ respectively.
 The validation of such covariance matrix proceeds like described in Sec.~\ref{sec:validation},
-through the computation of the angle $\theta$ between the shift $\delta$ and its component on
+through the computation of the angle $\theta$ between the shift $\delta$ and its component on the
 subspace $S$, defined in Eq.~\eqref{eq:angle}. In Table ~\ref{tab:process_efficiencies} 
-we compare the values of such angle for each process in the case of the 3- and 9-points prescriptions:
-the former performs rather poorly in comparison to the 9-points one, showing how a too
-simple covariance matrix doesn't capture the pattern of correlation between theory uncertainties. 
-This suggests that lack of correlation in the factorization scale between processes in this prescription
-means that much of the correlation in the MHOU due to universal PDF evolution has been missed.
+we compare the values of such angle for each process in the case of the 3- and 9-points prescriptions.
+We note how the former performs rather poorly in comparison to the 9-points one,
+suggesting that the lack of correlation in the factorization scale between processes in this prescription
+implies that much of the correlation pattern in the MHOU due to universal PDF evolution has been missed.
 \begin{table}[ht!]
 	\centering
 	\small
 	\input{tables/process_efficiencies.tex}
         \vspace{3mm}
-	\caption{Comparison between 3- and 9-points prescriptions.}
+	\caption{Comparison between the $\theta$ values for the 3- and 9-points prescriptions.}
 	\label{tab:process_efficiencies}
 \end{table}
 
-In Table.~\ref{tab:chi_3_vs_9} we report the values for the total $\chi^2$ and $\phi$ estimator for fits performed with the 9-points,
-already commented in Sec.~\ref{sec:th_error_results} and reported here for reference, and the 3-points
+%
+In Table.~\ref{tab:chi_3_vs_9} we compare the values for the total $\chi^2$ and $\phi$ estimator for fits performed with the 9-points,
+already shown in Sec.~\ref{sec:th_error_results}, and the 3-points
 prescription, together with values for the baseline NLO fit produced without any theory error.
-In the case of the 3-points prescription the quality of the fit remains unchanged by the inclusion of the MHOU,
-while as noticed before it is improved when considering the 9-point prescription, for which we also observe a more 
-marked increase in the value of $\phi$.
+Unlike the 9-points prescription case, for which as observed in Sec.~\ref{sec:th_error_results}
+the $\chi^2$ improves with respect to the baseline,
+in the case of the 3-points prescription the fit quality remains unchanged after the inclusion of the MHOU.
+Both prescriptions show an increase in the value of $\phi$, which is bigger in the case of the 9-points one.
 
 \begin{table}[ht!]
 	\centering
@@ -74,9 +76,10 @@ marked increase in the value of $\phi$.
 	\label{tab:chi_3_vs_9}
 \end{table}
 
-Finally in Fig.~\ref{fig:pdfs_plots_th_err_3_vs_9} we study the dependence of the fits results on the choice of the prescription
-for the theory covariance matrix, looking at the gluon distribution. In the same plot we report also the central value of
-the NNLO fit with experimental uncertainties only. All distributions are normalized to the 3-points prescription results.
+%
+Finally in Fig.~\ref{fig:pdfs_plots_th_err_3_vs_9} we study the dependence of the fit results on the choice of the prescription
+for the theory covariance matrix, taking as example the gluon distribution. In the same plot we report also the central value of
+the NNLO fit with experimental uncertainties only and all the distributions are normalized to the 3-points prescription results.
 In general the two results are consistent, but the central value of the 9-points prescription result is much closer 
 to the NNLO central value, providing further confirmation for preferring the 9-point prescription.
 
