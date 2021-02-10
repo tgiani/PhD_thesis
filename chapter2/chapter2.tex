@@ -186,6 +186,7 @@ will be discussed in the following.
 
 %
 \subsection{Next-to-Leading-Order QCD corrections}
+\label{sec:QCD_corrections}
 Considering a generic structure function $F$, following the parton model ideas we can write it as
 \begin{align}
     \label{eq:strcuture_function}
@@ -248,8 +249,8 @@ Similarly, when considering multiple gluons emissions from initial state particl
 $\left(\alpha_s\left(Q^2\right)\,\log\frac{Q^2}{Q_0^2}\right)^n$ show up.
 Since all these terms are of order 1, if we accounted for only some of them we would spoil perturbation theory.
 In order to get a proper perturbative expansion such terms have to be resummed at all orders.
-Such resummation is achieved through factorization of collinear singularities into the parton model PDFs,
-as described in the next section.
+Such resummation is achieved factorizing the collinear singularities into the parton model PDFs,
+and solving the resulting renormalization group equations as described in the next sections.
 
 \subsection{Factorization of collinear singularities}
 The singularities described in the previous sections arises from the kinematic region where $k_{\perp}\rightarrow 0$,
@@ -680,6 +681,8 @@ them starting from the QCD vertices for $q\rightarrow q\,g$, $g\rightarrow q\bar
 %
 The DGLAP equations can be solved perturbatively computing an evolution kernel, which can be subsequently convoluted
 with PDFs at a given scale $Q_0$ to evolve them up to the final scale $Q$.
+In such evolution kernel the resummation of the large collinear logarithms mentioned at the end of Sec.~\ref{sec:QCD_corrections}
+is achieved by exponentiating them, allowing a consistent definition of PDFs at a generic scale $Q$.
 In the following we briefly summarise how the QCD evolution equation can be solved in Mellin space for the
 nonsinglet sector, yielding such evolution kernel.
 %

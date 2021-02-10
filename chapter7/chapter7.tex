@@ -3,13 +3,18 @@
 
 In recent years, there has been a significant effort within the lattice
 community to compute specific equal-time correlators that can be directly
-related to Parton Distribution Functions (PDFs). PDFs describe the longitudinal
-structure of nucleons in terms of their partonic constituents. They are
-inherently non-perturbative quantities, which can be extracted from data using
-so-called factorization theorems. Given the central role of PDFs in the analysis
+related to PDFs. 
+The non-perturbative nature of parton distributions makes them a natural candidate for a lattice.
+Also, given their central role in the analysis
 of experimental data at hadronic colliders, it would be highly beneficial to be
 able to use lattice QCD to determine these crucial ingredients in our current
-understanding of nucleon structure. Quasi-PDFs\footnote{Quasi-PDFs are one example of the more general LaMET formalism \cite{Ji:2014gla,Ji:2020ect}, but here we focus on the collinear $x$-dependent distributions.} and pseudo-PDFs were introduced in
+understanding of nucleon structure.
+However it has been known for a long time that it is not possible to
+obtain them directly from first principle computations, due to the Euclidean metric of the
+lattice, which does not allow to access the light-cone matrix element of Eq.~\eqref{eq::barepdf}.
+%
+Quasi-PDFs\footnote{Quasi-PDFs are one example of the more general LaMET formalism \cite{Ji:2014gla,Ji:2020ect}, 
+but here we focus on the collinear $x$-dependent distributions.} and pseudo-PDFs were introduced in
 Refs.~\cite{PhysRevLett.110.262002, Radyushkin:2017cyf}, and since then numerous
 publications have appeared, addressing the main theoretical issues for these
 approaches. For recent reviews, we refer the reader to
@@ -29,8 +34,9 @@ questions: that is, how do we extract information on PDFs from quasi- and
 pseudo-PDFs, and what is the interplay between quasi- and pseudo-PDFs with
 experimental data?
 
-In this paper we study these topics in the context of a renormalizable scalar
-theory. Scalar field theory is a valuable model for understanding the essential
+In this Chapter we introduce and study these topics in the context of a renormalizable scalar
+theory, setting the stage for the phenomenological studies presented in the next two Chapters.
+Scalar field theory is a valuable model for understanding the essential
 theoretical issues in a simple framework, as shown in the pioneering study of
 PDFs by Collins in Ref.~\cite{Collins:1980ui}. We follow the ideas presented
 there, which we extend to account for quasi- and pseudo-PDFs. Our aim is to
@@ -68,7 +74,9 @@ this paper. }:
     \langle P | \phi\left(z\right) \phi\left(0\right) | P \rangle\, ,
 \end{align}
 where $P^+$ and $z^-$ are the usual light-cone coordinates of the four-vectors
-$P$ and $z$ respectively. In the second case we obtain an equal-time correlator
+$P$ and $z$ respectively.
+Eq.~\eqref{eq:barePDF} is the toy-model analogous of Eq.~\eqref{eq::barepdf}, giving the PDF definition in QCD.
+In the second case we obtain an equal-time correlator
 that can be computed on the lattice. We address the problem of the
 renormalization of these quantities and study the relation between them at one
 loop in perturbation theory, both in position and momentum space. As we shall
@@ -77,14 +85,10 @@ to understand easily the main concepts, relations and limitations of the quasi-
 and pseudo-PDF approaches. With a clear picture of the theoretical background
 and of what is currently available in the literature, we then propose a general
 framework to extract collinear PDFs from the available lattice data, based on
-the optimization of a parametric form of the PDFs. The implementation of such
-approach has been started in Ref.~\cite{Cichy:2019ebf} within the {\tt NNPDF}
-environment, using the same strategy that is commonly used to extract PDFs from
-data for experimental observables.
+the optimization of a parametric form of the PDFs within the {\tt NNPDF} framework.
 
 We address, in turn, a number of questions that have been raised in the context of
 QCD, and analyze the lessons that we can draw from the scalar model. 
-
 First we discuss issues that are related to the analysis of ultraviolet (UV)
 divergences of the bilinear operator and their subtraction through the
 renormalization process. In particular in Sec.~\ref{sec:light-cone} we perform
@@ -92,17 +96,15 @@ the computation of $\mathcal{M}$ in the case of a light-cone separation,
 recovering the results of Ref.~\cite{Collins:1980ui} through a position space
 calculation. In Sec.~\ref{sec:spatial-separtaion} we perform the same exercise
 outside the light-cone, choosing a purely spatial separation between fields, and
-we discuss the main differences with respect to the light-cone case. 
-
+we discuss the main differences with respect to the light-cone case.
 In both cases, we define quantities that are free of divergences when the
 regulator is removed, and then focus on the relation between light-cone and
 equal-time correlators. In Sec.~\ref{sec:factorization} we work out this
 relation explicitly at one loop in perturbation theory, and analyze the limits
 leading to a factorization theorem, in both position and momentum space, and
 in Sec.~\ref{sec:flow} we extend the discussion to include smeared equal-time correlators.  
-
 In Sec.~\ref{sec:conclusion} we summarize, discuss how these ideas can be used
-in a fitting framework to extract PDFs, and draw our conclusions. The work is
+in a fitting framework to extract PDFs, and draw our conclusions. This Chapter is
 supplemented with a number of appendices containing the technical details of the
 computations and addressing the objections raised in
 Refs.~\cite{Rossi:2017muf,Rossi:2018zkn}.
@@ -257,9 +259,10 @@ Therefore the only Feynman diagrams contributing to Eq.~\eqref{eq::LSZ} up to on
       \propag [mom={[arrow shorten=.2] $p+\ell$}] (v1) to (v1prime);
      \end{feynhand}
    \end{tikzpicture} 
-	\vspace*{5mm}
-	\caption{Feynman diagrams up to one loop for $\langle 0 | T\left[\phi\left(z\right)\phi\left(0\right)\phi\left(z_1\right)\phi\left(z_2\right)\right]|0\rangle$.}
-	\label{fig:2}
+        \vspace*{5mm}
+        \caption{Feynman diagrams up to one loop for the matrix element \\ 
+        $\langle 0 | T\left[\phi\left(z\right)\phi\left(0\right)\phi\left(z_1\right)\phi\left(z_2\right)\right]|0\rangle $.}
+        \label{fig:2}
 \end{figure}
 %
 Denoting the propagator in position space as
@@ -476,9 +479,9 @@ and therefore, from Eq.~\eqref{eq:DGLAPpositionspace},
         \alpha \int_{x}^{1} \frac{d\xi}{\xi}\,P\left(\xi\right)\,\widehat{f}\left(\frac{x}{\xi}, \mu^2\right)\, ,
 \end{align}
 which yields the standard DGLAP evolution equations, which were already obtained
-in Ref.~\cite{Collins:1980ui} for the scalar theory. The solution of
+in Ref.~\cite{Collins:1980ui} for the scalar theory. As detailed in Sec.~\ref{sec:DGLAP}, the solution of
 Eq.~\eqref{eq:AP} in perturbation theory is given by an evolution kernel
-$\Gamma\left(x,\mu,\mu_0,\alpha\right)$, which allows the PDF at a generic scale
+$\Gamma\left(x,\mu,\mu_0,\alpha\right)$, which resums the large collinear logarithms and allows the PDF at a generic scale
 $\mu$ to be computed in terms of the PDF at the scale $\mu_0$ as
 \begin{align}
         \label{eq:solutionDGLAP}
@@ -596,7 +599,8 @@ The behavior of the coefficient $\tilde{C}$ in the small-$z_3^2$ limit is
 obtained by expanding the Bessel function as 
 \begin{align}
 	\label{eq::besselexpansion}
-	2K_0\left(M z_3\right) = - \log\left(M^2 z_3^2\right) + 2 \log\left(2e^{-\gamma_E}\right) + \mathcal{O}\left(M^2 z_3^2\right)\, ,
+        2K_0\left(M z_3\right) = - \log\left(M^2 z_3^2\right) 
+        + 2 \log\left(2e^{-\gamma_E}\right) + \mathcal{O}\left(M^2 z_3^2\right)\, ,
 \end{align} 
 so that Eq.~\eqref{eq::fact0} becomes
 \begin{align}
@@ -633,9 +637,9 @@ in Ref.~\cite{Radyushkin:2017cyf}. They were originally defined as
 although a double ratio was proposed in \cite{Orginos:2017kos}. Here we restrict our attention to the ratio defined in Eq.~\eqref{eq::reduced}.
 In the context of our model, using the small-$z_3^2$ limit of Eq.~\eqref{eq::fact00} we have
 \begin{align}
-	\mathfrak{M}\left(\nu,-z_3^2\right) &= 
-	\mathcal{M}_R\left(\nu,0, \mu^2\right)  
-	-\alpha \log\left( \mu^2 z_3^2\frac{e^{2\gamma_E}}{4} \right) \int_0^1 d\xi\,\left(1-\xi\right)  
+	\mathfrak{M}&\left(\nu,-z_3^2\right) = 
+	\mathcal{M}_R\left(\nu,0, \mu^2\right)   \nonumber\\
+	&-\alpha \log\left( \mu^2 z_3^2\frac{e^{2\gamma_E}}{4} \right) \int_0^1 d\xi\,\left(1-\xi\right)  
 	\left[\mathcal{M}_R\left(\xi \nu,0,\mu^2\right)- \mathcal{M}_R\left(\nu,0,\mu^2\right) \right] \nonumber \\
 	& = \mathcal{M}_R\left(\nu, 0, \mu^2\right)  
 	-\alpha \log\left( \mu^2 z_3^2\frac{e^{2\gamma_E}}{4} \right) \int_0^1 d\xi\,\left(1-\xi\right)_+ 
@@ -988,7 +992,7 @@ In the short flow-time regime, the one-loop contributions to Eq.~\eqref{eq::MEfl
 renormalized quantity at one loop is therefore
 \begin{align}
 \label{eq::tIoffe1loopren}
-    \widehat{\mathcal{M}}_t\left(\nu, -z_3^2;\,\mu^2\right) =&
+    \widehat{\mathcal{M}}_t&\left(\nu, -z_3^2;\,\mu^2\right) =
     \left[1+ \alpha\left(\frac{1}{6}\log\frac{m^2}{\mu^2} + b\right)  \right]\widehat{\mathcal{M}}^{(0)}\left(\nu, 0\right) \nonumber \\
     &+\alpha \int_0^1 d\xi\,\left(1-\xi\right)
     \left[-\log\left( M^2 z_3^2\right)+ 2 \log\left(2e^{-\gamma_E}\right) + {\cal R}(Mz_3)\right] \widehat{\mathcal{M}}^{(0)}\left(x \nu, 0\right) .
@@ -1036,7 +1040,7 @@ show that these limits are equivalent at one loop, which highlights the formal
 equivalence of the pseudo- and quasi-PDFs approach. In addition, we demonstrate that
  the gradient flow can be used to define a new class of lattice observables that satisfy factorization.
 
-
+\comment{from here make connection with next chapters}
 These ideas naturally suggest that the lattice data should be used in a fitting framework to extract
 PDFs, in the same way experimental data are usually included in global QCD
 analyses. This approach has been studied at NLO in
