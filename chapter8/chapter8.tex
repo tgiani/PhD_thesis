@@ -1,0 +1,182 @@
+\chapter{PDFs from quasi-PDFs matrix elements}
+Data for equal-time correlators coming from first lattice QCD simulations
+have started appearing and have gotten into already a relatively advanced stage over the last few years
+\cite{Lin:2014zya,Alexandrou:2015rja,Chen:2016utp,Alexandrou:2016jqi,Zhang:2017bzy,Alexandrou:2017huk,Lin:2017ani,Chen:2017gck,Alexandrou:2018pbm,Chen:2018xof,Chen:2018fwa,Alexandrou:2018eet,Liu:2018uuj,Lin:2018qky,Fan:2018dxu,Liu:2018hxv,Alexandrou:2019lfo,Izubuchi:2019lyk}.
+This gives an idea of what PDFs from the lattice might look like, not only for
+nonsinglet quark PDFs of the nucleon, but also for the pion PDF and distribution
+amplitude, as well as for the gluon PDF of the nucleon. Given the general
+interest shown by the community, a quick improvement in the technologies
+involved in such lattice simulations is to be expected in the next few years. A
+great quantity of increasingly precise lattice data is then likely to be
+available in the near future, requiring detailed studies about the possible
+impact they might have on the overall precision of PDFs determination.
+
+Despite the increasing number of numerical results becoming available, an
+optimal strategy for reconstructing the PDFs from these data has not been
+entirely addressed yet. The approach which has been initially used within the lattice community
+(and that is still employed in many analyses)
+consists in approximating the quasi- or pseudo-PDFs by mean of a discrete Fourier transform,
+starting from the limited number of points for the corresponding equal-time correlator available from numerical simulations. 
+The continuous function resulting from this procedure
+is subsequently convoluted with the perturbative matching coefficients relating euclidean and light-cone distributions,
+in order to obtain the final PDF.
+The numerical error introduced by this procedure is rather large and difficult to control,
+so that this procedure generally provides unstable and inaccurate results.
+This problem was first addressed within the lattice community in Ref.~\cite{Karpie2019}
+where a series of possible approaches to tackle the problem of incomplete and discretized Fourier
+transform has been presented.
+
+In this Chapter, we exploit the momentum space factorization of quasi-PDFs in PDFs and perturbatively
+computable coefficients to extract nonsinglet distributions from the data of
+Refs.~\cite{Alexandrou:2018pbm,Alexandrou:2019lfo}, using the {\tt NNPDF} framework described
+in Chapter~\ref{ch:nnpdf_methodology} and treating the lattice data on the same footing as experimental ones.
+
+%The discussion is focused on the
+%quasi-PDFs case, but it can be extended to include data coming from different
+%lattice approaches, like for example pseudo-PDFs
+%\cite{Radyushkin:2017cyf,Orginos:2017kos,Karpie:2018zaz}, fictitious heavy/light
+%quark~\cite{Detmold:2005gg,Braun:2007wv} or current-current correlators
+%\cite{Ma:2014jla,Ma:2017pxb,Sufian:2019bol}, paving the way to a first global
+%lattice QCD analysis~\cite{Ma:2017pxb}.
+
+\section{quasi-PDFs in QCD}
+%
+Denoting by $\Gamma$ a generic Dirac structure and by the suffix $A$ the specific nonsinglet distribution
+we want to consider, we can introduce the {\em Ioffe time distributions} \cite{Radyushkin:2017cyf,Braun:1994jq}, 
+defined as the matrix element between nucleon states with momentum $P$
+\begin{align}
+	\label{eq:Ioffe}
+	M^\bare_{\Gamma,A}\left(z,P\right) &= \langle P |\mathcal{M}^\bare_{\Gamma,A}\left(z\right) |P\rangle \, ,
+\end{align}
+with
+\begin{align}
+	\label{eq:bilocal}
+	\mathcal{M}^\bare_{\Gamma,A}\left(z\right)= \bar{\psi}^\bare\lp z\rp \lambda_A \Gamma \,   
+	U\lp z,0\rp \psi^\bare\lp 0\rp.
+\end{align}
+Eqs.~\eqref{eq:Ioffe}, \eqref{eq:bilocal} represent the QCD generalization of the scalar quantity defined 
+in Eq.~\eqref{eq::ME}.
+The vector bilocal operator obtained for $\Gamma=\gamma^\mu$ can be decomposed
+in terms of two form factors depending on Lorentz invariants:
+\[
+    \label{eq:IoffeDecomposition}
+    M^\bare_{\gamma^\mu,A}\left(z, P\right)
+    = 2 P^\mu\,\text{h}^{(0)}_{\gamma^\mu,A}\lp z\cdot P,z^2 \rp
+    + z^\mu\, \tilde{\text{h}}^{(0)}_{\gamma^{\mu},A}\lp z\cdot P,z^2 \rp \, . 
+\]
+The light-cone PDF in Eq.~\eqref{eq:fADef} is obtained by taking the Fourier
+transform with respect to $z^-$ of a Ioffe time distribution with $\Gamma =
+\gamma^+$, $z=\left(0,z^-,0_{\perp}\right)$ and $P=(P^+,0,0_{\perp})$, given
+by
+\begin{align}
+	\label{eq:Ioffelightcone}
+    M^\bare_{\gamma^+,A}\left(z,P\right) =  
+    \langle \text{P}|\bar{\psi}^\bare\lp z^-\rp \lambda_A \gamma^+ \,   
+	U\lp z^-,0\rp \psi^\bare\lp 0\rp  |\text{P}\rangle
+	= 2 P^+\,\text{h}^{(0)}_{\gamma^+,A}\lp z^- P^+,0 \rp\, .
+\end{align} 
+Choosing instead a pure spatial direction $z=\left(0,0,0,z\right)$, and taking
+the Fourier transform with respect to $z$, we obtain the definition of the
+quasi-PDF  
+\begin{align}
+	\label{eq::bareqpdf}                                                 
+	\tilde{f}_A^{(0)}\lp x, P_z\rp = 
+	\int_{-\infty}^{\infty}\frac{dz}{4\pi}\,e^{i x \text{P}_z z}\,M^\bare_{\Gamma,A}\left(z,P\right)\, .
+\end{align}
+Choosing for example $\Gamma = \gamma^0$ we get
+\begin{align}
+	\label{eq::bareqpdf}                                                 
+	\tilde{f}_A^{(0)}\lp x, P_z\rp = 
+	2 P_0 \, \int_{-\infty}^{\infty}\frac{dz}{4\pi}\,e^{i x \text{P}_z z}\,\text{h}^{(0)}_{\Gamma,A}\lp z P_z,z^2 \rp, 
+\end{align}
+which will be the case considered in this work. As in the case of standard PDFs
+(which from now on we will call {\em light-cone}\ PDFs), the matrix elements
+defining the quasi-PDFs contain UV divergences, and need to be renormalized. The
+main features of the perturbative renormalization of a bilocal operator, 
+as the one appearing in
+Eq.~\eqref{eq::bareqpdf}, have been described in Chapter~\ref{ch:scalar_model}
+in the context of the scalar theory.
+Despite the details of the full QCD computation are of course more complicate,
+see Ref.~\cite{Ishikawa:2017faj}, as mentioned before 
+its main features and results are well described by the simple scalar case.
+As we found out looking at the scalar QFT,
+the position space operator appearing in Eq.~\eqref{eq::bareqpdf} can be multiplicatively
+renormalized, according to
+\begin{align}
+    \text{h}_{\Gamma,A}\lp z P_z,z^2,\mu \rp = Z_{A}(z)\,
+    e^{\delta m |z|} \text{h}^\bare_{\Gamma,A}\lp z P_z,z^2 \rp\,.
+\end{align}
+The only difference with respect to the scalar case is given by
+the exponential factor $e^{\delta m |z|}$, which reabsorbs the power divergence
+from the Wilson line which appears in the QCD case. The position-dependent factor $Z_{A}(z)$ takes care of
+the remaining UV logarithmic divergences.  
+%
+Importantly, we recall that the quasi-PDFs retain a dynamical dependence on the hadron momentum
+$P$, unlike PDFs, which are defined to be invariant under Lorentz boosts. Also,
+their support is defined to be the full real axis.
+
+The interest in quasi-PDFs comes from the potential to relate them to light-cone
+PDFs, as detailed in Sec.~\ref{sec::momentumspace};
+factorization allows us to rewrite the quasi-PDFs as a convolution of the
+light-cone PDFs with a coefficient function that can be computed in perturbation
+theory, up to corrections that are suppressed by inverse powers of $P_z$.
+It follows that they can be written as
+\begin{align}
+	\label{eq::pdftoqpdf}                                                                             
+	\tilde{f}_A\lp x , {\mu}^2 \rp =                                                               
+	\int_{-1}^{1} \frac{dy}{|y|}\, C_A\lp\frac{x}{y},\frac{\mu}{|y|P_z},\frac{\mu}{\mu'} \rp  f_A\lp y, {\mu'}^2\rp 
+	+ \mathcal{O}\lp \frac{M^2}{P_z^2},\frac{\Lambda^2_{\text{QCD}}}{P_z^2} \rp\, ,                   
+\end{align}
+where the terms $\mathcal{O}\lp
+\frac{M^2}{P_z^2},\frac{\Lambda^2_{\text{QCD}}}{P_z^2} \rp $ include
+the power corrections suppressed by the hadron momentum. The functions $C_A$,
+usually called matching coefficients, depend on the choice of the
+renormalization scheme, and on the kind of quasi-PDF under consideration. The
+first matching expressions, for all Dirac structures, were derived in
+Ref.~\cite{Xiong:2013bka}, using a simple transverse momentum cutoff scheme. In
+later works, matching coefficients were derived that relate the quasi-PDFs in
+different renormalization schemes to light-cone PDFs in the $\MSb$ scheme. The
+matching from $\MSb$ quasi-PDFs was first considered in
+Ref.~\cite{Wang:2017qyg}, both for non-singlet and singlet quark PDFs, as well
+as for gluons. Even though one can choose operators for the latter that do not
+mix with singlet quark quasi-PDFs under
+renormalization~\cite{Zhang:2018diq,Li:2018tpe}, mixing under matching is
+inevitable. 
+No mixing of the flavour nonsinglet sector with flavour singlet or
+gluon sectors occurs, as stated in Eq.~\eqref{eq::pdftoqpdf}. Ref.~\cite{Wang:2017qyg} did not, however, address the
+known issue of self-energy corrections, exhibiting a logarithmic UV divergence.
+This was resolved in Ref.~\cite{Izubuchi:2018srq} by adding terms outside of the
+plus prescription in the matching coefficient. As noticed in
+Ref.~\cite{Alexandrou:2018pbm}, such prescription for renormalizing this
+divergence violates vector current conservation, \ie\ the integral of the
+matched PDF is different from the integral of the input quasi-PDF, and not
+necessarily equal to 1 over the whole integration range. As a remedy, a modified
+matching expression, which is given explicitly in Eq.~\eqref{eq::matching} of
+App.~\ref{app:coefficients}, was proposed in Ref.~\cite{Alexandrou:2018pbm}. It
+consists in resorting to pure plus functions when subtracting the logarithmic
+divergence in self-energy corrections. However, this is an additional
+subtraction with respect to the minimal subtraction of the $\MSb$ scheme and
+thus, defines a modified $\MSb$ scheme, the so-called $\MMSb$ scheme. As such,
+it requires the quasi-PDF to be expressed in this modified scheme. The
+expression for the conversion of $\MSb$-renormalized matrix elements to the
+$\MMSb$ scheme was worked out in Ref.~\cite{Alexandrou:2019lfo} and we refer to
+it for the details of the procedure. Nevertheless, this modification is
+numerically very small, as also shown in Ref.~\cite{Alexandrou:2019lfo}. An
+alternative modification of the $\MSb$ scheme that guarantees vector current
+conservation was derived in an updated version of Ref.~\cite{Izubuchi:2018srq}.
+This defines the so-called ``ratio'' scheme. In this scheme, only pure plus
+functions are used, like in the $\MMSb$ scheme, but the modification is done
+also for the ``physical'' region of $0<z<1$ (in the notation of
+Eq.~\eqref{eq::matching}). Thus, the expected numerical effect of this
+modification is larger, as shown explicitly in Ref.~\cite{Alexandrou:2019lfo}.
+For this reason, we choose to use the $\MMSb$ procedure, with details of the
+lattice computation of the bare matrix elements and the renormalization in the
+$\MMSb$ scheme outlined in the next section. Yet another possibility of
+performing the matching consists in directly relating the quasi-PDFs in the
+intermediate RI-type scheme to $\MSb$ light-cone PDFs. This was proposed in
+Ref.~\cite{Stewart:2017tvs} for the unpolarized case. Obviously, such
+procedure is equivalent to the one adopted here, with possibly different
+systematic effects. All of the discussed papers considered the matching to only
+first order in perturbation theory, but NNLO results for the matching coefficients have recently become available
+in both position and momentum space \cite{Li:2020xml, Chen:2020ody, Braun:2020ymy, Chen:2020arf, Chen:2020iqi}.
+

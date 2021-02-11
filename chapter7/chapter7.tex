@@ -1,25 +1,37 @@
 \chapter{PDFs from lattice data: theoretical framework}
-\label{ch:lattice}
-
-In recent years, there has been a significant effort within the lattice
-community to compute specific equal-time correlators that can be directly
-related to PDFs. 
-The non-perturbative nature of parton distributions makes them a natural candidate for a lattice.
-Also, given their central role in the analysis
+\label{ch:scalar_model}
+ 
+Given the central role parton distributions have in the analysis
 of experimental data at hadronic colliders, it would be highly beneficial to be
 able to use lattice QCD to determine these crucial ingredients in our current
 understanding of nucleon structure.
-However it has been known for a long time that it is not possible to
+The non-perturbative nature of PDFs makes them a natural candidate for a lattice investigation,
+however it has been known for a long time that it is not possible to
 obtain them directly from first principle computations, due to the Euclidean metric of the
 lattice, which does not allow to access the light-cone matrix element of Eq.~\eqref{eq::barepdf}.
+To overcome this issue, several methods have been recently formulated, 
+and in recent years, there has been a significant effort within the lattice
+community to study and compute specific Euclidean quantities that, in turn, can be related to PDFs
+through a factorization theorem.
 %
-Quasi-PDFs\footnote{Quasi-PDFs are one example of the more general LaMET formalism \cite{Ji:2014gla,Ji:2020ect}, 
-but here we focus on the collinear $x$-dependent distributions.} and pseudo-PDFs were introduced in
+Two examples of these are quasi-PDFs\footnote{Quasi-PDFs are one example of the more general LaMET formalism \cite{Ji:2014gla,Ji:2020ect}, 
+but here we focus on the collinear $x$-dependent distributions.} and pseudo-PDFs.
+They were introduced in
 Refs.~\cite{PhysRevLett.110.262002, Radyushkin:2017cyf}, and since then numerous
 publications have appeared, addressing the main theoretical issues for these
-approaches. For recent reviews, we refer the reader to
+approaches: the definition and renormalization of
+the non-local operators involved in the lattice simulation
+\cite{Ji:2015jwa,Ishikawa:2016znu,Constantinou:2017sej,Alexandrou:2017huk,Ji:2017rah,Ji:2017oey,Ishikawa:2017faj,Green:2017xeu,Radyushkin:2018nbf,Zhang:2018diq,Li:2018tpe}, 
+the proof of the factorization theorem between PDFs and Euclidean matrix elements
+\cite{Xiong:2013bka,Ji:2014gla,Ma:2014jla,Briceno:2017cpo,Ma:2017pxb,Izubuchi:2018srq}, the computation of the
+matching coefficients relating lattice-computable quantities to PDFs in different renormalization schemes
+\cite{Xiong:2013bka,Ma:2014jla,Ji:2015qla,Xiong:2015nua,Ma:2017pxb,Wang:2017qyg,Stewart:2017tvs,Izubuchi:2018srq,Alexandrou:2018pbm,Alexandrou:2018eet,Liu:2018uuj,Liu:2018hxv}.  
+For recent reviews, we refer the reader to
 Refs.~\cite{DelDebbio:2018siw,Monahan:2018euv,Zhao:2018fyu,Cichy:2018mum,
-Radyushkin:2019mye,Ji:2020ect,Lin:2020rut}. This program has often been referred to as the ``first
+Radyushkin:2019mye,Ji:2020ect,Lin:2020rut}. 
+
+%
+This program has often been referred to as the ``first
 principles computation of PDFs'', generating different reactions among the
 lattice and high-energy physics communities: on the one hand it has been
 welcomed with enthusiasm, triggering several dedicated studies; on the other
@@ -34,7 +46,7 @@ questions: that is, how do we extract information on PDFs from quasi- and
 pseudo-PDFs, and what is the interplay between quasi- and pseudo-PDFs with
 experimental data?
 
-In this Chapter we introduce and study these topics in the context of a renormalizable scalar
+In this Chapter, following Ref.~\cite{DelDebbio:2020cbz}, we introduce and study these topics in the context of a renormalizable scalar
 theory, setting the stage for the phenomenological studies presented in the next two Chapters.
 Scalar field theory is a valuable model for understanding the essential
 theoretical issues in a simple framework, as shown in the pioneering study of
@@ -75,7 +87,7 @@ this paper. }:
 \end{align}
 where $P^+$ and $z^-$ are the usual light-cone coordinates of the four-vectors
 $P$ and $z$ respectively.
-Eq.~\eqref{eq:barePDF} is the toy-model analogous of Eq.~\eqref{eq::barepdf}, giving the PDF definition in QCD.
+Eq.~\eqref{eq:barePDF} is the scalar analogous of Eq.~\eqref{eq::barepdf}, giving the PDF definition in QCD.
 In the second case we obtain an equal-time correlator
 that can be computed on the lattice. We address the problem of the
 renormalization of these quantities and study the relation between them at one
@@ -1017,7 +1029,7 @@ This factorization relation provides the explicit connection between the colline
 equal-time correlator at nonzero flow time, through a convolution with a perturbative kernel.
 
   
-\section{Conclusions}
+\section{PDFs from lattice data}
 \label{sec:conclusion}
 
 We have addressed the definition and renormalization of equal-time
@@ -1040,16 +1052,16 @@ show that these limits are equivalent at one loop, which highlights the formal
 equivalence of the pseudo- and quasi-PDFs approach. In addition, we demonstrate that
  the gradient flow can be used to define a new class of lattice observables that satisfy factorization.
 
-\comment{from here make connection with next chapters}
 These ideas naturally suggest that the lattice data should be used in a fitting framework to extract
 PDFs, in the same way experimental data are usually included in global QCD
-analyses. This approach has been studied at NLO in
-\cite{Karpie:2019eiq,Cichy:2019ebf} and is in the spirit of the ``good lattice
-cross-sections'' (or factorizable matrix elements) proposed in
-Ref.~\cite{Ma:2017pxb,Ma:2014jla}. Results for the NNLO coefficients entering the factorization theorem have recently become available
-in both position and momentum space \cite{Li:2020xml, Chen:2020ody, Braun:2020ymy, Chen:2020arf, Chen:2020iqi}, paving the way to NNLO fits.
- 
-The general idea is straightforward: the unknown $x$-dependence of the PDF at a
+analyses:
+%in the spirit of the ``good lattice
+%cross-sections'' (or factorizable matrix elements) proposed in
+%Ref.~\cite{Ma:2017pxb,Ma:2014jla}. 
+%Results for the NNLO coefficients entering the factorization theorem have recently become available
+%in both position and momentum space \cite{Li:2020xml, Chen:2020ody, Braun:2020ymy, Chen:2020arf, Chen:2020iqi}, 
+%paving the way to NNLO fits.
+the unknown $x$-dependence of the PDF at a
 specific fitting scale is parametrized by introducing a suitable functional
 form. The PDF at a generic scale can be computed in terms of its parametric form
 at the fitting scale, which then leads to a theoretical prediction for the
@@ -1060,10 +1072,8 @@ the values of the free parameters that best describe such data. As in any other
 PDF determination, we highlight the importance of having a robust estimate of
 the full covariance matrix that enters the $\chi^2$ definition, and this should
 be provided by the lattice group performing the calculation.
- 
-We also stress that this procedure is exactly the one that is currently used to
-extract PDFs from experimental data \cite{Ball:2017nwa, Dulat:2015mca,
-Alekhin:2017kpj, Martin:2009iq, Buckley:2014ana}, with the lattice matrix
+It is important to stress that this procedure is exactly the one
+described in Chapter~\ref{ch:nnpdf_methodology}, with the lattice matrix
 elements playing the same role as the cross-sections for high-energy processes.
 Given a discrete set of points for quantities that are connected to collinear
 PDFs through a factorization theorem, we can use them to perform a fit, thereby
@@ -1085,3 +1095,7 @@ specific choice of discretization. These effects must be studied systematically,
 across a wide range of observables, to pin down systematic uncertainties and
 strengthen the role that lattice QCD can play in the determination of hadron
 structure.
+
+In the next Chapter we will address these issues from a phenomenological point of view,
+considering lattice QCD data for quasi- and pseudo-PDFs matrix elements and 
+performing a first study of them within the {\tt NNPDF} framework.
