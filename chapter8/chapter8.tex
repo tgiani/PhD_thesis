@@ -96,9 +96,9 @@ main features of the perturbative renormalization of a bilocal operator,
 as the one appearing in
 Eq.~\eqref{eq::bareqpdf}, have been described in Chapter~\ref{ch:scalar_model}
 in the context of the scalar theory.
-Despite the details of the full QCD computation are of course more complicate,
+Despite the details of the full QCD computation are of course more complicated,
 see Ref.~\cite{Ishikawa:2017faj}, as mentioned before 
-its main features and results are well described by the simple scalar case.
+its main features and results are well described by the simple example of the previous Chapter.
 As we found out looking at the scalar QFT,
 the position space operator appearing in Eq.~\eqref{eq::bareqpdf} can be multiplicatively
 renormalized, according to
@@ -106,7 +106,7 @@ renormalized, according to
     \text{h}_{\Gamma,A}\lp z P_z,z^2,\mu \rp = Z_{A}(z)\,
     e^{\delta m |z|} \text{h}^\bare_{\Gamma,A}\lp z P_z,z^2 \rp\,.
 \end{align}
-The only difference with respect to the scalar case is given by
+The only difference with respect to the scalar model is given by
 the exponential factor $e^{\delta m |z|}$, which reabsorbs the power divergence
 from the Wilson line which appears in the QCD case. The position-dependent factor $Z_{A}(z)$ takes care of
 the remaining UV logarithmic divergences.  
@@ -179,4 +179,760 @@ procedure is equivalent to the one adopted here, with possibly different
 systematic effects. All of the discussed papers considered the matching to only
 first order in perturbation theory, but NNLO results for the matching coefficients have recently become available
 in both position and momentum space \cite{Li:2020xml, Chen:2020ody, Braun:2020ymy, Chen:2020arf, Chen:2020iqi}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Nonsinglet distributions from quasi-PDFs Matrix Elements}
+\label{sec:PDFstoqPDFs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In this Section, we describe the lattice data used in this Chapter, presenting
+briefly the quasi-PDFs matrix elements (MEs) computed in
+Refs.~\cite{Alexandrou:2018pbm, Alexandrou:2019lfo}. Using the results recalled
+in the previous sections, we show that we can factorize such matrix
+elements into two nonsinglet distributions and a perturbatively computable
+coefficient, just as if they were experimental data for high-energy cross
+sections.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Lattice data}
+\label{subsec:latticedata}
+The field of nucleon isovector ($u-d$) quasi-PDFs has matured in recent years.
+Exploratory studies for all types of collinear PDFs -- unpolarized, helicity and
+transversity -- were performed in
+2014-2016~\cite{Lin:2014zya,Alexandrou:2015rja,Chen:2016utp,Alexandrou:2016jqi}.
+They used lattice ensembles with non-physical pion masses and the results had
+unsubtracted divergences, due to the lack of a well-defined renormalization
+procedure. The latter was proposed and applied for the first time in
+Refs.~\cite{Constantinou:2017sej,Alexandrou:2017huk}, utilizing a variant of the
+regularization-independent momentum subtraction scheme
+(RI'-MOM)~\cite{Martinelli:1994ty}. Moreover, another major progress for
+unpolarized PDFs was the identification of a lattice-induced mixing between the
+bilinear operator used in the first exploratory studies, which was defined using
+$\gamma_z$ to determine the Dirac structure, and the scalar bilinear operator
+(in spin space)~\cite{Constantinou:2017sej}. Even though in principle it is
+possible to compute the matrix elements of the latter and a mixing
+renormalization matrix to properly subtract the
+divergences~\cite{Alexandrou:2017huk}, this is bound to lead to much
+deteriorated precision, due to the rather poor signal for the scalar operator.
+Instead, it is preferable to define the quark bilinear using the $\gamma_0$
+Dirac matrix, since this procedure does not give rise to mixing. Moreover the
+quasi-PDF computed with it converges faster in powers of $1/P_z^2$ to the
+light-cone PDF, as argued in Ref.~\cite{Radyushkin:2016hsy}. Summarising in just
+one sentence, we could say that the major progresses with respect to the early
+works for unpolarized quasi-PDFs came from: (1) change of the Dirac structure in
+order to avoid the mixing, (2) non-perturbative renormalization procedure, (3)
+simulations at the physical pion mass. Matrix elements corresponding to such
+setup were computed in Refs.~\cite{Alexandrou:2018pbm,Alexandrou:2019lfo,Chen:2018xof} and they are briefly
+described below. For a recent review of other available results for quasi-PDF
+matrix elements, see \eg\ Ref.~\cite{Cichy:2018mum}. 
+
+The data used in this Chapter were computed by the Extended Twisted Mass Collaboration
+(ETMC)\footnote{Until 2018 known as the European Twisted Mass Collaboration.}.
+They used one ensemble of gauge field configurations with two degenerate light
+quarks~\cite{Abdel-Rehim:2015pwa} with masses chosen to reproduce the physical
+value of the pion mass ($m_\pi\approx130$ MeV, \ie\ slightly below the actual
+physical value). The lattice spacing is $a=0.0938(3)(2)$~fm~\cite{Alexandrou:2017xwd} and the lattice has
+$48^3 \times 96$ sites, corresponding to the spatial extent $L$ of around 4.5~fm
+and $m_\pi L = 2.98$. ETMC calculated bare quasi-PDF matrix elements for the
+unpolarized, helicity and transversity cases, but we concentrate only on the
+unpolarized one. The lattice data are available for three nucleon boosts,
+$P_z=6\pi/L,\,8\pi/L$ and $10\pi/L$ (0.83 GeV, 1.11 GeV and 1.38 GeV in physical
+units) and for four values of the temporal separation between the nucleon
+creation and annihilation operators, $t_s/a{=}8,9,10,12$ ($0.75,\, 0.84,\,
+0.94,\, 1.13$~fm). As shown in Refs.~\cite{Alexandrou:2018pbm,Alexandrou:2019lfo}, there are signs
+of convergence in the nucleon momentum (the largest two momenta give compatible
+results), indicating that the boost is already enough to suppress higher-twist
+effects below statistical precision. Moreover, as pointed out in
+Ref.~\cite{Alexandrou:2019lfo}, excited-states contamination at the largest
+source-sink separation is small, \ie\ the single-state fits at this $t_s$ are
+compatible with two-state fits including all four values of $t_s$. Hence, for
+the purpose of this study, we consider only the data at the largest nucleon
+boost and at the largest source-sink separation. 
+They are shown in Fig.~\ref{fig::data}.
+
+\begin{figure}[t!]
+    \begin{center}
+        \includegraphics[width=0.49\linewidth]{Re_data.pdf}
+        \includegraphics[width=0.49\linewidth]{Im_data.pdf}
+        \caption{Real (left) and imaginary (right) part 
+        of the quasi-PDF ME for the data used in this Chapter, computed in Refs.~\cite{Alexandrou:2018pbm, Alexandrou:2019lfo}.
+        The error band displayed accounts only for statistical uncertainty.
+        The separation $z$ is expressed in units of the lattice spacing $a$.} 
+        \label{fig::data} 
+    \end{center}
+\end{figure}
+%
+The bare lattice data contain two types of divergences. First of all, there are
+standard logarithmic divergences with respect to the regulator, \ie\ terms that
+behave like $\log(a\mu)$. Additionally, for non-zero Wilson line lengths,
+further power-like divergences appear. They resum into a multiplicative
+exponential factor, $e^{\delta m |z|/a}$, where $\delta m$ is
+operator-independent. The desired renormalization scheme for the final results
+is the $\MSb$ scheme of dimensional regularization. However, obviously, the
+latter is impossible on a lattice, restricted to integer dimensions. Thus, the
+usage of an intermediate lattice renormalization scheme is required. In
+Ref.~\cite{Alexandrou:2017huk}, it was proposed to use an RI'-type prescription.
+The renormalization conditions are enforced on the amputated vertex functions of
+operators with different Wilson line lengths $z$, setting them to their
+tree-level values. A similar renormalization condition is applied for the quark
+propagator. This results in a set of matrix elements renormalized in the RI'
+scheme. Thus, a perturbative conversion from the RI' to the $\MSb$ scheme is
+needed. Such a conversion was derived in Ref.~\cite{Constantinou:2017sej} to
+one-loop order and was applied to the RI'-renormalized matrix elements. As we
+discussed in the previous section, to guarantee vector current conservation, we
+use a modified $\MSb$ scheme, termed the $\MMSb$ scheme. Thus, another
+perturbative conversion of the $\MSb$-renormalized matrix elements is required,
+according to the formula given in Ref.~\cite{Alexandrou:2019lfo}. After this
+conversion, renormalized matrix elements in the $\MMSb$ scheme are the starting
+point of the current analysis.
+
+It is important to emphasize that despite having numerical evidence for the
+smallness of the effects of the nucleon momentum and of excited states, matrix
+elements from lattice studies come with a variety of other systematic effects.
+We discuss them in the next subsection. For more details about the lattice
+computation of the matrix elements, we refer the reader to
+Ref.~\cite{Alexandrou:2019lfo}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Systematics in matrix elements of quasi-PDFs}
+\label{subsec:sys}
+
+A proper investigation of systematic effects in matrix elements evaluated in
+lattice QCD simulations is a difficult task, necessitating dedicated efforts.
+Such efforts consist in simulating with varied parameter values, such as the
+lattice spacing, the lattice volume, or the temporal separation between the
+source and the sink in nucleon three-point functions. Moreover, unrelated to the
+lattice regularization, there are theoretical uncertainties intrinsic to the
+quasi-distribution approach whose impact should also be assessed~\footnote{Note
+that theoretical uncertainties can be included in global fits of PDFs as
+detailed in Chapter~\ref{ch:th_error}}. For an extensive review of these
+different uncertainties, we refer to Refs.~\cite{Cichy:2018mum,Monahan:2018euv},
+while a discussion of the systematic effects in the ETMC quasi-PDFs computation
+can be found in Ref.~\cite{Alexandrou:2019lfo}. The latter contains the analysis
+of the effects investigated so far and a discussion of directions that need to
+be pursued to fully quantify all the relevant systematics.
+
+Here, we briefly summarize the conclusions reached up to the present stage. It
+is important to emphasize that while the impact of some systematics is already
+known to a reasonable degree, reliable estimates of certain types of effects are
+still largely unknown. Nevertheless, rough assessments can be made even in the
+case of missing lattice data, by looking at the behaviour of related observables
+such as the average quark momentum fraction or nucleon charges that have a long
+history of evaluations on the
+lattice~\cite{Syritsyn:2014saa,Constantinou:2014tga,Constantinou:2015agp,Alexandrou:2015xts,Green:2018vxw}.
+This allows us to build scenarios describing the potential impact of the
+systematics on the matrix elements of quasi-PDFs. We consider three scenarios
+where the systematic effect is a given percentage of the central value of the
+matrix element and three further ones where it is a given additive shift. We
+always exclude from the analysis the imaginary part of the matrix element at
+$z=0$, equal to 0 by antisymmetry with respect to the sign change of $z$.
+
+\textbf{Cut-off effects}. One of the most obvious systematic effects in lattice
+computations comes from the finite value of the lattice spacing, $a$, \ie\ the
+ultraviolet cut-off imposed for the regularization of the theory. While a proper
+investigation of this uncertainty requires explicit simulations at a few values
+of the lattice spacing, which are still missing for quasi-PDFs, we may assume
+that discretization effects are not excessive. This expectation is based on two
+indirect, but related premises. First, one of the manifestations of large
+cut-off effects is the violation of the continuum relativistic dispersion
+relation, which is, however, not observed in the lattice data in
+Ref.~\cite{Alexandrou:2019lfo}. Second, the first moment of the unpolarized
+$u-d$ PDF gives the quark momentum fraction $\langle x\rangle_{u-d}$. This
+quantity was intensively investigated on the lattice and we may take the typical
+size of discretization effects found in such studies. Looking at a summary plot
+including data from different lattice groups, such as Fig.\ 12 from Ref.\
+\cite{Constantinou:2014tga}, we see that cut-off effects at lattice spacings
+comparable to the one of the present work are typically at the 5-15\% level in a
+fixed lattice setup (same discretization, pion mass, volume etc.). Thus, we
+investigate 6 plausible choices for the magnitude of cut-off effects: 10\%,
+20\%, 30\% of the matrix element and additive effects of 0.1, 0.2 and 0.3. 
+
+\textbf{Finite volume effects (FVE)}. Another natural source of uncertainty in
+all lattice simulations is the finite size of the box, $L$, which acts as an
+infrared regularization. Similarly to discretization effects, a robust
+investigation of these effects necessitates running the computations for a few
+values of the lattice size. However, the difference with respect to the lattice
+spacing effects, typically linear in $a$ or $a^2$ in the asymptotic scaling
+regime, is that FVE are usually suppressed as $\exp(-m_\pi L)$, where $m_\pi$ is
+the pion mass. This leads to typically $\mathcal{O}(1-5\%)$ effects in hadron
+structure observables if $m_\pi L\geq 3$. For the matrix elements used in this
+work, $m_\pi L\approx3$ -- thus, the reasonable assumption about the size of FVE
+is approx.\ 5\%. In addition to these ``standard'' FVE of lattice computations,
+it has been recently pointed out that the usage of a spatially extended
+operator, including a Wilson line, may lead to additional
+FVE~\cite{Briceno:2018lfj}. The intuition behind this is that further FVE may
+appear when the Wilson line has non-negligible size with respect to the lattice
+length in the boost direction. The analysis of Ref.~\cite{Briceno:2018lfj}
+pertains to a toy scalar theory and predicts a FVE of the form $\exp(-M (L-z))$
+(possibly with a polynomial amplifying prefactor), with $M$ being the analogue
+of the mass of the investigated hadron in the quasi-PDF approach. Given that the
+nucleon mass is at the physical point around 7 times larger than the pion mass,
+that would lead to totally irrelevant effects, since the maximum considered $z$
+is more than 3 times smaller than $L$. However, it can not be excluded that in
+QCD, the form of this FVE can be more severe, e.g.\ $\exp(-m_\pi (L-z))$. With
+the physical $m_\pi$ and $z_{\rm max}\approx L/3$, this could lead to the
+amplification of FVE from $\mathcal{O}(5\%)$ to even above 10\% at large $z$. We
+remark that ETMC has investigated FVE in the renormalization functions for the
+matrix elements and found no sign of excessive FVE coming at large $z$ (total
+FVE not larger than around 3\%)~\cite{Alexandrou:2019lfo}. We investigate 3
+scenarios for fixed percentage effects: constant FVE of 2.5\% and 5\%, as well
+as $z$-dependent ones of the form $\exp(-3+0.062z/a)\%$, where 0.062 is the pion
+mass value for the present ensemble, expressed in lattice units. In addition, we
+consider 3 shifts: 0.025, 0.05 and $\exp(-3+0.062z/a)$.
+
+\textbf{Excited states contamination}. One of the key uncertainties in nucleon
+structure calculations is whether the ground state hadron state is isolated. If
+the temporal separation between the interpolating operators creating the nucleon
+and annihilating it is too small, uncontrolled excited states contamination may
+appear, leading to a bias in the results. In the context of quasi-PDFs, an
+important aspect is that this contamination strongly depends on the boost,
+causing a delicate interplay between the need of large momentum, required for
+robust matching to light-cone distributions, and excited states contamination,
+larger for high boost. Thus, a careful analysis is needed to ensure ground state
+dominance. Such an analysis was performed for the matrix elements used in this
+work~\cite{Alexandrou:2019lfo}. The conclusion that we use for the present case
+is that these matrix elements are safe against excited states effects at the
+level of their statistical precision. In this way, we choose three values of
+uncertainty from excited states: 5\%, 10\% and 15\%. When the renormalized
+matrix elements are close to zero, the relative uncertainty can be larger and
+thus, we consider also three additive scenarios with magnitude 0.05, 0.1 and
+0.15.
+
+\textbf{Truncation effects}. The perturbative ingredients of the quasi-PDF
+approach are of two kinds. One of them is related to the fact that the lattice
+approach works in integer dimensions and thus, dimensional regularization of the
+$\MSb$ scheme is impossible. Instead, as discussed above, a non-perturbative
+renormalization programme has been proposed by ETMC~\cite{Alexandrou:2017huk},
+utilizing a variant of the regularization-independent momentum subtraction
+scheme (RI'-MOM). The renormalization correlators obtianed in this way can then
+be translated perturbatively to the $\MSb$ scheme and finally to the $\MMSb$
+scheme, using formulae derived in Refs.~\cite{Constantinou:2017sej,
+Alexandrou:2019lfo}. These formulae are currently available to the one-loop
+level and thus subject to a truncation effect from unknown higher orders. A
+manifestation of this effect is the fact that the $Z$-factors have a
+non-vanishing imaginary part even after conversion to $\MSb$, where they should
+be purely real. To evaluate the impact of this uncertainty, we compare the
+renormalized matrix elements with the ones obtained from applying only the real
+parts of the $Z$-factors. We find that the matrix elements obtained by this
+alternative procedure are compatible with the actual ones within statistical
+uncertainties, with relatively larger effects observed for small $z/a$ in the
+imaginary part (up to $\mathcal{O}(5\%)$) and intermediate $z/a$ in the real
+part (the real part is small there -- thus, the observed absolute effects of
+around 0.2 can be a large percentage of the value). Apart from the scheme
+conversion truncation effects, the necessary perturbative ingredient of the
+approach is the matching between quasi-PDFs and light-cone distributions, also
+known to one loop~\cite{Xiong:2013bka,Izubuchi:2018srq,Alexandrou:2019lfo}.
+%Without knowing the two-loop formulae, it is difficult to estimate their size.
+%We emphasize that, thus, the extension of the one-loop conversion, evolution 
+%and matching formulae to (at least) two loops is mandatory to properly estimate 
+%truncation effects. 
+%With two-loop equations at hand, one can e.g. apply standard methods of estimating truncation effects through scale variations. 
+We observe that comparing the quasi-distribution and the resulting light-cone PDF, the numerical
+magnitude of the matching factor can be significant and thus, the higher order
+effects may be sizable. The ``natural'' size of such truncation effects is of
+$\mathcal{O}(\alpha_s^2)$, which amounts to around 10\% at the renormalization
+scale we consider. However, they are rather uncertainties of the procedure, so
+they can not be translated to uncertainties of the matrix elements. These
+uncertainties are the analogue of the theoretical uncertainties that come from a
+truncated perturbative expansion in the description of observables in
+phenomenological fits of the PDFs, which have been described in Chapter~\ref{ch:th_error}.
+Finally, we consider 6 scenarios for truncation effects
+pertinent to matrix elements (\ie\ originating from the perturbative uncertainty
+in $Z$-factors): 10\%, 20\%, 30\% of the central value of the matrix element, as
+well as shifts of 0.1, 0.2 and 0.3. 
+
+\textbf{Higher twist effects}. For the current analysis we decide to ignore the
+effect of higher twists, \ie\ the presence of power-like corrections to the
+factorization formula. At this preliminary stage, we are not concerned by their
+effects, but a more precise phenomenological analysis should definitely take
+those into account. In particular, it should be kept in mind that, as argued in Refs.~\cite{Izubuchi:2018srq, Braun:2018brg},
+power corrections can be enhanced for both $x\rightarrow 0$ and $x\rightarrow 1$, limiting
+the quasi-PDFs approach in the small-$x$ and large-$x$ regime. We will come back to this point in the conclusions. 
+
+\textbf{Other effects}. Apart from the systematics mentioned above, there are
+some other effects that potentially affect the results. One of them is the usage
+of a setup including two degenerate light quarks. However, this effect, working
+in the isospin limit instead of taking into account the different masses and
+electric charges of the light quarks, is expected to be much below the level of
+the current precision -- of the order of the proton-neutron mass splitting, \ie\
+at the per mille level. A similar magnitude can be expected for the contribution
+of the neglected sea quark loops from heavier quarks. Such effects can at
+present be safely ignored and will become important only when aiming at an
+$\mathcal{O}(1\%)$ precision or better.
+
+
+\begin{table}[!t]
+    \centering
+    \scriptsize
+    \renewcommand{\arraystretch}{1.90}
+    \input{tables/qPDFsys.tex}
+    \vspace{0.3cm}
+    \caption{Scenarios of the impact of different systematic effects 
+    in the renormalized matrix elements of quasi-PDFs. Percentage values for scenarios 
+    S1-S3 should be understood as a given fraction of the central value of the matrix element, 
+    while absolute values for S4-S6 are shifts independent from the matrix element.}
+    \label{tab:systematics}
+\end{table}
+
+
+\textbf{Final scenarios}. In the end, we define 6 scenarios of possible impact
+of systematic effects, summarized in Tab.~\ref{tab:systematics}. Scenarios S1-S3
+include uncer\-tain\-ties that are a fixed percentage of the central value of
+the matrix element, while for S4-S6, the uncertainties are additive shifts
+independent from the value of the matrix element. Scenarios S1, S4 can be
+considered as the most ``optimistic'' ones. More realistic estimates of
+uncertainties are included in S2 and S5. Finally, S3 and S6 are ``pessimistic'',
+\ie\ assume largest plausible estimates of the various systematic effects.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{From parton distributions to lattice observables}
+\label{subsec:thpredictions}
+In this Chapter, we aim at describing the data presented in the previous subsection;
+further studies with different data and treatments of systematic
+errors are presented in the next Chapter. Hence, we specialize our discussion
+to the case of the unpolarized isovector parton distribution. Following the
+notations introduced above, the parton distribution $f_{3}$ is
+defined as
+\begin{align}
+	f_{3}\lp x, \mu^2 \rp = 
+	\begin{cases}
+      \phantom{-} u\lp x, \mu^2 \rp - d\lp x, \mu^2\rp\, , \quad                 %\,\,\,\,\ 
+      &\text{if} \,\,\,\,\, x > 0 \\
+      -\bar{u}\lp -x, \mu^2 \rp + \bar{d}\lp -x, \mu^2 \rp\, , \quad % \,\,\,\,\,
+      &\text{if} \,\,\,\,\, x < 0 
+	\end{cases}
+\end{align} 
+where the support is given by $x\in \left[ -1, 1 \right]$. The factorization
+theorem in Eq.~\eqref{eq::pdftoqpdf} becomes
+\begin{align}
+	\label{eq::factorization}
+	  & \tilde{f}_{3}\left(x,\mu,P_z\right) = \int_{-1}^{+1} \frac{dy}{|y|}\,C_3\left(\frac{x}{y},\frac{\mu}{|y|P_z}\right)\, 
+	  f_{3}\left(y,\mu^2\right)\, ,
+\end{align}
+where the quasi-PDF is the one given by $\Gamma = \gamma^0$ and the explicit
+expression of the matching coefficients is given in
+App.~\ref{app:coefficients}. Starting from the definition of quasi-PDFs
+given in Eq.~\eqref{eq::bareqpdf}, it is clear that the lattice ME is given by the
+inverse Fourier transform of Eq.~\eqref{eq::factorization}, which yields an
+equation relating the light-cone PDFs on the right hand side to the lattice observable:
+\begin{align}
+	\label{eq:factorisedME}
+	\text{h}_{\gamma^0,3}\lp z P_z, z^2,\mu\rp = 
+	\int_{-\infty}^{\infty} dx \, e^{-i \lp x P_z \rp z} 
+	\int_{-1}^{+1} \frac{dy}{|y|}\,
+	C_3\left(\frac{x}{y},\frac{\mu}{|y|P_z}\right)\, 
+	f_{3}\left(y,\mu^2\right). 
+\end{align}
+Since $C_3$ is purely real, we can split the above complex identity into two real equations, relating the
+real and imaginary part of the ME $\text{h}_{\gamma^0,3}\lp z \rp$ to the
+light-cone distribution $f_{3}$. For the purpose of this work, we introduce two
+lattice observables, denoted by $\mathcal{O}_{\gamma^0}^{\text{Re}}\lp z, \mu
+\rp$ and $\mathcal{O}_{\gamma^0}^{\text{Im}}\lp z, \mu \rp$, defined as 
+\begin{align}
+	  \mathcal{O}_{\gamma^0}^{\text{Re}}&\lp z, \mu \rp 
+		  \equiv \text{Re} \left[\text{h}_{\gamma^0,3}\lp z P_z, z^2, \mu^2 \rp\right] 
+           \nonumber \\
+           &= \int_{-\infty}^{\infty} dx\, \cos{\lp x P_z z \rp} 
+		  \int_{-1}^{+1} \frac{dy}{|y|}\, C_3\left(\frac{x}{y},\frac{\mu}{|y|P_z}\right)\, 
+		  f_{3}\left(y,\mu^2\right), \\
+	  \mathcal{O}_{\gamma^0}^{\text{Im}}&\lp z, \mu \rp 
+          \equiv \text{Im} \left[\text{h}_{\gamma^0,3}\lp z P_z, z^2, \mu^2 \rp\right]
+          \nonumber \\ 
+		  &= -\int_{-\infty}^{\infty} dx\, \sin{\lp x P_z z \rp} 
+		  \int_{-1}^{+1} \frac{dy}{|y|}\, C_3\left(\frac{x}{y},\frac{\mu}{|y|P_z}\right)\, 
+		  f_3\left(y,\mu^2\right)\, , 
+\end{align}  
+where we have only included $z$ and $\mu$ in the arguments of
+$\mathcal{O}_{\gamma^0}^{\text{Re}}$ and $\mathcal{O}_{\gamma^0}^{\text{Im}}$ in
+order to simplify the notation -- since we are working here with only one value
+of $P_z$ there is little advantage in keeping all the arguments. The explicit
+expression of $C_3$ contains plus distributions. Making them explicit we can
+write the equations above as
+\begin{align}
+	\label{eq::V3factorization}
+	  & \mathcal{O}_{\gamma^0}^{\text{Re}}\lp z, \mu \rp = \int_{0}^{1} dx \,\, \mathcal{C}_3^{\text{Re}}\lp x, z, \frac{\mu}{P_z}  \rp V_3\left(x,\mu\right) = \mathcal{C}_3^{\text{Re}}\lp z, \frac{\mu}{P_z}  \rp \circledast V_3\left(\mu^2\right), \\
+	\label{eq::T3factorization}
+	  & \mathcal{O}_{\gamma^0}^{\text{Im}}\lp z, \mu \rp = \int_{0}^{1} dx \,\, \mathcal{C}_3^{\text{Im}}\lp x, z, \frac{\mu}{P_z}  \rp T_3\left(x,\mu\right)= \mathcal{C}_3^{\text{Im}}\lp z, \frac{\mu}{P_z}  \rp \circledast T_3\left(\mu^2\right)   
+\end{align}
+where $V_3$ and $T_3$ are the nonsinglet distributions defined by
+\begin{align}
+	  & V_3 \lp x \rp = u\left(x\right) - \bar{u}\left(x\right) -\left[d\left(x\right)-\bar{d}\left(x\right)\right]\, , \\
+	  & T_3 \lp x \rp = u\left(x\right) + \bar{u}\left(x\right) -\left[d\left(x\right)+\bar{d}\left(x\right)\right]\, ,
+\end{align}
+where, for simplicity, the $\mu$ dependence has been omitted. 
+The equations above relate the position space matrix elements computable on the lattice with
+the collinear PDFs. Similar expressions were worked out in Ref.~\cite{Bali:2017gfr} in the context of
+the pion distribution amplitude.   
+The proof of Eqs.~\eqref{eq::V3factorization}, \eqref{eq::T3factorization} does require some
+care, and it is fully worked out in App.~\ref{app:coefficients}. The coefficients $\mathcal{C}_3^{\text{Re},\text{Im}}$
+are related to the real and imaginary part of the Fourier transform of the matching coefficient 
+$C_3$ appearing in Eq.~\eqref{eq::factorization}. Since the latter is defined in terms of plus distributions,
+the computation is quite involved, and the explicit expression of $\mathcal{C}_3^{\text{Re},\text{Im}}$
+is obtained in App.~\ref{app:coefficients}, making the action of the plus distributions explicit before taking the Fourier transform.  
+A discussion about the convergence of the
+integrals involved is also reported there. The above results show how fixed $z$
+matrix elements defining the quasi-PDF in position space give direct access to
+two independent nonsinglet distributions, through the integration of the parton
+distribution over its full support with a perturbatively computable coefficient.
+We will denote this operation as $\circledast$. 
+
+It is useful at this point to recall the form of the QCD factorization formula
+for the DIS nonsinglet structure function, given in Eq.~\eqref{eq:dis_qcd}.
+Comparing Eqs.~\eqref{eq::V3factorization}, \eqref{eq::T3factorization}  with
+Eq.~\eqref{eq:dis_qcd}, we see that the lattice observables introduced
+above can be treated on the same footing as experimental data for DIS structure
+functions, as they are related to the nonsinglet distributions through a
+convolution with a coefficient that can be computed in perturbation theory.
+%
+However, the form of such convolution, denoted by $\circledast$ , is quite
+different from the one appearing in the DIS case, denoted by $\otimes$: the
+former involves a DIS-like convolution first, to go from the PDFs to quasi-PDFs,
+followed by an integration over the full $x$-range to go to position space. This
+suggests that this kind of convolution, if implemented in a PDFs fit, may
+constrain the output much more than what the standard DIS convolution can do. 
+
+\section{Fit setting and FastKernel implementation}
+\label{sec:fk_qpdf}
+The main point of the previous Sections is that the lattice equal-time correlators 
+are just another possible observable connected to PDFs through some kind of factorization theorem.
+From a practical point of view, this means that we can treat the lattice data on
+exactly the same footing as the experimental ones, allowing a smooth and natural
+way to introduce them in a parton distributions fit. The results presented in this and in the following
+Chapter have therefore been produced using the {\tt c++} fitting framework of the {\tt NNPDF} collaboration
+described in Chapter~\ref{ch:nnpdf_methodology}: lattice data and the corresponding systematics
+are implemented in the code, just as they were data for DIS structure functions, and the fitting code
+can be run using the standard methodology, based on neural network parameterization, Monte Carlo replicas generation,
+numerical minimization of the $\chi^2$ and cross validation.
+The $\chi^2$ minimized during the fit is given by Eq~\eqref{eq:chi2}, where the explicit form of the 
+covariance matrix is
+\begin{align}
+    C_{\,ij} = \sigma_{i,s}^2\, \delta_{ij} + \sum_k \sigma_{i,k} \sigma_{j,k} 
+\end{align}
+where $i$ and $j$ run over the lattice points and $\sigma_{i,s}$, $\sigma_{i,k}$ 
+are respectively the total statistical and the set of  systematical uncertainties
+of the $i$-th lattice point, described in Sec.~\ref{subsec:sys}.
+
+In order to get theoretical predictions for the data entering the fit, 
+the parton distributions have to be evolved from the fitting scale up to the observable scale, and then
+they have to be convoluted with the correct coefficient function. 
+As discussed in Sec.~\ref{sec:FK_nnpdf}, these two steps are performed by mean of the FastKernel tables.
+We show an example of this also in Chapter~\ref{ch:jets}, when describing the implementation of jets
+data in a global PDFs determination.
+%
+The same procedure has to be implemented for lattice data as well.
+As seen in Sec.~\ref{subsec:thpredictions}, in this case the
+integration of the parton distributions over their full support is needed. This
+makes the form of the convolution $\circledast$ more complicated than the one we
+usually have for high-energy observables, which makes the general implementation of 
+the FastKernel tables slightly different from the standard case.
+This has been achieved using a proprietary code and in the following we summarize the main steps followed in 
+the implementation.
+
+%
+The lattice observables $\mathcal{O}_{\gamma^0}^{\text{Re},\text{Im}}\lp z,
+\mu^2 \rp$ are determined at a given renormalization scale $\mu^2$. They can be
+written in terms of the nonsinglet distributions at a given reference scale
+$\mu_0^2$, by first evolving the parton distribution up to the scale $\mu^2$,
+and then convoluting it with the coefficents
+$\mathcal{C}_3^{\text{Re},\text{Im}}$ defined in
+Eqs.~\eqref{eq::V3factorization}, \eqref{eq::T3factorization} and worked out in
+App.~\ref{app:coefficients}. For the nonsinglet distributions considered in this work, the evolution is given by
+\begin{align}
+	\label{eq::NSevolutionPlus}
+	T_3 \lp x, \mu^2 \rp = \int_x^1 \frac{dy}{y}\, 
+	\text{K}_3^{(+)}\lp \frac{x}{y}, \as, \as^0 \rp T_3 \lp y, \mu_0^2 \rp\, , \\
+	\label{eq::NSevolutionMinus}
+	V_3 \lp x, \mu^2 \rp = \int_x^1 \frac{dy}{y}\, 
+	\text{K}_3^{(-)}\lp \frac{x}{y}, \as, \as^0 \rp V_3 \lp y, \mu_0^2 \rp\, .
+\end{align}
+where the kernels $\text{K}^{(\pm)}$ are obtained by solving the DGLAP evolution
+equations in the nonsinglet sector, as described in Sec.~\ref{sec:DGLAP}.
+For $\nsv$ and $\nst$ we have two different
+nonsinglet evolution kernels, denoted by $\text{K}_3^{(-)}$ and
+$\text{K}_3^{(+)}$ respectively. Eqs.~\eqref{eq::NSevolutionPlus}
+and~\eqref{eq::NSevolutionMinus} can be rewritten expressing the parton
+distribution in terms of an interpolation basis \cite{Ball:2010de}, for instance for the case of
+$T_3$
+\begin{align}
+	  & T_3\lp x, \mu_0^2 \rp = \sum_{\beta}T_3\lp x_{\beta}, \mu_0^2\rp\mathcal{I}^{(\beta)}\lp x \rp 
+          + \mathcal{O}\left[\left(x_{\beta+1}-x_{\beta}\right)^p\right], 
+\end{align}  
+where $p$ is the lowest order neglected in the interpolation.
+In other words, the interpolating functions
+act by picking up the value of the PDF at some point $x_{\beta}$ of a
+predefined $x$-grid. Substituting in the evolution equation
+Eq.~\eqref{eq::NSevolutionPlus} we get
+\begin{align}
+	\label{eq::fastevol}
+	T_3 \lp x_{\alpha}, \mu^2 \rp & = 
+	\sum_{\beta} \mathcal{K}^{(+)}_{\alpha\beta}\,
+	T_3 \lp x_{\beta}, \mu_0^2 \rp\, . 
+\end{align}
+with
+\begin{align}
+	\mathcal{K}^{(+)}_{\alpha\beta} = \int_{x_{\alpha}}^1 \frac{dy}{y}\, 
+	\text{K}^{(+)} \lp \frac{x_{\alpha}}{y}, \as, \as^0 \rp 
+	\mathcal{I}^{(\beta)}\lp y \rp \, .
+\end{align}
+The interpolation basis used at the initial scale can also be used to
+interpolate the parton distributions at the scale $\mu^2$ appearing in
+Eqs.~\eqref{eq::V3factorization}, \eqref{eq::T3factorization}. For the imaginary part of the lattice observable we get
+\begin{align}
+	\label{eq::applgrid}             
+	\mathcal{O}_{\gamma^0}^{\mathrm{Im}}\lp z,\mu \rp = 
+	\sum_{\alpha} C_{z\alpha}^{\mathrm{Im}}\, 
+	T_3\left(x_{\alpha},\mu^2\right)\, , 
+\end{align}
+with
+\begin{align}
+	C_{z\alpha}^{\mathrm{Im}} = \int_0^1 dx\, 
+	\mathcal{C}_3^{\mathrm{Im}}\lp x, z, \frac{\mu}{P_z}\rp 
+	\mathcal{I}^{(\alpha)}\lp x \rp\, . 
+\end{align}
+Putting together Eqs.~\eqref{eq::fastevol} and~\eqref{eq::applgrid} we get
+\begin{align}
+	\mathcal{O}_{\gamma^0}^{\mathrm{Im}}\lp z,\mu \rp = 
+	\sum_{\beta}
+	\mathcal{H}_{z\beta}^{\mathrm{Im}}\,
+	T_3\lp x_{\beta}, \mu_0^2 \rp\, , 
+\end{align}
+where
+\begin{align}
+	\label{eq::FK}
+	\mathcal{H}_{z\beta}^{\mathrm{Im}} = 
+	\sum_{\alpha} C_{z\alpha}^{\mathrm{Im}}\, 
+	\mathcal{K}^{(+)}_{\alpha\beta}\, . 
+\end{align}
+Eq.~\eqref{eq::FK} defines the FastKernel table which enters the computation of
+the $\chi^2$ during the fit. It connects the parton distribution at the fitting
+scale to the lattice observable, taking into account the QCD evolution, the
+matching and the Fourier trasnform, expressing them through a single matrix
+vector multiplication. Clearly a similar set of equations defines a FastKernel
+table that yields the real part of the lattice observable,
+$\mathcal{O}_{\gamma^0}^{\mathrm{Re}}$, as a function of the valence parton
+distribution $V_3$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results}
+\label{sec:results}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Let us now proceed to presenting and discussing our numerical results. First, we
+study the way the available lattice data might constrain the parton
+distributions in a fit, by mean of closure tests: fake data for the real and
+imaginary part of the ME are generated according to
+Eqs.~\eqref{eq::V3factorization},~\eqref{eq::T3factorization} using as input a
+chosen PDFs set. The fitting code is then run over these pseudo-data, using
+exactly the same setting used in a common fit. By comparing the output of such
+fits with the known input PDFs sets, we can assess the accuracy we may expect to
+get from the current knowledge of the lattice data and their systematics. 
+
+Then we present results for fits run over the data presented in
+Sec.~\ref{subsec:latticedata}, studying the 6 different scenarios for the
+treatment of the systematic errors described in Sec.~\ref{subsec:sys} and
+summarized in Tab.~\ref{tab:systematics}. 
+The results presented here have been produced using the {\tt NNPDF} fitting code \cite{Ball:2017nwa}
+and the {\tt ReportEngine} software \cite{zahari_kassabov_2019_2571601}.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Closure tests}
+\label{subsec:CT}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+As shown in Sec.~\ref{subsec:thpredictions}, we can relate PDFs to lattice
+observables through the matching convolution of Eq.~\eqref{eq::factorization}
+followed by a Fourier transform. As already pointed out at the end of
+Sec.~\ref{subsec:thpredictions}, the resulting convolution $\circledast$ is
+quite different from the one entering standard QCD fits. In this section, we
+assess how much this operation together with the available lattice data from
+Refs.~\cite{Alexandrou:2018pbm,Alexandrou:2019lfo} are able to constrain parton distributions in a
+fit, running some preliminary closure tests. For a detailed description of the
+closure test procedure, we refer to Sec.~4 of Ref.~\cite{Ball:2014uwa}. We
+generate pseudo-data corresponding to the data of Ref.~\cite{Alexandrou:2018pbm}
+using {\tt NNPDF31\_nlo\_as\_0118} as our input PDFs set, and we run the fitting
+code over them. The outcome of the closure test fit is then used to assess how
+well the input PDFs can be reconstructed starting from the 16 position space ME
+points and their uncertainties.
+
+In order to get an idea of the impact on the fit of the statistical and
+systematic ME errors, we consider three different scenarios: first we generate
+fake data assuming no systematic uncertainties and a small uncorrelated
+statistical uncertainty for each point, constant for all of them and of the order of the
+smallest real one. From the results of this closure test we can estimate the
+real constraining power of the convolution $\circledast$, assuming an ideal
+scenario where all the systematics are under control and the statistical error
+is kept small. Second, we repeat the exercise but using the real statistical
+uncertainties, to assess how much the real statistics of the current simulations
+affect the conclusions of the previous case. Finally we look at the effect of
+the systematics, considering as a specific example the scenario S2 of
+Table~\ref{tab:systematics}. The three cases are summarized in
+Table~\ref{tab:CT} and the results are shown in
+Figs.~\ref{fig:1},~\ref{fig:2},~\ref{fig:3}.
+%
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Closure test & Statistics & Systematics \\
+\hline
+{\tt CT1} & fake & - \\
+{\tt CT2} & real & - \\
+{\tt CT3}  & real  & S2\\
+\hline
+\end{tabular}
+\end{center}
+\caption{\label{tab:CT} Closure tests with different choices of the statistical and systematic error. The results for each option above is summarised in the plots below.}
+\end{table}
+
+\begin{figure}[h]
+    \begin{center}
+	\includegraphics[width=0.49\linewidth]{CT1_V3_bigx.pdf}  
+	\includegraphics[width=0.49\linewidth]{CT1_T3_bigx.pdf}  
+	\caption{Closure test fit with fixed small statistical error and no systematics (CT1) compared to the input PDFs set. 
+		$V_3$ (top line) and $T_3$ (lower line) combinations in linear and logarithmic scale are shown.
+	The input PDFs set is fully reconstructed within 1-sigma level, getting PDFs with an error band comparable to the input one.}
+    \label{fig:1}
+    \end{center}
+\end{figure}
+    
+\begin{figure}[h!]
+    \begin{center}
+	\includegraphics[width=0.49\linewidth]{CT2_V3_bigx.pdf}  
+	\includegraphics[width=0.49\linewidth]{CT2_T3_bigx.pdf}  
+	\caption{Closure test fit with real statistical error and no systematics (CT2) compared to the input PDFs set. 
+		Top line: $V_3$ combination in linear and logarithmic scale.
+		$V_3$ (top line) and $T_3$ (lower line) combinations in linear and logarithmic scale are shown.
+		The error band of the reconstructed set is way bigger than the one of the input PDFs,
+	showing a non negligible impact of the current statistics over the final PDFs error.}
+    \label{fig:2}
+    \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+    \begin{center}
+	\includegraphics[width=0.49\linewidth]{CT3_V3_bigx.pdf}  
+	\includegraphics[width=0.49\linewidth]{CT3_T3_bigx.pdf}  
+	\caption{Closure test fit with real statistical and systematic error (CT3) compared to the input PDFs set. 
+                 $V_3$ (top line) and $T_3$ (lower line) combinations in linear and logarithmic scale are shown.
+                 The errors of the reconstructed PDFs are huge.}
+    \label{fig:3}
+    \end{center}
+\end{figure}
+\noindent
+Looking at the results for CT1, Fig.~\ref{fig:1}, it is worth stressing that the
+lattice data entering the fit are just 16 for the real part and 15 for the
+imaginary part of the matrix element. Just half of them are actually used in the
+training procedure, while the other ones are used to build the validation set.
+In a standard NLO QCD global fit, like the one used as input PDF here, the
+number of points entering the analysis is $\mathcal{O}\left(4000\right)$. 
+Fig.~\ref{fig:1} shows how good the convolution $\circledast$
+is in constraining the PDFs, assuming an ideal scenario where all the
+systematics are under control, and the statistics are kept small. Looking at the
+results for CT2 and CT3 in Figs.~\ref{fig:2} and \ref{fig:3}, it is clear how
+big the impact of the statistical and systematic uncertainties of the ME is on
+the PDFs error: in both cases the input PDFs set is reconstructed within 1-sigma
+level, with some tension for $V_3$ at medium x in the first case. The PDFs error
+is increasingly big, becoming huge when the full systematics are considered.
+Fig.~\ref{fig:3} shows what we may expect in a real life scenario.
+
+To sum up, the results from CT1 show how promising this kind of lattice data
+might be in constraining PDFs. On the other hand, the results from CT2 and CT3
+highlight the importance of having a good control over both the statistical and
+systematical uncertainties in the lattice simulations of the ME. It is worth
+noticing, however, that the overall error band of the reconstructed PDFs, even in
+presence of the full systematic errors, would surely be reduced when new data
+are available.
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Fit results}
+\label{subsec:fits}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In this section, we present our results for fits ran over the data from
+Refs.~\cite{Alexandrou:2018pbm,Alexandrou:2019lfo}, described in Sec.~\ref{subsec:latticedata}. As
+mentioned before, we consider 6 different scenarios for the treatment of the
+systematic errors, summarized in Table~\ref{tab:systematics}. We show results
+for "optimistic" (S1,S4), "realistic" (S2,S5) and "pessimistic" (S3,S6)
+scenarios, the difference between the elements of each couple being the nature
+of the systematic errors: an additive shift given by a percentage of the ME for
+the first, a constant shift for all the ME points for the second one. 
+
+The results of the fit for the two optimistic scenarios are shown in
+Fig.~\ref{fig:4}. S1 is sligthly more conservative than S4, but overall there is
+not much difference between them. The situation changes for the more realistic
+scenarios (Fig.~\ref{fig:5}), where S2 is much more conservative than S5. In the
+former case the tension with {\tt NNPDF31\_nlo\_0118} is smaller than what we
+observe in the previous scenarios, due to the increase in the error band and to
+a slight shift of the central replica of the fit. Similar comments can be made
+for the most pessimistic scenarios, shown in Fig.~\ref{fig:6}, having S3 with a
+huge error band and a more remarkable shift of the central replica towards the
+one of NNPDF31. Overall, we notice how, when the systematics are given by a
+percentage of the ME, we get qualitatively different results moving from one
+scenario to the other, while in the case we consider constant shifts there is no
+much difference between different cases. 
+ 
+\begin{figure}[h]
+    \begin{center}
+	\includegraphics[width=0.49\linewidth]{S1S4_V3_bigx.pdf}  
+	\includegraphics[width=0.49\linewidth]{S1S4_T3_bigx.pdf}  
+	\caption{S1 vs.\ S4: S1 results are sligthly more conservative than the S4
+	ones, but overall there is no significant difference between the two optimistic
+	scenarios.}
+    \label{fig:4}
+    \end{center}
+\end{figure}
+
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics[width=0.49\linewidth]{S2S5_V3_bigx.pdf}  
+	\includegraphics[width=0.49\linewidth]{S2S5_T3_bigx.pdf}  
+	\caption{S2 vs.\ S5: S2 results are more conservative than the S5 ones,
+        showing also a small shift of the replica 0 towards the light-cone PDFs.
+        Overall, S2 results are comptible with {\tt NNPDF31\_nlo\_0118} within
+        1-sigma level.}
+    \label{fig:5}
+    \end{center}
+\end{figure}
+
+\begin{figure}[h]
+    \begin{center}
+	\includegraphics[width=0.49\linewidth]{S3S6_V3_bigx.pdf}  
+	\includegraphics[width=0.49\linewidth]{S3S6_T3_bigx.pdf}  
+	\caption{S3 vs.\ S6: S3 results are extremely conservative, while those for S6
+        do not show a qualitative difference with respect to S4 and S5.}
+    \label{fig:6}
+    \end{center}
+\end{figure}
+
+
+To sum up, in this Chapter, we have used the momentum space factorization of quasi-PDFs in order to relate
+the unpolarized isovector parton distribution to well-defined matrix elements
+computable on the lattice. Using some of the currently available lattice data,
+we have used such result to extract the nonsinglet distributions $V_3$ and $T_3$
+within the {\tt NNPDF} framework, studying also different possible scenarios for
+the treatment of the systematic uncertainties from lattice QCD simulations.
+
+Our first results from closure tests show how effective these lattice data might
+be in constraining PDFs, allowing a consistent determination of the target
+distribution starting from $\mathcal{O}\left(15\right)$ ME points. On the other
+hand, we show that a consistent treatment of the lattice systematics is
+extremely important, and how the final result of the fit strongly depends on the
+specific systematics scenario we consider. Considering the most realistic ones,
+agreement with the phenomenological PDFs is observed within 1 sigma level, for
+both the nonsiglet distributions considered here. The error bands are, however,
+very large with respect to the corresponding phenomenological PDFs, showing again how
+important the control over the lattice systematics is. 
+
+Despite having focused on the quasi-PDFs case, the framework we
+implemented is general enough to allow for the treatment of different lattice data. 
+In the next Chapter we will discuss a similar analysis addressing this time the pseudo-PDFs 
+approach. In this case more data are available and, as we are going to see, 
+position space factorization formulas allows for a number of additional advantages.
+
+
+
+
+
 

@@ -312,10 +312,13 @@ To sum up, considering higher orders QCD corrections, the DIS structure function
 as
 \begin{align}
     \label{eq:dis_qcd}
-    F\left(x,Q^2\right) = 
+    F\left(x,Q^2\right) &= 
     \sum_a \int_x^1\frac{d\xi}{\xi}\,C_a\left(\frac{x}{\xi},\frac{Q^2}{\mu_F^2}, \alpha_s\right)q_{a/H}\left(\xi,\mu_F^2\right)
-    +\mathcal{O}\left(\frac{\Lambda_{QCD}}{Q}\right)\,.
+    +\mathcal{O}\left(\frac{\Lambda_{QCD}}{Q}\right) \nonumber\\
+    & \equiv \sum_a \,C_a\left(\frac{Q^2}{\mu_F^2}, \alpha_s\right) \otimes q_{a/H}\left(\mu_F^2\right)
+    +\mathcal{O}\left(\frac{\Lambda_{QCD}}{Q}\right)\,,
 \end{align}
+where in the second line we have denoted as $\otimes$ the convolution operation.
 The coefficients functions $C_a$ appearing in Eq.~\eqref{eq:dis_qcd} correspond to the finite partonic structure 
 functions $\hat{F}_{\text{reg}}$ after renormalization and subtraction of collinear singularities.
 Their explicit expression will depend on the specific structure function under consideration

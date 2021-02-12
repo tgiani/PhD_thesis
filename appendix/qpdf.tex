@@ -1,0 +1,204 @@
+\chapter{PDFs from quasi-PDFs matrix elements}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Matching coefficient and lattice convolution}
+\label{app:coefficients}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+As detailed at the end of Sec.~\ref{subsec:latticedata}, the matching coefficients to be
+used to relate the data of Refs.~\cite{Alexandrou:2018pbm,Alexandrou:2019lfo} to the light-cone PDFs
+are those expressed in the $\MMSb$ scheme. Their explicit expression is given
+by \cite{Alexandrou:2018pbm,Alexandrou:2019lfo}
+\begin{equation}
+	\label{eq::matching}
+	\begin{split}
+		&C_{3}\left(\xi,\eta\left(\xi\right) \right)= \delta\left(1-\xi\right)\, +  C_{3}^{\text{NLO}}\left(\xi,\eta\left(\xi\right) \right)_+\,,  \\ \\ 
+		& C_{3}^{\text{NLO}}\left(\xi,\eta\left(\xi\right) \right)_+ =  \frac{\alpha_s}{2\pi}C_F \begin{cases} \left[\frac{1+\xi^2}{1-\xi}\log{\frac{\xi}{\xi-1}} + 1 + \frac{3}{2\xi}\right]^{\left[1,+\infty\right]}_{+(1)} \,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, \xi > 1\\ \left[\frac{1+\xi^2}{1-\xi}\log\left[{\frac{1}{\eta^2\left(\xi\right)}}\left(4\xi\left(1-\xi\right)\right)\right]  -\frac{\xi\left(1+\xi\right)}{1-\xi}\right]^{\left[0,1\right]}_{+(1)}\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, 0<\xi < 1 \\ \left[-\frac{1+\xi^2}{1-\xi}\log{\frac{\xi}{\xi-1}} - 1 + \frac{3}{2\left(1-\xi\right)}\right]^{\left[-\infty,0\right]}_{+(1)} \,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, \xi<0\end{cases}\, .
+	\end{split}
+\end{equation}
+where the superscripts indicate the domain over which the plus prescription acts.
+The matching coefficients relate the light-cone PDF to the quasi-PDF up to power suppressed terms
+according to
+\begin{align}
+	\label{eq::matchingfud}                                   
+	\tilde{f}_{3}\lp x P_z, {\mu}^2 \rp =              
+	\int_{-1}^{1} \frac{dy}{|y|}\, C_{3}\lp\frac{x}{y},\frac{\mu}{y P_z}\rp  
+	f_{3}\lp y, {\mu}^2\rp. 
+\end{align}
+In the following, we work out the full expression of the coefficients appearing in Eqs.~\eqref{eq::V3factorization}, \eqref{eq::T3factorization}.
+Starting from Eq.~\eqref{eq::matchingfud} we have
+\begin{align}
+	\label{eq::explicitmatching}
+	\tilde{f}_3\left(x,\mu^2,P_z\right) = \int_{-1}^{1} \frac{dy}{|y|}\, \delta\lp 1- \frac{x}{y} \rp  
+	f_{3}\lp y, {\mu}^2\rp + \int_{-1}^{1} \frac{dy}{|y|}\, C_{3}^{\text{NLO}}\lp\frac{x}{y},\frac{\mu}{y P_z}\rp_+  
+	f_{3}\lp y, {\mu}^2\rp\, .
+\end{align}
+Let us focus on the next-to-leading order term, making the plus distribution
+explicit. In order to do so, we find it useful to split the integral in the two
+contributions for $y<0$ and $y>0$. A change of variables, $\frac{x}{y} =
+\xi$, yields 
+\begin{align}
+\label{eq::intermediate}
+	\tilde{f}_3^{\text{NLO}}\left(x,\mu^2,P_z\right) 
+	  & \equiv \int_{-1}^{1} \frac{dy}{|y|}\, 
+	C_{3}^{\text{NLO}}\lp\frac{x}{y},\frac{\mu}{y P_z}\rp_+ 
+	f_{3}\lp y, \mu^2\rp \nonumber \\ 
+	  & = \int_{|x|}^{\infty} d\xi\,          
+	C_3^{\text{NLO}}\left(\xi,\frac{\mu\xi}{x P_z}\right)_+ 
+	\frac{1}{|\xi|} f_3\left(\frac{x}{\xi},\mu^2\right) + \nonumber \\
+	  & \quad + \int_{-\infty}^{-|x|} d\xi\,  
+	C_3^{\text{NLO}}\left(\xi,\frac{\mu\xi}{xP_z}\right)_+ 
+	\frac{1}{|\xi|} f_3\left(\frac{x}{\xi},\mu\right). 
+\end{align}
+%
+The plus distribution appearing in the matching coefficients is defined in Ref.~\cite{Izubuchi:2018srq} and implemented as
+follows
+\begin{align}
+	\int_D d\xi\, 
+	C\left(\xi,g\left(\xi\right)\right)_+ f\left(\xi\right) 
+	= \int_D d\xi\,
+	\left[C\left(\xi,g\left(\xi\right)\right)f\left(\xi\right) - 
+	C\left(\xi,g\left(1\right)\right)f\left(1\right) \right]\, , 
+\end{align}
+with $g\lp\xi\rp =\frac{\mu\xi}{xP_z} $ and $D$ representing a generic integration domain, which in our case will be, according to Eq.~\eqref{eq::intermediate},
+either $\left(-\infty,-|x|\right)$ or $\left(|x|,+\infty\right)$. 
+It follows
+\begin{align}
+	\tilde{f}_3^{\text{NLO}}&\left(x,\mu^2,P_z\right) 
+	   =\int_{|x|}^{\infty} d\xi\, 
+	  \left[ C_3^{\text{NLO}}\left(\xi,\frac{\mu\xi}{xP_z}\right)
+	  \frac{f_3\left(\frac{x}{\xi},\mu^2\right)}{|\xi|} - 
+	  C_3^{\text{NLO}}\left(\xi,\frac{\mu}{xP_z}\right) f_3\left(x,\mu^2\right)\right] \nonumber \\
+	  &  
+	  + \int_{-\infty}^{-|x|}d\xi
+	  \left[C_3^{\text{NLO}}\left(\xi,\frac{\mu\xi}{xP_z}\right)
+	  \frac{f_3\left(\frac{x}{\xi},\mu^2\right)}{|\xi|} - 
+	  C_3^{\text{NLO}}\left(\xi,\frac{\mu}{xP_z}\right)f_3\left(x,\mu^2\right)\right]. 
+\end{align}
+It can be easily verified that the two contributions appearing in the above
+equation are indeed well defined for every fixed $x$: the singularity in
+$\xi=+1$ is cured by the plus prescription, while for $\xi\rightarrow \pm
+\infty$ the matching coefficient behaves like $C\left(\xi\right)\sim
+\frac{1}{\xi^2}$, which is enough to guarantee the convergence of all the
+integrals above. For numerical stability we find it useful to avoid the
+singularity in $\xi = +1$ introducing a suitable small parameter $\delta \sim
+10^{-6}$, and rewriting the above equation as
+\begin{equation}
+	\label{eq::explicitplus}
+	\begin{split}
+		\tilde{f}_3^{\text{NLO}}&\left(x,\mu^2,P_z\right)
+		=\int_{|x|}^{1-\delta} d\xi\,
+		C_3^{\text{NLO}}\left(\xi,\frac{\mu\xi}{xP_z}\right)
+		\frac{f_3\left(\frac{x}{\xi},\mu\right)}{\xi} - 
+		f_3\left(x,\mu\right) \int_{|x|}^{1-\delta} d\xi\,
+		C_3^{\text{NLO}}\left(\xi,\frac{\mu}{xP_z}\right) \\
+		& + \int_{1+\delta}^{\infty}d\xi\,
+		C_3^{\text{NLO}}\left(\xi,\frac{\mu\xi}{xP_z}\right)
+		\frac{f_3\left(\frac{x}{\xi},\mu\right)}{\xi} - 
+		f_3\left(x,\mu\right) \int_{1+\delta}^{\infty}d\xi\,
+		C_3^{\text{NLO}}\left(\xi,\frac{\mu}{xP_z}\right) \\
+		& - \int_{-\infty}^{-|x|} d\xi\, 
+		C_3^{\text{NLO}}\left(\xi,\frac{\mu\xi}{xP_z}\right)
+		\frac{f_3\left(\frac{x}{\xi},\mu\right)}{\xi} - 
+		f_3\left(x,\mu\right) \int_{-\infty}^{-|x|}d\xi\, 
+		C_3^{\text{NLO}}\left(\xi,\frac{\mu}{xP_z}\right).
+	\end{split}
+\end{equation}
+%
+In order to obtain the lattice ME, we need to compute the real and imaginary part
+of the Fourier transform of Eq.~\eqref{eq::explicitmatching} as shown in
+Eq.~\eqref{eq:factorisedME}. Starting from the leading-order contribution, we get
+\begin{align}
+	\label{eq::LO}
+	\int_{-\infty}^{\infty}& dx\, \cos\left(x P_z z\right) \int_{-1}^{1} \frac{dy}{|y|}\, \delta\lp 1-\frac{x}{y} \rp  
+	f_{3}\lp y, {\mu}^2\rp  \nonumber \\
+	&= \int_0^1 dy \cos\lp y P_z z  \rp \lp f_{3}\lp y, {\mu}^2\rp + f_{3}\lp -y, {\mu}^2\rp  \rp = 
+	\int_0^1 dx \cos\lp x P_z z  \rp V_3 \lp x, {\mu}^2 \rp \nonumber \\
+	&= \int_0^1 dx\, \text{A}^{\text{Re}, \,\text{LO}} \lp x P_z z \rp V_3 \lp x, {\mu}^2 \rp
+\end{align}
+where we have integrated in $x$ first, re-expressed the integral $\int_{-1}^1 dy$ as $\int_0^1 dy$, used
+\begin{align} 
+	f_3\left(x\right)+f_3\left(-x\right) = f_3^{\text{sym}}\left(x\right) = u^-\left(x\right) - d^-\left(x\right) = V_3\left(x\right) 
+\end{align}
+and finally changed variables back to $x$.  
+Moving now to the next-to-leading order part, we analyse each of the six contributions listed in
+Eq.~\eqref{eq::explicitplus}, defining for each lattice observable six integrals
+to be computed, denoted as
+$\text{I}^{\text{Re}}_i,\,\text{I}^{\text{Im}}_i\,\,\, i = 1,..,6$. Starting
+from the first contribution to the real part we get
+\begin{align}
+	\text{I}^{\text{Re}}_1 
+	  & =\int_{-\infty}^{\infty} dx\, \cos\left(x P_z z\right)
+	  \int_{|x|}^{1-\delta}d\xi\, 
+	  C_3^{\text{NLO}}\left(\xi,\frac{\mu\,\xi}{xP_z}\right)
+	  \frac{f_3\left(\frac{x}{\xi},\mu\right)}{\xi} \nonumber \\
+	  & = \int_{0}^{\infty} dx\, \cos\left(x P_z z\right)
+	  \int_{x}^{1-\delta}\frac{d\xi}{\xi}\,
+	  C_3^{\text{NLO}}\left(\xi,\frac{\mu\,\xi}{xP_z}\right)
+	  \left(f_3\left(\frac{x}{\xi},\mu\right) + 
+	  f_3\left(-\frac{x}{\xi},\mu\right) \right) \nonumber \\
+	  & =\int_{0}^{1} dx\, \cos\left(x P_z z\right)
+	  \int_{x/(1-\delta)}^{1}\frac{dy}{y}\,
+	  C_3^{\text{NLO}}\left(\frac{x}{y},\frac{\mu}{y P_z}\right) V_3\left(y,\mu\right)\, ,
+\end{align}
+where in the last line we have changed variables back to $\frac{x}{\xi} = y$.
+Also, the integration range for $x$ becomes $\lp 0,1 \rp$, since $x<y<1$.
+Renaming variables, we have
+\begin{align}
+	\text{I}^{\text{Re}}_1 
+	  & = \int_{0}^{1}dx\,
+	  	\left[
+			  \frac{1}{x}\int_{0}^{1} dy\, 
+			  \Theta\lp x - frac{y}{1-\delta} \rp
+			  \cos\left(y P_z z\right) 
+			  C_3^{\text{NLO}}\left(\frac{y}{x},\frac{\mu}{x P_z}\right)
+		\right]
+	V_3\left(x,\mu^2\right) \nonumber \\
+	  & = \int_{0}^{1}dx\, 
+		  \text{A}^{\text{Re},\,\text{NLO}}_1 \lp x, z, \frac{\mu}{P_z} \rp 
+		  V_3\left(x,\mu^2\right)\, . 
+\end{align}
+Analogously, we find out that the other five contributions can be written as 
+\begin{align}
+	\text{I}^{\text{Re}}_{\,i} =
+	\int_{0}^{1}dx\, \text{A}^{\text{Re},\,\text{NLO}}_{\,i} \lp x, z, \frac{\mu}{P_z} \rp V_3\left(x,\mu^2\right). 
+\end{align}
+with
+\begin{align}
+	& \text{A}^{\text{Re},\,\text{NLO}}_2 = \cos(x P_z z)\int_{x}^{1-\delta}d\xi \,
+		C_3^{\text{NLO}}\left(\xi,\frac{\mu}{xP_z}\right), \\
+	& \text{A}^{\text{Re},\,\text{NLO}}_3 = \frac{1}{x}\,\int_{0}^{\infty} dy\,
+		\Theta\left(\frac{y}{1+\delta}-x\right) \cos\left(y P_z z\right)C_3^{\text{NLO}}\left(\frac{y}{x},\frac{\mu}{x P_z}\right), \\
+	& \text{A}^{\text{Re},\,\text{NLO}}_4 = \cos(x P_z z)\int_{1+\delta}^{\infty}d\xi\,
+		C_3^{\text{NLO}}\left(\xi,\frac{\mu}{xP_z}\right), \\
+	& \text{A}^{\text{Re},\,\text{NLO}}_5 = -\frac{1}{x}\,\int_{0}^{\infty} dy\,
+		\cos\left(y P_z z\right) 
+		C_3^{\text{NLO}}\left(-\frac{y}{x},\frac{\mu}{x P_z}\right), \\
+	& \text{A}^{\text{Re},\,\text{NLO}}_6 = \cos(x P_z z) \int_{-\infty}^{-x}d\xi \,
+		C_3^{\text{NLO}}\left(\xi,\frac{\mu}{xP_z}\right)
+\end{align}
+Collecting all the terms yields Eq.~\eqref{eq::V3factorization}
+\begin{align}
+	\mathcal{O}_{\gamma^0}^{\text{Re}}\lp z,\mu \rp = \int_{0}^{1} dx \, \mathcal{C}_3^{\text{Re}}\lp x, z, \frac{\mu}{P_z}\rp 
+	\nsv\left(x,\mu^2\right)\, , 
+\end{align}
+where
+\begin{align}
+	\mathcal{C}_3^{\text{Re}}&\lp x, z, \frac{\mu}{P_z}  \rp = 
+	\text{A}^{\text{Re},\,\text{LO}} + \text{A}^{\text{Re},\,\text{NLO}}  
+\end{align}
+with
+\begin{align}
+	\text{A}^{\text{Re},\,\text{NLO}}= 
+	\text{A}^{\text{Re}, \,\text{NLO}}_1 - \text{A}^{\text{Re}, \,\text{NLO}}_2 + \text{A}^{\text{Re}, \,\text{NLO}}_3 
+	- \text{A}^{\text{Re}, \,\text{NLO}}_4 - \text{A}^{\text{Re}, \,\text{NLO}}_5 - \text{A}^{\text{Re}, \,\text{NLO}}_6. 
+\end{align}
+%
+We now turn to the imaginary part of the Fourier transform. The computation is
+exactly the same as in the previous case, with the only difference that now we
+have a $\sin$ instead of a $\cos$. Because of this, when re-expressing the
+integral $\int_{-\infty}^{\infty} dx$ as $\int_{0	}^{\infty} dx $, we get an
+additional minus sign, which gives the combination
+\begin{align} 
+	f\left(x\right)-f\left(-x\right) = f_3^{\text{asy}}\left(x\right) = u^+\left(x\right) - d^+\left(x\right) = T_3\left(x\right). 
+\end{align} 
+Therefore, the results for the imaginary part can be obtained from those for the real part simply by replacing $\cos$ with $\sin$ and $V_3$ with $T_3$.
