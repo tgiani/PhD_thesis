@@ -2,9 +2,9 @@
 \label{ch:ppdf_NNPDF}
 In the previous Chapter, 
 starting from the momentum space factorization formula connecting quasi-PDFs to collinear PDFs,
-upon numerical implementation of the Fourier transform an expression relating
-parton distributions directly to position space quasi-PDFs matrix elements
-was obtained. Such factorized expression has been subsequently used in the NNPDF framework in order to 
+upon numerical implementation of the Fourier transform we obtained an expression relating
+parton distributions directly to position space quasi-PDFs matrix elements.
+Such factorized expression has been subsequently used in the NNPDF framework in order to 
 extract two nonsinglet distributions from data for quasi-PDFs matrix elements 
 produced in Refs.~\cite{Alexandrou:2018pbm, Alexandrou:2019lfo}.
 A similar analysis was very recently performed by the JAM collaboration in Ref.~\cite{Bringewatt:2020ixn} 
@@ -12,7 +12,7 @@ for the spin-averaged and spin-dependent PDFs employing quasi-PDF lattice data.
 In this Chapter, base on Ref.~\cite{DelDebbio:2020rgv} we extend such analysis to the case of the pseudo-PDFs approach,
 which relies on the position space formulation of the same factorization theorem. 
 In particular, we will consider data for reduced pseudo-ITD, introduced in Sec.~\ref{sec:pseudo_PDFsfact}
-in the context of the scalar field theory.
+in the context of the scalar field theory and that we now revise in the context of QCD.
 
 %
 As we saw in Sec.~\ref{sec:qPDFs_th} the UV divergences of the Ioffe-time pseudodistribution (pseudo-ITD)
@@ -37,9 +37,7 @@ based on the operator product expansion (OPE).
 The computation of the relevant QCD diagrams has been performed in a number of independent papers.
 The original QCD computation is reported, for example, 
 in Refs.~\cite{Radyushkin:2017lvu, Radyushkin:2016hsy, Izubuchi:2018srq, Ji:2017rah}.
-A simple discussion of the basic features of  the derivation of the factorization formula in non-gauge 
-theories has been presented in Chapter~\ref{ch:scalar_model}, following Ref.~\cite{DelDebbio:2020cbz}.
-The QCD result reads
+The result reads
 \begin{align}
 	\label{eq:factIoffe}
 	\mathfrak{M}\left(\nu, z_3^2\right) = \int_{-1}^{1} dx\,C\left(x\nu,\mu^2 z_3^2\right)f\left(x,\mu^2\right) + \mathcal{O}\left(z_3^2\Lambda^2\right)\,, 
@@ -86,8 +84,8 @@ we consider the  fits where only the statistical uncertainties of the lattice da
 Analyzing data from different lattice ensembles we 
 show that, in general, without accounting for systematic effects  it is not possible to obtain a good fit.
 In Sec.~\ref{sec:sys_fits} we discuss and quantify some of the systematic uncertainties affecting
-the lattice data.  We  include them into the analysis and  study their impact on the final PDFs and on the fit quality.
-Sec.~\ref{sec:conclusions} summarizes our conclusions. 
+the reduced pseudo-ITD data.  We include such systeatics in the analysis and we study their impact on the final PDFs
+and on the fit quality.
 
 
 \section{Lattice data and observables}
@@ -392,15 +390,20 @@ Excited states contaminations might represent another possible source of systema
 Also missing higher orders in perturbation theory and higher twist effects could in principle be treated
 as additional systematic uncertainties. 
 Unlike the case of the FV, CL and PM systematic uncertainties discussed above, we cannot estimate
-the size of such effects using the current lattice results. One could then follow the approach adopted in Ref.~\cite{Cichy2019},
+the size of such effects using the current lattice results. 
+One could then follow the approach adopted in the previous Chapter,
 where different scenarios for the size of such systematics have been considered, and try to draw conclusions about their
 impact on the PDFs and on the fit quality. 
 Here we will follow a different approach, trying to quantify an additional uncertainty which accounts for the 
-unknown missing systematic effects, following a Bayesian approach as detailed in the following.
+unknown missing systematic effects, following a Bayesian approach.
+The gaussian Bayesian approach that we are going to use here is the same 
+described in Chapter~\ref{ch:th_error} in the case of global QCD analysis in order to take into account 
+the theoretical error due to missing higher orders\footnote{In Ref.~\cite{Bernal:2018cxc} a similar approach was applied 
+to cosmological data.}.
 
 %
-The figure of merit which is minimized during a Gaussian fit is defined as the probability of the data $D$ given
-the model parameters $\theta$, namely the likelihood
+As discussed in Sec.~\ref{sec:th_err_as_cov}, the figure of merit which is minimized during a Gaussian fit is defined 
+as the probability of the data $D$ given the model parameters $\theta$, namely the likelihood
 \begin{align}
     \label{eq:likelihood}
     \mathcal{P}\left(D|\theta\right) = e^{-\frac{1}{2}\left(D-T\left(\theta\right)\right)^T\,
@@ -430,23 +433,11 @@ Eq.~\eqref{eq:modifiedlikelihood} shows how the presence of unknown systematic e
 introducing in the likelihood an additional contribution to the covariance matrix, denoted by $\hat{\Sigma}$, 
 which defines the prior probability distribution of these systematics. Its specific definition is of course arbitrary,
 and depends on the knowledge of the missing uncertainties we have.
-
 This Bayesian approach, despite not providing a general method 
 to estimate the missing systematics, allows to include in the analysis the partial information we may have about them.
-It should be noted that Eq.~\eqref{eq:modifiedlikelihood} is obtained under the hypothesis that 
-the unknown systematic uncertainty is gaussianly distributed. This is an assumption of the model, often done in the literature,
-which allows to greatly simplify the problem. However depending on the specific data considered it might not be the most 
-realistic one. In the present work we will work using this gaussian assumption, leaving for future studies
-the investigation of different choices for the prior probability distribution. 
-A gaussian Bayesian approach has already been applied in different physical problems, when the data are affected 
-by unknown sources of systematics:
-in the case of global QCD analysis, in Refs.~\cite{AbdulKhalek:2019bux,AbdulKhalek:2019ihb},
-a suitable covariance matrix $\hat{\Sigma}$ was defined by mean of scale variations, in order to take into account 
-the theoretical error due to missing higher orders, while in Ref.~\cite{Bernal:2018cxc} a similar approach was applied 
-to cosmological data.
 
 %
-In our case, we only know the discrepancies observed at the beginning of this section,
+In the present case, we only know the discrepancies observed at the beginning of this section,
 not described by continuum limit, finite volume and pion mass effects.
 We can look at such discrepancies as an indication of the minimal size of the systematic
 effects affecting the data and use them to construct a suitable $\hat{\Sigma}$:
@@ -486,11 +477,11 @@ showing a good fit quality.
 It should be noted that after the inclusion of systematic uncertainties in the analysis, the effect
 on the final result could be different depending on the specific situation we are considering.
 In other words, it is not always the case that the inclusion of new systematic effects leads to an increase 
-of the final PDFs error. This can be seen for example in the case of the distribution $T_3$ plotted in Fig.~\ref{fig::fits_z2},
+of the final PDFs error, as we also noticed in Chapter~\ref{ch:th_error}. This can be seen for example in the case of the distribution $T_3$ plotted in Fig.~\ref{fig::fits_z2},
 from which it is clear how the error of the fit \textit{fine-sys} has not increased with respect to the one of
 \textit{fine-stat}. The reason for this can be traced back to the fact that the covariance matrix 
-defined in Eq.~\eqref{eq:covariance} enters both the Monte Carlo replicas generation and the $\chi^2$ definition
-of Eq.~\eqref{eq::chi2}: while the former mostly controls the final PDFs error, 
+defined in Eq.~\eqref{eq:covariance} enters both the Monte Carlo replicas generation and the $\chi^2$ definition:
+while the former mostly controls the final PDFs error, 
 the latter is responsible for the relative weights different points have in the analysis.
 Points affected by bigger errors will give smaller contributions to the $\chi^2$ and therefore 
 will count less in the fit. 
@@ -523,7 +514,8 @@ of the central value of the replicas distribution rather than in an increase of 
 
 %
 Despite it is probably too early to draw comparisons between our results and phenomenological distributions, 
-it is interesting to see how they look when plotted together: given the fact that nowadays $V_3$ and $T_3$ are
+it is interesting to see how they look when plotted together, as we did in the previous Chapter for
+quasi-PDFs results: given the fact that nowadays $V_3$ and $T_3$ are
 very well constrained by experimental data, the discrepancies we observe between lattice and phenomenological results
 might be a good indication of the size of the systematic we are still missing, highlighting specific $x$-region
 where the lattice PDFs error might have been underestimated. 
@@ -545,9 +537,8 @@ and for large values of $x$ ($ >0.8$), showing a probable underestimation of the
     \label{fig::fits_ratio}
 \end{figure}
 
-\section{Conclusions}
-\label{sec:conclusions}
-In this Chapter,
+
+To sum up, in this Chapter
 we have considered the pseudo-ITD data produced in Refs.~\cite{Joo:2019jct,Joo:2020spy}. Using the
 position space factorization theorem relating such data to collinear PDFs, we have extracted two nonsinglet distributions 
 within the {\tt NNPDF} framework. 
@@ -572,7 +563,7 @@ to make comparisons with phenomenological distributions.
 
 %
 Finally, we stress once more that the analysis performed in this paper is complementary to that 
-presented in Ref.~\cite{Cichy2019}, where quasi-PDFs matrix elements where considered instead, 
+presented in the previous Chapter, where quasi-PDFs matrix elements where considered instead, 
 starting from the momentum space version of the factorization theorem. 
 In both cases, results have been produced within the {\tt NNPDF} environment,
 running the same machinery used for global QCD analysis over experimental data. 
