@@ -3,7 +3,7 @@
 Data for equal-time correlators coming from first lattice QCD simulations
 have started appearing and have gotten into already a relatively advanced stage over the last few years
 \cite{Lin:2014zya,Alexandrou:2015rja,Chen:2016utp,Alexandrou:2016jqi,Zhang:2017bzy,Alexandrou:2017huk,Lin:2017ani,Chen:2017gck,Alexandrou:2018pbm,Chen:2018xof,Chen:2018fwa,Alexandrou:2018eet,Liu:2018uuj,Lin:2018qky,Fan:2018dxu,Liu:2018hxv,Alexandrou:2019lfo,Izubuchi:2019lyk}.
-This gives an idea of what PDFs from the lattice might look like, not only for
+Results from these studies give an idea of what PDFs from the lattice might look like, not only for
 nonsinglet quark PDFs of the nucleon, but also for the pion PDF and distribution
 amplitude, as well as for the gluon PDF of the nucleon. Given the general
 interest shown by the community, a quick improvement in the technologies
@@ -16,19 +16,20 @@ Despite the increasing number of numerical results becoming available, an
 optimal strategy for reconstructing the PDFs from these data has not been
 entirely addressed yet. The approach which has been initially used within the lattice community
 (and that is still employed in many analyses)
-consists in approximating the quasi- or pseudo-PDFs by mean of a discrete Fourier transform,
+consists in approximating the quasi-PDFs by mean of a discrete Fourier transform,
 starting from the limited number of points for the corresponding equal-time correlator available from numerical simulations. 
 The continuous function resulting from this procedure
 is subsequently convoluted with the perturbative matching coefficients relating euclidean and light-cone distributions,
-in order to obtain the final PDF.
+(see Eq.~\eqref{eq::matching_scalar}) in order to obtain the final PDF.
 The numerical error introduced by this procedure is rather large and difficult to control,
-so that this procedure generally provides unstable and inaccurate results.
+so that it generally provides unstable and inaccurate results.
 This problem was first addressed within the lattice community in Ref.~\cite{Karpie2019}
 where a series of possible approaches to tackle the problem of incomplete and discretized Fourier
 transform has been presented.
 
-In this Chapter, we exploit the momentum space factorization of quasi-PDFs in PDFs and perturbatively
-computable coefficients to extract nonsinglet distributions from the data of
+In this Chapter, following the ideas of Sec.~\ref{sec:conclusions_scalar}
+and the formalism described in Sec.~\ref{sec::momentumspace}, we exploit the momentum space factorization
+of quasi-PDFs in PDFs and perturbatively computable coefficients to extract nonsinglet distributions from the data of
 Refs.~\cite{Alexandrou:2018pbm,Alexandrou:2019lfo}, using the {\tt NNPDF} framework described
 in Chapter~\ref{ch:nnpdf_methodology} and treating the lattice data on the same footing as experimental ones.
 
@@ -43,9 +44,11 @@ in Chapter~\ref{ch:nnpdf_methodology} and treating the lattice data on the same 
 \section{quasi-PDFs in QCD}
 \label{sec:qPDFs_th}
 %
+In this Section we extend the formalism introduced in Chapter~\ref{ch:scalar_model} to the full QCD case,
+giving formulas and expressions which have to be used when working with data coming from lattice QCD simulations,
+and referring to the original publications where they were first presented to further details.
 Denoting by $\Gamma$ a generic Dirac structure and by the suffix $A$ the specific nonsinglet distribution
-we want to consider, we can introduce the {\em Ioffe time distributions} \cite{Radyushkin:2017cyf,Braun:1994jq}, 
-defined as the matrix element between nucleon states with momentum $P$
+we want to consider, we consider the matrix element between nucleon states with momentum $P$ given by
 \begin{align}
 	\label{eq:Ioffe}
 	M^\bare_{\Gamma,A}\left(z,P\right) &= \langle P |\mathcal{M}^\bare_{\Gamma,A}\left(z\right) |P\rangle \, ,
@@ -56,6 +59,7 @@ with
 	\mathcal{M}^\bare_{\Gamma,A}\left(z\right)= \bar{\psi}^\bare\lp z\rp \lambda_A \Gamma \,   
 	U\lp z,0\rp \psi^\bare\lp 0\rp.
 \end{align}
+with $\lambda_A$ denoting the flavour structure and the gauge-link $U\lp z,0\rp$ given by Eq.~\eqref{eq::wilsonline}.
 Eqs.~\eqref{eq:Ioffe}, \eqref{eq:bilocal} represent the QCD generalization of the scalar quantity defined 
 in Eq.~\eqref{eq::ME}.
 
@@ -84,7 +88,7 @@ $\gamma^{\mu}=\gamma^{0}$ and $P=\left(E,0,0,P_3\right)$. Then taking the time
 component of Eq.~\eqref{eq:Ioffedec} we get
 \begin{align}
 	\label{eq:pseudoIoffe}
-	M^\bare_0\left(z, P\right) 
+	M^\bare_{0,A}\left(z, P\right) 
 	= 2 E\,\mathcal{M}_A^{(0)}\lp \nu,-z_3^2 \rp \, .
 \end{align}
 The correlators defined in Eqs.~\eqref{eq:barePDF} and~\eqref{eq:pseudoIoffe}
@@ -99,10 +103,9 @@ quasi-PDF
 \begin{align}
 	\label{eq::bareqpdf}                                                 
 	\tilde{f}_A^{(0)}\lp x, P_z\rp = 
-	2 P_0 \, \int_{-\infty}^{\infty}\frac{dz}{4\pi}\,e^{i x \text{P}_z z}\,\mathcal{M}_A^{(0)}\lp zP_z,-z_3^2 \rp\,, 
+	2 E \, \int_{-\infty}^{\infty}\frac{dz}{4\pi}\,e^{i x \text{P}_z z}\,\mathcal{M}_A^{(0)}\lp zP_z,-z_3^2 \rp\,. 
 \end{align}
-which will be the case considered in this Chapter. 
-As in the case of standard PDFs (which from now on we will call {\em light-cone}\ PDFs),
+As in the case of standard PDFs,
 the matrix elements defining the quasi-PDFs contain UV divergences, and need to be renormalized. The
 main features of the perturbative renormalization of a bilocal operator, 
 as the one appearing in Eq.~\eqref{eq::bareqpdf}, have been described in Chapter~\ref{ch:scalar_model}
@@ -131,7 +134,7 @@ $P$, unlike PDFs, which are defined to be invariant under Lorentz boosts. Also,
 their support is defined to be the full real axis.
 
 The interest in quasi-PDFs comes from the potential to relate them to light-cone
-PDFs, as detailed in Sec.~\ref{sec::momentumspace};
+PDFs in the limit of high values of $P_z$, as detailed in Sec.~\ref{sec::momentumspace};
 factorization allows us to rewrite the quasi-PDFs as a convolution of the
 light-cone PDFs with a coefficient function that can be computed in perturbation
 theory, up to corrections that are suppressed by inverse powers of $P_z$.
@@ -201,7 +204,7 @@ in both position and momentum space \cite{Li:2020xml, Chen:2020ody, Braun:2020ym
 \label{sec:PDFstoqPDFs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this Section, we describe the lattice data used in this Chapter, presenting
+In this Section, we describe the lattice data we will use in this Chapter, presenting
 briefly the quasi-PDFs matrix elements (MEs) computed in
 Refs.~\cite{Alexandrou:2018pbm, Alexandrou:2019lfo}. Using the results recalled
 in the previous sections, we show that we can factorize such matrix
@@ -278,7 +281,7 @@ They are shown in Fig.~\ref{fig::data}.
     \end{center}
 \end{figure}
 %
-The bare lattice data contain two types of divergences. First of all, there are
+As seen previously, the bare lattice data contain two types of divergences. First of all, there are
 standard logarithmic divergences with respect to the regulator, \ie\ terms that
 behave like $\log(a\mu)$. Additionally, for non-zero Wilson line lengths,
 further power-like divergences appear. They resum into a multiplicative
@@ -509,7 +512,7 @@ In this Chapter, we aim at describing the data presented in the previous subsect
 further studies with different data and treatments of systematic
 errors are presented in the next Chapter. Hence, we specialize our discussion
 to the case of the unpolarized isovector parton distribution. Following the
-notations introduced above, the parton distribution $f_{3}$ is
+notations of Sec.~\ref{sec:PDFsdef}, the parton distribution $f_{3}$ is
 defined as
 \begin{align}
 	f_{3}\lp x, \mu^2 \rp = 
@@ -611,7 +614,7 @@ constrain the output much more than what the standard DIS convolution can do.
 
 \section{Fit setting and FastKernel implementation}
 \label{sec:fk_qpdf}
-The main point of the previous Sections is that the lattice equal-time correlators 
+The main point of the discussion in Sec.~\ref{sec:conclusions_scalar} is that the lattice equal-time correlators 
 are just another possible observable connected to PDFs through some kind of factorization theorem.
 From a practical point of view, this means that we can treat the lattice data on
 exactly the same footing as the experimental ones, allowing a smooth and natural
@@ -736,7 +739,7 @@ where
 Eq.~\eqref{eq::FK} defines the FastKernel table which enters the computation of
 the $\chi^2$ during the fit. It connects the parton distribution at the fitting
 scale to the lattice observable, taking into account the QCD evolution, the
-matching and the Fourier trasnform, expressing them through a single matrix
+matching and the Fourier transform, expressing them through a single matrix
 vector multiplication. Clearly a similar set of equations defines a FastKernel
 table that yields the real part of the lattice observable,
 $\mathcal{O}_{\gamma^0}^{\mathrm{Re}}$, as a function of the valence parton
