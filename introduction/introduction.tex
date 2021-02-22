@@ -1,11 +1,11 @@
 \addcontentsline{toc}{chapter}{Introduction}
 \chapter*{Introduction}
-The increasing demand for precision required nowadays to perform high-energy phenomenology
+The increasing demand for accuracy required nowadays to perform high-energy phenomenology
 represents one of the main challenge for the particle theory community. The
-overall precision of a theoretical computation has to match the one of the corresponding
-experimental measure: more precise  
-experimental results call for more precise theoretical computations, together with a better control
-and understanding of the different sources of errors affecting them. % and new data analysis techniques.
+overall precision of theoretical computations has to match the one of the corresponding
+experimental measurements: more precise  
+experimental results call for more precise computations, together with a better control
+and understanding of the different sources of errors affecting theoretical predictions. 
 
 The computations of high-energy processes involving nucleons are base on factorization, namely on the separation
 of amplitudes or cross-sections in different contributions, each of which depends on a specific energy scales.
@@ -21,13 +21,88 @@ denotes as Parton Distribution Functions (PDFs).
 
 PDFs encode our knowledge about the structure of the nucleons in terms of quarks and
 gluons, and represent an essential ingredients to perform theory computations in collider physics.
-Using factorization theorems PDFs can be extracted from global QCD fits
-over a set of experimental data and thanks to their universality the results can be subsequently used
+Using factorization theorems, PDFs can be extracted from global QCD fits
+over a set of experimental data, and, thanks to their universality, the results can be subsequently used
 to perform computation for different processes. 
-Unfortunately they also represent the dominant source of uncertainty in many important computations
+Unfortunately, they also represent the dominant source of uncertainty in many important computations
 including analyses at the Large Hadron Collider (LHC) and other experiments,
 the determination of standard model parameters, Higgs boson characterisation and searches for New Physics.
 It is therefore necessary to push the determination of PDFs to a new level of accuracy,
 researching for new technologies and physical ideas to be used in such global analyses.
 
-Detailed introduction plus overview of the thesis, chapter by chapter and saying which papers are involved.
+The problem of PDFs determination involves a number of different lines of research which are investigated 
+using diverse approaches by more scientific communities.
+%
+For phenomenological applications, it is important to develop frameworks which allow to implement and test
+different numerical and analytical techniques to deal with complex global fits, involving a big number of data coming
+from experimental measurements. Such frameworks need to be flexible enough in order to fit the available data 
+while imposing known physical constraints which have to be satisfied by the final PDFs,
+and should allow to easily include new data and computations in the analysis. 
+%
+When new experimental data for specific high-energy processes become available,
+their impact on the results of such global analyses needs to be studied and quantified, to see how the new experimental 
+information changes our knowledge regarding PDFs.
+This involves on one side a deep understanding of the details of the new data (best distributions to be considered,
+statistical and systematic errors, kinematic cuts to apply in order to use factorization theorems in their domains of validity), 
+on the other the implementation of the most up to date theoretical computation for the process considered.  
+%
+In order to quantify how reliable such theory predictions are, specific studies regarding the theoretical errors
+and their propagations into PDFs need to be carried out, and a suitable prescription for the combination
+of experimental and theoretical uncertainties have to be formulated.
+%
+Alongside this kind of studies, which are usually performed within the high-energy community,
+other possible approaches to study parton distributions are possible.
+Being non-perturbative objects, PDFs are also a natural subject for a lattice QCD investigation. 
+Starting from the formal definition of parton distributions, given in terms of matrix elements between 
+nucleons states of QCD bilocal operators, it is possible to study the detailed structure of the ultraviolet (UV)
+and infrared (IR) divergences of such objects, and relate them to specific correlators which, in principle, 
+can be obtained through lattice QCD simulations. In recent year such ideas have been deeply studied and developed, 
+and data from lattice QCD simulation have started appearing. 
+Given the high interest shown by both the lattice and high-energy community, new lattice data are likely to appear
+in the coming years. It is therefore important to understand how
+to extract information about PDFs from them, study their potential for phenomenological studies and
+their interplay with experimental data.
+
+This thesis can be divided into three parts. The first part, composed by the first two chapters, 
+is devoted to review the basics of QCD and the main concepts underlying the theory of factorization. 
+I will introduce the PDFs first from a phenomenological point of view, following the parton model ideas and
+discussing the general structure of the NLO QCD corrections, and subsequently from a more formal point of view,
+revising the theoretical definition of PDFs in terms of QCD bilocal operators.
+%This will be useful when studying the relation with Euclidean correlators available from the lattice.
+%
+In the second part, made by Chapters~\ref{ch:nnpdf_methodology},~\ref{ch:jets},~\ref{ch:th_error} and ~\ref{ch:bottom}, 
+I will present a number of phenomenological studied, as detalied in the following.
+%
+In Chapter~\ref{ch:nnpdf_methodology} I will describe the fitting methodology which has been developed
+within the NNPDF collaboration and its recent implementation within the new {\tt n3fit} framework, 
+with particular emphasis on the numerical techniques adopted to impose physical constraints on PDFs.
+I will also discuss the so called fit basis, showing how
+the final results produced within this framework only depend on the experimental and physical inputs, 
+and not on the specific details of the phenomenology. Such studies will we part of the next public release
+of the NNPDF collaboration.
+%
+In Chapter~\ref{ch:jets} I will discuss the impact of jets data in a global PDFs determination. 
+This gives a general example of the kind of study which needs to be done every time an important class of new measurements
+are available. The results presented in this Chapter have been first presented and discussed in Ref.~\cite{AbdulKhalek:2020jut},
+in collaboration with Rabah Abdul Khalek, Stefano Forte, Thomas Gehrmann, Aude Gehrmann-De Ridder,
+Nigel Glover, Alexander Huss, Emanuele R. Nocera, Joao Pires, Juan Rojo and Giovanni Stagnitto.
+In Chapter~\ref{ch:th_error} I will discuss the implementation of a theoretical error accounting for missing higher orders
+in a PDFs global analysis. The Chapter is based on Refs.~\cite{AbdulKhalek:2019bux,AbdulKhalek:2019ihb} where this
+study was first presented in collaboration with Rabah Abdul Khalek, Richard D. Ball, Stefano Carrazza, Stefano Forte
+, Zahari Kassabov, Emanuele R. Nocera, Rosalyn L. Pearson, Juan Rojo, Luca Rottoli,
+Maria Ubiali, Cameron Voisey and Michael Wilson.
+In Chapter~\ref{ch:bottom} I discuss an alternative treatment for the bottom PDFs, analysing the specific case of
+Higgs production in bottom fusion. The Chapter is base on Ref.~\cite{Forte:2019hjc}, in collaboration with
+Stefano Forte and Davide Napoletano.
+%
+The third part of the thesis, made by Chapters.~\ref{ch:scalar_model},~\ref{ch:qpdfNNPDF} and~\ref{ch:ppdf_NNPDF}, 
+I will present a number of studies in the direction of understanding the relation between PDFs and lattice computable
+Euclidean correlators.
+In particular in Chapter~\ref{ch:scalar_model}, based on Ref.~\cite{DelDebbio:2020cbz}
+in collaboration with Luigi Del Debbio and Christopher J. Monahan,
+I will revise the main theoretical ideas behind the lattice approach
+using a nongauge theory as a simple toy example.
+
+
+
+
