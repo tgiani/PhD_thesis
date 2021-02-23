@@ -567,5 +567,50 @@ presented in the previous Chapter, where quasi-PDFs matrix elements where consid
 starting from the momentum space version of the factorization theorem. 
 In both cases, results have been produced within the {\tt NNPDF} environment,
 running the same machinery used for global QCD analysis over experimental data. 
+
+It is therefore interesting to compare our best result of this Chapter \textit{fine-sys} with
+one of the more realistic cases of the previous one, like for example those produced using the
+systematic scenario S2. 
+Both PDFs sets have been obtained using the same NNPDF methodology, the only difference 
+being the input data (pesudo-ITD and quasi-PDFs data) and the corresponding errors,
+discussed in details in Sec.~\ref{sec:sys_fits} and~\ref{subsec:sys} respectively.
+\begin{figure}[h!]
+    \center
+    \includegraphics[width=0.49\linewidth]{T3_ppdf_vs_qpdf.pdf}
+    \includegraphics[width=0.49\linewidth]{V3_ppdf_vs_qpdf.pdf}
+    \caption{PDFs from the fits \textit{fine-sys} compared with the corresponding distributions from 
+    the fit presented in Chapter~\ref{ch:qpdfNNPDF} produced with the systematics scenario S2.}
+    \label{fig::ppdf_vs_qpdf}
+\end{figure} 
+Quasi-PDFs and pseudo-ITD results are plotted together in Fig.~\ref{fig::ppdf_vs_qpdf}: 
+both $T_3$ and $V_3$ distributions appear to be in good agreement, the main difference being a huge decrease in the 
+PDFs error when considering results presented in this work. 
+This difference can be partially traced back to the number of points included in the analysis: while in the analysis of 
+Chapter~\ref{ch:qpdfNNPDF} 16 points for quasi-PDFs matrix element where included, 
+in this Chapter data corresponding to all momentum values are considered, for a total of 48 pseudo-ITD points.
+Clearly, having more points in the analysis allows to better constraint the fit results, giving final PDFs with smaller error.
+%
+The size of the statistical and systematic uncertainties affecting the points entering the two analyses is of course another
+reason for different PDFs error.
+In general it is expected that, given equivalent computational cost,
+the low momenta matrix elements, which are used in the pseudo-PDF approach,
+are exponentially more precise than the large momenta matrix elements, to which the quasi-PDF approach are restricted. 
+However a detailed study of such differences is left for a future study.
+
+%
 The next logical step might be a global lattice QCD fit within this same framework, where data for multiple lattice observables 
 coming from different simulations are simultaneously included in the analysis.
+Given the results presented here it is clear that, when combining the currently available
+data for quasi-PDFs and reduced pseudo-ITD, the fit will be driven by the latter, 
+and the results won't be much different from those of the fit \textit{fine-sys}.
+However the situation might change when 
+some level of maturity in terms of precision and systematic effects is achieved.
+One could then combine data from all pertinent lattice formalisms 
+including results from the so-called “Good Lattice Cross-Sections” (LCS) approach, which is described in Ref.~\cite{Ma:2017pxb}
+and represents a general framework, where one computes matrix elements that can be factorized into PDFs
+at short distances~\cite{Bali:2017gfr,Bali:2018spj,Sufian:2019bol,Bali:2019ecy, Sufian:2020vzb}, on the same 
+lines of what described in Chapter~\ref{ch:scalar_model}.
+
+Clearly a global analysis only makes sense after having scrutinised each set of data individually,
+and having understood the systematics that affect them. Chapters~\ref{ch:qpdfNNPDF},~\ref{ch:ppdf_NNPDF} represent a 
+first step in this direction.
