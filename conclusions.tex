@@ -1,10 +1,47 @@
 \chapter{Summary}
 \label{ch:conclusions}
-In this thesis we have presented a number of studies connected to the general topic of the Parton Distribution Functions
-of the proton.
+In this thesis we have presented a number of studies connected to the general topic of the proton Parton Distribution Functions.
 PDFs represent an essential input to do computations of processes involving hadrons in collider physics, and nowadays
 they are responsible for the dominant source of theoretical uncertainties in many important analyses.
 In order to achieve better accuracy in theoretical predictions entering phenomenological studies 
 a better control of PDFs uncertainties is therefore necessary. This can be achieved through both
 improving the numerical frameworks and techniques commonly used to extract PDFs from experimental data, 
 and exploring new approaches and physical ideas. 
+
+%
+In the first part of the thesis we have revised the general methodology adopted by the NNPDF collaboration in 
+global PDFs determination, describing its implementation within the {\tt n3fit} environment. In particular,
+we have described the implementation of positivity and integrability constraints, studying their impact in
+a global fit. Also, we have presented studies regarding fit basis independence, showing how the final results 
+are driven by the experimental input and do not depend on the methodology details, such as the choice of the distributions
+which are independently parameterized.
+
+%
+We have then presented a systematic study of the inclusion of inclusive jet production measurements at LHC in the context of global
+PDFs determination, considering single-inclusive jets and, for the first time in a PDFs fit, dijets data.
+In order to perform this study we have used recent NNLO QCD computations supplemented by EW corrections,
+both implemented in the fit by mean of K-factors. 
+
+%
+Using a Bayesian approach, we have set up a general formalism to include different sources of theoretical error
+in a global PDFs determination by mean of a covariance matrix,
+and we have considered the case of missing higher order corrections in the QCD calculations entering the global analysis.
+After constructing and validating the corresponding covariance matrix, we have presented a first NLO global PDFs fit 
+including missing higher order uncertainties, studying the impact of the theory error on the PDFs central value and uncertainty.
+
+%
+We have generalized the FONLL matching of a massive and massless computations for hadronic processes
+involving heavy quarks to the case in which the heavy quark PDF is freely parameterized. 
+As a first application we have studied the case of Higgs production in bottom fusion, showing how b PDF effect are likely
+to be comparable to mass effect. The determination of the bottom PDF fro experimental data is therefore likely to be 
+necessary for precision studies of $b$-induced hadron collider processes.
+
+%
+In the final Chapters of the thesis we have addressed the problem of PDFs determination from a different point of view,
+exploring a number of recent ideas which have been developed within the lattice community.
+We have first revised and clarified the main conceptual points of such ideas in the context of a simple nongauge theory,
+proposing a general strategy to extract PDFs from lattice simulation in a systematic way.
+We have then considered some of the data which are currently available from lattice QCD simulations, and we have presented
+a first study of PDFs determination from lattice QCD observables adopting the NNPDF methodology.
+Our results show how promising lattice data might be in constraining PDFs, but also highlight the necessity for a deeper
+understanding and control of the different systematic errors entering lattice simulations.
