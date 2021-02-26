@@ -4,7 +4,7 @@ The increasing demand for accuracy required nowadays to perform high-energy phen
 represents one of the main challenge for the particle theory community. The
 overall precision of theoretical computations has to match the one of the corresponding
 experimental measurements: more precise  
-experimental results call for more precise computations, together with a better control
+experimental data call for more precise computations, together with a better control
 and understanding of the different sources of errors affecting theoretical predictions. 
 
 The computations of high-energy processes involving nucleons are based on factorization, namely on the separation
@@ -14,21 +14,16 @@ those related to long-distance phenomena and responsible for the internal
 structure of the nucleons are factorized into universal objects of non perturbative origin,
 denoted as Parton Distribution Functions (PDFs).
  
-%PDFs are therefore a crucial ingredient in any analysis 
-%involving initial states hadrons, but unfortunately they also represent the dominant source 
-%of uncertainty in many analyses, such as the determination of standard model parameters, 
-%Higgs boson characterisation and searches for New Physics.
-
 PDFs encode our knowledge about the structure of the nucleons in terms of quarks and
 gluons, and represent an essential ingredients to perform theory computations in collider physics.
 Using factorization theorems, PDFs can be extracted from global QCD fits
 over a set of experimental data, and, thanks to their universality, the results can be subsequently used
 to compute different processes. 
-Unfortunately, they also represent the dominant source of uncertainty in many important computations
+Unfortunately, they also represent the dominant source of uncertainty in many important computations,
 including analyses at the Large Hadron Collider (LHC) and other experiments,
 the determination of standard model parameters, Higgs boson characterisation and searches for New Physics.
 It is therefore necessary to push the determination of PDFs to a new level of accuracy,
-researching for new technologies and physical ideas to improve such global analyses.
+researching for new methodologies and physical ideas to improve such global analyses.
 
 The problem of PDFs determination involves a number of different lines of research which can be investigated 
 using diverse approaches.
@@ -42,7 +37,7 @@ and should allow to easily include new data and computations in the analysis.
 When new experimental data for specific high-energy processes become available,
 their impact on parton distributions needs to be studied and quantified, to see how the new experimental 
 information changes our knowledge regarding the structure of the nucleons.
-This involves, on one side, a deep understanding of the details of the new data (distributions to be considered,
+This involves, on one side, the understanding of the details of the new data (distributions to be included in the analysis,
 statistical and systematic errors, kinematic cuts to apply in order to use factorization theorems in their domains of validity), 
 on the other the implementation of the most up to date theoretical computation for the process considered.  
 %
@@ -63,7 +58,7 @@ are likely to appear in the coming years.
 It is therefore important to understand how to extract information about PDFs from them, 
 study their potential for phenomenological studies,
 their interplay with experimental data and understand the different sources of uncertainties 
-affecting lattice simulation.
+affecting the corresponding lattice simulation.
 
 This thesis can be divided into three main parts. The first part, composed by the first two chapters, 
 is devoted to review the basics of QCD and the main concepts underlying factorization theorems. 
@@ -87,37 +82,30 @@ and not on the specific details of our fitting methodology. Such studies will we
 of the NNPDF collaboration.
 %
 In chapter~\ref{ch:jets} I will discuss the impact of jets data in a global PDFs determination. 
-This gives a general example of the kind of studies and analyses which need to be done every time an important class of new measurements
-are available. The results presented in this chapter have been first presented and discussed in Ref.~\cite{AbdulKhalek:2020jut},
-in collaboration with Rabah Abdul Khalek, Stefano Forte, Thomas Gehrmann, Aude Gehrmann-De Ridder,
-Nigel Glover, Alexander Huss, Emanuele R. Nocera, Joao Pires, Juan Rojo and Giovanni Stagnitto.
+This gives an example of the kind of studies and analyses which need to be done
+every time an important class of new experimental measurements are available, together with the corresponding
+theoretical predictions. 
+The results discussed in this chapter have been first presented in Ref.~\cite{AbdulKhalek:2020jut}.
 In chapter~\ref{ch:th_error} I will discuss the definition and implementation of a theoretical error 
 accounting for missing higher orders in a PDFs global analysis. 
 The chapter is based on Refs.~\cite{AbdulKhalek:2019bux,AbdulKhalek:2019ihb} where this
-study was first presented in collaboration with Rabah Abdul Khalek, Richard D. Ball, Stefano Carrazza, Stefano Forte
-, Zahari Kassabov, Emanuele R. Nocera, Rosalyn L. Pearson, Juan Rojo, Luca Rottoli,
-Maria Ubiali, Cameron Voisey and Michael Wilson.
-In chapter~\ref{ch:bottom} I discuss an alternative treatment for the bottom PDFs, analysing the specific case of
-Higgs production in bottom fusion and its potential impact on precise phenomenology. 
-The chapter is base on Ref.~\cite{Forte:2019hjc}, in collaboration with Stefano Forte and Davide Napoletano.
+study was first presented by the NNPDF collaboration.
+In chapter~\ref{ch:bottom}, base on Ref.~\cite{Forte:2019hjc}, I discuss an alternative treatment for the bottom PDFs,
+analysing the specific case of Higgs production in bottom fusion and its potential impact on precise phenomenology. 
 %
 Finally, in the third part of the thesis, made by chapters~\ref{ch:scalar_model},~\ref{ch:qpdfNNPDF} and~\ref{ch:ppdf_NNPDF}, 
-I will present a number of studies in the direction of understanding the relation between PDFs and lattice computable
+I will present a number of studies to understand the relation between PDFs and lattice computable
 Euclidean correlators.
-In particular in chapter~\ref{ch:scalar_model}, based on Ref.~\cite{DelDebbio:2020cbz}
-in collaboration with Luigi Del Debbio and Christopher J. Monahan,
+In particular in chapter~\ref{ch:scalar_model}, based on Ref.~\cite{DelDebbio:2020cbz},
 I will revise the main theoretical ideas behind the lattice approach
-using a nongauge theory as a simple toy example. This chapter is used to introduce and set up the theoretical framework necessary
+using a nongauge theory as a simple toy example. This chapter is used to introduce the theoretical framework necessary
 to understand the studies presented in the two following chapters.
 In chapter~\ref{ch:qpdfNNPDF} we analyse data for quasi-PDFs matrix elements, studying their potentiality
 in constraining PDFs and presenting a detailed analysis of the systematic uncertainties affecting the data and of how
-these affect the final results. The results reported in this chapter were first presented in Ref.~\cite{Cichy:2019ebf}
-in collaboration with Krzysztof Cichy and Luigi Del Debbio.
+these affect the final results. The results reported in this chapter were first presented in Ref.~\cite{Cichy:2019ebf}.
 In chapter~\ref{ch:ppdf_NNPDF} we present results for PDFs extracted from a different kind of lattice 
 observables, denoted as reduced Ioffe-time pseudodistribution, and we assess differences and similarities with
-the analysis of chapter~\ref{ch:qpdfNNPDF}. The chapter is based on Ref.~\cite{DelDebbio:2020rgv} 
-in collaboration with Luigi Del Debbio, Joseph Karpie, Kostas Orginos, Anatoly
-Radyushkinc and Savvas Zafeiropoulos.
+the analysis of chapter~\ref{ch:qpdfNNPDF}. The chapter is based on Ref.~\cite{DelDebbio:2020rgv}.
 Finally in chapter~\ref{ch:conclusions} we briefly summarize the main results and conclusions of this thesis. 
 
 The thesis is supplemented with a number of Appendices, where some analyses are further expanded and 
