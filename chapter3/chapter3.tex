@@ -8,8 +8,8 @@ knowing the functional form of the PDFs at a given initial scale $Q_0^2$,
 their dependence on the energy scale can be computed by solving the DGLAP evolution equations.
 However the dependence on $x$ would be computable only solving QCD in a nonperturbative domain, 
 by computing the proton wave function from first principles. We will come back to 
-this point in Chapter~\ref{ch:lattice}, when considering lattice QCD observables.
-In this Chapter we will discuss the general approach adopted to extract the $x$ dependence of the PDFs
+this point in chapter~\ref{ch:scalar_model}, when considering lattice QCD observables.
+In this chapter we will discuss the general approach adopted to extract the $x$ dependence of the PDFs
 from a discrete set of experimental data, using as basic ingredient the factorization theorems for high-energy processes
 discussed before.
 
@@ -42,7 +42,7 @@ about uncertainties and correlations are taken into account when making predicti
 In this chapter we discuss how all these issue have been addressed within the NNPDF collaboration
 starting from 2002 \cite{Forte:2002fg}, revising the Monte Carlo replicas generation, the neural networks parameterization
 and the minimization procedure. Such methodology has been used to produce the last public NNPDF PDFs set NNPDF3.1 \cite{Ball:2017nwa}
-. The studies which will be described in Chapter~\ref{ch:jets} and Chapter~\ref{ch:th_error}, regarding the inclusion of jets data
+. The studies which will be described in chapters~\ref{ch:jets} and ~\ref{ch:th_error}, regarding the inclusion of jets data
 and the formulation of a theoretical error in a global PDFs determination, have been performed within the private
 {\tt c++ } implementation of this framework.
 
@@ -702,7 +702,7 @@ no small-$x$ preprocessing is used. This implies that the small-$x$ behaviour of
 by experimental data, can only be controlled through Lagrange multipliers.
 Because of this reason, for integrable distributions more stringent constraints are used than those implemented
 for the evolution basis. In particular, in order to get replicas satisfying Eq.~\eqref{eq:integ_def_2},
-the lagrange multiplier terms given in Eq.~\eqref{eq:chi2integ_k} is built using the three small-$x$
+the lagrange multiplier terms given in Eq.~\eqref{eq:chi2integ_k} are built using the three small-$x$
 points $x_i = 10^{-5}, 10^{-4}, 10^{-3}$. 
 
 %
@@ -718,7 +718,7 @@ consistently implemented, different choices for the fit basis do no change the f
 It is worth recalling that this result, even if expected, is not trivial. When we change fit basis a number
 of settings and parameters are changed at the same time. In particular, no small-$x$ preprocessing
 is used for the flavour basis, which as a consequence present a lower number of free parameters.
-The fact that we still get equivalent results provides a strong validation of the {\tt n3fit} environment.
+The fact that we still get equivalent results provides a strong validation check of the {\tt n3fit} environment.
 
 %
 In order to determine the best methodology, one should fix the input dataset and the fit basis. Once this is done,
@@ -727,7 +727,7 @@ a scan of the hyperparameters defining the final methodology has to be performed
 the corresponding values which allow the best fit.
 The methodology used to produce the results presented here has been optimized considering the evolution basis,
 which will be used in the final NNPDF4.0 release.  
-If results in the flavour basis were used to do actual phenomenology, an additional hyperparameters scan
+If results in the flavour basis were to be used to do actual phenomenology, an additional hyperparameters scan
 should be run, to ensure the best possible performance of the methodology. 
 Here we have shown how, without explicitly doing an additional hyperoptimization, the {\tt n3fit} environment still
 allows to obtain a good fit using a different basis, providing a proof of concept of basis independence.
@@ -743,7 +743,7 @@ allows to obtain a good fit using a different basis, providing a proof of concep
         \includegraphics[width=0.49\linewidth]{plot_pdfs_T3_flav_vs_evol.pdf}
         \includegraphics[width=0.49\linewidth]{plot_pdfs_T8_flav_vs_evol.pdf}
         \includegraphics[width=0.49\linewidth]{plot_pdfs_T15_flav_vs_evol.pdf}
-        \caption{PDFs plots} 
+        \caption{PDFs plots comparing results for fits performed in the evolution (orange) and flavour (green) basis.} 
         \label{fig:pdfs_plots_flav_vs_evol} 
     \end{center}
   \end{figure}
