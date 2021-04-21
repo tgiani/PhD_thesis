@@ -8,7 +8,7 @@ or amplitude in separate contributions, each factor containing the dependence of
 while short-distance effects can be computed in perturbation theory, contributions coming from long-distance phenomena have
 to be extracted from experimental data. 
 In this chapter, starting from the Parton Model ideas we will discuss factorization theorems in QCD,
-using the case of Deep Inelastic Scattering as a basic example. We will then introduce the main subject of the
+using the case of Deep Inelastic Scattering (DIS) as a basic example. We will then introduce the main subject of the
 present work, namely Parton Distribution Functions (PDFs).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -19,14 +19,14 @@ In this picture fundamental particles called \textit{partons} are bounded togeth
 Since the details of the partonic system are unknown, the scattering between a test particle and the hadron 
 as a whole cannot be computed. However we assume that we do know how to describe the scattering with a free parton.
 %
-As example, let us consider the case of the scattering of a high-energy charged lepton off a
+For example, let us consider the case of the scattering of a high-energy charged lepton off a
 hadron target 
 $$e^{-}(k)\,H\,(P)\,\rightarrow e^{-}(k')\,X \,. $$ 
 Such process is known as Deep Inelastic lepton-hadron Scattering (DIS).
 Looking at this scattering in the centre of mass frame, the hadron will be Lorentz contracted 
 in the direction of the collision and the lifetime of the internal partonic states will be lengthened.
 As a consequence, the time the electron takes to cross the hadron will be much shorter than the average lifetime of
-each partonic states. During the time of the interaction the hadron can then be thought as "frozen" in 
+each partonic states. During the time of the interaction the hadron can then be thought as ``frozen'' in 
 a well defined partonic states, with each parton carrying a definite fraction $\xi$ of the hadron momentum
 and not interacting with the other ones. 
 If the energy of the collision is high enough, the virtual photon mediating the electron-hadron 
@@ -42,7 +42,7 @@ namely as a sum of probabilities rather than of amplitudes. The parton model ide
      \hat{\sigma}\left(e^{-}\left(k\right)q_i\left(\xi P\right)\rightarrow e^{-}\left(k'\right)+q_f\right)
 \end{align}
 where $\hat{\sigma}$ represents the partonic cross section describing the interaction between 
-a single free parton and the virtual photon, and the set of functions $q_{i/H}\left(\xi\right)$ the probability densities
+a single free parton and the virtual photon, and the set of functions $q_{i/H}\left(\xi\right)$ are the probability densities
 of having a parton of kind $i$ inside the hadron $H$, carrying a fraction $\xi \in \left(0,1\right)$ of the total hadron momentum.
 
 %
@@ -59,8 +59,8 @@ giving the bulk of experimental measurements at the basis of every phenomenologi
 
 \begin{figure}[h!]
     \center
-    \includegraphics[scale=0.7]{dis.png}
-    \caption{DIS kinematic in the parton model.}
+    \includegraphics[scale=0.40]{dis_kin.pdf}
+    \caption{DIS kinematic.}
     \label{fig:DIS_kin}
 \end{figure}
 
@@ -75,14 +75,14 @@ It is customary to introduce the kinematic variables
     %y = \frac{P\cdot q}{P\cdot k }\,.
 \end{align}
 In the regime 
-$$ Q^2,\, W^2 >> m^2_{\text{hadron}} \sim \Lambda^2_{\text{QCD}}\,, $$ 
+$$ Q^2,\, W^2 \gg m^2_{\text{hadron}} \sim \Lambda^2_{\text{QCD}}\,, $$ 
 leptons and quarks masses can be neglected.
 It is easy to see that the variable $x$, known as \textit{Bjorken variable} can take values between 0 and 1, 
 with $x\rightarrow 1$ representing the elastic limit in which $W=m^2_{\text{hadron}}$. The Deep Inelastic regime
-is then defined as $Q^2 >> \Lambda^2_{\text{QCD}} $ with $x$ fixed and different from 1.
+is then defined as $Q^2 \gg \Lambda^2_{\text{QCD}} $ with $x$ fixed and different from 1.
 
 %
-The corresponding amplitude reads
+The amplitude corresponding to the diagram in Fig.~\ref{fig:DIS_kin} reads
 \begin{align}
     \label{eq:DIS_amplitude}
     \mathcal{M} = 
@@ -131,7 +131,7 @@ we can derive a general expression for the double differential cross section of 
 where $\alpha = e^2/\left(4\pi\right)$ is the fine structure constant and the transverse and longitudinal structure functions 
 are defined as
 \begin{align}
-    F_L = F_2 -2F_1\,, \,\,\,\, F_T = 2F_1\,.
+    F_L = F_2 -2xF_1\,, \,\,\,\, F_T = 2F_1\,.
 \end{align}
 %Following the same steps, considering a single parton of momentu $\xi P$ in the initial state,
 %we can introduce partonic structure functions $\hat{F}_1$, $\hat{F}_2$ to parameterized the 
@@ -170,9 +170,6 @@ Also, it shows explicitly how in the parton model the structure functions do not
 Such property is known as Bjorken scaling, and its experimental observation was taken as a confirmation
 of the composite nature of hadrons, confirming the picture of the parton model.
 
-\comment{some final remark about parton model, maybe smt about sum rules and the evidence for the 
-presence of the gluon, references.}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Improved Parton Model and factorization of collinear singularities}
 In this section, starting from the parton model ideas, we briefly recall how to include Next-to-Leading-Order
@@ -203,7 +200,7 @@ of $\Lambda_{QCD}/Q$.
 %
 From the previous section we know that at Born level $\hat{F}_a$ is proportional
 to a delta function $e^2\delta\left(1-x\right)$. 
-Considering QCD correction of order $\alpha_s$
+Considering QCD correction of order $\alpha_s$,
 initial and final states emissions of a single gluon, corresponding to Feynman diagrams of Fig.~\eqref{fig:NLO_QCD_DIS}
 have to be computed. 
 Accounting also for the corresponding virtual corrections on the quark legs
@@ -253,7 +250,7 @@ Such resummation is achieved factorizing the collinear singularities into the pa
 and solving the resulting renormalization group equations as described in the next sections.
 
 \subsection{Factorization of collinear singularities}
-The singularities described in the previous sections arises from the kinematic region where $k_{\perp}\rightarrow 0$,
+The singularities described in the previous sections arise from the kinematic region where $k_{\perp}\rightarrow 0$,
 namely when a gluon is emitted parallel to an initial state quark. For this reason they are often called collinear
 singularities.
 To understand how to deal with such terms, one needs to realize that the limit of small$-k_{\perp}$
@@ -302,7 +299,7 @@ where the renormalized quark PDFs $q_{a/H}$ is defined as
     q_{a/H}\left(x,\mu_F\right) = \int_x^1 \frac{d\eta}{\eta} \,
     q^{\bare}_{a/H}\left(\frac{x}{\eta}\right)\Gamma\left(\eta, \mu_F\right)\,.
 \end{align}
-Collinear poles are therefore factorized from the hard scattering structure function and reabsorbed into
+The collinear poles are therefore factorized from the hard scattering structure function and reabsorbed into
 the PDFs, following a procedure symilar to the one used for UV renormalization.
 As a consequence PDFs acquire a non trivial dependence on an unphysical scale $\mu_F$,
 which will be further described in in the next section.
@@ -322,7 +319,7 @@ where in the second line we have denoted as $\otimes$ the convolution operation.
 The coefficients functions $C_a$ appearing in Eq.~\eqref{eq:dis_qcd} correspond to the finite partonic structure 
 functions $\hat{F}_{\text{reg}}$ after renormalization and subtraction of collinear singularities.
 Their explicit expression will depend on the specific structure function under consideration
-and on the choice for the renormalization and factorization schemes, defined when removing UV and collinear
+and on the choice for the renormalization and factorization schemes, defined when removing the UV and collinear
 singularities respectively. 
 Once properly defined they can be computed order by order in perturbation theory as an expansion in the strong coupling
 \begin{align}
@@ -360,7 +357,7 @@ where $\tau = \frac{Q^2}{s}$ and $s=\left(p_1+p_2\right)^2$.
 
 %
 The two factorized expressions given in Eqs.~\eqref{eq:dis_qcd},~\eqref{eq:hadron_hadron}
-allow to connect cross sections for high-energy processes having hadrons in the initial states to hard scattering processes.
+allow to connect cross sections for high-energy processes having hadrons in the initial states to hard scattering cross-sections.
 The former can be measured in collider experiments, while the latter 
 can be computed in perturbation theory. The objects connecting perturbation theory with physical observables are
 the Parton Distribution Functions.
@@ -385,7 +382,7 @@ The formalism and notations commonly used to describe PDFs in terms of QCD opera
 from those introduced in the previous section, which are commonly adopted for phenomenological applications.
 Since in this work we will present results for which both formalism are required,
 in this section we briefly revise the formal definition of PDFs, addressing their UV renormalization
-and renormalization group equation and making contact with the formalism and notations introduced in the previous section.
+and renormalization group equations and making contact with the formalism and notations introduced in the previous section.
 
 \subsection{PDFs operator definition}
 \label{sec:PDFsdef}
