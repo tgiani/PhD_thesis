@@ -372,14 +372,14 @@ any other high-energy collisions.
 \section{Parton Distribution Functions}
 In the previous section we have introduced PDFs as some bare quantities,
 which are then used to reabsorb the infrared collinear poles coming from the fixed order computation of partonic
-hard cross sections. Following this approach PDFs are introduced in the discussion through 
+cross sections. Following this approach PDFs are introduced in the discussion through 
 the parton model ideas, and defined as objects containing all the dependence 
-of the physical observable on low energy physics. 
+of the physical observables on low energy physics. 
 %
 It is possible to give a rigorous operator definition of parton distributions,
 which can be applied beyond perturbation theory and makes manifest the universal nature of PDFs.
-The formalism and notations commonly used to describe PDFs in terms of QCD operators are usually quite different
-from those introduced in the previous section, which are commonly adopted for phenomenological applications.
+The formalism and notations commonly used to describe PDFs in terms of QCD operators are quite different
+from those introduced in the previous section, which are usually adopted for phenomenological applications.
 Since in this work we will present results for which both formalism are required,
 in this section we briefly revise the formal definition of PDFs, addressing their UV renormalization
 and renormalization group equations and making contact with the formalism and notations introduced in the previous section.
@@ -519,7 +519,8 @@ definition of the flavor decomposition. More specifically, we have:
 
 %
 As mentioned above the bilocal operator products of Eq.~\eqref{eq::barepdf} requires renormalization.
-The corresponding renormalization group equations are the Altarelli-Parisi equations fo PDFs.
+The corresponding renormalization group equations are the Altarelli-Parisi equations for PDFs, or 
+DGLAP, discussed in the next section.
 Considering on-shell incoming partons, a straightforward 1-loop computation gives
 \begin{align}
     \label{eq:1-loop_bare_partonic_pdf}
@@ -527,9 +528,9 @@ Considering on-shell incoming partons, a straightforward 1-loop computation give
     + \alpha_s\left[\frac{1}{\epsilon_{UV}}-\frac{1}{\epsilon_{IR}}\right] P_{a/b}^{(1)}\left(x\right)
     + \mathcal{O}\left(\alpha_s^2\right)\,.
 \end{align}
-To obtain such result, one has to work in dimensional regularization to regularize both UV and infrared
+To obtain such result, one has to work in dimensional regularization to regularize both the UV and IR
 divergences. 
-Working in $\overline{MS}$ the UV pole $1/\epsilon_{UV}$ is removed through renormalization,
+Working in the $\overline{MS}$ scheme, the UV pole $1/\epsilon_{UV}$ is removed through renormalization,
 and we are left with the renormalized partonic PDFs
 \begin{align}
     \label{eq:1-loop_renormalized_partonic_pdf}
@@ -574,7 +575,7 @@ of this at every order in perturbation theory see for example \cite{Collins:1980
 \subsection{DGLAP evolution equations}
 \label{sec:DGLAP}
 As stated in Eq.~\eqref{eq:RenormPDF} the operator defining parton distribution functions requires
-renormalization. As a consequence renormalized PDFs acquire a scale dependence.
+renormalization. It follows that renormalized PDFs acquire a scale dependence.
 Including in the discussion also the gluon PDF, the corresponding renormalization group equations read
 \begin{align}
     \mu^2\frac{\partial}{\partial\mu^2}
@@ -583,7 +584,7 @@ Including in the discussion also the gluon PDF, the corresponding renormalizatio
         g\left(x,\mu^2\right)
     \end{pmatrix}
     =
-    \alpha_s\sum_{q_i,\bar{q}_i}\int_x^1 \frac{d\xi}{\xi} 
+    \alpha_s\sum_{j}\int_x^1 \frac{d\xi}{\xi} 
     \begin{pmatrix}
         P_{q_i q_j}\left(\frac{x}{\xi},\alpha_s\right) & P_{q_i g}\left(\frac{x}{\xi},\alpha_s\right) \\
         P_{g q_j}\left(\frac{x}{\xi},\alpha_s\right)   & P_{g g}\left(\frac{x}{\xi},\alpha_s\right) 
@@ -593,7 +594,7 @@ Including in the discussion also the gluon PDF, the corresponding renormalizatio
         g\left(x,\mu^2\right)
     \end{pmatrix}
 \end{align}
-with each splitting function computable in perturbation theory
+with each splitting function $P$ computable in perturbation theory
 \begin{equation}
     \begin{split}
     &P_{q_i q_j}\left(x,\alpha_s\right) = \delta_{ij}P^{(0)}_{qq}\left(x\right) 
@@ -616,7 +617,7 @@ and considering the flavours $u, d, s, c, b, t$ the non-singlet sector is define
 \begin{align}
     V_i = q_i^-
 \end{align} 
-and the $T_i$ combinations, defined as
+and by the $T_i$ combinations
 \begin{align}
     T_3 = u^+ - d^+\,,\,\,\,\,\,\,T_8 = u^+ + d^+ -2s^+\,,\,\,\,\,\,\,T_{15} = u^+ + d^+ + s^+ -3c^+\,,\,\,\,\,\,\, \\
     T_{24} = u^+ + d^+ + s^+ + c^+ -4b^+\,,\,\,\,\,\,\, T_{35} = u^+ + d^+ + s^+ + c^+ + b^+ - 5 t^+\,. 
@@ -636,8 +637,9 @@ which at leading order are
 Working in the evolution basis, the only distribution which couples to the gluon is the so called
 singlet combination, defined as
 \begin{align}
-    \Sigma\left(x,\mu^2\right) = \sum_i \left(q_i\left(x,\mu^2\right)+\bar{q}_i\left(x,\mu^2\right)\right)
+    \Sigma\left(x,\mu^2\right) = \sum_i \left(q_i\left(x,\mu^2\right)+\bar{q}_i\left(x,\mu^2\right)\right)\,,
 \end{align}
+for which we have
 \begin{align}
     \mu^2\frac{\partial}{\partial\mu^2}
     \begin{pmatrix}
@@ -665,9 +667,9 @@ with the leading order splitting function given by
     &P_{gq}^{(0)}\left(x\right) = \frac{C_F}{2\pi}\left[\frac{1+\left(1-x\right)^2}{x}\right]\,, \nonumber \\
     &P_{qg}^{(0)}\left(x\right) = \frac{n_f}{2\pi}\left[x^2+\left(1-x\right)^2\right]\,.
 \end{align}
-Because of charge conjugation invariance and $SU(n_f)$ flavour symmetry splitting functions are independent on the quark
+Because of charge conjugation invariance and $SU(n_f)$ flavour symmetry, splitting functions are independent on the quark
 flavour and are the same for quarks and antiquarks. 
-Also, leading order splitting function have a nice physical interpretation as probability distributions.
+Also, the leading order splitting functions have a nice physical interpretation as probability distributions.
 Following Ref.~\cite{ALTARELLI1977298}, Eq.~\eqref{eq:DGLAP_NS} can be written as
 \begin{align}
     q^{NS}&\left(x,\mu^2\right) + dq^{NS}\left(x,\mu^2\right) = \nonumber\\
@@ -783,8 +785,8 @@ extended to DIS structure functions in Refs.~\cite{Forte:2010ta} and to hadronic
 %
 In the following, using the notations of Refs.~\cite{Forte:2010ta,Forte:2015hba} we will briefly recall 
 the main features of the FONLL scheme, which will be used in
-Chapter~\ref{ch:bottom} to construct a new method to deal with initial state heavy quarks in an hadronic process.
-Assuming an hadronic process involving $n_l$ light quarks $q$  and only one massive quark $h$ of mass $m_h$,
+chapter~\ref{ch:bottom} to construct a new method to deal with initial state heavy quarks in an hadronic process.
+Considering an hadronic process involving $n_l$ light quarks $q$  and only one massive quark $h$ of mass $m_h$,
 the corresponding cross section in the massless $(n_l+1)$-flavours scheme is given by
 \begin{align}
     \label{eq:massless}
@@ -794,7 +796,7 @@ the corresponding cross section in the massless $(n_l+1)$-flavours scheme is giv
 \end{align}
 The sum in Eq.~\eqref{eq:massless} runs on both light and heavy flavours, which are all treated in the
 $\overline{MS}$ scheme. The heavy quark has an associated PDF and contributes to both the
-DGLAP evolution equation and to the running of $\alpha_s$, which is therefore denoted as $\alpha_s^{(n_l+1)}$. 
+DGLAP evolution equations and to the running of $\alpha_s$, which is therefore denoted as $\alpha_s^{(n_l+1)}$. 
 For simplicity we have omitted the
 dependence on the factorization and renormalization scales in the hard cross section.
 The same process can be computed in the massive $(n_l)$-flavours scheme as
@@ -827,14 +829,14 @@ order to express the massive scheme PDFs in terms of the massless scheme ones. T
 allow to express the heavy quark PDF in the massless schemes in terms of the gluon and light flavours PDFs of the massive one,
 under the assumption that the heavy quark PDF is generated perturbatively.
 %
-Inverting Eq.~\eqref{eq:matching_alpha},~\eqref{eq:matching_PDFs} and substituting in Eq.~\eqref{eq:massive},
+Inverting Eqs.~\eqref{eq:matching_alpha},~\eqref{eq:matching_PDFs} and substituting in Eq.~\eqref{eq:massive},
 one can obtain the expression of the massive scheme cross-section in terms of $\alpha_s^{(n_l+1)}$
-and $f_i^{(n_l+1)}$, $i = g,q,\bar{q}$
+and $f_i^{(n_l+1)}$, with $i = g,q,\bar{q}$
 \begin{align}
     \label{eq:massive_as_func_massless}
     \sigma^{(n_l)} = \int \int dx_1 dx_2\, \sum_{ij = g,q,\bar{q} }&\, 
     f_i^{(n_l+1)}\left(x_1,\mu^2\right)f_j^{(n_l+1)}\left(x_2,\mu^2\right) \nonumber \\
-    &\times B_{ij}\left(x_1,x_2,\frac{\mu^2}{m_h^2},\alpha_s^{(n_l+1)}\right)\,.
+    &\times B_{ij}\left(x_1,x_2,\frac{\mu^2}{m_h^2},\alpha_s^{(n_l+1)}\right)\,,
 \end{align}
 where the coefficient functions $B_i$ can be expressed as a fixed order expansion in $\alpha_s^{(n_l+1)}$
 \begin{align}
@@ -843,7 +845,7 @@ where the coefficient functions $B_i$ can be expressed as a fixed order expansio
     = \sum_{p=0}^P \left(\alpha_s^{(n_l+1)}\left(\mu^2\right)\right)^p B_{ij}^p\left(x_1,x_2,\frac{\mu^2}{m_h^2}\right)\,.
 \end{align}
 From now on we can use Eq.~\eqref{eq:massive_as_func_massless} to express the massive scheme results, avoiding
-any further reference to $\alpha_s^{n_l}$ and $f_i^{(n_l)}$\footnote{Note that Eq.~\eqref{eq:massive_as_func_massless}
+any further reference to $\alpha_s^{(n_l)}$ and $f_i^{(n_l)}$\footnote{Note that Eq.~\eqref{eq:massive_as_func_massless}
 differs from the original massive scheme expression Eq.~\eqref{eq:massive} by subleading terms,
 due to the fact that matching coefficients are known at a given order in perturbation theory.}.
 Using again Eqs.~\eqref{eq:matching_PDFs} to write the massless scheme heavy quarks PDFs in terms of light-quark parton
@@ -868,7 +870,7 @@ In order to match the two results given in Eqs.~\eqref{eq:massless_1},~\eqref{eq
 one should notice that the contributions to the massive scheme expression of Eq.~\eqref{eq:massive_1}
 which do not vanish when $\mu^2 \gg m_h^2$, namely all the constant and logarithmic terms, 
 must also be present in the massless scheme computation.
-The $p$-th order contribution to the sum of these terms $B_i^{(0),\,p}$ can be defined as
+The $p$-th order contribution to the sum of these terms, denoted as $B_i^{(0),\,p}$, can be implicitly defined as
 \begin{align}
     \lim_{m_h\rightarrow 0}\left[B_{ij}^p\left(x_1,x_2,\frac{\mu^2}{m_h^2}\right)- 
     B_{ij}^{(0),\,p}\left(x_1,x_2,\frac{\mu^2}{m_h^2}\right)\right] = 0\,,
@@ -880,8 +882,8 @@ and since it has to be present also in the massless scheme computation it will a
 \end{align}
 The FONLL method can be expressed as follows: considering the massless scheme coefficients
 at a given perturbative order $p$  
-appearing Eq.~\eqref{eq:expansionA} $A^{(p),(k)}_{ij}$, replace all the terms which are also present in the massless limit of the massive scheme
-$B^{(0),p}_{ij}$ Eq.~\eqref{eq:expansionB0} with their fully massive expression $B^{p}_{ij}$ appearing in Eq.~\eqref{eq:massive_1}.
+appearing in Eq.~\eqref{eq:expansionA} $A^{(p),(k)}_{ij}$, replace all the terms which are also present in the massless limit of the massive scheme
+$B^{(0),p}_{ij}$ of Eq.~\eqref{eq:expansionB0} with their fully massive expression $B^{p}_{ij}$ appearing in Eq.~\eqref{eq:massive_1}.
 This can be done in a systematic way defining the massless limit of the massive computation as
 \begin{align}
     \label{eq:massive_massless_limit}
