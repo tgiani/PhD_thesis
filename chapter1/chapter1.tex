@@ -4,8 +4,7 @@ within the framework of Quantum Field Theory (QFT) \cite{tHooft:1998qmr}.
 Despite the remarkable success of Quantum Electrodynamics (QED) in describing phenomena such as the anomalous magnetic moment of the electron,
 the renormalization process was not completely understood yet and 
 renormalizable quantum field theories were still looked at with suspicion.
-%, and considered not suitable to describe the dynamics responsible for the composition of hadrons and hadronic reactions.  
-
+ 
 %
 The experimental observation of Bjorken scaling \cite{PhysRev.179.1547} in Deep Inelastic Scattering (DIS) experiment (SLAC 1960)
 suggested that the constituents of nucleons may be described as almost-free and point-like objects 
@@ -45,7 +44,7 @@ with the field strength tensor and the covariant derivative defined as
     \label{eq:covariant_derivateive}
     &D_{\mu} = \partial_{\mu} - i\,g\,T^A \mathcal{A}^{A}_{\mu}\,.
 \end{align}
-The summation over $k$ runs over all the quark flavors, with
+The summation over $k$ runs over all the quark flavours, with
 each quark field $\psi^k_a$ belonging to the fundamental representation of the gauge group SU(3)$_\text{color}$ ($a=1,2,3$),
 while the gauge field $\mathcal{A}^A_{\mu}$, called gluon, belongs to the adjoint representation
 ($A=1,2,...,8$). The quantities $g$ and $f^{ABC}$ are the gauge coupling and the SU(3)$_\text{color}$ structure constants
@@ -70,7 +69,7 @@ with $C_F= 4/3$ and $C_A= 3$.
 %
 The classical Lagrangian of Eq.~\eqref{eq:QCD_lagrangian} does not allow to formulate quantum
 perturbation theory in a consistent way. The problem cannot be avoided as long as
-we rely on a gauge invariant lagrangian, where the gauge field $\mathcal{A}^A_{\mu}$
+we rely on a gauge invariant Lagrangian, where the gauge field $\mathcal{A}^A_{\mu}$
 has the freedom to change according to gauge transformations.
 We can get rid of such freedom by putting constraints on the field $\mathcal{A}^A_{\mu}$, 
 known as \textit{gauge fixing conditions}, which in general can be expressed as
@@ -132,7 +131,7 @@ to SU(2)$_V$ are identified with the three pions $\pi^+$, $\pi^-$ and $\pi^0$
 in the massless quark limit. 
 While the survived SU(2)$_V$ $\otimes$ U(1)$_V$ symmetry is identified with the isospin and baryon number 
 conservation mentioned previously, the remaining U(1)$_A$, despite not being spontaneously broken,
-appears to be lost in QCD. The study of what happens to this symmetry is known as the U(1)-problem.
+appears to be lost in QCD. The study of what happens to this symmetry is known as the U(1)-problem~\cite{Weinberg:1975ui}.
 The axial symmetry U(1)$_A$ is actually broken at the quantum level, through the Adler-Bell-Jackiw anomaly,
 which induces a new term in the QCD Lagrangian proportional to 
 $\epsilon_{\alpha\beta\gamma\delta}\, \text{Tr}\, F^{\gamma\delta} F^{\alpha\beta}$ .
@@ -151,7 +150,7 @@ for the $\theta$ values through the introduction of additional particles called 
 In analogy with the QED fine structure constant,
 the QCD coupling constant is defined in terms of the gauge coupling as $\alpha_s = g^2/4\pi$.
 As a consequence of the renormalization process, the coupling acquires a dependence on the renormalization scale $\mu$,
-namely the arbitrary scale at which the subtraction of the UV poles is performed. 
+namely the arbitrary scale at which the subtraction of the ultraviolet (UV) poles is performed. 
 The resulting renormalization group equations read
 \begin{align}
     \label{eq:renormalization_group_coupling}
@@ -180,9 +179,8 @@ $\mu^2$
 Given the positive sign of $\beta_0$, from Eq.~\eqref{eq:ll_coupling} it is evident how, as the scale $Q^2$ becomes very large, 
 the coupling $\alpha_s\left(Q^2\right)$ decreases to zero. This property, which characterizes non-Abelian gauge theories 
 like QCD, is known as asymptotic freedom and the theory is then said to be asymptotically free.
-%and it opens the way to compute high energy scattering processes as an expansion in the coupling.
 It is customary to introduce a dimensionful parameter, usually denoted as $\Lambda_{\text{QCD}}$, representing the energy 
-scale at which the perturbative series of the coupling would diverge.
+scale at which the perturbative series of the coupling would diverge
 \begin{align}
     \label{eq:lambda_QCD}
     \frac{1}{\alpha_s\left(\Lambda_{\text{QCD}^2}\right)} = 0\,.
@@ -221,13 +219,13 @@ we can write the expansion
     R\left(1, \alpha_s\left(Q^2\right),0 \right)\nonumber \\
     & + \sum_{n=1}^{N}\frac{1}{n!}\left[\frac{m\left(Q^2\right)}{Q^2}\right]^n R^{(n)}\left(1,\alpha_s\left(Q^2\right),0\right)\,.
 \end{align}
-where $R^{(n)}$ denotes the derivative of $R$ with respect its third argument. 
+where $R^{(n)}$ denotes the $n$-th derivative of $R$ with respect its third argument. 
 Given the fact that Eq.~\eqref{eq:renormalization_mass} leads to a change of the renormalized mass with $Q$ 
 which is at most logarithmic, from Eq.~\eqref{eq:R_mass_dependence} it is clear how, when considering 
 high energy scales $Q \gg m$, the mass dependence can be dropped, and the quark can be considered massless.
 %
 On the other hand, when the mass of the quark is much greater of the relevant scale $Q$ it can be shown 
-that the heavy quark mass correction to $R$ are suppressed by powers of $m$, and therefore they can be ignored when
+that the heavy quark mass correction to $R$ are suppressed by inverse powers of $m$, and therefore they can be ignored when
 $Q \ll m$. 
 %
 The $n_l$ active flavour introduced in the previous section are the light quarks whose mass is much smaller than
@@ -244,20 +242,17 @@ to be continuos at $Q=m$, getting a matching equation of the form
     \alpha_s^{(n_l)}\left(Q^2\right) 
     + \sum_{k=2}^{\infty} c_k\left(L\right) \left(\alpha_s^{(n_l)}\left(m^2\right)\right)^k\,,
 \end{align}
-with the coefficients $c_k\left(L\right)$  polynomial in $L=\log Q^2/m^2$.
+where the coefficients $c_k\left(L\right)$ are  polynomials in $L=\log Q^2/m^2$.
 Depending on the specific energy scale of interest,
 one can perform the computation of a generic physical observable considering either $n_l$ or $n_l + 1$ active flavours,
 each choice being more convenient in a given kinematic region. 
-In Sec.~\ref{sec:fonll} we will see a practical way in which such computations can be combined in a unique result which
+In Sec.~\ref{sec:fonll} we will discuss a way in which such computations can be combined in a unique result which
 is accurate at every energy scale.
-\comment{See also Ferrera's notes on quarks mass}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Perturbative and non-Perturbative approaches}
 The property of asymptotic freedom allows to compute high energy scattering processes as
-an expansion in the coupling, allowing a perturbative treatment of QCD.
+an expansion in the coupling, paving the way to a perturbative treatment of QCD.
 The Lagrangian given in Eq.~\eqref{eq:QCD_lagrangian_gauge_fixing}
 can be written as the sum between the free Lagrangian $\mathcal{L}_0$, describing free fermions and gauge fields, 
 plus an interaction term $\mathcal{L}_I$, containing all the terms proportional to the gauge coupling $g$:
@@ -270,12 +265,12 @@ In general, perturbation theory can be seen as a systematic way of approximating
 of a quantum field theory keeping the error under control.
 Although its success in describing high energy processes, it is not a full solution of the theory, 
 and there are situations in which it cannot be applied: in the case of QCD, at low energy the coupling
-becomes large, and a power expansion in the coupling is no longer possible. 
+becomes large, and a power expansion in $\alpha_s$ is no longer possible. 
 It is therefore important to have a non-perturbative formulation of QCD, based on the classical Lagrangian 
 of Eq.~\eqref{eq:QCD_lagrangian}.
 The framework of lattice QFT represents one of the most studied and developed systematic approaches to study quantum
 field theories in non-perturbative regimes. In the following we recall the basic ideas underlying the formulation of 
-QCD on an Euclidean lattice, referring to standard textbooks as Refs.~\cite{smit_2002} for more details.
+QCD on an Euclidean lattice, referring to standard textbooks as Ref.~\cite{smit_2002} for a complete discussion.
 
 %
 In lattice QFT the path integral of the theory is defined on a discrete and finite Euclidean space-time,
@@ -351,7 +346,7 @@ to remove the unwanted states
     - \frac{a^5}{2}\sum_{x\in\Lambda^4}\bar{\psi}\left(x\right)\tilde{\delta}^2 \psi\left(x\right)\,,
 \end{align}
 where $\tilde{\delta}^2 = a^{-2}\sum_{\mu}\left(1-\tau_{-\mu}\right)\left(\tau_{\mu}-1\right)$.
-In the presence of a gauge filed $U_{\mu}$, Eq.~\eqref{eq:fermions_wilson_action} becomes 
+In the presence of a gauge field, Eq.~\eqref{eq:fermions_wilson_action} becomes 
 \begin{align}
     S_W\left[\psi,\bar{\psi}, U_{\mu}\right] = a^4\sum_{x\in\Lambda^4}\bar{\psi}\left(x\right)\left(K\left[U_{\mu}\right] + m\right)\psi\left(x\right)\,,
 \end{align}
@@ -362,7 +357,7 @@ chiral symmetry, leading to a more complex UV structure of the theory.
 
 %
 Once the Euclidean action has been defined, the expectation value of a generic observable 
-$O\left[\psi,\bar{\psi},A_{\mu}\right]$ can be evaluated
+$O\left[\psi,\bar{\psi},U_{\mu}\right]$ can be evaluated
 through the path integral
 \begin{align} 
     \label{eq:lattice_path_integral}
