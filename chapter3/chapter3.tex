@@ -203,7 +203,6 @@ which in terms of quarks and antiquarks distributions are given by
     V_8     &=  \lp u-\bar{u} +  d-\bar{d}  \rp - 2\lp s-\bar{s} \rp \,,\\
     T_3     &=  \lp u+\bar{u}\rp - \lp  d+\bar{d}  \rp \, ,  \nonumber\\
     T_8     &=  \lp u+\bar{u} +  d+\bar{d}  \rp - 2\lp s+\bar{s} \rp \, , \nonumber\\
-    %T_{15}     &=  \lp u+\bar{u} +  d+\bar{d} +  s+\bar{s} \rp - 3\lp   c+\bar{c}\rp \, , \\
     c^+ &= c +\bar{c}\,. \nonumber
   \end{align}
 
@@ -286,7 +285,7 @@ In order to get expressions for physical observables, PDFs have to be
 evolved up to the physical scale $Q$ of the hard processes and finally 
 combined with partonic matrix elements. These steps happen through two separate convolutions, first with
 the evolution kernel, see Sec.~\ref{sec:DGLAP}, which solves DGLAP evolution equations and second with the hard cross sections.
-Such convolutions happen by means of FastKernel tables, introduced and validated in Refs.~\cite{Ball:2010de,Bertone:2016lga}
+Such convolutions happen by means of FastKernel (FK) tables, introduced and validated in Refs.~\cite{Ball:2010de,Bertone:2016lga}
 and used in any subsequent NNPDF analysis.
 Each PDFs is projected on a suitable basis functions
 \begin{align}
@@ -319,10 +318,10 @@ validation sets and the $\chi^2$ function of the training set is minimized.
 \section{The n3fit environment}
 \label{sec:n3fit}
 The methodology described in the previous section has been completely revised and extended within the new
-{\tt n3fit} environment, first presented in \cite{Carrazza:2019mzf}.
+{\tt n3fit} environment, first presented in Ref.~\cite{Carrazza:2019mzf}.
 In this section we describe the {\tt n3fit} general features, focusing in particular
 on the implementation of PDFs positivity and integrability. 
-Also we will present some results regarding the problem of the fit basis independence, addressed here for the first time
+Additionally, we will present some results regarding the problem of the fit basis independence, addressed here for the first time
 within this environment.
 
 \subsection{Architecture and general structure}
@@ -337,7 +336,7 @@ and represents an important technological improvement with respect
 to the previous code. 
 
 %
-The two main methodological changes in {\tt n3fit} concern the architecture and minimization algorithm:
+The two main methodological changes in {\tt n3fit} concern the architecture and the minimization algorithm:
 rather than using eight independent neural networks, each one giving as output a particular flavour, in
 the new environment a single net with an eight-dimensional output is used; additionally, gradient descent
 methods are implemented to replace the genetic algorithm described before.
@@ -365,22 +364,20 @@ different options: two standard choices are the so called evolution and flavour 
 While the former represents the equivalent of the one given in Eq.~\eqref{eq:nnpdf31IC_basis}, in
 the latter each quark, antiquark and the gluon are independently parameterized. 
 The choice of the fit basis should not affect the final results, however different choices might be more
-convenient from a methodological point of view, and different architecture setups might be required
+convenient from a numerical point of view, and different architecture setups might be required
 when changing the basis. We will extensively discuss these points in Sec.~\ref{sec:fitbasis}.
 Depending on our choice for the fit basis, each output can be supplemented with a suitable preprocessing
-polynomials, and with normalization factors to impose momentum and valence sum rules.
-
-%
-\comment{Add a short paragraph about hyperopt? Probably not..}
+polynomials, and with normalization factors to impose momentum and valence sum rules,
+as discussed in Sec.~\ref{sec:theory_constraints}
 
 \subsection{Fit basis}
 \label{sec:fitbasis}
-The parton distributions used to define the FK tables are the thirteen PDFs
+The parton distributions used to build the FK tables are the thirteen PDFs
 \begin{align}
 	\label{eq::fkdistributions}
 	q_i = \Sigma, g, V, V_3, V_8, V_{15}, V_{24}, V_{35}, T_3, T_8, T_{15}, T_{24}, T_{35}.
 \end{align}
-Eight of these are parametrized, while the remaining ones, involving heavy quarks,
+Eight of these are independently parameterized, while the remaining ones, involving heavy quarks,
 are determined by perturbative evolution, using the matching relations given in Eqs.~\eqref{eq:matching_PDFs}.
 When QED corrections are considered in the analysis,
 the photon PDF $\gamma$ is also included and independently parameterized.   
@@ -389,15 +386,18 @@ words, the user can choose which distributions should be independently parameter
 
 %
 The two most natural choices are the so called \textit{evolution} and \textit{flavour} basis.
-%In the former the flavours are split into independent singlet ($g$ and $\Sigma$) and nonsinglet ($V$ and $T$) sectors
 The former is defined by the eight dimensional subset of \eqref{eq::fkdistributions} given by 
 \begin{align}
     \label{eq:evolution_basis}
-    q_k = \left[g, \Sigma, V, V_3, V_8, T_3, T_8, T_{15} \right]\,,
+    q_k = \left[g, \Sigma, V, V_3, V_8, T_3, T_8, T_{15} \right]\,.
 \end{align}
-while in the latter, the neural network outputs   
+This basis is the equivalent of the one given in Eq.~\eqref{eq:nnpdf31IC_basis}, with the only difference
+that the distribution $c^+$ has been replaced by $T_{15}$, defined as 
+\begin{align}
+    T_{15}     &=  \lp u+\bar{u} +  d+\bar{d} +  s+\bar{s} \rp - 3\lp   c+\bar{c}\rp \, .
+\end{align}
+In the case of the flavour basis the neural network outputs   
 up, down, strange and charm quarks and antiquarks distributions (for charm we consider $c=\bar{c}$) plus the gluon
-\comment{define T15}
 \begin{align}
     \label{eq:flavour_basis}
 	\tilde{q}_k = \left[g, u, \bar{u}, d, \bar{d}, s, \bar{s}, c\right]\,.
@@ -463,7 +463,7 @@ in $x=0$: a parameterization like the one given in Eq.~\eqref{eq::paramEvol} can
 randomized in intervals such that $\alpha<1$ in the former case and $\alpha>1$ in the latter.
 %
 On the other hand, when working in the flavour basis each distribution (except the gluon) has both a singlet 
-and a nonsinglet component, which makes impossible to use a polynomial expression 
+and a nonsinglet component, which makes it impossible to use a polynomial expression 
 to describe in a consistent way its small-$x$ behaviour. Because of this, when working in the flavour basis
 only a large-$x$ preprocessing is implemented, so that each distribution of Eq.~\eqref{eq:flavour_basis} is
 parameterized as
@@ -475,12 +475,12 @@ with $\text{NN}_{j}\left(x\right)$ denoting the corresponding neural network out
 
 
 \paragraph{Positivity.}
-As recalled in Chapter~\ref{ch:fact}, PDFs are renormalization scheme dependent quantities.
+As recalled in chapter~\ref{ch:fact}, PDFs are renormalization scheme dependent quantities.
 Despite at LO they can be interpreted as probabilities distributions, when considering QCD corrections
 such naive picture doesn't hold any more. This in general prevents PDFs from being positive definite objects.
-However, regardless of the PDFs sign and shapes, cross sections for high-energy processes have to be positive,
+However, regardless of the PDFs sign and shape, cross sections for high-energy processes have to be positive,
 which means that fit solutions leading to negative cross-sections have to be discarded.
-This condition might have a non-negligible impact on the PDFs themself, 
+This condition might have a non-negligible impact on the PDFs themselves, 
 especially in those kinematic regions where no experimental
 data are available: functional forms giving negative cross sections cannot be 
 physical solutions of the problem, and therefore should be discarded.  
@@ -490,15 +490,15 @@ denoted as positivity observables, result to be negative.
 
 %
 It would be highly beneficial to work in a renormalization scheme in which PDFs are positive definite
-also beyond LO: this would allow to implement directly the positivity of the distributions themself,
+also beyond LO: this would allow to implement directly the positivity of the distributions,
 without having to rely on a specific choice of positivity observables.
 This is indeed the idea of a recent paper~\cite{Candido:2020yat}, where such positive renormalization
 scheme for PDFs is built. In the same paper, the Authors work out the relation between such positive
-renormalization scheme and the standard $\overline{MS}$, which is the one commonly used in 
+renormalization scheme and the standard $\overline{MS}$ scheme, which is the one commonly used in 
 PDFs determinations, and surprisingly they find out that NLO $\overline{MS}$ distributions
 for quarks, antiquarks and gluon are actually positive definite.  
 This result has been accounted for in {\tt n3fit}, where positivity is imposed at the PDFs level.
-In the following we describe how this is implemented in the code, and we assess the impact of such constraints
+In the following we describe how this feature is implemented in the code, and we assess the impact of such constraint
 on the large-$x$ region of the PDFs.
 
 %
@@ -522,7 +522,7 @@ with $\alpha=10^{-7}$.
 When the distribution $\tilde{q}_k\left(x_i, Q^2\right)$ is negative, the total $\chi^2$ will receive a positive contribution
 (a penalty) proportional to the corresponding Lagrange multipliers $\Lambda_k$. 
 Therefore, during the minimization of $\chi^2_{tot}$ solutions corresponding to positive distributions $q_k$
-will be favoured. Note that such implementation works with both the evolution and flavour basis, the only 
+will be favoured. Note that such implementation works fine for both the evolution and flavour basis, the only 
 difference being the linear transformation mapping the network outputs to the positive distributions to be 
 used in Eq.~\eqref{eq:chi2pos_k}.
 
@@ -530,14 +530,14 @@ used in Eq.~\eqref{eq:chi2pos_k}.
 Given the lack of data in the small-$x$ region, when $x<10^{-4}$ the PDFs are left largely unconstrained. 
 Because of the redundant parameterization employed in the NNPDF methodology, this will result in 
 an artificially big PDFs error in the small-$x$ region.
-This is an important feature a reliable PDFs set should have: in those kinematic regions where experimental data
+This is an important feature that a reliable PDFs set should have: in those kinematic regions where experimental data
 are missing, the PDFs error should increase accordingly.
 There are however some physical considerations that can be made to further constrain PDFs at small-$x$, 
 which can be used to reduce the huge error band in this kinematic region. 
 In order to have well defined momentum and valence sum rules the distributions $V, V_3, V_8, xg, x\Sigma$ 
 have to be integrable when $x$ decrease to zero.
-Moreover, in order to have well defined Gottfried sum rules, also the integral of $T_3$ and $T_8$ over the interval
-$\left(0,1\right)$ has to be finite. 
+Moreover, in order to have well defined Gottfried sum rules, also the integrals of $T_3$ and $T_8$ over the interval
+$\left(0,1\right)$ have to be finite. 
 
 This means that, denoting as $q\left(x,Q_0^2\right)$ a generic integrable PDF at the fitting scale, as $x$ decreases to zero
 such distribution cannot raise faster than $1/x$. In other words the following limit has to be verified
@@ -545,17 +545,9 @@ such distribution cannot raise faster than $1/x$. In other words the following l
     \label{eq:integrability}
     \lim_{x\rightarrow 0} xq\left(x,Q_0^2\right) = 0\,.
 \end{align}
-
 %
-Despite the simplicity of Eq.~\eqref{eq:integrability} it is important to note that, 
-from a numerical point of view, its practical implementation in a generic fit basis is a delicate matter.
-For numerical implementations in a fit, it is convenient to consider a different condition, which in turn implies
-Eq.~\eqref{eq:integrability}.
-%numerical integration of the PDFs between $\left(0,1\right)$ could still give a finite answer even if 
-%Eq.~\eqref{eq:integrability} is not satisfied; on the other hand, there is no unique and straightforward way to implemented
-%such constraint in the PDFs parameterization.
-%
-We define the distribution $q$ to be integrable if, for a given set of points $x^{(i)}_{\text{integ}}$ in the small-$x$ region,
+In order to satisfy numerically Eq.~\eqref{eq:integrability}
+we require that, for a given set of points $x^{(i)}_{\text{integ}}$ in the small-$x$ region,
 the function $xq\left(x\right)$ evaluated in these points is much smaller than its peak value,
 \begin{align}
     \label{eq:integ_def}
@@ -570,19 +562,22 @@ Eq.~\eqref{eq:integ_def} can be rewritten introducing a numerical parameter $f_q
 Despite Eq.~\eqref{eq:integ_def_2} is not mathematically equivalent to Eq.~\eqref{eq:integrability},
  the idea is that,
 if satisfied for small enough $x$ values $x^{(i)}_{\text{integ}}$, the function $xq\left(x\right)$ will 
-decrease to zero as $x$ keeps getting smaller. Also, unlike Eq.~\eqref{eq:integrability}, the condition given
-in Eq.~\eqref{eq:integ_def_2} can be easily verified replica by replica, so that not-integrable replicas can be discarded.
+decrease to zero as $x$ keeps getting smaller, and the integrals defining the sum rules will be 
+well defined. Also, unlike Eq.~\eqref{eq:integrability}, the condition given
+in Eq.~\eqref{eq:integ_def_2} can be easily verified replica by replica, so that replicas not satisfying it
+can be discarded.
 
 %
-In a similar way to what done for positivity we can impose integrability. For each distributions $q_k$ which has to satisfy integrability we
+In a similar way to what done for positivity we can impose integrability. 
+For each distributions $q_k$ which has to be integrable we
 add to the total $\chi^2$ a new bit defined as  
 \begin{align}
 	\label{eq:chi2integ_k}
 	\chi^2_{k,integ} = \Lambda_k \,\sum_i \,\left[x_i\,q_k\left(x_i,Q^2\right)\right]^2\,,
 \end{align}
 In this way, the fit will favour configurations with smaller values of $|x_i\,q_k\left(x_i,Q^2\right)|$, and should 
-therefore produce distributions with integrable small-$x$ behaviour. The points $x_i$ are chosen in different ways depending
-on the specific distribution and fit basis we are considering., as detailed in the next section. 
+therefore produce distributions satisfying Eq.~\eqref{eq:integ_def_2}. The points $x_i$ are chosen in different ways depending
+on the specific distribution and fit basis we are considering, as detailed in the next section. 
 
 
 \subsection{Results}
