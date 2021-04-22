@@ -601,8 +601,6 @@ Our point here is to show the effects of such theoretical constraints on a given
 include them. We will first present results obtained using the evolution basis, and in the
 next section we will repeat the exercise in the flavour basis, in order to check explicitly 
 fit basis independence.
-%Such analysis, together with a detailed comparison with NNPDF3.1 and an extended version
-%of the baseline dataset, will be part of the NNPFD4.0 release paper.
 
 %
 The baseline dataset we will consider here is the one of the NNPDF3.1 PDFs set, presented and discussed in Ref.~\cite{Ball:2017nwa}.
@@ -623,19 +621,16 @@ ATLAS~\cite{Aad:2013iua,Aad:2014qja,Aad:2011dm,Aaboud:2016btc,Aad:2015auj,
 Aad:2014kva,Aaboud:2016pbd,Aad:2015mbv}, CMS~\cite{Chatrchyan:2012xt,
 Chatrchyan:2013mza,Chatrchyan:2013tia,Khachatryan:2016pev,Khachatryan:2015oaa,
 Khachatryan:2016mqs,Khachatryan:2015uqb,Khachatryan:2015oqa} 
-and LHCb~\cite{Aaij:2012vn,Aaij:2012mda,Aaij:2015gna,Aaij:2015zlq}. 
+and LHCb~\cite{Aaij:2012vn,Aaij:2012mda,Aaij:2015gna,Aaij:2015zlq};
+ATLAS and CMS single-inclusive jet data~\cite{Aad:2014vwa, Khachatryan:2015luy}.
 In total this baseline dataset contains $n_{\rm dat}=4287$
 datapoints, see Ref.~\cite{Ball:2017nwa} for more details.
 
-\comment{You took this list from the jets paper, but there you have 3813 datapoints.
-The difference is that in the jet paper the baseline doe not include jets data which are included in NNPDF31. You
-have checked this looking at the runcards} 
-
 %
 When working in the evolution basis the small-$x$ behaviour is largely controlled by the preprocessing
-polynomial factor. Integrability (as defined in Eq.~\eqref{eq:integ_def_2})
+polynomial factor. Eq.~\eqref{eq:integ_def_2}
 can then be satisfied mainly by choosing the corresponding preprocessing exponents in an interval which ensures integrability.
-Additionally, the lagrange multiplier term given in Eq.~\eqref{eq:chi2integ_k} is added to the
+Additionally, the Lagrange multiplier term given in Eq.~\eqref{eq:chi2integ_k} is added to the
 total $\chi^2$ using a single small-$x$ point $x=10^{-9}$. These choices have been proved to
 produce replicas which mostly satisfy Eq.~\eqref{eq:integ_def_2}. 
 
@@ -678,7 +673,8 @@ and in a non negligible change in their central value.
     \begin{center}
         \includegraphics[width=0.49\linewidth]{normalize_basespecs0_pdfscalespecs0_distspecs0_plot_pdfdistances.pdf}
         \includegraphics[width=0.49\linewidth]{normalize_basespecs0_pdfscalespecs1_distspecs0_plot_pdfdistances.pdf}
-        \caption{Distance plots} 
+        \caption{Distance plots between the baseline fit and the one produced using positivity and integrability
+        constraints.} 
         \label{fig:distances} 
     \end{center}
 \end{figure}
@@ -689,7 +685,7 @@ and in a non negligible change in their central value.
         \includegraphics[width=0.49\linewidth]{plot_pdfs_V3.pdf}
         \includegraphics[width=0.49\linewidth]{plot_pdfs_V8.pdf}
         \includegraphics[width=0.49\linewidth]{plot_pdfs_T8.pdf}
-        \caption{PDFs plots} 
+        \caption{PDFs plots: baseline fit (orange) and fit with positivity and integrability constraints (green).} 
         \label{fig:pdfs_plots} 
     \end{center}
 \end{figure}
@@ -708,7 +704,7 @@ no small-$x$ preprocessing is used. This implies that the small-$x$ behaviour of
 by experimental data, can only be controlled through Lagrange multipliers.
 Because of this reason, for integrable distributions more stringent constraints are used than those implemented
 for the evolution basis. In particular, in order to get replicas satisfying Eq.~\eqref{eq:integ_def_2},
-the lagrange multiplier terms given in Eq.~\eqref{eq:chi2integ_k} are built using the three small-$x$
+the Lagrange multiplier terms given in Eq.~\eqref{eq:chi2integ_k} are built using the three small-$x$
 points $x_i = 10^{-5}, 10^{-4}, 10^{-3}$. 
 
 %
@@ -717,13 +713,13 @@ value in the evolution basis: $\chi_{\text{flav}}^2=1.13$ to be compared with th
 from Tab.~\ref{tab:experiments_chi2}.
 The resulting PDFs plotted in the evolution basis are reported in Fig.~\ref{fig:pdfs_plots_flav_vs_evol}, 
 where they are compared with the evolution basis fit presented in the previous section.
-The plots are shown in linear scale, in order to highlight the $x$-region where experimental data lay.
+The plots are shown in linear scale, in order to highlight the $x$-region where more experimental data are available.
 By inspection of Fig.~\ref{fig:pdfs_plots_flav_vs_evol} it is clear that fit basis independence is achieved,
 showing how, as expected, as long as data are present and physical constraints given by positivity, integrability and sum rules
-consistently implemented, different choices for the fit basis do no change the final results.
-It is worth recalling that this result, even if expected, is not trivial. When we change fit basis a number
+consistently implemented, different choices for the fit basis do no change the final PDFs.
+It is worth stressing that this result, even if expected, is not trivial. When we change fit basis a number
 of settings and parameters are changed at the same time. In particular, no small-$x$ preprocessing
-is used for the flavour basis, which as a consequence present a lower number of free parameters.
+is used for the flavour basis, which therefore presents a lower number of free parameters.
 The fact that we still get equivalent results provides a strong validation check of the {\tt n3fit} environment.
 
 %
