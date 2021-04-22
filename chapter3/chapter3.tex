@@ -5,7 +5,7 @@ related to different distance scales: while short distance
 effects can be obtained through the perturbative computation of partonic matrix elements, 
 long-distance contributions are collected in the universal PDFs $q\left(x,Q^2\right)$. As seen in Sec.~\ref{sec:DGLAP},
 knowing the functional form of the PDFs at a given initial scale $Q_0^2$, 
-their dependence on the energy scale can be computed by solving the DGLAP evolution equations.
+their dependence on the generic energy scale $Q^2$ can be computed by solving the DGLAP evolution equations.
 However the dependence on $x$ would be computable only solving QCD in a nonperturbative domain, 
 by computing the proton wave function from first principles. We will come back to 
 this point in chapter~\ref{ch:scalar_model}, when considering lattice QCD observables.
@@ -15,8 +15,8 @@ discussed before.
 
 %
 The general problem is to determine a set of unknown functions given
-a collection of data instances. Such kind of task has a long history in data science and AI literature, 
-and might be classified as a pattern recognition problem \cite{Forte:2020yip}.
+a collection of data instances. Such kind of task has a long history in data science literature, 
+and can be classified as a pattern recognition problem \cite{Forte:2020yip}.
 However the specific problem of PDFs determination has some additional peculiarities that we need to keep in mind.
 First, PDFs are continuos functions, which makes our problem intrinsically ill-defined: a continuous real function
 $q\left(x,Q_0^2\right)$ cannot be determine from a discrete set of data, no matter how large such set is.
@@ -24,7 +24,7 @@ Second, the data are not instances of the functions we are trying to determine, 
 them through factorization theorems: each point is determined combining a certain subset of PDFs in a non-linear way,
 and integrating over a certain range of $x$, as stated in Eq.~\eqref{eq:hadron_hadron}. 
 As we will extensively discuss in this and the following chapters,
-this fact have several practical and conceptual implications.
+this fact has several practical and conceptual implications.
 
 %
 Another important aspect concerning the problem of PDFs determination 
@@ -39,7 +39,7 @@ of the probability distribution for the unknown PDFs in the whole functional spa
 about uncertainties and correlations are taken into account when making predictions for new observables.
 
 %
-In this chapter we discuss how all these issue have been addressed within the NNPDF collaboration
+In this chapter we discuss how all these issues have been addressed within the NNPDF collaboration
 starting from 2002 \cite{Forte:2002fg}, revising the Monte Carlo replicas generation, the neural networks parameterization
 and the minimization procedure. Such methodology has been used to produce the last public NNPDF PDFs set NNPDF3.1 \cite{Ball:2017nwa}
 . The studies which will be described in chapters~\ref{ch:jets} and ~\ref{ch:th_error}, regarding the inclusion of jets data
@@ -56,7 +56,7 @@ the integrability of the nonsinglet sector and the fit basis independence.
 \label{sec:nnpdf_meth}
 
 The NNPDF methodology is based on a Monte Carlo determination of the PDFs error, combined
-with a neural network parameterization of the unknown $x$-dependence of the PDFs. So far numerical minimization algorithm
+with a neural network parameterization of the unknown $x$-dependence of the PDFs. So far numerical minimization algorithms
 have been used, and overfitting has been avoided using a cross-validation technique.
 In the first part of this section we revise these general ideas, referring to the baseline {\tt c++} code which
 has been used to produce NNPDF3.1. 
@@ -67,7 +67,7 @@ As mentioned before, in order to make PDFs sets an useful tool for making predic
 a faithful estimation of the errors affecting the analysis is necessary. A possible way
 to address the problem is to determine the probability distribution of the PDFs set $q\left(x\right)$
 given a set of data $D$. Let's denote such probability distribution as $\mathcal{P}\left(q|D\right)$.
-A generic observable $\mathcal{O}$ function of one or more PDFs will be determined as an expectation value
+A generic observable $\mathcal{O}$, function of one or more PDFs, will be determined as an expectation value
 over $\mathcal{P}$. Considering for example the case of a DIS observable, the central value and 
 uncertainty of the prediction will be given by 
 \begin{align}
@@ -87,12 +87,12 @@ corresponding to the kinematic variables $\{x_p,Q_p^2\}$,
 $N_{rep}$ artificial pseudo-data are generated according to~\cite{Ball:2008by}
 \begin{align}
     \mathcal{O}^{(k)}_p = 
-    S_{p,N}^{(k)}\,\left(\mathcal{O}^{\text{exp}}_p+\sum_{l=1}^{N_c}r_{p,l}^{(k)}\sigma_{p,l} + r_{p}^{(k)}\sigma_{p, s} \right)\,,
+    S_{p,N}^{(k)}\,\left(\mathcal{O}^{\text{exp}}_p+\sum_{l}r_{p,l}^{(k)}\sigma_{p,l} + r_{p}^{(k)}\sigma_{p, s} \right)\,,
     \,\,\,\,\,\,k = 1,..., N_{rep}
 \end{align} 
 where
 \begin{align}
-    S_{p,N}^{(k)} = \prod_{n=1}^{N_a}\left(1 + r_{p,n}^{(k)}\sigma_{p,n}\right)\,,
+    S_{p,N}^{(k)} = \prod_{n}\left(1 + r_{p,n}^{(k)}\sigma_{p,n}\right)\,,
 \end{align}
 takes into account normalization errors. 
 The variable $\sigma_{p, s}$ represents the uncorrelated statistical uncertainty of the datapoint while 
@@ -102,7 +102,6 @@ are all univariate gaussian random numbers, generating fluctuations of the artif
 For each replica $k$, if the l-th additive systematic is correlated between the two experimental points $p$ and $p'$
 then $r_{p,l}^{(k)} = r_{p',l}^{(k)}\,$ with an equivalent condition on $r_{p,n}^{(k)}$ to ensure correlation between multiplicative
 uncertainties. 
-\comment{Check all of this, in the original formula there s an additional term with a square root tat I don t understand.}
 $N_{rep}$ independent fits are performed, generating a Monte Carlo ensemble of
 PDFs that faithfully reproduces the statistical features of the original experimental 
 data, providing the desired representation of the probability density in the space of PDFs.
@@ -124,7 +123,7 @@ As mentioned above, the determination of a continuos function from a discrete se
 is an intrinsically ill-defined problem, no matter how copious this set is. In order to overcome this
 issue a particular functional form for the $x$ dependence of the PDFs at a reference scale $Q_0$ is chosen,
 given in terms of a set of free parameters.
-The PDFs at all the other scales $Q$ are determined by solving perturbative evolution equations 
+The PDFs at all the other scales $Q$ are determined by solving perturbative evolution equations, 
 and the experimental data are used to determine the optimal values of the free parameters.
 
 %
@@ -147,10 +146,10 @@ release of the PDFs set NNPDF3.1 \cite{Ball:2017nwa}.
 %
 Neural networks are a class of non-linear maps between some input $\xi_i^{(1)} $ 
 and some output $\xi_i^{(L)} $ variables. They are used in several machine learning applications where flexibility
-and a lack of bias with respect to a conventional fixed parametrisation  are  desired. 
+and a lack of bias with respect to a conventional fixed parameterization  are  desired. 
 Like other sets of functions, neural networks, in the limit of an infinite number of parameters, 
 can reproduce any differentiable function. The main advantage of using them is the possibility of dealing 
-with a greater number of parameters than what is usually available using a more standard parametrization.
+with a greater number of parameters than what is usually available using a more standard parameterization.
 The basic element of a neural net is a \textit{neuron} or \textit{node}, which takes a vector $\vec{x} \in \Re^N $ 
 as input and gives back a scalar output $ f\left(\vec{x}\right) \in \Re$.
 A neural network consists of many neurons stacked into layers and can be graphically represented as a direct graph made by input,
@@ -176,8 +175,8 @@ for the nodes belonging to the hidden layers, and by a linear function $ g(x)=x 
 %
 Starting from the first proof-of-concepts exercises up to the most recent public release, the basic
 neural network architecture employed in all the NNPDF determination has been the same.
-The only thing which has been changed is the number of independent parametrized PDFs in a global fit:
-five in NNPDF1.0 (up and down quarks and antiquarks), 
+The only thing which has been changed is the number of independent parameterized PDFs in a global fit:
+five in NNPDF1.0 (up and down quarks and antiquarks, gluon), 
 seven in NNPDF1.1 (up, down, strange quarks and antiquarks, gluon) and eight in NNPDF3.1
 where the total charm PDF was fitted from data for the first time.
 Each flavour is independently parameterized using a neural network,
@@ -196,13 +195,24 @@ and valence sum rules. The eight flavours independently parameterized in NNPDF3.
     \label{eq:nnpdf31IC_basis}
     q_j = \left[\Sigma, g, V, V_3, V_8, T_3, T_8, c^+ \right]\,,
 \end{align} 
-with the total charm defined as $c^+ = c +\bar{c}$.
+which in terms of quarks and antiquarks distributions are given by
+\begin{align}
+    \Sigma  &=  u+\bar{u} + d+\bar{d} + s+\bar{s} + 2c  \, ,  \nonumber \\
+    V     &= \lp u-\bar{u}\rp + \lp d-\bar{d}\rp + \lp s-\bar{s}\rp   \, ,\nonumber \\
+    V_3     &=  \lp u-\bar{u}\rp - \lp  d-\bar{d}  \rp \, , \nonumber\\
+    V_8     &=  \lp u-\bar{u} +  d-\bar{d}  \rp - 2\lp s-\bar{s} \rp \,,\\
+    T_3     &=  \lp u+\bar{u}\rp - \lp  d+\bar{d}  \rp \, ,  \nonumber\\
+    T_8     &=  \lp u+\bar{u} +  d+\bar{d}  \rp - 2\lp s+\bar{s} \rp \, , \nonumber\\
+    %T_{15}     &=  \lp u+\bar{u} +  d+\bar{d} +  s+\bar{s} \rp - 3\lp   c+\bar{c}\rp \, , \\
+    c^+ &= c +\bar{c}\,. \nonumber
+  \end{align}
+
 \begin{figure}[htb]     
 	\begin{center}
-		\includegraphics[width=70mm]{nn.pdf}
+		\includegraphics[scale=0.25]{nn31.pdf}
 	\end{center}
     \caption{Graphical representation of the neural network used in the NNPDF code.
-    For each flavour one independent neural network is implemented.}
+    For each PDF of Eq.~\eqref{eq:nnpdf31IC_basis} one independent neural network is implemented.}
 	\label{nn}                 
 \end{figure}
 The preprocessing exponents $\alpha_i$ and $\beta_i$ are randomized, by choosing a different value for each replica
@@ -234,8 +244,8 @@ and then by building the quantity
 \label{tot chi2}
 \chi^2=\sum_k \chi^2_k\,.
 \end{equation}
-Here $D_{ki}$ is the i-th experimental data point in the k-th dataset; $T_{ki}$ is the corresponding 
-theoretical prediction computed using the corresponding factorization theorem and 
+Here $D_{ki}$ is the i-th experimental datapoint in the k-th dataset; $T_{ki}$ is the corresponding 
+theoretical prediction, computed using a suitable factorization theorem and 
 expressed as a function of the free parameters; 
 $C_{ij}$ is the covariance matrix, which takes into account both statistical and systematic uncertainties,
 as given by the experimental collaborations.
@@ -246,7 +256,7 @@ NNPDF PDFs determination.
 %
 The $\chi^2$ minimization implemented within the NNPDF environment is based on genetic algorithm (GA):
 after a first random initialization of the neural network parameters,
-the weights are mutated according to a suitable rules, producing
+the weights are mutated according to a suitable rule, producing
 several copies of the original neural net, each one characterized by a different mutation.
 Mutations with the lowest value of the figure of merit are selected and the procedure is iterated.
 Different variations of GA have been used in every NNPDF PDFs set, including NNPDF3.1.
@@ -254,7 +264,7 @@ Another possible option which has been investigated is the CMA algorithm \cite{D
 which has been used, for example, in a recent NNPDF determination of 
 fragmentation functions \cite{Bertone:2017tyb}. 
 Nowadays several efficient deterministic methods are available in a number of public libraries.
-As we are going to discuss in the next section, numerical minimizer are no longer the best possible options
+As we are going to discuss in the next section, numerical minimizers are no longer the best possible option
 and an efficient deterministic minimization is more desirable. 
 
 %
@@ -267,7 +277,7 @@ net and the data is computed for both the training and validation set. At an ear
 the training, both these quantities are expected to decrease. However, towards the end of the
 training, while the error function over the training set will keep decreasing, the same value
 computed over the validation data will reach a minimal value, and eventually it may even start
-increasing. This is a signal of overfitting, and the point in parameter space yielding the minimal
+increasing. This is a signal of overfitting, and the point in parameters space yielding the minimal
 value of the validation error is the one taken as the fit result.  
 
 \subsection{Fast Kernel tables}
@@ -276,7 +286,7 @@ In order to get expressions for physical observables, PDFs have to be
 evolved up to the physical scale $Q$ of the hard processes and finally 
 combined with partonic matrix elements. These steps happen through two separate convolutions, first with
 the evolution kernel, see Sec.~\ref{sec:DGLAP}, which solves DGLAP evolution equations and second with the hard cross sections.
-Such convolutions happen by mean of FastKernel tables, introduced and validated in Refs.~\cite{Ball:2010de,Bertone:2016lga}
+Such convolutions happen by means of FastKernel tables, introduced and validated in Refs.~\cite{Ball:2010de,Bertone:2016lga}
 and used in any subsequent NNPDF analysis.
 Each PDFs is projected on a suitable basis functions
 \begin{align}
@@ -290,7 +300,7 @@ can be expressed as a tensors product of the kind
     \mathcal{O}^{\text{DIS}} = \left[\text{FK}\right]_{i\alpha}q_{i\alpha}\,.
 \end{align}
 with the PDF tensor defined as $q_{i\alpha} = q_i\left(x_{\alpha},Q_0^2\right)$.
-The matrix $\text{FK}$, denoted as FK table, stores the precomputed evolution and partonic matrix element 
+The matrix $\text{FK}$, denoted as FK table, stores the evolution and partonic matrix element 
 and can be precomputed for each process entering the analysis.
 In the case of hadronic observables $\mathcal{O}^{\text{DY}}$ 
 the PDF tensor has to be replaced by a luminosity tensor $\mathcal{L}_{i\alpha j\beta} = q_{i\alpha}q_{j\beta}$ 
@@ -387,6 +397,7 @@ The former is defined by the eight dimensional subset of \eqref{eq::fkdistributi
 \end{align}
 while in the latter, the neural network outputs   
 up, down, strange and charm quarks and antiquarks distributions (for charm we consider $c=\bar{c}$) plus the gluon
+\comment{define T15}
 \begin{align}
     \label{eq:flavour_basis}
 	\tilde{q}_k = \left[g, u, \bar{u}, d, \bar{d}, s, \bar{s}, c\right]\,.
@@ -442,13 +453,13 @@ so that the procedure remains the same independently on the choice of the fit ba
 \paragraph{Large- and small-$x$ behaviour.} 
 The large-$x$ behaviour of the PDFs has to be consistent with the elastic limit, namely the condition
 $q_i\left(x=1\right)=0$ has to be satisfied by all the distributions of both the flavour and evolution basis.
-This can be easily implemented in the fit by supplementing the neural network parametrization of 
+This can be easily implemented in the fit by supplementing the neural network parameterization of 
 each flavour by the preprocessing factor $\left(1-x\right)^{\beta_i}$, just like in the NNPDF methodology
 described before.
 The use of an additional polynomial factor $x^{-\alpha_i}$, controlling the small-$x$ behaviour of each flavour,
 only makes sense when working in the evolution basis. In this case, each flavour is either a singlet or nonsinglet
 distribution, and as such its small-$x$ behaviour can be classified as integrable (nonsinglet) or not integrable (singlet)
-in $x=0$: a parametrization like the one given in Eq.~\eqref{eq::paramEvol} can be used, with $\alpha$
+in $x=0$: a parameterization like the one given in Eq.~\eqref{eq::paramEvol} can be used, with $\alpha$
 randomized in intervals such that $\alpha<1$ in the former case and $\alpha>1$ in the latter.
 %
 On the other hand, when working in the flavour basis each distribution (except the gluon) has both a singlet 
