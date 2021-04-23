@@ -519,7 +519,7 @@ Eq.~\eqref{9S} can be generalized to the off-diagonal blocks of the theory covar
     \section{NLO PDFs with missing higher order uncertainties}
     \label{sec:th_error_results}
     In this section we present the first determination of the proton PDFs 
-    which systematically account for MHOU,
+    which systematically accounts for MHOU,
     using the theory covariance matrix formalism described in the previous sections.
     %
     We will present only a NLO fit, leaving a full NNLO analysis for a future work.
@@ -568,16 +568,16 @@ Eq.~\eqref{9S} can be generalized to the off-diagonal blocks of the theory covar
     to the uncertainties of the original experimental data, taking correlations into account. For a purely diagonal
     covariance matrix, this would be the ratio of the uncertainty of the predictions using the output PDFs
     to that of the original data. Note that  $\phi$ is defined in such a way that the uncertainty in the prediction is always
-    normalized to the experimental uncertainty, rather then to the combined experimental and theoretical uncertainty.
+    normalized to the experimental uncertainty, rather than to the combined experimental and theoretical uncertainty.
     By comparing $\phi$ values for fits with and without MHOU we can then get a quantitative idea of the effect of theory
     uncertainty on the final PDF error.
 
     %
     In order to asses the effect of MHOU, in addition to fits with the theory covariance matrix, two baseline
-    NLO and NNLO fits based on the experimental covariance matrix $C$ only have been also produced, 
+    NLO and NNLO fits based on the experimental covariance matrix $C$ only have been produced, 
     using the same input datasets described in Section ~\ref{sec:validation}. 
     As mentioned previously, including a new contribution to the covariance matrix of the fit
-    will affect both the PDFs central value of and uncertainty. In order to disentangle these
+    will affect both the PDFs central value and uncertainty. In order to disentangle these
     two different effects, we also study PDFs determined by only partially 
     including the theory covariance matrix $S$ in the analysis, either only in the data generation or in the fitting. 
     %
@@ -589,36 +589,39 @@ Eq.~\eqref{9S} can be generalized to the off-diagonal blocks of the theory covar
     The $\chi^2$ and $\phi$ values are shown in Tables ~\ref{table:chi2table_covth_global_nlo}
     and \ref{table:phitable_covth_global_nlo} respectively, for both the total dataset and the individual processes of 
     Table~\ref{eq:expclassification}.
-    For all the processes, when including $S$ in the fit the $\chi^2$ decreases, improving
+    Considering the fit where the theory covariance matrix is included in both the $\chi^2$ definition
+    and in the Monte Carlo replicas generation,
+    for all the processes the $\chi^2$ decreases, improving
     by about $3\%$ when considering the total dataset. Additionally the total $\chi^2$ almost coincides with the NNLO 
     $\chi^2$, suggesting that indeed the theory uncertainty is correctly accounting for the missing NNLO corrections.
     Looking at the value of $\phi$, we notice how, interestingly, this only increases by around $30\%$, 
-    much less than the $70\%$ one would expect looking at the relative size of the NLO MHOU and experimental uncertainties.
+    much less than what one might expect looking at the relative size of the NLO MHOU and experimental uncertainties.
     These numbers suggest that the main effect of the inclusion of the theory covariance matrix is that
     in the data region tensions which are otherwise present in the global dataset due to the MHO are partially resolved,
     leading to a better fit quality without any major effect on the final PDFs error. 
     %
     Looking at the fits where the theory error is included in the $\chi^2$ but not in the replicas generation,
     it is clear how the inclusion of the theory covariance matrix in the 
-    $\chi^2$ definition alone leads to a final $\chi^2$ value very close to that of the fit where the MHOU are fully included.
+    $\chi^2$ definition only leads to a final $\chi^2$ value very close to that of the fit where the MHOU are fully included.
     This means that, as we would expect, the MHOU affect mostly the central value of the fit,
     since the relative weight carried by each point is altered during the fit according to their relative size of their MHOU.
     On the other hand, considering the case where the theory covariance matrix is included only in the replica generation, 
     the $\chi^2$ goes up and $\phi$ increases dramatically, pointing out a much more prominent effect in PDFs uncertainty.
-    This behaviour is expected: due to the inclusions of MHOU in the pseudodata generation the replica fluctuations are wider,
-    leading to an increase in the PDFs error, which is now uncompensated by a rebalancing of the datasets in the fits.
+    This behaviour is expected: due to the inclusions of MHOU in the pseudodata generation, the replica fluctuations are wider,
+    leading to an increase in the PDFs error. Since the theory error is not included in the $\chi^2$,
+    such increase in the PDFs error is now uncompensated by a rebalancing of the datasets in the fits.
     \input{tables/chi2table_covth_global_nlo_process.tex}  
     \input{tables/chi2table_phi_global.tex} 
     
     %
     In Fig.~\ref{fig:pdfs_plots_th_err} we show plots for the NLO PDFs of the gluon, the total quark singlet,
     the anti-down quark and the strange, comparing results for fits based on $C$ and $C+S$.
-    All the PDFs are plotted at $Q=10$ GeV and normalized to the fit results without MHOU, 
-    and the central value of the NNLO fit based on the experimental covariance matrix only is shown as well.
+    All the PDFs are plotted at $Q=10$ GeV and normalized to the fit results without MHOU.
+    The central value of the NNLO fit based on the experimental covariance matrix only is shown as well.
     %
     We find that in the data region the increase in PDF uncertainties is very moderate, while the central values 
-    can shift by up to one sigma. On the other hand, in the regions where the PDFs are loosely constrained by the experimental
-    data the PDF uncertainties increases significantly.
+    can be shifted by up to one sigma. On the other hand, in the regions where the PDFs are loosely constrained by the experimental
+    data, the PDF uncertainties increases significantly.
     These features are in agreement with the observation that the estimator $\phi$, whose values are reported 
     in Table~\ref{table:phitable_covth_global_nlo}, increases only by a moderate amount when including the theory error,
     and provide further evidence that in the data region the inclusion of the theory covariance matrix has resolved tensions
@@ -657,7 +660,7 @@ Eq.~\eqref{9S} can be generalized to the off-diagonal blocks of the theory covar
     the change of the PDFs error in the data region is very small.
     This confirms our previous statement according to which, while the addition of a theory covariance matrix
     in replicas generation increases the fluctuations of the data replicas, this is compensated by the inclusion of MHOU
-    in the fit, which releases tensions between dataset, with the net results that, while the central values shift, 
+    in the fit, which releases tensions between dataset, with the net results that, while the central values are shifted, 
     the uncertainties in the data region do not increase much.
     \begin{figure}[t!]
         \begin{center}
@@ -675,11 +678,11 @@ Eq.~\eqref{9S} can be generalized to the off-diagonal blocks of the theory covar
     \section{Usage and delivery}
     \label{sec:th_error_usage}
     The PDFs with theory error can be used in the same way as a standard Monte Carlo PDF sets.
-    In this section we briefly discuss how to combine the PDF theory error with that in that hard matrix elements,
+    In this section we briefly discuss how to combine the PDF theory error with that in the hard matrix elements,
     providing detailed instructions to use the results presented in Sec.~\ref{sec:th_error_results}. 
 
     %
-    The MHOU on PDFs discussed here arise from the fact that the PDFs are determined using finite order
+    The MHOU discussed here arise from the fact that the PDFs are determined using finite order
     perturbative computations: parton distributions obtained by using different perturbative orders in the computations
     for the input processes will be different (so that for example NLO PDFs differ from NNLO PDFs), and the formalism
     developed here provides a way to take this into account when working at some finite order in
