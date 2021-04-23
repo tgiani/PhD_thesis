@@ -11,17 +11,17 @@ size of PDFs uncertainty, MHOU might affect the relative weights different point
 points accurately described by the current perturbative predictions (up to NNLO) should weight more
 than those poorly described. 
 %
-As discussed in Chapter~\ref{ch:nnpdf_methodology}, present PDFs uncertainties only account for statistical and 
+As discussed in chapter~\ref{ch:nnpdf_methodology}, present PDFs uncertainties only account for statistical and 
 systematic errors affecting the experimental data entering the analysis, and typically do not include any source 
 of theory uncertainty.
 %
-In this Chapter, based on Refs.~\cite{AbdulKhalek:2019bux,AbdulKhalek:2019ihb}, we describe how to set up 
+In this chapter, based on Refs.~\cite{AbdulKhalek:2019bux,AbdulKhalek:2019ihb}, we describe how to set up 
 a general formalism for the inclusion of theoretical uncertainties in PDFs determinations,
 and we specify it to the case of MHOU.
 
 % 
-The Chapter is structure as follows. In Sec.~\ref{sec:th_err_as_cov} we show how a generic source of theory error 
-can be described by mean of a covariance matrix; in Sec.~\ref{sec:scale_var} we discuss how, when considering
+The chapter is structure as follows. In Sec.~\ref{sec:th_err_as_cov} we show how a generic source of theory error 
+can be described by means of a covariance matrix; in Sec.~\ref{sec:scale_var} we discuss how, when considering
 MHO, such covariance matrix can be constructed using scale variations and a suitable prescription,
 which is validated in Sec.~\ref{sec:validation};
 in Sec.~\ref{sec:th_error_results} we present a first NLO PDFs set accounting for MHO, and finally in Sec.~\ref{sec:th_error_usage}
@@ -30,7 +30,7 @@ we provide instructions on how to use such result in phenomenological applicatio
 
  \section{Theory error as a covariance matrix}
  \label{sec:th_err_as_cov}
- In this Section we will show how, by adopting a Bayesian approach and
+ In this section we will show how, by adopting a Bayesian approach and
  assuming a Gaussian prior probability distribution for the true value of the theory, any missing theoretical
  uncertainty can be accounted for by adding a contribution to the experimental covariance matrix used in the PDFs fit.
 
@@ -47,16 +47,17 @@ The true values $\mathcal{T}$ are unknown, however we can compute the theory pre
 for each experimental data using a theory framework which is 
 generally incomplete, for example because it is based on the fixed-order truncation of a perturbative
 expansion \footnote{In addition to MHO other effects which could be neglected in the theoretical predictions $T$ are 
-higher twist and nuclear effects.}. Furthermore $T$ depend on PDFs which are evolved up to 
+higher twist and nuclear effects.}. Furthermore $T$ depend on PDFs, which are evolved up to 
 the physical scales of the data using again an incomplete theory. The vectors $\mathcal{T}$ and $T$ would coincide
 if the theory were exact and the PDFs were known with certainty.
 %
 Writing the difference between the true and the actual value of the theory predictions as
 \begin{align}
+    \label{eq:shifts}
     \Delta = \mathcal{T} - T\,,
 \end{align}
 we can consider this difference as an additional unknown systematic error, accounting for the incomplete theory.
-If we assume, in the same spirit as when estimating experimental systematic, that the true values $T$ are 
+If we assume, in the same spirit as when estimating experimental systematic, that the true values $\mathcal{T}$ are 
 Gaussianly distributed about the theory predictions $T$
 \begin{align}
     \label{eq:gaussian_hyp}
@@ -67,7 +68,7 @@ then the prior probability distribution of $\Delta$ will be given by
 \begin{align}
     P\left(\Delta\right) \propto \exp\left(-\frac{1}{2}\Delta^T S^{-1} \Delta\right)\,. 
 \end{align}
-Eq.~\ref{eq:conditional_prob} can be rewritten as
+Eq.~\eqref{eq:conditional_prob} can be rewritten as
 \begin{align}
     P\left(D|\mathcal{T}\right) = P\left(D, \Delta|T\right)  \propto 
     \exp\left(-\frac{1}{2}\left(D - T - \Delta\right)^T C \left(D-T-\Delta\right)\right)\,,   
@@ -83,21 +84,21 @@ given the theory predictions $T$ can be obtained using the Bayes theorem and mar
     &\propto \exp\left(-\frac{1}{2} \left(D-T\right)^T\left(C + S\right)^{-1} \left(D-T\right) \right)\,,
 \end{align}
 where in the last line we have performed explicitly the Gaussian integral over $\Delta$.
-Eq.~\ref{eq:log_likelihood} defines the likelihood which is usually minimized in a Gaussian fit and shows how
+Eq.~\eqref{eq:log_likelihood} defines the likelihood which is usually minimized in a Gaussian fit and shows how
 theoretical uncertainties can be treated simply as another form of experimental systematic: 
 it is an additional uncertainty to be taken into account when trying to find the truth from the data
 using a specific theory setting, and it can be accounted for by mean of an additional contribution $S$ to
 the experimental covariance matrix $C$.
 
 %
-The problem is then to estimate the theory covariance matrix $S$. The Gaussian hypothesis Eq.~\ref{eq:gaussian_hyp}
+The problem is then to estimate the theory covariance matrix $S$. The Gaussian hypothesis Eq.~\eqref{eq:gaussian_hyp}
 implies that 
 \begin{align}
     \label{eq:def_th_cov_0}
     \int d\mathcal{T} \, P\left(\mathcal{T}|T\right) \left(\mathcal{T}-T\right)_i \left(\mathcal{T}-T\right)_j = 
     \langle \Delta_i \,\Delta_j \rangle = S_{ij}\,,
 \end{align}
-showing how in general we need to estimate the shifts $\Delta_i$, in a way that takes into account
+showing how in general we need to estimate the shifts $\Delta_i$ defined in Eq.~\eqref{eq:shifts}, in a way that takes into account
 the theoretical correlations between different points within the same dataset, between different datasets
 measuring the same physical process and between datasets corresponding to different processes
 \footnote{Unlike experimental correlations, theory correlations will be present even for entirely different processes,
@@ -119,7 +120,7 @@ anomalous dimensions that determine the evolution of parton distributions.
 These will be associated with two independent unphysical scales, which here will be denoted as renormalization scale
 $\mu_r$ and factorization scale $\mu_f$.
 Using RG equations for hard cross-sections and for PDFs it is possible to obtain an estimate of the MHOU
-varying independently the two unphysical scales entering the problem.
+by varying independently the two unphysical scales entering the problem.
 
 Considering a generic structure function, 
 denoting as $\overline{F}$ the corresponding scale-dependent theory prediction\footnote{The structure 
@@ -133,8 +134,8 @@ we have
     \overline{C}\left(\alpha_s\left(\mu_r^2\right),\frac{\mu_r^2}{Q^2}\right)\otimes 
     q\left(\alpha_s\left(\mu_f^2\right),\frac{\mu_f^2}{Q^2}\right)\,. 
 \end{align}
-Following the notations Ref.~\cite{AbdulKhalek:2019ihb}, we introduce the variables
-$t = \log Q^2/\Lambda^2$, $k_r = \log \mu_r^2/Q^2$ and $k_f = \log \mu_f^2/Q^2$ so that Eq.~\ref{eq:scale_var_F_Q}
+Following the notations of Ref.~\cite{AbdulKhalek:2019ihb}, we introduce the variables
+$t = \log Q^2/\Lambda^2$, $k_r = \log \mu_r^2/Q^2$ and $k_f = \log \mu_f^2/Q^2$ so that Eq.~\eqref{eq:scale_var_F_Q}
 can be written as 
 \begin{align}
     \label{eq:scale_var_F}
@@ -172,16 +173,16 @@ the renormalization scale dependent Wilson coefficients $\overline{C}$ can be wr
     C\left(t+k_r\right) &-  k\frac{d}{dt}C\left(t+k_r\right) 
     + \frac{1}{2} k_r^2\, \frac{d^2}{dt^2}C\left(t+k_r\right) + ...
 \end{align}
-where according to Eq.~\ref{eq:central_scale} $C\left(t\right) = \overline{C}\left(\alpha_s\left(t\right),0\right)$.
+where according to Eq.~\eqref{eq:central_scale} $C\left(t\right) = \overline{C}\left(\alpha_s\left(t\right),0\right)$.
 In other words, thanks to the RG invariance we can write the renormalization scale dependent Wilson coefficients
 at a generic scale $\mu_r$ in terms of their values at the physical scale $\mu_r=Q$.
-The log derivatives appearing in Eq.~\ref{eq:wilson_coeff_scale_var} can be easily evaluated using the 
+The log derivatives appearing in Eq.~\eqref{eq:wilson_coeff_scale_var} can be easily evaluated using the 
 perturbative expression of $C$ 
 \begin{align}
     C\left(t\right) = 
     c_0 + \alpha_s\left(t\right)c_1 + \alpha_s^2\left(t\right)c_2 + \alpha_s^3\left(t\right)c_3 + ...\,,
 \end{align}
-and of the $\beta$ function expansion Eq.~\ref{eq:beta_function_expansion} getting
+and of the $\beta$ function expansion Eq.~\eqref{eq:beta_function_expansion} getting
 \begin{align}
     \label{eq:scale_varied_wilson_coeff}
     \overline{C}&\left(\alpha_s\left(t+k_r\right),k_r\right) = c_0 
@@ -190,7 +191,7 @@ and of the $\beta$ function expansion Eq.~\ref{eq:beta_function_expansion} getti
 \end{align} 
 
 %
-In the same way, starting again from Eq.~\ref{eq:scale_var_F}, in order to get the 
+In the same way, starting again from Eq.~\eqref{eq:scale_var_F}, in order to get the 
 scaled varied PDF we can fix $\mu_r=Q$
 and vary the scale $\mu_f$ at which the PDFs are evaluated. Setting $\mu_r=Q$ we get 
 \begin{align}
@@ -199,7 +200,7 @@ and vary the scale $\mu_f$ at which the PDFs are evaluated. Setting $\mu_r=Q$ we
     \overline{q}\left(\alpha_s\left(\mu_f^2\right),\frac{\mu_f^2}{Q^2}\right) \nonumber \\
     &=C\left(t\right)\otimes \overline{q}\left(\alpha_s\left(t+k_f\right),k_f\right)\,,
 \end{align}
-and using the RG invariance Eq.~\ref{eq:RG_invariance} with respect to $\mu_f$ we get 
+and using the RG invariance Eq.~\eqref{eq:RG_invariance} with respect to $\mu_f$ we get 
 \begin{align}
     \label{eq:scale_vare_pdf_1}
     \overline{q}\left(\alpha_s\left(t+k_f\right),k_f\right) = q\left(t+k_f\right) &-  k_f\frac{d}{dt}q\left(t+k_f\right) 
@@ -213,7 +214,7 @@ convolutions are replaced by ordinary products.}
 \begin{align}
     \frac{d}{d\mu_f^2}\, q\left(\mu_f^2\right) = \gamma\left(\alpha_s\left(\mu_f^2\right)\right)q\left(\mu_f^2\right)\,,
 \end{align}
-Eq.~\ref{eq:scale_vare_pdf_1} can be rewritten as 
+Eq.~\eqref{eq:scale_vare_pdf_1} can be rewritten as 
 \begin{align}
     \label{eq:scale_var_pdf_2}
     \overline{q}\left(\alpha_s\left(t+k_f\right),k_f\right) = &q\left(t+k_f\right) - k\gamma q\left(t+k_f\right) \nonumber\\
@@ -221,15 +222,15 @@ Eq.~\ref{eq:scale_vare_pdf_1} can be rewritten as
 \end{align}
 which can be further simplified using the perturbative expansion of the anomalous dimension
 and the expression for the $\beta$ function\footnote{In Ref.~\cite{AbdulKhalek:2019ihb} it is explicitly shown that an 
-alternative way of obtaining Eq.~\ref{eq:scale_var_pdf_2} consists in varying the renormalization scale of the anomalous dimension.
+alternative way of obtaining Eq.~\eqref{eq:scale_var_pdf_2} consists in varying the renormalization scale of the anomalous dimension.
 MHOU due to PDFs evolution can therefore be estimated varying either the PDFs scale or the scale of the anomalous dimension.}.
 
 %
-Eqs.~\ref{eq:scale_varied_wilson_coeff},\ref{eq:scale_var_pdf_2} allow to easily perform scale variations for a single process,
+Eqs.~\eqref{eq:scale_varied_wilson_coeff},\eqref{eq:scale_var_pdf_2} allow to easily perform scale variations for a single process,
 varying independently the two unphysical scales $\mu_r$ and $\mu_f$.
 In particular, they allow to obtain scaled varied coefficient functions and PDFs in terms of the corresponding values 
 computed at the physical scale $Q$. 
-Considering a specific process involved in the PDFs fit, one can, for example perform scale variation in the range
+Considering a specific process involved in the PDFs fit, one can, for example, perform scale variation in the range
 $|k_r|, |k_f| < \log 4$, obtaining the scale varied cross section $\overline{F}\left(k_r, k_f\right)$.
 When considering hadronic processes,
 the same arguments presented above can be used to obtain a formula similar to the one of Eq.~\eqref{eq:scale_varied_wilson_coeff},
@@ -237,7 +238,9 @@ as shown in Ref.~\cite{AbdulKhalek:2019ihb}.
 
 %
 We now consider a situation where we have $p$ different types of processes (like for example electroproduction processes, 
-hadronic processes, jets ...) $\pi_a = \{i_a\}$, where $i_a$ labels the datapoint belonging to the $a$-th process.
+hadronic processes, jets ...) 
+\[\pi_a = \{i_a\}\,, \,\,\,\,\,\,\,\, a = 1,...,p\,,\] 
+where $i_a$ labels the datapoints belonging to the $a$-th process.
 Each of them is characterized by a factorization scale $\mu_f$ (associated to the universal PDFs) and a renormalization scale 
 $\mu_{r_a}$ (associated with the hard coefficient functions).
 Given the $i$-th point of the $a$-th process $F_{i_a}$, we define the corresponding shift $\Delta_{i_a}$ as 
@@ -252,7 +255,7 @@ while those of $k_f$ will be correlated between different processes.
 In other words, because of PDFs universality the relation between the physical scale of each process (whatever that is)
 and the factorization scale $\mu_f$ is the same for all the processes.
 
-According to Eq.~\ref{eq:def_th_cov_0}, the theory covariance matrix is then constructed by averaging
+According to Eq.~\eqref{eq:def_th_cov_0}, the theory covariance matrix is then constructed by averaging
 outer products of the shifts over points in the space of scales 
 \begin{align}
     \label{eq:th_cov_matrix_1}
@@ -261,17 +264,15 @@ outer products of the shifts over points in the space of scales
 where $i_a \in \pi_a$ and $j_b \in \pi_b$ indicate two data points possibly corresponding to different
 processes $\pi_a$ and $\pi_b$, $V$ is the set of scale points to be summed over and $N$ is a normalization factor.
 Note that from this definition it follows immediately that the
-theory covariance matrix is positive definite: considering a real vector $v_i$, from Eq.~\ref{eq:th_cov_matrix_1}
+theory covariance matrix is positive definite: considering a real vector $v_i$, from Eq.~\eqref{eq:th_cov_matrix_1}
 we have
 \begin{align}
-    \sum_{ij} v_i S_{ij} v_j = N_m \sum_{V_m}\left(\sum_i v_i \Delta_i\right)^2 \geq 0\,.
+    \sum_{ij} v_i S_{ij} v_j = N \sum_{V}\left(\sum_i v_i \Delta_i\right)^2 \geq 0\,.
 \end{align}
-
-
 
 %
 Different prescriptions for the theory covariance matrix definition can be adopted, characterized by a different
-set of combination of scales which are summed over in Eq.~\ref{eq:th_cov_matrix_1}.
+set of combination of scales which are summed over in Eq.~\eqref{eq:th_cov_matrix_1}.
 Here we will discuss results for the so called 9-points prescriptions, referring to the original publication 
 Ref.~\cite{AbdulKhalek:2020jut} for more details about alternative possibilities.
 For simplicity, let's first consider the theory covariance matrix entries corresponding to 
@@ -280,7 +281,7 @@ corresponding to the renormalization and factorization scales $k_r$ and $k_f$.
 In the 9-points prescription $k_r$ and $k_f$ are varied completely independently, getting the 8 + 1 points in the 
 scales space reported in Fig.~\ref{fig:symmetricPrescriptions} (left), where the +1 refers to the trivial 
 point $k_r=k_f=0$ for which the shift $\Delta_i$ vanishes.
-The normalization factor appearing in Eq.~\ref{eq:th_cov_matrix_1}
+The normalization factor appearing in Eq.~\eqref{eq:th_cov_matrix_1}
 is determined by averaging over the number of points associated with the variation of each scale,
 and adding the contributions from variation of independent scales.
 So in the case of the 9-points prescriptions we have 8 points and 2 independent scales, 
@@ -291,15 +292,16 @@ giving a normalization factor $N=1/4$. The corresponding theory covariance matri
         S^{(\rm 9pt)}_{ij} = \frac{1}{4}\{ &\Delta_i^{+0} \Delta_j^{+0} + \Delta_i^{-0}\Delta_j^{-0}
                                 + \Delta_i^{0+} \Delta_j^{0+} + \Delta_i^{0-}\Delta_j^{0-} \\
                                 + &\Delta_i^{++}\Delta_j^{++} + \Delta_i^{+-} \Delta_j^{+-}
-                                + \Delta_i^{-+}\Delta_j^{-+} + \Delta_i^{--} \Delta_j^{--} \} \, .
+                                + \Delta_i^{-+}\Delta_j^{-+} + \Delta_i^{--} \Delta_j^{--} \} \,,
     \end{split}                            
 \end{equation}
+where the superscripts $+,-,0$ denote the different variations of $k_r$ and $k_f$ defining the shift. 
 Such construction can be generalized to the case of couples of
 points belonging to two different processes $\pi_1$ and $\pi_2$. The set $V$ now involves 
 possible variations of three scales $k_f,k_{r_1}, k_{r_2}$, represented in the right plot 
 of Fig.~\ref{fig:symmetricPrescriptions}.
 Again, varying such scales independently and accounting for the corrects normalization factors,
-Eq.~\ref{9S} can be generalized to the off-diagonal blocks of the theory covariance matrix, giving
+Eq.~\eqref{9S} can be generalized to the off-diagonal blocks of the theory covariance matrix, giving
 \begin{equation}\label{9M}
 \begin{split}
     S^{(\rm 9pt)}_{i_1j_2} =
@@ -342,10 +344,10 @@ Eq.~\ref{9S} can be generalized to the off-diagonal blocks of the theory covaria
 
     \section{Construction and validation of a theory covariance matrix}
     \label{sec:validation}
-    In this section we determine the theory covariance matrix at NLO using Eqs.~\ref{9S}, \ref{9M}
+    In this section we determine the theory covariance matrix at NLO using Eqs.~\eqref{9S}, \eqref{9M}
     and we validate it against the known NNLO results.
     As input datasets, we use the same NNPDF3.1 baseline given in Tab.~\ref{tab:experiments_chi2} with two minor differences:
-    the value of the lower kinematic cut has been increased from $Q^2_{min} = 2.69 \,\,GeV^2$ to $13.96 \,\, GeV^2$
+    the value of the lower kinematic cut has been increased from $Q^2_{min} = 2.69 \,\,\text{GeV}^2$ to $13.96 \,\, \text{GeV}^2$
     in order to ensure the validity of the perturbative QCD expansion when scales are varied downwards, 
     and the HERA $F^b_2$ and fixed-target Drell-Yan cross-sections have been removed, 
     for technical reasons related to difficulties in implementing scale variation. 
@@ -410,7 +412,7 @@ Eq.~\ref{9S} can be generalized to the off-diagonal blocks of the theory covaria
     \end{align}
     By inspection of Fig.~\ref{fig:covmats} large positive correlations within individual experiments along 
     the diagonal blocks are apparent, particularly evident for DIS NC and DY data.
-    Within the same process there are large correlations between experiments for the DY, jets and top data points 
+    Within the same process there are large correlations between experiments for the DY, jets and top datapoints 
     and large anticorrelations for the DIS NC points. Correlations and anticorrelations between different processes,
     despite being present thanks to PDFs universality, are generally weaker.
 
@@ -430,19 +432,19 @@ Eq.~\ref{9S} can be generalized to the off-diagonal blocks of the theory covaria
     Next, we wish to construct a validation test for the NLO theory covariance matrix, using the known shift between
     NNLO and NLO results.
     In order to do this, we view the set of experimental data as a vector $D_i$, where $i = 1, ..., N_{dat}$.
-    Such vector lives in a $N_{dat}-$dimensional vector space $D$ and
+    Such vector lives in a vector space $D$ of dimension $N_{dat}$, and
     the theory covariance matrix $S_{ij}$ defines an ellipsoid $E$ belonging to a subspace $S$ of dimension
     $N_{sub}$ of the full space $D$. 
     %
     In the context of MHOU we can take the NLO theory predictions evaluated at the central scales $T_i^{NLO}\left(0,0\right)$
     as our best NLO predictions with the ellipsoid $E$ estimating a $68\%$ confidence level for the MHO corrections. 
-    We want to check how well $S_{ij}$ predicts both the size and the correlation pattern
+    We want to check how well the theory covariance matrix $S_{ij}$ predicts both the size and the correlation pattern
     of the MHO terms. This can be done by testing the extend by which the known shift vector between NNLO and NLO theory predictions
     $T_i^{NNLO} - T_i^{NLO}$
     falls within the ellipsoid $E$.
     %
     More in detail, we first normalize the theory covariance matrix $S_{ij}$ to the NLO predictions, so that all its
-    entry are dimensionless allowing for a meaningful comparison 
+    entries are dimensionless allowing for a meaningful comparison 
     \begin{align}
         \hat{S}_{ij} = S_{ij}/\left(T_i^{NLO}T_j^{NLO}\right)\,,
     \end{align}
@@ -450,7 +452,7 @@ Eq.~\ref{9S} can be generalized to the off-diagonal blocks of the theory covaria
     \begin{align}
         \delta_i = \left(T_i^{NNLO}-T_i^{NLO}\right)/T_i^{NLO}\,.
     \end{align}
-    The NNLO predictions used to define the shift are computed using the NNLO matrix elements and anomalous dimension
+    The NNLO predictions used to define the shift $\delta_i$ are computed using the NNLO matrix elements and anomalous dimensions
     but the same NLO PDF set used to compute the NLO theory predictions. In this way the shift $\delta_i$ 
     only accounts for the perturbative effects due to NNLO corrections, without including additional effects
     due to refitting.
@@ -459,7 +461,7 @@ Eq.~\ref{9S} can be generalized to the off-diagonal blocks of the theory covaria
     This check is performed in Fig.~\ref{fig:diag_shift_validation_symmetric}: in all cases 
     $\delta_i$ turns out to be smaller or comparable to $\sigma_i$, showing how how
     the overall size of the estimated uncertainties, obtained by varying the renormalization and factorization scales by
-    a factor two in either directions, give a qualitative reliable (if somewhat conservative) estimate of the true MHOU. 
+    a factor two in either directions, gives a qualitative reliable (if somewhat conservative) estimate of the true MHOU. 
     \begin{figure}[t!]
         \begin{center}
           \includegraphics[width=14cm, height=4.4cm]{shift_diag_cov_comparison_9pt_global.pdf}
@@ -486,12 +488,14 @@ Eq.~\ref{9S} can be generalized to the off-diagonal blocks of the theory covaria
     we expect the angle $\theta$ between $\delta$ and $\delta^s$
     \begin{align}
         \label{eq:angle}
-        \theta = \arccos\left(\frac{|\delta_i^s|}{|\delta_i|}\right)
+        \theta = \arccos\left(\frac{|\delta^s|}{|\delta|}\right)
     \end{align}
     to be reasonably small. This geometric relation is represented graphically in Fig.~\ref{fig:subspace_diagram},
     where the space $D$ is drawn as a three dimensional space and the subspace $S$ as a two dimensional space.
-    For individual processes we find $\theta = 3^{\rm o}, 14^{\rm o}, 22^{\rm o}, 32^{\rm o}, 16^{\rm o}$ for top, jets, DY, NC and CC DIS respectively, 
-    while the complete dataset we find $\theta = 26^{\rm o}$.
+    For individual processes we find 
+    \[\theta = 3^{\rm o}, 14^{\rm o}, 22^{\rm o}, 32^{\rm o}, 16^{\rm o}\]
+    for top, jets, DY, NC and CC DIS respectively, 
+    while for the complete dataset we find $\theta = 26^{\rm o}$.
     %
     \begin{figure}[t]
         \begin{center}
@@ -514,7 +518,7 @@ Eq.~\ref{9S} can be generalized to the off-diagonal blocks of the theory covaria
     
     \section{NLO PDFs with missing higher order uncertainties}
     \label{sec:th_error_results}
-    In this section we present the first determination of the parton distributions of the proton 
+    In this section we present the first determination of the proton PDFs 
     which systematically account for MHOU,
     using the theory covariance matrix formalism described in the previous sections.
     %
@@ -525,7 +529,7 @@ Eq.~\ref{9S} can be generalized to the off-diagonal blocks of the theory covaria
     %
     As discussed in Sec.~\ref{sec:th_err_as_cov}, the theory uncertainties are included by replacing the
     experimental covariance matrix $C_{ij}$ with the sum $C_{ij}+S_{ij}$. The NNPDF methodology 
-    described in Chapter~\ref{ch:nnpdf_methodology} is otherwise unchanged.
+    described in chapter~\ref{ch:nnpdf_methodology} is otherwise unchanged.
     It is then clear how the inclusion of a theory-induced contribution in the covariance matrix affects only two steps
     of the fit: the pseudodata generation and the definition of the $\chi^2$ to be minimized.
     In particular, denoting as $D_i^{(k)}$ the $k$-th replicas for the $i$-th datapoint entering the analysis,
@@ -553,17 +557,17 @@ Eq.~\ref{9S} can be generalized to the off-diagonal blocks of the theory covaria
     \end{align}
     where by $\chi^2_{\text{exp}}\left[T^{(k)}\right]$ we denote the value of the $\chi^2$
     computed using the $k$-th PDF replica and only including the experimental covariance matrix.
-    The average $\chi^2$ values entering Eq.~\ref{eq:phi} are the mean value of the $\chi^2$ averaged over the replicas
-    and the $\chi^2$ computed using the central PDF which is obtained as an average of all replicas. 
+    The average $\chi^2$ values entering Eq.~\eqref{eq:phi} are the $\chi^2$ averaged over the replicas
+    and the $\chi^2$ computed using the central PDF, which is obtained as an average of all replicas. 
     As shown in App.~\ref{app:phi} Eq.~\eqref{eq:phi} can be written as
     \begin{align}
-        \phi = \left(\frac{1}{N_{dat}}\sum_{i,j=1}^{N_dat} \left(C\right)^{-1}_{ij}T_{ij}\right)^{1/2}\,,
+        \phi = \left(\frac{1}{N_{dat}}\sum_{i,j=1}^{N_{dat}} \left(C\right)^{-1}_{ij}T_{ij}\right)^{1/2}\,,
     \end{align}
     where $T_{ij} = \langle T^{(k)}_i T^{(k)}_j \rangle - \langle T^{(k)}_i \rangle \langle T^{(k)}_j \rangle$. In words,
     $\phi$ gives the average over all the datapoints of the ratio of the uncertainties of the predictions
-    to the uncertainties of the original experimental data, taking account of correlations. For a purely diagonal
+    to the uncertainties of the original experimental data, taking correlations into account. For a purely diagonal
     covariance matrix, this would be the ratio of the uncertainty of the predictions using the output PDFs
-    to that of the original data. Note that  $\phi$ is defined so that the uncertainty in the prediction is always
+    to that of the original data. Note that  $\phi$ is defined in such a way that the uncertainty in the prediction is always
     normalized to the experimental uncertainty, rather then to the combined experimental and theoretical uncertainty.
     By comparing $\phi$ values for fits with and without MHOU we can then get a quantitative idea of the effect of theory
     uncertainty on the final PDF error.
@@ -705,7 +709,7 @@ Eq.~\ref{9S} can be generalized to the off-diagonal blocks of the theory covaria
     \end{align}
     Considering the PDFs presented in this work, $\sigma_{\mathcal{F}}^{\text{PDF}}$ will account for
     uncertainties related to both experimental data and MHO in the PDFs determination.
-    On the other hand, when Eq.~\ref{eq:PDFunc} is used with a standard PDFs set (like NNPDF3.1), the resulting
+    On the other hand, when Eq.~\eqref{eq:PDFunc} is used with a standard PDFs set (like NNPDF3.1), the resulting
     uncertainty only incudes statistical and systematic errors from the data. 
     Turning to MHOU on the hard matrix element $\sigma_{\mathcal{F}}^{\text{th}}$,
     this can be estimated using any prescription preferred by the user.
@@ -717,7 +721,7 @@ Eq.~\ref{9S} can be generalized to the off-diagonal blocks of the theory covaria
         \sigma_{\mathcal{F}}^{\text{th}} = \left[S_{\mathcal{F}\mathcal{F}}\right]^{\frac{1}{2}}\,,
     \end{align} 
     with the shift $\Delta_{ij}$ computed for $i=j = \mathcal{F}$.
-    The PDF uncertainty Eq.~\ref{eq:PDFunc} and the uncertainty on the hard matrix element Eq.~\ref{eq:Thunc}
+    The PDF uncertainty Eq.~\eqref{eq:PDFunc} and the uncertainty on the hard matrix element Eq.~\eqref{eq:Thunc}
     can now be combined in quadrature, giving the total uncertainty on the PDF
     \begin{align}
         \label{eq:TOTunc}
