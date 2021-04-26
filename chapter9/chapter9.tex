@@ -1,15 +1,15 @@
 \chapter{PDFs from pseudo-Ioffe Time Distribution}
 \label{ch:ppdf_NNPDF}
-In the previous Chapter, 
+In the previous chapter, 
 starting from the momentum space factorization formula connecting quasi-PDFs to collinear PDFs,
 upon numerical implementation of the Fourier transform we obtained an expression relating
 parton distributions directly to position space quasi-PDFs matrix elements.
 Such factorized expression has been subsequently used in the NNPDF framework in order to 
 extract two nonsinglet distributions from data for quasi-PDFs matrix elements 
 produced in Refs.~\cite{Alexandrou:2018pbm, Alexandrou:2019lfo}.
-A similar analysis was very recently performed by the JAM collaboration in Ref.~\cite{Bringewatt:2020ixn} 
+A similar analysis was recently performed by the JAM collaboration in Ref.~\cite{Bringewatt:2020ixn} 
 for the spin-averaged and spin-dependent PDFs employing quasi-PDF lattice data.  
-In this Chapter, base on Ref.~\cite{DelDebbio:2020rgv} we extend such analysis to the case of the pseudo-PDFs approach,
+In this chapter, base on Ref.~\cite{DelDebbio:2020rgv} we extend such analysis to the case of the pseudo-PDFs approach,
 which relies on the position space formulation of the same factorization theorem. 
 In particular, we will consider data for reduced pseudo-ITD, introduced in Sec.~\ref{sec:pseudo_PDFsfact}
 in the context of the scalar field theory and that we now revise in the context of QCD.
@@ -51,14 +51,10 @@ with
 \end{align}
 Eqs.~\eqref{eq:factIoffe}, ~\eqref{eq:WilsonCoeffIoffe} allow to relate collinear PDFs to quantities
 which are computable in lattice QCD simulations, through a factorized expression similar to those
-relating collinear PDFs to physical cross sections. Just as described in the previous Chapter, 
+relating collinear PDFs to physical cross sections. Just as described in the previous chapter, 
 this formula can be used in a fitting framework to extract PDFs from lattice data.
 
-%
-%In this Chapter we perform an analogous exercise considering this time the reduced pseudo-ITD approach,
-%implementing within the {\tt NNPDF} environment the lattice data presented in Ref.~\cite{Joo:2019jct,Joo:2020spy},
-%and using the position space factorization formula of Eqs.~\eqref{eq:factIoffe}, \eqref{eq:WilsonCoeffIoffe}.
-This, besides being a complementary exercise to the one performed in Ref.~\cite{Cichy2019}, has also some
+This, besides being a complementary exercise to the one presented in chapter~\ref{ch:qpdfNNPDF}, has also some
 practical advantages. First, when working in the pseudo-ITD approach, the factorization is realized in the limit of small-$z^2$.
 Unlike in the quasi-PDFs approach, where the factorization is realized for high values of $P$,
 here we are allowed to keep in the analysis data coming from a wide range of momentum values, 
@@ -68,16 +64,7 @@ Second, we can directly use the position space factorization formula of Eq.~\eqr
 expression for the perturbative coefficient of Eq.~\eqref{eq:WilsonCoeffIoffe} and without having
 to perform the numerical Fourier transform described in App.~\ref{app:coefficients}.
 
-\iffalse
-In this article we extend the general strategy that has been developed within the {\tt NNPDF} framework and which allows us to systematically extract parton distributions from the available lattice data. In the implementation of this idea once the lattice data have reached some level of maturity in terms of precision and systematic effects, one could combine data from all pertinent lattice formalisms such as quasi-distributions ~\cite{Lin:2014zya,Chen:2016utp,Alexandrou:2015rja,Alexandrou:2016jqi, Monahan:2016bvm, Zhang:2017bzy, Alexandrou:2017huk, Green:2017xeu,Alexandrou:2018pbm,Chen:2018xof,Alexandrou:2018eet,Lin:2018qky,Fan:2018dxu,Liu:2018hxv,Alexandrou:2019lfo,Izubuchi:2019lyk,Green:2020xco,Chai:2020nxw,Lin:2020ssv,Alexandrou:2020zbe}
-and pseudo-distributions ~\cite{Orginos:2017kos,Karpie:2018zaz,Joo:2019jct,Joo:2019bzr,Joo:2020spy,Bhat:2020ktg,Fan:2020cpa,Gao:2020ito}.
-One can also include results from the so-called ``Good Lattice Cross-Sections'' (LCS) approach,
-which is described in~\cite{Ma:2017pxb} and represents a general framework, where one computes matrix elements that can be factorized into PDFs at short distances. 
-Papers~\cite{Bali:2017gfr,Bali:2018spj,Sufian:2019bol,Bali:2019ecy, Sufian:2020vzb} describe implementations of the latter formalism.
-Clearly a global analysis only makes sense after having scrutinised each set of data individually,
-and having understood the systematics that affect them.
-\fi
-The structure of the Chapter is as  follows.  In Sec.~\ref{sec:data} we define the lattice observable considered in the fit,
+The structure of the chapter is as  follows.  In Sec.~\ref{sec:data} we define the lattice observable considered in the fit,
 describe the corresponding data and  briefly recall the main features of the NLO terms entering the factorization formulas.
 In Sec.~\ref{sec:fit} we present the first set of results:
 we consider the  fits where only the statistical uncertainties of the lattice data are taken into account.
@@ -92,10 +79,10 @@ and on the fit quality.
 \label{sec:data}
 
 In this section we describe the lattice observables we will consider in the following, together with the corresponding data.
-As in the case of the previous Chapter we will consider two different observables corresponding to 
+As in the case of the previous chapter we will consider two different observables corresponding to 
 the real and imaginary part of the reduced pseudo-ITD defined in Eq.~\eqref{eq:reducedIoffe}.
  
-Considering the case of the unpolarized isovector parton distribution 
+Considering the case of the unpolarized isovector parton distribution, 
 taking the real and complex parts of Eq.~\eqref{eq:factIoffe} and using Eq.~\eqref{eq:WilsonCoeffIoffe}, 
 we can define the two lattice observables
 \begin{align}
@@ -134,7 +121,7 @@ while the former is responsible for the evolution from the PDF scale
 $\hat{z}^{-2} = \mu^2\frac{e^{2\gamma_E + 1}}{4} $ to the pseudo-ITD scale $z^2$, the latter takes into
 account the finite terms characterizing the specific choice of the renormalization scheme. 
 They are plotted in Fig.~\ref{fig::BL} for both the real and imaginary part, using the PDFs set 
-NNPDF31\_nlo\_as\_0118 as input.
+{\tt NNPDF31\_nlo\_as\_0118} as input.
 \begin{figure}[h!]
     \center
     \includegraphics[width=11.5cm,height=4.5cm,keepaspectratio]{BxM_real.pdf}
@@ -192,7 +179,7 @@ together with the number of reduced pseudo-ITD datapoints $n_{\text{dat}}$ compu
 Given a set of lattice data for the real and imaginary part of the reduced pseudo-ITD, 
 the distributions $T_3$ and $V_3$ can again be extracted from them through a standard minimum-$\chi^2$ fit.
 Here we will implement them in the {\tt NNPDF} framework following the same approach as the one
-described in Chapter~\ref{ch:qpdfNNPDF}.
+described in chapter~\ref{ch:qpdfNNPDF}.
 
 
 \section{Fits over lattice data: statistical uncertainties only}
@@ -326,14 +313,14 @@ after evolution, some points having the same Ioffe time are not compatible betwe
 Such discrepancies might be explained by the presence of systematic effects we are not accounting for.
 
 % 
-A proper investigation of the systematic effects affecting the computation of the equal time correlators underlying
+As already mentioned in the previous chapter, a proper investigation of the systematic effects affecting
+the computation of the equal time correlators underlying
 the definition of pseudo-PDFs is a difficult and expensive task which would require to run different lattice simulations 
 varying a set of parameters, like for example the lattice spacing, the lattice volume, the pion mass. 
 Alongside systematic effects due to the lattice simulation, other sources of errors are those connected 
-to the theoretical framework of the pseudo-PDFs approach, like the presence of higher twist effects and perturbative matching truncation effects. 
-A detailed discussion of many of these uncertainties, together with a series of possible scenarios for their numerical values, 
-can be found for example in Ref.~\cite{Cichy2019}. 
-
+to the theoretical framework of the pseudo-PDFs approach, like the presence of higher twist effects 
+and perturbative matching truncation effects, as detailed in Sec.~\ref{subsec:sys}. 
+ 
 %
 As mentioned in Sec.~\ref{sec:data},
 in Ref.~\cite{Joo:2019jct} additional pseudo-ITD points were computed starting
@@ -391,13 +378,13 @@ Also missing higher orders in perturbation theory and higher twist effects could
 as additional systematic uncertainties. 
 Unlike the case of the FV, CL and PM systematic uncertainties discussed above, we cannot estimate
 the size of such effects using the current lattice results. 
-One could then follow the approach adopted in the previous Chapter,
+One could then follow the approach adopted in the previous chapter,
 where different scenarios for the size of such systematics have been considered, and try to draw conclusions about their
 impact on the PDFs and on the fit quality. 
 Here we will follow a different approach, trying to quantify an additional uncertainty which accounts for the 
 unknown missing systematic effects, following a Bayesian approach.
 The gaussian Bayesian approach that we are going to use here is the same 
-described in Chapter~\ref{ch:th_error} in the case of global QCD analysis in order to take into account 
+described in chapter~\ref{ch:th_error} in the case of global QCD analysis in order to take into account 
 the theoretical error due to missing higher orders\footnote{In Ref.~\cite{Bernal:2018cxc} a similar approach was applied 
 to cosmological data.}.
 
@@ -477,7 +464,7 @@ showing a good fit quality.
 It should be noted that after the inclusion of systematic uncertainties in the analysis, the effect
 on the final result could be different depending on the specific situation we are considering.
 In other words, it is not always the case that the inclusion of new systematic effects leads to an increase 
-of the final PDFs error, as we also noticed in Chapter~\ref{ch:th_error}. This can be seen for example in the case of the distribution $T_3$ plotted in Fig.~\ref{fig::fits_z2},
+of the final PDFs error, as we also noticed in chapter~\ref{ch:th_error}. This can be seen for example in the case of the distribution $T_3$ plotted in Fig.~\ref{fig::fits_z2},
 from which it is clear how the error of the fit \textit{fine-sys} has not increased with respect to the one of
 \textit{fine-stat}. The reason for this can be traced back to the fact that the covariance matrix 
 defined in Eq.~\eqref{eq:covariance} enters both the Monte Carlo replicas generation and the $\chi^2$ definition:
@@ -514,7 +501,7 @@ of the central value of the replicas distribution rather than in an increase of 
 
 %
 Despite it is probably too early to draw comparisons between our results and phenomenological distributions, 
-it is interesting to see how they look when plotted together, as we did in the previous Chapter for
+it is interesting to see how they look when plotted together, as we did in the previous chapter for
 quasi-PDFs results: given the fact that nowadays $V_3$ and $T_3$ are
 very well constrained by experimental data, the discrepancies we observe between lattice and phenomenological results
 might be a good indication of the size of the systematic we are still missing, highlighting specific $x$-region
@@ -538,7 +525,7 @@ and for large values of $x$ ($ >0.8$), showing a probable underestimation of the
 \end{figure}
 
 
-To sum up, in this Chapter
+To sum up, in this chapter
 we have considered the pseudo-ITD data produced in Refs.~\cite{Joo:2019jct,Joo:2020spy}. Using the
 position space factorization theorem relating such data to collinear PDFs, we have extracted two nonsinglet distributions 
 within the {\tt NNPDF} framework. 
@@ -563,12 +550,11 @@ to make comparisons with phenomenological distributions.
 
 %
 Finally, we stress once more that the analysis performed in this paper is complementary to that 
-presented in the previous Chapter, where quasi-PDFs matrix elements where considered instead, 
+presented in the previous chapter, where quasi-PDFs matrix elements where considered instead, 
 starting from the momentum space version of the factorization theorem. 
 In both cases, results have been produced within the {\tt NNPDF} environment,
 running the same machinery used for global QCD analysis over experimental data. 
-
-It is therefore interesting to compare our best result of this Chapter \textit{fine-sys} with
+It is therefore interesting to compare our best result of this chapter \textit{fine-sys} with
 one of the more realistic cases of the previous one, like for example those produced using the
 systematic scenario S2. 
 Both PDFs sets have been obtained using the same NNPDF methodology, the only difference 
@@ -586,8 +572,8 @@ Quasi-PDFs and pseudo-ITD results are plotted together in Fig.~\ref{fig::ppdf_vs
 both $T_3$ and $V_3$ distributions appear to be in good agreement, the main difference being a huge decrease in the 
 PDFs error when considering results presented in this work. 
 This difference can be partially traced back to the number of points included in the analysis: while in the analysis of 
-Chapter~\ref{ch:qpdfNNPDF} 16 points for quasi-PDFs matrix element where included, 
-in this Chapter data corresponding to all momentum values are considered, for a total of 48 pseudo-ITD points.
+chapter~\ref{ch:qpdfNNPDF} 16 points for quasi-PDFs matrix element where included, 
+in this chapter data corresponding to all momentum values are considered, for a total of 48 pseudo-ITD points.
 Clearly, having more points in the analysis allows to better constraint the fit results, giving final PDFs with smaller error.
 %
 The size of the statistical and systematic uncertainties affecting the points entering the two analyses is of course another
@@ -609,7 +595,7 @@ One could then combine data from all pertinent lattice formalisms
 including results from the so-called “Good Lattice Cross-Sections” (LCS) approach, which is described in Ref.~\cite{Ma:2017pxb}
 and represents a general framework, where one computes matrix elements that can be factorized into PDFs
 at short distances~\cite{Bali:2017gfr,Bali:2018spj,Sufian:2019bol,Bali:2019ecy, Sufian:2020vzb}, on the same 
-lines of what described in Chapter~\ref{ch:scalar_model}.
+lines of what described in chapter~\ref{ch:scalar_model}.
 
 Clearly a global analysis only makes sense after having scrutinised each set of data individually,
 and having understood the systematics that affect them. Chapters~\ref{ch:qpdfNNPDF},~\ref{ch:ppdf_NNPDF} represent a 
