@@ -1,5 +1,5 @@
 \chapter{Lattice observables}
-
+\label{app:scalar_lattice}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Momentum space factorization}
 \label{app:plus}
@@ -7,7 +7,7 @@
 
 In this appendix we report in detail some of the computations performed in
 Sec.~\ref{sec::momentumspace}, to obtain the coefficient $C$ of
-Eq.~\eqref{eq::C0} and its high momentum limit of Eq.~\eqref{eq::matching}. In
+Eq.~\eqref{eq::C0} and its high momentum limit of Eq.~\eqref{eq::matching_scalar}. In
 order to compute the Fourier transform of the coefficient $\tilde{C}$ entering
 Eq.~\eqref{eq::fact0}, we perform a change variable, $\theta = \xi P_3 z_3 $,
 and define $\eta = \frac{y}{\xi}$, so that
@@ -66,7 +66,7 @@ in the limit where $\kappa\to 0$. Defining
     G\left(\eta, \kappa^2\right) = 
     \int_0^1 \frac{d\xi}{\sqrt{\left(\xi - \eta\right)^2 + \kappa^2}}
 \end{equation}
-allows us to rewrite Eq.~\ref{eq::limitApp} above as 
+allows us to rewrite Eq.~\eqref{eq::limitApp} above as 
 \begin{align}
     \label{eq:IntPlusDecomp}
     \int_0^1 d\xi\,
@@ -84,7 +84,7 @@ $G\left(\eta,\kappa^2\right)$, which can be readily evaluated:
     \log \left(4\eta\left(1-\eta\right)\frac{1}{\kappa^2}\right) +
     \mathcal O\left(\kappa^2\right)\, .
 \end{equation}
-The integral on the RHS of \eqref{eq:IntPlusDecomp} is convergent for $\kappa\to
+The integral on the RHS of Eq.~\eqref{eq:IntPlusDecomp} is convergent for $\kappa\to
 0$, and we have
 \begin{align}
     \int_0^1 & d\xi\, 
@@ -114,7 +114,7 @@ Therefore, collecting both contributions,
 As discussed at the end of Sec.~\ref{sec:factorization}, taking the
 small-$z_3^2$ limit in position space is equivalent to taking the large-$P_3$
 limit in momentum space. This can be verified at 1-loop by showing that the
-coefficent functions of Eqs.~\eqref{eq::Cpseudo0} and~\eqref{eq::matching} are
+coefficent functions of Eqs.~\eqref{eq::Cpseudo0} and~\eqref{eq::matching_scalar} are
 related through a Fourier transform, as stated in Eq.~\eqref{eq::check}. Here we
 report the details of the computation. Taking the Fourier transform of the
 small-$z_3^2$ coefficient of Eq.\eqref{eq::Cpseudo0} and defining $\eta= y/x$ we
@@ -207,7 +207,7 @@ the points raised in Ref.~\cite{Rossi:2017muf, Rossi:2018zkn} can be easily seen
 and understood within the toy model presented in this paper, showing explicitly
 how all the moments of quasi-PDFs are indeed divergent; second we discuss how
 such feature does not invalidate the programme presented in
-Sec.~\ref{sec:conclusion}, based on the determination of a parametric form of
+Sec.~\ref{sec:conclusions_scalar}, based on the determination of a parametric form of
 the light-cone PDF based on a discrete set of data for the euclidean matrix
 element.
 
@@ -281,8 +281,8 @@ and considering $n-k = 2m$, we get
 		\int_0^{\infty} \frac{dT}{\sqrt{T}}\, e^{-T } 
 		\int_{-\infty}^{\infty} dy\, y^{2m} e^{-T y^2 \frac{P_3^2}{M^2}} \nonumber \\
 	&\propto \alpha\, \int_0^1 d\xi\, \left(1-\xi\right) \xi^{n-2m}
-		\int_{a^2}^{\infty} \frac{dT}{T^{m +1}}\, e^{-T} \,\, 
-		\stackrel{a^2\rightarrow 0}{\sim}\,\, 
+		\int_{a^2}^{\infty} \frac{dT}{T^{m +1}}\, e^{-T} \,\, \nonumber \\
+		&\stackrel{a^2\rightarrow 0}{\sim}\,\, 
 		\alpha\, \int_0^1 d\xi\, \left(1-\xi\right) \xi^{n-2m}
 		\frac{1}{m} \left(\frac{1}{a^2} \right)^{m}\, ,
 \end{align}
@@ -297,7 +297,7 @@ This relatively simple calculation shows that we obtain divergent contributions
 for the moments of the quasi-PDF and therefore quasi-PDFs cannot be considered
 as the proper euclidean generalization of the light-cone parton distribution.
 This, however, does not invalidate the approach described in
-Sec.~\ref{sec:conclusion}: as mentioned, what really matters is the existence
+Sec.~\ref{sec:conclusions_scalar}: as mentioned, what really matters is the existence
 of a factorization theorem connecting the collinear PDF with a renormalizable
 quantity that can be computed on the lattice, which in our case will be the
 euclidean matrix element of Eq.~\eqref{eq::pIoffe1loopren}, computed for fixed
