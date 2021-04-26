@@ -809,20 +809,21 @@ The same process can be computed in the massive $(n_l)$-flavours scheme as
 Unlike the case of the massless computation, here the sum is on light flavours only, there is no PDF corresponding
 to the heavy quark and the hard cross-section retains the explicit dependence on the heavy quark mass $m_h$.
 In order to match the two computations, we express Eqs.~\eqref{eq:massless}, \eqref{eq:massive} in terms of 
-the massless schemes coupling $\alpha_s^{(n_l+1)}$ and light quarks PDFs $f^{(n_l+1)}_i$,
-$i = g,q,\bar{q}$ using relations of the form
+the massless schemes coupling $\alpha_s^{(n_l+1)}$ and light quarks PDFs 
+\[ f^{(n_l+1)}_i,\,\,\,\,\, i = g,q,\bar{q} \] 
+using relations of the form
 \begin{align}
     \label{eq:matching_alpha}
     &\alpha_s^{(n_l+1)}\left(\mu^2\right) = 
     \alpha_s^{(n_l)}\left(\mu^2\right) 
     + \sum_{k=2}^{\infty} c_k\left(L\right) \left(\alpha_s^{(n_l)}\left(m_h^2\right)\right)^k\,, \\
     \label{eq:matching_PDFs}
-    &f_i^{(n_l+1)}\left(x_1,\mu^2\right) = \int_x^1 \frac{dy}{y} 
+    &f_i^{(n_l+1)}\left(x,\mu^2\right) = \int_x^1 \frac{dy}{y} 
     \sum_{j=g,q,\bar{q}} K_{ij}\left(\frac{x}{y}, L, \alpha_s^{(n_l)}\left(\mu^2\right)\right) f_j^{(n_l)}\left(y,\mu^2\right)\,,
 \end{align}
 where $i = g, q, \bar{q}, h, \bar{h}$ and $L = \log \mu^2/m_h^2$. The coefficients $c_k\left(L\right)$ are polynomial in $L$,
 and the functions $K_{ij}$ can be expressed as a power expansion in $\alpha_s$ with coefficients
-that are polynomial in $L$. The sum over $j$ in Eqs.~\eqref{eq:matching_PDFs}
+that are polynomial in $L$. The sum over $j$ in Eq.~\eqref{eq:matching_PDFs}
 runs over the $n_l$ light flavours and anti-flavour plus the gluon, therefore the first $2n_l+1$
 of these equations relate the light quarks and gluon PDFs in the two schemes and can be inverted in
 order to express the massive scheme PDFs in terms of the massless scheme ones. The last two equations
@@ -870,7 +871,7 @@ In order to match the two results given in Eqs.~\eqref{eq:massless_1},~\eqref{eq
 one should notice that the contributions to the massive scheme expression of Eq.~\eqref{eq:massive_1}
 which do not vanish when $\mu^2 \gg m_h^2$, namely all the constant and logarithmic terms, 
 must also be present in the massless scheme computation.
-The $p$-th order contribution to the sum of these terms, denoted as $B_i^{(0),\,p}$, can be implicitly defined as
+The $p$-th order contribution to the sum of these terms, denoted as $B_{ij}^{(0),\,p}$, can be implicitly defined as
 \begin{align}
     \lim_{m_h\rightarrow 0}\left[B_{ij}^p\left(x_1,x_2,\frac{\mu^2}{m_h^2}\right)- 
     B_{ij}^{(0),\,p}\left(x_1,x_2,\frac{\mu^2}{m_h^2}\right)\right] = 0\,,
