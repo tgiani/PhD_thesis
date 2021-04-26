@@ -27,24 +27,16 @@ This problem was first addressed within the lattice community in Ref.~\cite{Karp
 where a series of possible approaches to tackle the problem of incomplete and discretized Fourier
 transform has been presented.
 
-In this Chapter, following the ideas of Sec.~\ref{sec:conclusions_scalar}
+In this chapter, following the ideas of Sec.~\ref{sec:conclusions_scalar}
 and the formalism described in Sec.~\ref{sec::momentumspace}, we exploit the momentum space factorization
 of quasi-PDFs in PDFs and perturbatively computable coefficients to extract nonsinglet distributions from the data of
 Refs.~\cite{Alexandrou:2018pbm,Alexandrou:2019lfo}, using the {\tt NNPDF} framework described
-in Chapter~\ref{ch:nnpdf_methodology} and treating the lattice data on the same footing as experimental ones.
-
-%The discussion is focused on the
-%quasi-PDFs case, but it can be extended to include data coming from different
-%lattice approaches, like for example pseudo-PDFs
-%\cite{Radyushkin:2017cyf,Orginos:2017kos,Karpie:2018zaz}, fictitious heavy/light
-%quark~\cite{Detmold:2005gg,Braun:2007wv} or current-current correlators
-%\cite{Ma:2014jla,Ma:2017pxb,Sufian:2019bol}, paving the way to a first global
-%lattice QCD analysis~\cite{Ma:2017pxb}.
+in chapter~\ref{ch:nnpdf_methodology} and treating the lattice data on the same footing as experimental ones.
 
 \section{quasi-PDFs in QCD}
 \label{sec:qPDFs_th}
 %
-In this Section we extend the formalism introduced in Chapter~\ref{ch:scalar_model} to the full QCD case,
+In this Section we extend the formalism introduced in chapter~\ref{ch:scalar_model} to the full QCD case,
 giving formulas and expressions which have to be used when working with data coming from lattice QCD simulations,
 and referring to the original publications where they were first presented to further details.
 Denoting by $\Gamma$ a generic Dirac structure and by the suffix $A$ the specific nonsinglet distribution
@@ -108,11 +100,8 @@ quasi-PDF
 As in the case of standard PDFs,
 the matrix elements defining the quasi-PDFs contain UV divergences, and need to be renormalized. The
 main features of the perturbative renormalization of a bilocal operator, 
-as the one appearing in Eq.~\eqref{eq::bareqpdf}, have been described in Chapter~\ref{ch:scalar_model}
+as the one appearing in Eq.~\eqref{eq::bareqpdf}, have been described in chapter~\ref{ch:scalar_model}
 in the context of the scalar theory.
-%Despite the details of the full QCD computation are of course more complicated,
-%see Ref.~\cite{Ishikawa:2017faj}, as mentioned before 
-%its main features and results are well described by the simple example of the previous Chapter.
 When considering the QCD case, for $z_3^2  \neq 0$ 
 in addition to usual ultraviolet (UV) divergences described in the scalar QFT case, 
 specific link-related UV divergences arise, which are regularized by a finite lattice spacing $a$. 
@@ -204,7 +193,7 @@ in both position and momentum space \cite{Li:2020xml, Chen:2020ody, Braun:2020ym
 \label{sec:PDFstoqPDFs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this Section, we describe the lattice data we will use in this Chapter, presenting
+In this section, we describe the lattice data we will use in this chapter, presenting
 briefly the quasi-PDFs matrix elements (MEs) computed in
 Refs.~\cite{Alexandrou:2018pbm, Alexandrou:2019lfo}. Using the results recalled
 in the previous sections, we show that we can factorize such matrix
@@ -245,7 +234,7 @@ setup were computed in Refs.~\cite{Alexandrou:2018pbm,Alexandrou:2019lfo,Chen:20
 described below. For a recent review of other available results for quasi-PDF
 matrix elements, see \eg\ Ref.~\cite{Cichy:2018mum}. 
 
-The data used in this Chapter were computed by the Extended Twisted Mass Collaboration
+The data used in this chapter were computed by the Extended Twisted Mass Collaboration
 (ETMC)\footnote{Until 2018 known as the European Twisted Mass Collaboration.}.
 They used one ensemble of gauge field configurations with two degenerate light
 quarks~\cite{Abdel-Rehim:2015pwa} with masses chosen to reproduce the physical
@@ -325,7 +314,7 @@ source and the sink in nucleon three-point functions. Moreover, unrelated to the
 lattice regularization, there are theoretical uncertainties intrinsic to the
 quasi-distribution approach whose impact should also be assessed~\footnote{Note
 that theoretical uncertainties can be included in global fits of PDFs as
-detailed in Chapter~\ref{ch:th_error}}. For an extensive review of these
+detailed in chapter~\ref{ch:th_error}}. For an extensive review of these
 different uncertainties, we refer to Refs.~\cite{Cichy:2018mum,Monahan:2018euv},
 while a discussion of the systematic effects in the ETMC quasi-PDFs computation
 can be found in Ref.~\cite{Alexandrou:2019lfo}. The latter contains the analysis
@@ -508,9 +497,9 @@ uncertainties are included in S2 and S5. Finally, S3 and S6 are ``pessimistic'',
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{From parton distributions to lattice observables}
 \label{subsec:thpredictions}
-In this Chapter, we aim at describing the data presented in the previous subsection;
+In this chapter, we aim at fitting the data presented in the previous subsection;
 further studies with different data and treatments of systematic
-errors are presented in the next Chapter. Hence, we specialize our discussion
+errors are presented in the next chapter. Hence, we specialize our discussion
 to the case of the unpolarized isovector parton distribution. Following the
 notations of Sec.~\ref{sec:PDFsdef}, the parton distribution $f_{3}$ is
 defined as
@@ -619,8 +608,8 @@ are just another possible observable connected to PDFs through some kind of fact
 From a practical point of view, this means that we can treat the lattice data on
 exactly the same footing as the experimental ones, allowing a smooth and natural
 way to introduce them in a parton distributions fit. The results presented in this and in the following
-Chapter have therefore been produced using the {\tt c++} fitting framework of the {\tt NNPDF} collaboration
-described in Chapter~\ref{ch:nnpdf_methodology}: lattice data and the corresponding systematics
+chapter have therefore been produced using the {\tt c++} fitting framework of the {\tt NNPDF} collaboration
+described in chapter~\ref{ch:nnpdf_methodology}: lattice data and the corresponding systematics
 are implemented in the code, just as they were data for DIS structure functions, and the fitting code
 can be run using the standard methodology, based on neural network parameterization, Monte Carlo replicas generation,
 numerical minimization of the $\chi^2$ and cross validation.
@@ -647,7 +636,7 @@ In order to get theoretical predictions for the data entering the fit,
 the parton distributions have to be evolved from the fitting scale up to the observable scale, and then
 they have to be convoluted with the correct coefficient function. 
 As discussed in Sec.~\ref{sec:FK_nnpdf}, these two steps are performed by mean of the FastKernel tables.
-We show an example of this also in Chapter~\ref{ch:jets}, when describing the implementation of jets
+We show an example of this also in chapter~\ref{ch:jets}, when describing the implementation of jets
 data in a global PDFs determination.
 %
 The same procedure has to be implemented for lattice data as well.
@@ -938,7 +927,7 @@ much difference between different cases.
 \end{figure}
 
 
-To sum up, in this Chapter, we have used the momentum space factorization of quasi-PDFs in order to relate
+To sum up, in this chapter, we have used the momentum space factorization of quasi-PDFs in order to relate
 the unpolarized isovector parton distribution to well-defined matrix elements
 computable on the lattice. Using some of the currently available lattice data,
 we have used such result to extract the nonsinglet distributions $V_3$ and $T_3$
@@ -958,7 +947,7 @@ important the control over the lattice systematics is.
 
 Despite having focused on the quasi-PDFs case, the framework we
 implemented is general enough to allow for the treatment of different lattice data. 
-In the next Chapter we will discuss a similar analysis addressing this time the pseudo-PDFs 
+In the next chapter we will discuss a similar analysis addressing this time the pseudo-PDFs 
 approach. In this case more data are available and, as we are going to see, 
 position space factorization formulas allows for a number of additional advantages.
 
