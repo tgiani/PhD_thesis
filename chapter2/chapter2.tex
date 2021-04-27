@@ -65,8 +65,10 @@ giving the bulk of experimental measurements at the basis of every phenomenologi
 \end{figure}
 
 The kinematic for DIS is reported in Fig.~\ref{fig:DIS_kin}.
-The space-like momentum of the photon (if the initial lepton is an electron or a muon then the scattering is 
-mediated by the exchange of a photon) is given by $q = k - k'$, the centre of mass energy square is $s=\left(P+k\right)^2$ and
+We specify the discussion to the case of neutral current (NC) unpolarized scattering, 
+considering only the contribution associated to photon exchange (which is the dominant one as long as
+we consider energy scales below $m_Z^2$).
+The space-like momentum of the photon is given by $q = k - k'$, the centre of mass energy square is $s=\left(P+k\right)^2$ and
 we denote the invariant mass square of the finale states as $W = \left(P+q\right)^2$.
 It is customary to introduce the kinematic variables
 \begin{align}
@@ -112,16 +114,6 @@ we allow $j_{\alpha}$ to be any electroweak current, there will be more than two
 %
 Computing explicitly the leptonic tensor and plugging Eq.~\eqref{eq:hadronic_tensor} in Eq.~\eqref{eq:DIS_xsec} 
 we can derive a general expression for the double differential cross section of DIS in the Center of Mass frame
-%\begin{align}
-%    \label{general cross xsec DIS}
-%    \frac{d\sigma}{dx\, d} = \frac{4\pi \alpha^2}{x y Q^2}\left[xy^2F_1\left(x,Q^2\right) +\left(1-y\right)F_2\left(x,Q^2\right)\right].
-%\end{align}
-%or\footnote{$F_2\left(x,Q^2\right)-2 x F_1\left(x,Q^2\right) \equiv F_L\left(x,Q^2\right)$}
-%\begin{align}
-%    \label{general cross xsec DIS}
-%    \frac{d\sigma}{dx\, dQ^2} = \frac{4\pi \alpha^2}{Q^4}\left[\left[1+\left(1-y\right)^2\right]F_1\left(x,Q^2\right) 
-%    +\frac{\left(1-y\right)}{x}\left(F_2\left(x,Q^2\right)-2 x F_1\left(x,Q^2\right)\right)\right].
-%\end{align} 
 
 \begin{align}
     \label{general cross xsec DIS}
@@ -133,9 +125,6 @@ are defined as
 \begin{align}
     F_L = F_2 -2xF_1\,, \,\,\,\, F_T = 2F_1\,.
 \end{align}
-%Following the same steps, considering a single parton of momentu $\xi P$ in the initial state,
-%we can introduce partonic structure functions $\hat{F}_1$, $\hat{F}_2$ to parameterized the 
-%parton level cross section $\hat{d\sigma}$ for the lepton-parton scattering.
 
 %
 The partonic cross section $d\hat{\sigma}$ for the scattering of the lepton off a single parton with momentum $\xi P$
@@ -152,11 +141,6 @@ $\hat{F}_1$ and $\hat{F}_2$
 %
 Finally, using the parton model assumption of Eq.~\eqref{eq:parton_model}, we can write
 an explicit expression for the full structure functions
-%\begin{align}
-%    \label{structure functions}
-%    F_i\left(x,Q^2\right)= \int_x^1\frac{d\xi}{\xi}\sum_j f_j\left(\xi\right)\hat{F}_{ij}\left(\frac{x}{\xi},Q^2\right)
-%\end{align}
-%where $F_i = F_1, \, F_2/x $, so that
 
 \begin{align}
     \label{eq:LO DIS xsex}
@@ -169,6 +153,25 @@ giving direct access to the functions $q_{a/H}\left(x\right) $ encoding its inte
 Also, it shows explicitly how in the parton model the structure functions do not depend on the energy scale.
 Such property is known as Bjorken scaling, and its experimental observation was taken as a confirmation
 of the composite nature of hadrons, confirming the picture of the parton model.
+From the analysis of DIS experimental data the following picture emerged: the proton is composed by two $u$-valence quarks
+\[
+    u_v\left(x\right) = u\left(x\right) - \bar{u}\left(x\right)\,,
+\]
+and one $d$-valence quark
+\[
+    d_v\left(x\right) = d\left(x\right) - \bar{d}\left(x\right)\,.
+\]
+plus a \textit{sea} of light quarks made of $q\bar{q}$ pairs.
+Additionally, the following integrals, known as valence sum rules, are satisfied
+\begin{align}
+    &\int_0^1 dx \, u_v\left(x\right) = 2\,,\,\,\,\,\,  
+    \int_0^1 dx \, d_v\left(x\right) = 1\,.
+\end{align}
+Experimentally it was observed that only about the $50\%$ of the proton's momentum is carried by quarks
+\begin{align}    
+    &\sum_q \int_0^1 dx \, x\left[q\left(x\right) + \bar{q}\left(x\right)\right] \simeq 0.5\,,
+\end{align}
+with the remaining momentum fraction associated to gluons.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Improved Parton Model and factorization of collinear singularities}
