@@ -62,7 +62,7 @@ In the first part of this section we revise these general ideas, referring to th
 has been used to produce NNPDF3.1. 
 
 
-\subsection{Monte Carlo PDFs}
+\subsection{The Monte Carlo replica method for error propagation}
 As mentioned before, in order to make PDFs sets an useful tool for making predictions,
 a faithful estimation of the errors affecting the analysis is necessary. A possible way
 to address the problem is to determine the probability distribution of the PDFs set $q\left(x\right)$
@@ -315,14 +315,15 @@ validation sets and the $\chi^2$ function of the training set is minimized.
 
 
 
-\section{The n3fit environment}
+\section{Towards NNPDF4.0}
 \label{sec:n3fit}
 The methodology described in the previous section has been completely revised and extended within the new
 {\tt n3fit} environment, first presented in Ref.~\cite{Carrazza:2019mzf}.
-In this section we describe the {\tt n3fit} general features, focusing in particular
+This framework will be used to produce NNPDF4.0, the next public PDFs set by the NNPDF collaboration.
+In this section we describe some of the {\tt n3fit} general features, focusing in particular
 on the implementation of PDFs positivity and integrability. 
-Additionally, we will present some results regarding the problem of the fit basis independence, addressed here for the first time
-within this environment.
+Additionally, we will present some results regarding the problem of the fit basis independence,
+addressed here for the first time within this environment.
 
 \subsection{Architecture and general structure}
 The {\tt n3fit} code is a python-based framework, written using an object-oriented approach and
