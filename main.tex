@@ -4,17 +4,11 @@
 % Preamble commands go here
 \usepackage{customisations}
 \usepackage[Bjornstrup]{fncychap}
-
-
-%% Some of the below packages may be useful to thesis writers in Physics
-%% Googling `latex <packagename>' will usually give you some documentation
-% \usepackage[load-configurations=abbreviations]{siunitx} % siunitx typesets physical units in a consistent manner
-\usepackage{booktabs} % booktabs provides professional formatting commands for tables
-\usepackage{amsmath} % amsmath provides extra maths symbols
-\usepackage{textcomp} % textcomp provides extra text symbols (like a degrees celsius symbol)
+\usepackage{booktabs} 
+\usepackage{amsmath} 
+\usepackage{textcomp} 
 \usepackage{xcolor}
 \usepackage{slashed}
-
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{afterpage}
@@ -22,7 +16,6 @@
 \usepackage{multirow}
 \usepackage{url}
 \usepackage{float}
-\usepackage{afterpage}
 \usepackage{url}
 \usepackage{tikz}
 \usetikzlibrary{arrows}
@@ -34,15 +27,10 @@
 \usepackage{tikz-feynman}
 \tikzfeynmanset{compat=1.0.0}
 \usepackage{simpler-wick}
+%\usepackage{nopageno}
+
 
 \input{tikz_setup}
-
-% \usepackage{tikz} % tikz is a package for drawing diagrams and adding annotations to figures
-% \usepackage{threeparttable} % threeparttable allows for adding notes to tables
-% \usepackage{eps2pdf} % eps2pdf allows background transformation of eps files to pdfs so they 
-%						work seamlessly with pdflatex. If using this with the LaTeX editor Kile,
-%						you need to add --shell-escape before '%source', in
-%						Settings -> Configure Kile... -> Tools -> Build -> build_pdflatex
 
 
 \graphicspath{{./chapter2/figs/}{./chapter3/figs/}{./chapter4/figs/}{./chapter5/figs/}{./chapter6/figs/}{./chapter8/figs/}{./chapter9/figs/}}
@@ -62,14 +50,26 @@
 \newcommand{\order}[1]{{\cal O}(#1)}
 \newcommand{\msbar}{$\overline{\mathrm{MS}}$}  
 \newcommand{\MSb}{\overline{\mathrm{MS}}}
-\newcommand{\MMSb}{{\rm M}\overline{\mathrm{MS}}}     
+\newcommand{\MMSb}{{\rm M}\overline{\mathrm{MS}}} 
 \def \z{\zeta}
-% End preamble
+\newcommand\myemptypage{
+    \null
+    \thispagestyle{empty}
+    \addtocounter{page}{-1}
+    \newpage
+}
+\def\blankpage{%
+    \clearpage%
+    \thispagestyle{empty}%
+    %\addtocounter{page}{-1}%
+    \null%
+    \clearpage
+}
 
-% REPLACE THESE with your thesis title, your name and the date of submission of the thesis
-\title{Towards a new generation of Parton Distribution Functions: from high-precision collider data to lattice QCD}
+\title{Towards a new generation of Parton Distribution Functions: from high-precision collider data to lattice
+Quantum Chromodynamics }
 \author{Tommaso Giani}
-\date{February 2021} % of submission
+\date{April 2021} % of submission
 
 \begin{document}
 
@@ -77,11 +77,20 @@
 % See customisations.sty to modify the title page or declaration
 \singlespacing
 \maketitlepage
-\frontmatter
 \eighteenptleading
+\frontmatter
 \input{declaration}
-\input{acknowledgments.tex}
+\input{laysummary}
 \input{abstract}
+
+\cleardoublepage
+\vspace*{\stretch{1}}
+{\itshape A tutti i miei nonni
+e a Franco Sar}
+\vspace{\stretch{2}}
+\cleardoublepage
+
+\input{acknowledgments}
 \clearpage
 \newpage
 \tableofcontents
@@ -111,18 +120,8 @@
 \input{appendix/qpdf.tex}
 \input{appendix/ppdf.tex}
 
-
-
-
-
 \clearpage
 \newpage
-%\singlespace
-
-%\phantomsection
-%\addcontentsline{toc}{chapter}{\bibname}
-% Choose a bibliography style to suit your taste here
-% This one was downloaded from http://web.reed.edu/cis/help/latex/bibtexstyles.html (June 2012)
 \bibliographystyle{UTPstyle}
 \bibliography{main, chapter1/chapter1, chapter2/chapter2, chapter3/chapter3, 
 chapter4/chapter4, chapter5/chapter5, chapter6/chapter6, chapter7/chapter7, chapter9/chapter9}
