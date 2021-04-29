@@ -180,7 +180,7 @@ five in NNPDF1.0 (up and down quarks and antiquarks, gluon),
 seven in NNPDF1.1 (up, down, strange quarks and antiquarks, gluon) and eight in NNPDF3.1
 where the total charm PDF was fitted from data for the first time.
 Each flavour is independently parameterized using a neural network,
-with architecture 2-5-3-1, represented in Fig.~(\ref{nn}). 
+with architecture 2-5-3-1, represented in fig.~(\ref{nn}). 
 The momentum fraction $x$ enters the two input nodes as $x$ and $\log{x}$, followed by two hidden layers with a sigmoid activation function and an output layers with a single node, 
 associated with a linear activation function. 
 This architecture is supplemented with a preprocessing polynomial factor $x^{-\alpha}\left(1-x\right)^{\beta}$ which controls the PDFs behaviour
@@ -341,7 +341,7 @@ The two main methodological changes in {\tt n3fit} concern the architecture and 
 rather than using eight independent neural networks, each one giving as output a particular flavour, in
 the new environment a single net with an eight-dimensional output is used; additionally, gradient descent
 methods are implemented to replace the genetic algorithm described before.
-The new architecture, graphically depicted in Fig.~\ref{fig:nn_n3fit}, allows to study and take into account 
+The new architecture, graphically depicted in fig.~\ref{fig:nn_n3fit}, allows to study and take into account 
 cross-correlations between different PDFs,
 while the new gradient descent minimizers have been proved to produce more stable fits than those 
 obtained using the genetic algorithm. 
@@ -677,11 +677,11 @@ conditions to be satisfied during the fit, they provide meaningful physical hint
 the experimental data.
  
 %
-In Fig.~\ref{fig:distances} we show the distance between the two fits, quantifying the effect of theoretical
+In fig.~\ref{fig:distances} we show the distance between the two fits, quantifying the effect of theoretical
 constraints at the PDFs level. For the definition of the distance between PDFs sets, see App.~\ref{app:estimators}.
 While in the small-$x$ region the difference between the two fits remains below 
 one-sigma, in the medium- and large-$x$ regions we find differences of up to
-two-sigmas. The evolution basis flavours $V$, $V_3$, $V_8$ and $T_8$ are plotted in linear scale in Fig.~\ref{fig:pdfs_plots}.
+two-sigmas. The evolution basis flavours $V$, $V_3$, $V_8$ and $T_8$ are plotted in linear scale in fig.~\ref{fig:pdfs_plots}.
 Inspection of these plots show an important reduction of the PDFs error for the flavours $V$, $V_3$, $V_8$,
 and a change in the PDFs shape and central value to satisfy the new positivity constraints, which affects also the distribution
 $T_8$.
@@ -743,10 +743,10 @@ points $x_i = 10^{-5}, 10^{-4}, 10^{-3}$.
 The fit quality is again basically unchanged, with a total $\chi^2$ which is slightly better than the corresponding 
 value in the evolution basis: $\chi_{\text{flav}}^2=1.13$ to be compared with the value $\chi_{\text{evol}}^2=1.15$ 
 from Tab.~\ref{tab:experiments_chi2}.
-The resulting PDFs plotted in the evolution basis are reported in Fig.~\ref{fig:pdfs_plots_flav_vs_evol}, 
+The resulting PDFs plotted in the evolution basis are reported in fig.~\ref{fig:pdfs_plots_flav_vs_evol}, 
 where they are compared with the evolution basis fit presented in the previous section.
 The plots are shown in linear scale, in order to highlight the $x$-region where more experimental data are available.
-By inspection of Fig.~\ref{fig:pdfs_plots_flav_vs_evol} it is clear that fit basis independence is achieved,
+By inspection of fig.~\ref{fig:pdfs_plots_flav_vs_evol} it is clear that fit basis independence is achieved,
 showing how, as expected, as long as data are present and physical constraints given by positivity, integrability and sum rules
 consistently implemented, different choices for the fit basis do no change the final PDFs.
 It is worth stressing that this result, even if expected, is not trivial. When we change fit basis a number
