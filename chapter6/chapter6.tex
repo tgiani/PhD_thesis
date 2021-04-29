@@ -7,7 +7,7 @@ distribution (PDF) on the same footing as light-quark PDFs, namely, to
 parametrize it and extract it from data, rather than to take it
 as radiatively generated from the gluon using  perturbative matching
 conditions. This is likely to be
-due to the fact that the matching conditions Eq.~\ref{eq:matching_PDFs} are only known to
+due to the fact that the matching conditions Eq.~\eqref{eq:matching_PDFs} are only known to
 the lowest nontrivial order, which may well be subject to large higher
 order
 corrections, as revealed by the strong dependence of results on the
@@ -170,7 +170,7 @@ The general idea of the FONLL method is to realize that these are just
 two different renormalization schemes: the massive scheme is a
 decoupling scheme, and the massless scheme is a minimal subtraction
 scheme. So the two calculations can be simply matched by re-expressing
-both in the same renormalization scheme using Eqs.~\ref{eq:matching_alpha},~\ref{eq:matching_PDFs}
+both in the same renormalization scheme using Eqs.~\eqref{eq:matching_alpha},~\eqref{eq:matching_PDFs}
 and then subtracting common contributions. In practice, this is done by expressing the massive
 scheme computation in terms of the PDFs and $\alpha_s$ of the
 massless scheme, and then adding to it the difference $\sigma ^{\rm
@@ -290,7 +290,7 @@ closely follows the corresponding construction for electroproduction,
 presented in Refs.~\cite{Ball:2015tna,Ball:2015dpa}, to which we refer
 for more details. In comparison to the matched-$b$ FONLL of
 Refs.~\cite{Forte:2015hba,Forte:2016sja} the massive scheme
-contribution to Eq.~(\ref{eq:fonlldef}) includes an extra contribution:
+contribution to Eq.~\eqref{eq:fonlldef} includes an extra contribution:
 \begin{align}
   \label{eq:delta-i}
   \sigma_{\text{FONLL}_P} &= \sigma_{\text{FONLL}_M} +
@@ -550,11 +550,7 @@ while we have implemented the new terms $\delta\sigma_P^{\rm massive}$
 Eq.~(\ref{eq:xs4fs-i})
 and their
 massless limit in a new version of  {\tt bbhfonll}, following
-the expressions reported in Appendix~\ref{sec:app-coeff}, and is
-available at
-\begin{center}
-\url{https://gitlab.com/dnapoletano/bbh-intrinsic-public}.
-\end{center}
+the expressions reported in Appendix~\ref{sec:app-coeff}.
 Both codes use the LHAPDF~\cite{Buckley:2014ana} package.
 
 We use the  NNPDF3.1 NNLO set of parton distributions with
@@ -571,25 +567,6 @@ the $b$-PDF we then consider, for the sake of argument, a $b$ PDF
 equal to that which would be obtained by using the matching condition
 at $\mu_b = 2/3 m_b$ or $\mu_b = 1/2 m_b$, and then evolving up to
 $Q=m_b$ where the initial PDF is given.
-% \begin{figure}[ht]
-%   \centering
-%   \includegraphics[width=0.49\linewidth]{figs/mur_var_pdf4lhc_.pdf}
-%   \includegraphics[width=0.49\linewidth]{figs/muf_var_pdf4lhc_.pdf}
-%   \caption{Same as Fig.~\ref{fig:scale-var} but computed with the
-%     PDF4LHC set.
-%   }
-%   \label{fig:scale-var-pdf4lhc}
-% \end{figure}
-
-
-%Our reference PDF set is the NNPDF31\_nnlo\_as\_0118~\cite{Ball:2017nwa},
-%and, for consistency, in our calculation we set $m_b=4.92$~GeV.
-%Starting from this set, we construct our intrinsic $b$ component
-%by lowering the $b$-quark threshold to either $\mu_b = 2/3 m_b$ or $\mu_b = 1/2% m_b$.
-%We obtain these modified set using the APFEL evolution library~\cite{Bertone:20%13vaa}.
-%In the rest, results for the standard PDF case are shown with a solid
-%line, while the $\kappa = 2/3$ and the $\kappa = 1/2$ cases are plotted in dash%ed lines
-%of decreasing line-widths.
 
 \begin{figure}[htbp]
   \centering

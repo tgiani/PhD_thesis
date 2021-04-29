@@ -425,20 +425,23 @@ In the following we address each of them, discussing the way they are implemente
 different fit bases.
 
 %
-\paragraph{Sum rules.}
-Energy conservation and the valence structure of the proton imply momentum and valence sum rules
-given by 
+\paragraph{Sum rules.} 
+\label{sec:sumrules}
+As seen in Sec.~\ref{sec:parton_model} in the context of the parton model, the valence structure
+of the proton implies the valence sum rules Eq.~\eqref{eq:valence_sumrules_parton_model}.
+Additionally, energy conservation implies momentum sum rules, given by
 \begin{align}
     \label{eq:momentum_sumrule}
     \int_0^1 dx\, x\left(g\left(x\right) + \Sigma\left(x\right)\right) = 1\,. 
 \end{align}
-and
+In QCD these sum rules remain valid, and provide additional information to constrain parton distributions.
+We can rewrite Eq.~\eqref{eq:valence_sumrules_parton_model} in terms of the evolution basis
 \begin{align}
     \label{eq:valence_sumrules}
     \int_0^1& dx\, V\left(x\right) = \int_0^1 dx\, V_8\left(x\right) = 3\,,   \,\,\,
     \int_0^1 dx\, V_3\left(x\right) = 1\,.
 \end{align} 
-These are implemented in the fit multiplying the distributions $V$, $V_3$, $V_8$ and $g$ by suitable normalization factors
+and implement these conditions in the fit multiplying the distributions $V$, $V_3$, $V_8$ and $g$ by suitable normalization factors
 $A_V$, $A_{V_3}$, $A_{V_8}$ and $A_g$ defined as
 \begin{align}
     A_V = A_{V_8} = \frac{3}{\int_0^1 dx\, V\left(x\right)}\,,\,\,
@@ -449,6 +452,33 @@ so that Eqs.~\eqref{eq:momentum_sumrule}, \eqref{eq:valence_sumrules} are automa
 satisfied.
 Such multiplication happens after rotating the fit basis back into Eq.~\eqref{eq::fkdistributions},
 so that the procedure remains the same independently on the choice of the fit basis.
+
+%
+Additional information about PDFs can be obtained by the Gottfried sum rule, given by the integral
+\begin{align}
+    \label{eq:gottfried_sumrule}
+    I_G = \int_0^1 \frac{dx}{x} \left[F_2^{lp} - F_2^{ln}\right]\,,
+\end{align}
+where $F_2^{lp}$ and $F_2^{ln}$ are the structure functions of charged lepton-proton and charged lepton-nucleon DIS.
+Eq.~\eqref{eq:gottfried_sumrule} can be expressed as
+\begin{align}
+    \label{eq:gottfried_sumrule_1}
+    I_G &= \frac{1}{3}\int_0^1 dx\,\left(u_v\left(x\right) - d_v\left(x\right)\right) 
+    + \frac{2}{3}\int_0^1 dx\,\left(\bar{u}\left(x\right) - \bar{d}\left(x\right)\right) \nonumber \\
+    & = \frac{1}{3} + \frac{2}{3}\int_0^1 dx\,\left(\bar{u}\left(x\right) - \bar{d}\left(x\right)\right)\,. 
+\end{align}
+Experimental analyses of the deviation of $I_G$ from the nominal value of $1/3$ \cite{Amaudruz:1991at},
+provide measurements of the quark flavour asymmetry of the sea $\int dx \left(\bar{u} - \bar{d}\right)$.
+Unlike the case of the valence sum rules, no specific value for the Gottfried sum rule is imposed
+during the fit.
+However the value of $I_G$ can be directly related to the integral of distribution $T_3$ 
+\begin{align}
+    \label{eq:T3_integral}
+    I_G = \frac{1}{3}\int_0^1 dx\, T_3\left(x\right)\,. 
+\end{align}
+Eq.~\eqref{eq:T3_integral} shows how, in order to have a well defined Gottfried sum rule, the distribution
+$T_3$ has to be integrable in the interval $\left(0,1\right)$, providing information for its small-$x$ behaviour.
+
 
 
 \paragraph{Large- and small-$x$ behaviour.} 
@@ -535,10 +565,11 @@ This is an important feature that a reliable PDFs set should have: in those kine
 are missing, the PDFs error should increase accordingly.
 There are however some physical considerations that can be made to further constrain PDFs at small-$x$, 
 which can be used to reduce the huge error band in this kinematic region. 
-In order to have well defined momentum and valence sum rules the distributions $V, V_3, V_8, xg, x\Sigma$ 
-have to be integrable when $x$ decrease to zero.
-Moreover, in order to have well defined Gottfried sum rules, also the integrals of $T_3$ and $T_8$ over the interval
-$\left(0,1\right)$ have to be finite. 
+As seen in Sec.~\ref{sec:sumrules}, in order to have well defined momentum and valence sum rules
+the distributions $V, V_3, V_8, xg, x\Sigma$ have to be integrable when $x$ decrease to zero.
+Moreover, in order to have well defined Gottfried sum rules, also the integral of $T_3$ over the interval
+$\left(0,1\right)$ has to be finite. 
+Assuming an equal small-$x$ behaviour of all the light sea quarks, the same is true also for the distribution $T_8$.
 
 This means that, denoting as $q\left(x,Q_0^2\right)$ a generic integrable PDF at the fitting scale, as $x$ decreases to zero
 such distribution cannot raise faster than $1/x$. In other words the following limit has to be verified
