@@ -3,7 +3,7 @@
 As seen in the previous chapter, factorization theorems allow for a separation between contributions 
 related to different distance scales: while short distance
 effects can be obtained through the perturbative computation of partonic matrix elements, 
-long-distance contributions are collected in the universal PDFs $q\left(x,Q^2\right)$. As seen in Sec.~\ref{sec:DGLAP},
+long-distance contributions are collected in the universal PDFs $q\left(x,Q^2\right)$. As seen in sec.~\ref{sec:DGLAP},
 knowing the functional form of the PDFs at a given initial scale $Q_0^2$, 
 their dependence on the generic energy scale $Q^2$ can be computed by solving the DGLAP evolution equations.
 However the dependence on $x$ would be computable only solving QCD in a nonperturbative domain, 
@@ -137,8 +137,8 @@ has been rapidly recognized, and more and more complex models have been adopted 
 %
 The use of neural networks as basic functional form for PDFs was first suggested in 2002 \cite{Forte:2002fg},
 in the context of the determination of the DIS structure function $F_2$. 
-The idea was further developed in Ref.~\cite{DelDebbio:2004xtd} and applied for the first time to quark
-distributions in Ref.~\cite{DelDebbio:2007ee}. This first suggestion was then developed in the context of 
+The idea was further developed in ref.~\cite{DelDebbio:2004xtd} and applied for the first time to quark
+distributions in ref.~\cite{DelDebbio:2007ee}. This first suggestion was then developed in the context of 
 global fits of PDFs by the NNPDF collaboration through a series of intermediate steps 
 \cite{Ball:2008by, Ball:2010de, Ball:2012cx, Ball:2014uwa}, the last of which in 2017, with the
 release of the PDFs set NNPDF3.1 \cite{Ball:2017nwa}.
@@ -216,7 +216,7 @@ which in terms of quarks and antiquarks distributions are given by
 \end{figure}
 The preprocessing exponents $\alpha_i$ and $\beta_i$ are randomized, by choosing a different value for each replica
 within a suitable range. This is determined in a fully self-consistent way: the effective exponents, defined in
-Ref.~\cite{Ball:2014uwa} as 
+ref.~\cite{Ball:2014uwa} as 
 \begin{align}
     \label{eq:effective_exp}
     \alpha_{eff,i}\left(x\right) = \frac{\log q_i\left(x\right)}{\log 1/x}\,, \,\,\,\,
@@ -249,7 +249,7 @@ expressed as a function of the free parameters;
 $C_{ij}$ is the covariance matrix, which takes into account both statistical and systematic uncertainties,
 as given by the experimental collaborations.
 In order to avoid a fitting bias, multiplicative uncertainties required to be handled with a specific method
-denoted as $t_0$ prescription, which as been developed in Ref.~\cite{Ball:2009qv} and implemented in all the following
+denoted as $t_0$ prescription, which as been developed in ref.~\cite{Ball:2009qv} and implemented in all the following
 NNPDF PDFs determination.
 
 %
@@ -284,8 +284,8 @@ value of the validation error is the one taken as the fit result.
 In order to get expressions for physical observables, PDFs have to be
 evolved up to the physical scale $Q$ of the hard processes and finally 
 combined with partonic matrix elements. These steps happen through two separate convolutions, first with
-the evolution kernel, see Sec.~\ref{sec:DGLAP}, which solves DGLAP evolution equations and second with the hard cross sections.
-Such convolutions happen by means of FastKernel (FK) tables, introduced and validated in Refs.~\cite{Ball:2010de,Bertone:2016lga}
+the evolution kernel, see sec.~\ref{sec:DGLAP}, which solves DGLAP evolution equations and second with the hard cross sections.
+Such convolutions happen by means of FastKernel (FK) tables, introduced and validated in refs.~\cite{Ball:2010de,Bertone:2016lga}
 and used in any subsequent NNPDF analysis.
 Each PDFs is projected on a suitable basis functions
 \begin{align}
@@ -318,7 +318,7 @@ validation sets and the $\chi^2$ function of the training set is minimized.
 \section{Towards NNPDF4.0}
 \label{sec:n3fit}
 The methodology described in the previous section has been completely revised and extended within the new
-{\tt n3fit} environment, first presented in Ref.~\cite{Carrazza:2019mzf}.
+{\tt n3fit} environment, first presented in ref.~\cite{Carrazza:2019mzf}.
 This framework will be used to produce NNPDF4.0, the next public PDFs set by the NNPDF collaboration.
 In this section we describe some of the {\tt n3fit} general features, focusing in particular
 on the implementation of PDFs positivity and integrability. 
@@ -366,10 +366,10 @@ While the former represents the equivalent of the one given in Eq.~\eqref{eq:nnp
 the latter each quark, antiquark and the gluon are independently parameterized. 
 The choice of the fit basis should not affect the final results, however different choices might be more
 convenient from a numerical point of view, and different architecture setups might be required
-when changing the basis. We will extensively discuss these points in Sec.~\ref{sec:fitbasis}.
+when changing the basis. We will extensively discuss these points in sec.~\ref{sec:fitbasis}.
 Depending on our choice for the fit basis, each output can be supplemented with a suitable preprocessing
 polynomials, and with normalization factors to impose momentum and valence sum rules,
-as discussed in Sec.~\ref{sec:theory_constraints}
+as discussed in sec.~\ref{sec:theory_constraints}
 
 \subsection{Fit basis}
 \label{sec:fitbasis}
@@ -427,7 +427,7 @@ different fit bases.
 %
 \paragraph{Sum rules.} 
 \label{sec:sumrules}
-As seen in Sec.~\ref{sec:parton_model} in the context of the parton model, the valence structure
+As seen in sec.~\ref{sec:parton_model} in the context of the parton model, the valence structure
 of the proton implies the valence sum rules Eq.~\eqref{eq:valence_sumrules_parton_model}.
 Additionally, energy conservation implies momentum sum rules, given by
 \begin{align}
@@ -565,7 +565,7 @@ This is an important feature that a reliable PDFs set should have: in those kine
 are missing, the PDFs error should increase accordingly.
 There are however some physical considerations that can be made to further constrain PDFs at small-$x$, 
 which can be used to reduce the huge error band in this kinematic region. 
-As seen in Sec.~\ref{sec:sumrules}, in order to have well defined momentum and valence sum rules
+As seen in sec.~\ref{sec:sumrules}, in order to have well defined momentum and valence sum rules
 the distributions $V,\, V_3,\, V_8,\, xg,\, x\Sigma$ have to be integrable when $x$ decrease to zero.
 Moreover, in order to have well defined Gottfried sum rules, also the integral of $T_3$ over the interval
 $\left(0,1\right)$ has to be finite. 
@@ -635,7 +635,7 @@ next section we will repeat the exercise in the flavour basis, in order to check
 fit basis independence.
 
 %
-The baseline dataset we will consider here is the one of the NNPDF3.1 PDFs set, presented and discussed in Ref.~\cite{Ball:2017nwa}.
+The baseline dataset we will consider here is the one of the NNPDF3.1 PDFs set, presented and discussed in ref.~\cite{Ball:2017nwa}.
 This includes: fixed-target neutral-current 
 (NC) DIS structure function data from NMC~\cite{Arneodo:1996kd,Arneodo:1996qe}, 
 SLAC~\cite{Whitlow:1991uw} and BCDMS~\cite{Benvenuti:1989rh}; charged-current 
@@ -656,7 +656,7 @@ Khachatryan:2016mqs,Khachatryan:2015uqb,Khachatryan:2015oqa}
 and LHCb~\cite{Aaij:2012vn,Aaij:2012mda,Aaij:2015gna,Aaij:2015zlq};
 ATLAS and CMS single-inclusive jet data~\cite{Aad:2014vwa, Khachatryan:2015luy}.
 In total this baseline dataset contains $n_{\rm dat}=4287$
-datapoints, see Ref.~\cite{Ball:2017nwa} for more details.
+datapoints, see ref.~\cite{Ball:2017nwa} for more details.
 
 %
 When working in the evolution basis the small-$x$ behaviour is largely controlled by the preprocessing
@@ -724,14 +724,14 @@ and in a non negligible change in their central value.
 
 
 \subsection{Fit basis independence}
-As described in Sec.~\ref{sec:fitbasis}, different choices for the specific PDFs which are independently
+As described in sec.~\ref{sec:fitbasis}, different choices for the specific PDFs which are independently
 parameterized are possible.
 In this section we present results for a fit run in the flavour basis, using the same methodology
 implemented for the evolution basis (same minimization algorithm and architecture parameters) 
 and imposing the theoretical constraints as described previously.
 
 %
-As mentioned in Sec.~\ref{sec:theory_constraints}, when working in the flavour basis 
+As mentioned in sec.~\ref{sec:theory_constraints}, when working in the flavour basis 
 no small-$x$ preprocessing is used. This implies that the small-$x$ behaviour of the PDFs, which is unconstrained 
 by experimental data, can only be controlled through Lagrange multipliers.
 Because of this reason, for integrable distributions more stringent constraints are used than those implemented

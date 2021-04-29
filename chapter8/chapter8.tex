@@ -27,8 +27,8 @@ This problem was first addressed within the lattice community in Ref.~\cite{Karp
 where a series of possible approaches to tackle the problem of incomplete and discretized Fourier
 transform has been presented.
 
-In this chapter, based on Ref.~\cite{Cichy:2019ebf}, following the ideas of Sec.~\ref{sec:conclusions_scalar}
-and the formalism described in Sec.~\ref{sec::momentumspace}, we exploit the momentum space factorization
+In this chapter, based on Ref.~\cite{Cichy:2019ebf}, following the ideas of sec.~\ref{sec:conclusions_scalar}
+and the formalism described in sec.~\ref{sec::momentumspace}, we exploit the momentum space factorization
 of quasi-PDFs in PDFs and perturbatively computable coefficients to extract nonsinglet distributions from the data of
 Refs.~\cite{Alexandrou:2018pbm,Alexandrou:2019lfo}, using the {\tt NNPDF} framework described
 in chapter~\ref{ch:nnpdf_methodology} and treating the lattice data on the same footing as experimental ones.
@@ -36,7 +36,7 @@ in chapter~\ref{ch:nnpdf_methodology} and treating the lattice data on the same 
 \section{quasi-PDFs in QCD}
 \label{sec:qPDFs_th}
 %
-In this Section we extend the formalism introduced in chapter~\ref{ch:scalar_model} to the full QCD case,
+In this section we extend the formalism introduced in chapter~\ref{ch:scalar_model} to the full QCD case,
 giving formulas and expressions which have to be used when working with data coming from lattice QCD simulations,
 and referring to the original publications where they were first presented to further details.
 Denoting by $\Gamma$ a generic Dirac structure and by the suffix $A$ the specific nonsinglet distribution
@@ -123,7 +123,7 @@ $P$, unlike PDFs, which are defined to be invariant under Lorentz boosts. Also,
 their support is defined to be the full real axis.
 
 The interest in quasi-PDFs comes from the potential to relate them to light-cone
-PDFs in the limit of high values of $P_z$, as detailed in Sec.~\ref{sec::momentumspace};
+PDFs in the limit of high values of $P_z$, as detailed in sec.~\ref{sec::momentumspace};
 factorization allows us to rewrite the quasi-PDFs as a convolution of the
 light-cone PDFs with a coefficient function that can be computed in perturbation
 theory, up to corrections that are suppressed by inverse powers of $P_z$.
@@ -159,7 +159,7 @@ divergence violates vector current conservation, \ie\ the integral of the
 matched PDF is different from the integral of the input quasi-PDF, and not
 necessarily equal to 1 over the whole integration range. As a remedy, a modified
 matching expression, which is given explicitly in Eq.~\eqref{eq::matching} of
-App.~\ref{app:coefficients}, was proposed in Ref.~\cite{Alexandrou:2018pbm}. It
+app.~\ref{app:coefficients}, was proposed in Ref.~\cite{Alexandrou:2018pbm}. It
 consists in resorting to pure plus functions when subtracting the logarithmic
 divergence in self-energy corrections. However, this is an additional
 subtraction with respect to the minimal subtraction of the $\MSb$ scheme and
@@ -494,7 +494,7 @@ In this chapter, we aim at fitting the data presented in the previous subsection
 further studies with different data and treatments of systematic
 errors are presented in the next chapter. Hence, we specialize our discussion
 to the case of the unpolarized isovector parton distribution. Following the
-notations of Sec.~\ref{sec:PDFsdef}, the parton distribution $f_{3}$ is
+notations of sec.~\ref{sec:PDFsdef}, the parton distribution $f_{3}$ is
 defined as
 \begin{align}
 	f_{3}\lp x, \mu^2 \rp = 
@@ -514,7 +514,7 @@ theorem in Eq.~\eqref{eq::pdftoqpdf} becomes
 \end{align}
 where the quasi-PDF is the one given by $\Gamma = \gamma^0$ and the explicit
 expression of the matching coefficients is given in
-App.~\ref{app:coefficients}. Starting from the definition of quasi-PDFs
+app.~\ref{app:coefficients}. Starting from the definition of quasi-PDFs
 given in Eq.~\eqref{eq::bareqpdf}, it is clear that the lattice ME is given by the
 inverse Fourier transform of Eq.~\eqref{eq::factorization}, which yields an
 equation relating the light-cone PDFs on the right hand side to the lattice observable:
@@ -567,11 +567,11 @@ The equations above relate the position space matrix elements computable on the 
 the collinear PDFs. Similar expressions were worked out in Ref.~\cite{Bali:2017gfr} in the context of
 the pion distribution amplitude.   
 The proof of Eqs.~\eqref{eq::V3factorization}, \eqref{eq::T3factorization} does require some
-care, and it is fully worked out in App.~\ref{app:coefficients}. The coefficients $\mathcal{C}_3^{\text{Re},\text{Im}}$
+care, and it is fully worked out in app.~\ref{app:coefficients}. The coefficients $\mathcal{C}_3^{\text{Re},\text{Im}}$
 are related to the real and imaginary part of the Fourier transform of the matching coefficient 
 $C_3$ appearing in Eq.~\eqref{eq::factorization}. Since the latter is defined in terms of plus distributions,
 the computation is quite involved, and the explicit expression of $\mathcal{C}_3^{\text{Re},\text{Im}}$
-is obtained in App.~\ref{app:coefficients}, making the action of the plus distributions explicit before taking the Fourier transform.  
+is obtained in app.~\ref{app:coefficients}, making the action of the plus distributions explicit before taking the Fourier transform.  
 A discussion about the convergence of the
 integrals involved is also reported there. The above results show how fixed $z$
 matrix elements defining the quasi-PDF in position space give direct access to
@@ -596,7 +596,7 @@ constrain the output much more than what the standard DIS convolution can do.
 
 \section{Fit setting and FastKernel implementation}
 \label{sec:fk_qpdf}
-The main point of the discussion in Sec.~\ref{sec:conclusions_scalar} is that the lattice equal-time correlators 
+The main point of the discussion in sec.~\ref{sec:conclusions_scalar} is that the lattice equal-time correlators 
 are just another possible observable connected to PDFs through some kind of factorization theorem.
 From a practical point of view, this means that we can treat the lattice data on
 exactly the same footing as the experimental ones, allowing a smooth and natural
@@ -614,7 +614,7 @@ covariance matrix is
 \end{align}
 where $i$ and $j$ run over the lattice points and $\sigma_{i,s}$, $\sigma_{i,k}$ 
 are respectively the total statistical and the set of  systematical uncertainties
-of the $i$-th lattice point, described in Sec.~\ref{subsec:sys}.
+of the $i$-th lattice point, described in sec.~\ref{subsec:sys}.
 The covariance matrix enters both the definition of the $\chi^2$  
 and the generation of Monte Carlo replicas,
 being therefore important for both the central value of the fit and the final PDFs error. A solid knowledge 
@@ -628,12 +628,12 @@ how well these are able to constrain the PDFs and to compare lattice results wit
 In order to get theoretical predictions for the data entering the fit, 
 the parton distributions have to be evolved from the fitting scale up to the observable scale, and then
 they have to be convoluted with the correct coefficient function. 
-As discussed in Sec.~\ref{sec:FK_nnpdf}, these two steps are performed by mean of the FastKernel tables.
+As discussed in sec.~\ref{sec:FK_nnpdf}, these two steps are performed by mean of the FastKernel tables.
 We show an example of this also in chapter~\ref{ch:jets}, when describing the implementation of jets
 data in a global PDFs determination.
 %
 The same procedure has to be implemented for lattice data as well.
-As seen in Sec.~\ref{subsec:thpredictions}, in this case the
+As seen in sec.~\ref{subsec:thpredictions}, in this case the
 integration of the parton distributions over their full support is needed. This
 makes the form of the convolution $\circledast$ more complicated than the one we
 usually have for high-energy observables, which makes the general implementation of 
@@ -652,7 +652,7 @@ $\mu_0^2$, by first evolving the parton distribution up to the scale $\mu^2$,
 and then convoluting it with the coefficents
 $\mathcal{C}_3^{\text{Re},\text{Im}}$ defined in
 Eqs.~\eqref{eq::V3factorization}, \eqref{eq::T3factorization} and worked out in
-App.~\ref{app:coefficients}. For the nonsinglet distributions considered in this work, the evolution is given by
+app.~\ref{app:coefficients}. For the nonsinglet distributions considered in this work, the evolution is given by
 \begin{align}
 	\label{eq::NSevolutionPlus}
 	T_3 \lp x, \mu^2 \rp = \int_x^1 \frac{dy}{y}\, 
@@ -662,7 +662,7 @@ App.~\ref{app:coefficients}. For the nonsinglet distributions considered in this
 	\text{K}_3^{(-)}\lp \frac{x}{y}, \as, \as^0 \rp V_3 \lp y, \mu_0^2 \rp\, .
 \end{align}
 where the kernels $\text{K}^{(\pm)}$ are obtained by solving the DGLAP evolution
-equations in the nonsinglet sector, as described in Sec.~\ref{sec:DGLAP}.
+equations in the nonsinglet sector, as described in sec.~\ref{sec:DGLAP}.
 For $\nsv$ and $\nst$ we have two different
 nonsinglet evolution kernels, denoted by $\text{K}_3^{(-)}$ and
 $\text{K}_3^{(+)}$ respectively. Eqs.~\eqref{eq::NSevolutionPlus}
@@ -744,8 +744,8 @@ fits with the known input PDFs sets, we can assess the accuracy we may expect to
 get from the current knowledge of the lattice data and their systematics. 
 
 Then we present results for fits run over the data presented in
-Sec.~\ref{subsec:latticedata}, studying the 6 different scenarios for the
-treatment of the systematic errors described in Sec.~\ref{subsec:sys} and
+sec.~\ref{subsec:latticedata}, studying the 6 different scenarios for the
+treatment of the systematic errors described in sec.~\ref{subsec:sys} and
 summarized in Tab.~\ref{tab:systematics}. 
 The results presented here have been produced using the {\tt NNPDF} fitting code \cite{Ball:2017nwa}
 and the {\tt ReportEngine} software \cite{zahari_kassabov_2019_2571601}.  
@@ -754,15 +754,15 @@ and the {\tt ReportEngine} software \cite{zahari_kassabov_2019_2571601}.
 \subsection{Closure tests}
 \label{subsec:CT}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-As shown in Sec.~\ref{subsec:thpredictions}, we can relate PDFs to lattice
+As shown in sec.~\ref{subsec:thpredictions}, we can relate PDFs to lattice
 observables through the matching convolution of Eq.~\eqref{eq::factorization}
 followed by a Fourier transform. As already pointed out at the end of
-Sec.~\ref{subsec:thpredictions}, the resulting convolution $\circledast$ is
+sec.~\ref{subsec:thpredictions}, the resulting convolution $\circledast$ is
 quite different from the one entering standard QCD fits. In this section, we
 assess how much this operation together with the available lattice data from
 Refs.~\cite{Alexandrou:2018pbm,Alexandrou:2019lfo} are able to constrain parton distributions in a
 fit, running some preliminary closure tests. For a detailed description of the
-closure test procedure, we refer to Sec.~4 of Ref.~\cite{Ball:2014uwa}. We
+closure test procedure, we refer to sec.~4 of Ref.~\cite{Ball:2014uwa}. We
 generate pseudo-data corresponding to the data of Ref.~\cite{Alexandrou:2018pbm}
 using {\tt NNPDF31\_nlo\_as\_0118} as our input PDFs set, and we run the fitting
 code over them. The outcome of the closure test fit is then used to assess how
@@ -864,7 +864,7 @@ are available.
 \label{subsec:fits}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In this section, we present our results for fits ran over the data from
-Refs.~\cite{Alexandrou:2018pbm,Alexandrou:2019lfo}, described in Sec.~\ref{subsec:latticedata}. As
+Refs.~\cite{Alexandrou:2018pbm,Alexandrou:2019lfo}, described in sec.~\ref{subsec:latticedata}. As
 mentioned before, we consider 6 different scenarios for the treatment of the
 systematic errors, summarized in Table~\ref{tab:systematics}. We show results
 for "optimistic" (S1,S4), "realistic" (S2,S5) and "pessimistic" (S3,S6)
