@@ -161,7 +161,7 @@ of interpolation techniques.
 To this purpose we use {\tt NLOJET++}~\cite{Nagy:2001fj} interfaced to {\tt F{\small AST}NLO}~\cite{Wobisch:2011ij}.
 The computation is performed using the scale choices described above and is validated against the {\tt NNLOJET} computation.
 This fast interpolation grids are then combined with PDF evolution kernel using {\tt APFEL{\small GRID}}~\cite{Bertone:2016lga}
-to obtain FK tables, as described in Eq.~\eqref{eq:DY_obs}.
+to obtain FK tables, as described in eq.~\eqref{eq:DY_obs}.
 However fast interpolation grids to be used as input for {\tt APFEL{\small GRID}} are available only at NLO.
 We therefore implement NNLO QCD corrections by supplementing the NLO grids with QCD $K$-factors as detailed in the following.
 We define the NNLO QCD $K$-factors as
@@ -181,7 +181,7 @@ prescription
     \Bigg|_{\rm NLO_{QCD}} \times K_{\rm NNLO}^{\rm QCD}(p_T,y,\sqrt{s})\, .
 \end{align}
 The first term on the right-hand side is the output of the NLO computation, given in terms of fast interpolation grids,
-while the second term is the bin-by-bin QCD $K$-factors computing according to Eq.~\eqref{eq:QCD_kfactors}. 
+while the second term is the bin-by-bin QCD $K$-factors computing according to eq.~\eqref{eq:QCD_kfactors}. 
 The result is validated against the full NNLO result from {\tt NNLOJET}. In general QCD $K$-factors might be affected by 
 point-to-point fluctuations due to underlying numerical uncertainties affecting the NNLO computation,
 therefore they are provided with a Monte Carlo uncertainty, estimated as described in ref.~\cite{Ridder:2016rzm}.
@@ -218,7 +218,7 @@ As in the case of NNLO QCD corrections, EW contributions are included by mean of
 where the partonic cross sections have been obtained combining the computation of ref.~\cite{Dittmaier:2012kx} 
 with LO QCD results.
 Fast interpolation grids accounting for EW corrections can be compute
-supplementing Eq.~\eqref{eq:NNLO_kfactors} with the EW $K$-factor of Eq.~\eqref{eq:EW_kfactors}, getting
+supplementing eq.~\eqref{eq:NNLO_kfactors} with the EW $K$-factor of eq.~\eqref{eq:EW_kfactors}, getting
 \begin{align}
     \label{eq:NNLO_EW_kfactors}
     \frac{d^2\sigma}{dp_T dy}\Bigg|_{NNLO+EW} =\,\,\,\,\,\,\,\, &\frac{d^2\sigma}{dp_T dy} 
@@ -238,7 +238,7 @@ EW $K$-factors for the other distributions, not displayed here, present similar 
     \centering
     \includegraphics[scale=0.44]{kfactqcd_ewk_incjets_atlas7-hist.png}
     \includegraphics[scale=0.44]{kfactqcd_ewk_dijets_cms7-hist.png}\\
-    \caption{The EW $K$-factors, Eq.~\eqref{eq:EW_kfactors}, for the 7 TeV ATLAS and CMS
+    \caption{The EW $K$-factors, eq.~\eqref{eq:EW_kfactors}, for the 7 TeV ATLAS and CMS
        single-inclusive (left) and dijet (right)  measurements. For 
        single-inclusive jets the $K$-factors are shown as a function of jet $p_T$ 
        in six different rapidity bins. For dijets they are shown as a function of 

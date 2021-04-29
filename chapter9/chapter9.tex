@@ -60,8 +60,8 @@ Unlike in the quasi-PDFs approach, where the factorization is realized for high 
 here we are allowed to keep in the analysis data coming from a wide range of momentum values, 
 without having to remove those with lower $P$.
 This advantage is particularly important, because in lattice QCD, the low momentum data are significantly more precise for a fixed computational cost.
-Second, we can directly use the position space factorization formula of Eq.~\eqref{eq:factIoffe}, relying on the analytical
-expression for the perturbative coefficient of Eq.~\eqref{eq:WilsonCoeffIoffe} and without having
+Second, we can directly use the position space factorization formula of eq.~\eqref{eq:factIoffe}, relying on the analytical
+expression for the perturbative coefficient of eq.~\eqref{eq:WilsonCoeffIoffe} and without having
 to perform the numerical Fourier transform described in app.~\ref{app:coefficients}.
 
 The structure of the chapter is as  follows.  In sec.~\ref{sec:data} we define the lattice observable considered in the fit,
@@ -80,10 +80,10 @@ and on the fit quality.
 
 In this section we describe the lattice observables we will consider in the following, together with the corresponding data.
 As in the case of the previous chapter we will consider two different observables corresponding to 
-the real and imaginary part of the reduced pseudo-ITD defined in Eq.~\eqref{eq:reducedIoffe}.
+the real and imaginary part of the reduced pseudo-ITD defined in eq.~\eqref{eq:reducedIoffe}.
  
 Considering the case of the unpolarized isovector parton distribution, 
-taking the real and complex parts of Eq.~\eqref{eq:factIoffe} and using Eq.~\eqref{eq:WilsonCoeffIoffe}, 
+taking the real and complex parts of eq.~\eqref{eq:factIoffe} and using eq.~\eqref{eq:WilsonCoeffIoffe}, 
 we can define the two lattice observables
 \begin{align}
 	\label{eq:Reppdf}
@@ -107,15 +107,15 @@ with
     \log\left(z_3^2\mu^2\frac{e^{2\gamma_E + 1}}{4}\right)  + L\left(w\right)\biggr] \sin\left(\xi w\right)\, ,
 \end{align}
 where the kernels $B\left(w\right)$ and $L\left(w\right)$, 
-according to Eq. (\ref{eq:WilsonCoeffIoffe}), are given by 
+according to eq. (\ref{eq:WilsonCoeffIoffe}), are given by 
 \begin{align}
     \label{eq:B}
     &B\left(w\right) = \left[\frac{1+w^2}{1-w}\right]_+ \, ,\\
     \label{eq:L}
     &L\left(w\right) = \left[4\frac{\log\left(1-w\right)}{1-w} -2\left(1-w\right)\right]_+ \, .
 \end{align}
-It is worth recalling some important features of the NLO coefficients given in Eqs.~\eqref{eq:ReC},~\eqref{eq:ImC}.
-The contributions proportional to the two kernels $B\left(w\right)$ and $L\left(w\right)$ of Eqs.~\eqref{eq:B},~\eqref{eq:L} 
+It is worth recalling some important features of the NLO coefficients given in eqs.~\eqref{eq:ReC},~\eqref{eq:ImC}.
+The contributions proportional to the two kernels $B\left(w\right)$ and $L\left(w\right)$ of eqs.~\eqref{eq:B},~\eqref{eq:L} 
 can be seen as an evolution and a scheme change term respectively \cite{Joo:2019jct,Radyushkin:2018cvn}: 
 while the former is responsible for the evolution from the PDF scale 
 $\hat{z}^{-2} = \mu^2\frac{e^{2\gamma_E + 1}}{4} $ to the pseudo-ITD scale $z^2$, the latter takes into
@@ -133,7 +133,7 @@ They are plotted in Fig.~\ref{fig::BL} for both the real and imaginary part, usi
     \label{fig::BL}
 \end{figure}
 The evolution term $B\left(w\right)$ also connects pseudo-ITD points having different values of $z^2$: 
-considering for example the real part, from Eqs.~\eqref{eq:Reppdf},~\eqref{eq:ReC} it follows
+considering for example the real part, from eqs.~\eqref{eq:Reppdf},~\eqref{eq:ReC} it follows
 \begin{align}
     \label{eq::evolRe}
         \text{Re}\left[\mathcal{M}\right]\left(\nu, z_0^2\right) &= 
@@ -291,10 +291,10 @@ In the following, focusing on the case of the fine ensemble results, we will sho
 and we will investigate possible sources of systematic uncertainties and their numerical values.
 
 The matrix element defining the pseudo-ITD is a function of the Ioffe-time $\nu$ and of the scale $z^2$.
-Points having the same Ioffe-time but different Euclidean separation can be related through Eq.~\eqref{eq::evolRe}, 
+Points having the same Ioffe-time but different Euclidean separation can be related through eq.~\eqref{eq::evolRe}, 
 which can be used to evolve each pseudo-ITD point up to a chosen reference scale $z_0 ^2 = \left(0.7\,a\right)^2$.
 Looking at Fig.~\ref{fig::BL} it is clear that, given this choice for $z_0$, the sign of the NLO correction 
-of Eq.~\eqref{eq::evolRe} will be positive for every datapoint, so that the evolution increases the real part of the pseudo-ITD.
+of eq.~\eqref{eq::evolRe} will be positive for every datapoint, so that the evolution increases the real part of the pseudo-ITD.
 Considering the imaginary part, the sign of the NLO evolution term is initially negative, and it turns positive at bigger values of $\nu$.
 Such effects can be seen in Fig.~\ref{fig::evol}, where the pseudo-ITD points computed from the fine ensemble are plotted
 before (blue) and after evolution (red). 
@@ -399,7 +399,7 @@ as the probability of the data $D$ given the model parameters $\theta$, namely t
 where $\Sigma$ is the covariance matrix of the data $D$, accounting for the known
 statistical and systematic uncertainties, and $T\left(\theta\right)$ is the theoretical prediction,
 function of the model parameters.
-If we assume the presence of unknown systematic effect $\Delta$ affecting the datapoints $D$, Eq.~\eqref{eq:likelihood}
+If we assume the presence of unknown systematic effect $\Delta$ affecting the datapoints $D$, eq.~\eqref{eq:likelihood}
 can be modified as
 \begin{align}
     \mathcal{P}\left(D,\Delta|\theta\right) = 
@@ -467,7 +467,7 @@ In other words, it is not always the case that the inclusion of new systematic e
 of the final PDFs error, as we also noticed in chapter~\ref{ch:th_error}. This can be seen for example in the case of the distribution $T_3$ plotted in Fig.~\ref{fig::fits_z2},
 from which it is clear how the error of the fit \textit{fine-sys} has not increased with respect to the one of
 \textit{fine-stat}. The reason for this can be traced back to the fact that the covariance matrix 
-defined in Eq.~\eqref{eq:covariance} enters both the Monte Carlo replicas generation and the $\chi^2$ definition:
+defined in eq.~\eqref{eq:covariance} enters both the Monte Carlo replicas generation and the $\chi^2$ definition:
 while the former mostly controls the final PDFs error, 
 the latter is responsible for the relative weights different points have in the analysis.
 Points affected by bigger errors will give smaller contributions to the $\chi^2$ and therefore 

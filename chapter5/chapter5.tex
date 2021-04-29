@@ -90,21 +90,21 @@ theoretical uncertainties can be treated simply as another form of experimental 
 it is an additional uncertainty to be taken into account when trying to find the truth from the data
 using a specific theory setting, and it can be accounted for by mean of an additional contribution $S$ to
 the experimental covariance matrix $C$.
-It should be noted that Eq.~\eqref{eq:log_likelihood} has been obtained under the assumption
-of a Gaussian prior for MHOU, as given in Eq.~\eqref{eq:gaussian_hyp}. In general one could use different
+It should be noted that eq.~\eqref{eq:log_likelihood} has been obtained under the assumption
+of a Gaussian prior for MHOU, as given in eq.~\eqref{eq:gaussian_hyp}. In general one could use different
 models, depending on the nature of the theory error considered, and minimize the resulting likelihood as given
-in the first line of Eq.~\eqref{eq:log_likelihood}. 
+in the first line of eq.~\eqref{eq:log_likelihood}. 
 Here we will work using the Gaussian assumption, which will be validated in sec.~\ref{sec:validation}.
 
 %
-The problem is then to estimate the theory covariance matrix $S$. The Gaussian hypothesis Eq.~\eqref{eq:gaussian_hyp}
+The problem is then to estimate the theory covariance matrix $S$. The Gaussian hypothesis eq.~\eqref{eq:gaussian_hyp}
 implies that 
 \begin{align}
     \label{eq:def_th_cov_0}
     \int d\mathcal{T} \, P\left(\mathcal{T}|T\right) \left(\mathcal{T}-T\right)_i \left(\mathcal{T}-T\right)_j = 
     \langle \Delta_i \,\Delta_j \rangle = S_{ij}\,,
 \end{align}
-showing how in general we need to estimate the shifts $\Delta_i$ defined in Eq.~\eqref{eq:shifts}, in a way that takes into account
+showing how in general we need to estimate the shifts $\Delta_i$ defined in eq.~\eqref{eq:shifts}, in a way that takes into account
 the theoretical correlations between different points within the same dataset, between different datasets
 measuring the same physical process and between datasets corresponding to different processes
 \footnote{Unlike experimental correlations, theory correlations will be present even for entirely different processes,
@@ -141,7 +141,7 @@ we have
     q\left(\alpha_s\left(\mu_f^2\right),\frac{\mu_f^2}{Q^2}\right)\,. 
 \end{align}
 Following the notations of ref.~\cite{AbdulKhalek:2019ihb}, we introduce the variables
-$t = \log Q^2/\Lambda^2$, $k_r = \log \mu_r^2/Q^2$ and $k_f = \log \mu_f^2/Q^2$ so that Eq.~\eqref{eq:scale_var_F_Q}
+$t = \log Q^2/\Lambda^2$, $k_r = \log \mu_r^2/Q^2$ and $k_f = \log \mu_f^2/Q^2$ so that eq.~\eqref{eq:scale_var_F_Q}
 can be written as 
 \begin{align}
     \label{eq:scale_var_F}
@@ -179,16 +179,16 @@ the renormalization scale dependent Wilson coefficients $\overline{C}$ can be wr
     C\left(t+k_r\right) &-  k\frac{d}{dt}C\left(t+k_r\right) 
     + \frac{1}{2} k_r^2\, \frac{d^2}{dt^2}C\left(t+k_r\right) + ...
 \end{align}
-where according to Eq.~\eqref{eq:central_scale} $C\left(t\right) = \overline{C}\left(\alpha_s\left(t\right),0\right)$.
+where according to eq.~\eqref{eq:central_scale} $C\left(t\right) = \overline{C}\left(\alpha_s\left(t\right),0\right)$.
 In other words, thanks to the RG invariance we can write the renormalization scale dependent Wilson coefficients
 at a generic scale $\mu_r$ in terms of their values at the physical scale $\mu_r=Q$.
-The log derivatives appearing in Eq.~\eqref{eq:wilson_coeff_scale_var} can be easily evaluated using the 
+The log derivatives appearing in eq.~\eqref{eq:wilson_coeff_scale_var} can be easily evaluated using the 
 perturbative expression of $C$ 
 \begin{align}
     C\left(t\right) = 
     c_0 + \alpha_s\left(t\right)c_1 + \alpha_s^2\left(t\right)c_2 + \alpha_s^3\left(t\right)c_3 + ...\,,
 \end{align}
-and of the $\beta$ function expansion Eq.~\eqref{eq:beta_function_expansion} getting
+and of the $\beta$ function expansion eq.~\eqref{eq:beta_function_expansion} getting
 \begin{align}
     \label{eq:scale_varied_wilson_coeff}
     \overline{C}&\left(\alpha_s\left(t+k_r\right),k_r\right) = c_0 
@@ -197,7 +197,7 @@ and of the $\beta$ function expansion Eq.~\eqref{eq:beta_function_expansion} get
 \end{align} 
 
 %
-In the same way, starting again from Eq.~\eqref{eq:scale_var_F}, in order to get the 
+In the same way, starting again from eq.~\eqref{eq:scale_var_F}, in order to get the 
 scaled varied PDF we can fix $\mu_r=Q$
 and vary the scale $\mu_f$ at which the PDFs are evaluated. Setting $\mu_r=Q$ we get 
 \begin{align}
@@ -206,7 +206,7 @@ and vary the scale $\mu_f$ at which the PDFs are evaluated. Setting $\mu_r=Q$ we
     \overline{q}\left(\alpha_s\left(\mu_f^2\right),\frac{\mu_f^2}{Q^2}\right) \nonumber \\
     &=C\left(t\right)\otimes \overline{q}\left(\alpha_s\left(t+k_f\right),k_f\right)\,,
 \end{align}
-and using the RG invariance Eq.~\eqref{eq:RG_invariance} with respect to $\mu_f$ we get 
+and using the RG invariance eq.~\eqref{eq:RG_invariance} with respect to $\mu_f$ we get 
 \begin{align}
     \label{eq:scale_vare_pdf_1}
     \overline{q}\left(\alpha_s\left(t+k_f\right),k_f\right) = q\left(t+k_f\right) &-  k_f\frac{d}{dt}q\left(t+k_f\right) 
@@ -220,7 +220,7 @@ convolutions are replaced by ordinary products.}
 \begin{align}
     \frac{d}{d\mu_f^2}\, q\left(\mu_f^2\right) = \gamma\left(\alpha_s\left(\mu_f^2\right)\right)q\left(\mu_f^2\right)\,,
 \end{align}
-Eq.~\eqref{eq:scale_vare_pdf_1} can be rewritten as 
+eq.~\eqref{eq:scale_vare_pdf_1} can be rewritten as 
 \begin{align}
     \label{eq:scale_var_pdf_2}
     \overline{q}\left(\alpha_s\left(t+k_f\right),k_f\right) = &q\left(t+k_f\right) - k\gamma q\left(t+k_f\right) \nonumber\\
@@ -228,7 +228,7 @@ Eq.~\eqref{eq:scale_vare_pdf_1} can be rewritten as
 \end{align}
 which can be further simplified using the perturbative expansion of the anomalous dimension
 and the expression for the $\beta$ function\footnote{In ref.~\cite{AbdulKhalek:2019ihb} it is explicitly shown that an 
-alternative way of obtaining Eq.~\eqref{eq:scale_var_pdf_2} consists in varying the renormalization scale of the anomalous dimension.
+alternative way of obtaining eq.~\eqref{eq:scale_var_pdf_2} consists in varying the renormalization scale of the anomalous dimension.
 MHOU due to PDFs evolution can therefore be estimated varying either the PDFs scale or the scale of the anomalous dimension.}.
 
 %
@@ -239,7 +239,7 @@ computed at the physical scale $Q$.
 Considering a specific process involved in the PDFs fit, one can, for example, perform scale variation in the range
 $|k_r|, |k_f| < \log 4$, obtaining the scale varied cross section $\overline{F}\left(k_r, k_f\right)$.
 When considering hadronic processes,
-the same arguments presented above can be used to obtain a formula similar to the one of Eq.~\eqref{eq:scale_varied_wilson_coeff},
+the same arguments presented above can be used to obtain a formula similar to the one of eq.~\eqref{eq:scale_varied_wilson_coeff},
 as shown in ref.~\cite{AbdulKhalek:2019ihb}.
 
 %
@@ -261,7 +261,7 @@ while those of $k_f$ will be correlated between different processes.
 In other words, because of PDFs universality the relation between the physical scale of each process (whatever that is)
 and the factorization scale $\mu_f$ is the same for all the processes.
 
-According to Eq.~\eqref{eq:def_th_cov_0}, the theory covariance matrix is then constructed by averaging
+According to eq.~\eqref{eq:def_th_cov_0}, the theory covariance matrix is then constructed by averaging
 outer products of the shifts over points in the space of scales 
 \begin{align}
     \label{eq:th_cov_matrix_1}
@@ -270,7 +270,7 @@ outer products of the shifts over points in the space of scales
 where $i_a \in \pi_a$ and $j_b \in \pi_b$ indicate two data points possibly corresponding to different
 processes $\pi_a$ and $\pi_b$, $V$ is the set of scale points to be summed over and $N$ is a normalization factor.
 Note that from this definition it follows immediately that the
-theory covariance matrix is positive definite: considering a real vector $v_i$, from Eq.~\eqref{eq:th_cov_matrix_1}
+theory covariance matrix is positive definite: considering a real vector $v_i$, from eq.~\eqref{eq:th_cov_matrix_1}
 we have
 \begin{align}
     \sum_{ij} v_i S_{ij} v_j = N \sum_{V}\left(\sum_i v_i \Delta_i\right)^2 \geq 0\,.
@@ -278,7 +278,7 @@ we have
 
 %
 Different prescriptions for the theory covariance matrix definition can be adopted, characterized by a different
-set of combination of scales which are summed over in Eq.~\eqref{eq:th_cov_matrix_1}.
+set of combination of scales which are summed over in eq.~\eqref{eq:th_cov_matrix_1}.
 Here we will discuss results for the so called 9-points prescriptions. In app.~\ref{app:the_error_3pt}
 we describe another possible option and we refer to the original publication 
 ref.~\cite{AbdulKhalek:2020jut} for more details about alternative prescriptions.
@@ -288,7 +288,7 @@ corresponding to the renormalization and factorization scales $k_r$ and $k_f$.
 In the 9-points prescription $k_r$ and $k_f$ are varied completely independently, getting the 8 + 1 points in the 
 scales space reported in Fig.~\ref{fig:symmetricPrescriptions} (left), where the +1 refers to the trivial 
 point $k_r=k_f=0$ for which the shift $\Delta_i$ vanishes.
-The normalization factor appearing in Eq.~\eqref{eq:th_cov_matrix_1}
+The normalization factor appearing in eq.~\eqref{eq:th_cov_matrix_1}
 is determined by averaging over the number of points associated with the variation of each scale,
 and adding the contributions from variation of independent scales.
 So in the case of the 9-points prescriptions we have 8 points and 2 independent scales, 
@@ -309,7 +309,7 @@ points belonging to two different processes $\pi_1$ and $\pi_2$. The set $V$ now
 possible variations of three scales $k_f,k_{r_1}, k_{r_2}$, represented in the right plot 
 of Fig.~\ref{fig:symmetricPrescriptions}.
 Again, varying such scales independently and accounting for the corrects normalization factors,
-Eq.~\eqref{9S} can be generalized to the off-diagonal blocks of the theory covariance matrix, giving
+eq.~\eqref{9S} can be generalized to the off-diagonal blocks of the theory covariance matrix, giving
 \begin{equation}\label{9M}
 \begin{split}
     S^{(\rm 9pt)}_{i_1j_2} =
@@ -352,7 +352,7 @@ Eq.~\eqref{9S} can be generalized to the off-diagonal blocks of the theory covar
 
     \section{Construction and validation of a theory covariance matrix}
     \label{sec:validation}
-    In this section we determine the theory covariance matrix at NLO using Eqs.~\eqref{9S}, \eqref{9M}
+    In this section we determine the theory covariance matrix at NLO using eqs.~\eqref{9S}, \eqref{9M}
     and we validate it against the known NNLO results.
     As input datasets, we use the same NNPDF3.1 baseline given in Tab.~\ref{tab:experiments_chi2} with two minor differences:
     the value of the lower kinematic cut has been increased from $Q^2_{min} = 2.69 \,\,\text{GeV}^2$ to $13.96 \,\, \text{GeV}^2$
@@ -565,9 +565,9 @@ Eq.~\eqref{9S} can be generalized to the off-diagonal blocks of the theory covar
     \end{align}
     where by $\chi^2_{\text{exp}}\left[T^{(k)}\right]$ we denote the value of the $\chi^2$
     computed using the $k$-th PDF replica and only including the experimental covariance matrix.
-    The average $\chi^2$ values entering Eq.~\eqref{eq:phi} are the $\chi^2$ averaged over the replicas
+    The average $\chi^2$ values entering eq.~\eqref{eq:phi} are the $\chi^2$ averaged over the replicas
     and the $\chi^2$ computed using the central PDF, which is obtained as an average of all replicas. 
-    As shown in app.~\ref{app:phi}, Eq.~\eqref{eq:phi} can be written as
+    As shown in app.~\ref{app:phi}, eq.~\eqref{eq:phi} can be written as
     \begin{align}
         \phi = \left(\frac{1}{N_{dat}}\sum_{i,j=1}^{N_{dat}} \left(C\right)^{-1}_{ij}T_{ij}\right)^{1/2}\,,
     \end{align}
@@ -720,7 +720,7 @@ Eq.~\eqref{9S} can be generalized to the off-diagonal blocks of the theory covar
     \end{align}
     Considering the PDFs presented in this work, $\sigma_{\mathcal{F}}^{\text{PDF}}$ will account for
     uncertainties related to both experimental data and MHO in the PDFs determination.
-    On the other hand, when Eq.~\eqref{eq:PDFunc} is used with a standard PDFs set (like NNPDF3.1), the resulting
+    On the other hand, when eq.~\eqref{eq:PDFunc} is used with a standard PDFs set (like NNPDF3.1), the resulting
     uncertainty only includes statistical and systematic errors from the data. 
     Turning to MHOU on the hard matrix element $\sigma_{\mathcal{F}}^{\text{th}}$,
     this can be estimated using any prescription preferred by the user.
@@ -732,7 +732,7 @@ Eq.~\eqref{9S} can be generalized to the off-diagonal blocks of the theory covar
         \sigma_{\mathcal{F}}^{\text{th}} = \left[S_{\mathcal{F}\mathcal{F}}\right]^{\frac{1}{2}}\,,
     \end{align} 
     with the shift $\Delta_{ij}$ computed for $i=j = \mathcal{F}$.
-    The PDF uncertainty Eq.~\eqref{eq:PDFunc} and the uncertainty on the hard matrix element Eq.~\eqref{eq:Thunc}
+    The PDF uncertainty eq.~\eqref{eq:PDFunc} and the uncertainty on the hard matrix element eq.~\eqref{eq:Thunc}
     can now be combined in quadrature, giving the total uncertainty $\sigma_{\mathcal{F}}^{\text{tot}}$
     for the cross section $\mathcal{F}$
     \begin{align}

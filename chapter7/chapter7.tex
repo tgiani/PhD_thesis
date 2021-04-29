@@ -8,7 +8,7 @@ understanding of nucleon structure.
 The non-perturbative nature of PDFs makes them a natural candidate for a lattice investigation,
 however it has been known for a long time that it is not possible to
 obtain them directly from first principle computations, due to the Euclidean metric of the
-lattice, which does not allow to access the light-cone matrix element of Eq.~\eqref{eq::barepdf}.
+lattice, which does not allow to access the light-cone matrix element of eq.~\eqref{eq::barepdf}.
 To overcome this issue, several methods have been recently formulated, 
 and in recent years, there has been a significant effort within the lattice
 community to study and compute specific Euclidean quantities that, in turn, can be related to PDFs
@@ -77,7 +77,7 @@ when the separation $z$ between the fields is either light-cone like, $z^2=0$,
 or purely spatial, $z^2=-z_3^2$. In the first case, we obtain the matrix element
 that underlies the formal definition of collinear PDFs~\cite{Collins:1980ui,
 Collins:1981uw}, which are obtained as the Fourier transform along a light-cone
-direction of the matrix element in Eq.\eqref{eq::ME}~\footnote{The field
+direction of the matrix element in eq.\eqref{eq::ME}~\footnote{The field
 bilinear needs to undergo a proper renormalization, which we explore in detail in
 this Chapter. }:
 \begin{align}
@@ -87,7 +87,7 @@ this Chapter. }:
 \end{align}
 where $P^+$ and $z^-$ are the usual light-cone coordinates of the four-vectors
 $P$ and $z$ respectively.
-Eq.~\eqref{eq:barePDF_toy} is the scalar analogous of Eq.~\eqref{eq::barepdf}, giving the PDF definition in QCD.
+Eq.~\eqref{eq:barePDF_toy} is the scalar analogous of eq.~\eqref{eq::barepdf}, giving the PDF definition in QCD.
 In the second case we obtain an equal-time correlator
 that can be computed on the lattice. We address the problem of the
 renormalization of these quantities and study the relation between them at one
@@ -127,7 +127,7 @@ refs.~\cite{Rossi:2017muf,Rossi:2018zkn}.
 \label{sec:light-cone}
 
 As stressed in ref.~\cite{Radyushkin:2017cyf}, the matrix element defined in
-Eq.~\eqref{eq::ME} is a function of the Lorentz invariants $z^2$ and $\nu =
+eq.~\eqref{eq::ME} is a function of the Lorentz invariants $z^2$ and $\nu =
 P\cdot z$, the ``Ioffe time'', so that we can write
 $\mathcal{M}=\mathcal{M}\left(\nu,z^2\right)$. In this section we focus on the
 perturbative renormalization of $\mathcal{M}\left(\nu,z^2\right)$ at the
@@ -155,7 +155,7 @@ where $m_\mathrm{pole}^2$ is defined by the location of the pole in the scalar
 propagator, and can be computed at each order in perturbation theory. At tree
 level we have $m_\mathrm{pole}^2 = m^2$, while in general $m_\mathrm{pole}^2 - m^2 = \mathcal{O}\left(g^2\right)$.
 
-When computing the 4-point function entering Eq.~\eqref{eq::LSZ}, we will not
+When computing the 4-point function entering eq.~\eqref{eq::LSZ}, we will not
 consider diagrams like those in Fig.~\ref{fig:f_diag_1}. Following
 ref.~\cite{Collins:1980ui}, we are only interested in the contribution
 proportional to $\exp(-ip\cdot z)$, and therefore discard topologies like the
@@ -209,7 +209,7 @@ contribution only.
 	\caption{Contractions that are not considered in the present discussion. Diagram (a) is excluded when considering contributions proportional to $\exp(-ip\cdot z)$, while diagram (b) cancels when looking at the connected correlator.}
 	\label{fig:f_diag_1}
 \end{figure}
-Therefore the only Feynman diagrams contributing to Eq.~\eqref{eq::LSZ} up to one-loop order are those shown in 
+Therefore the only Feynman diagrams contributing to eq.~\eqref{eq::LSZ} up to one-loop order are those shown in 
 Fig.~\ref{fig:f_diag_2}.
 \begin{figure}[h]
         \centering
@@ -294,7 +294,7 @@ where we use the notation
 \begin{equation}
         \int_k = \int \frac{\mathrm{d}^dk}{(2\pi)^d}\, .
 \end{equation}
-Plugging Eq.~\eqref{eq::contraction} in Eq.~\eqref{eq::LSZ} we obtain the tree
+Plugging eq.~\eqref{eq::contraction} in eq.~\eqref{eq::LSZ} we obtain the tree
 level expression for $\widehat{\mathcal{M}}\left(\nu, z^2\right)$
 \begin{align}
 \label{eq::treelevel}
@@ -303,7 +303,7 @@ level expression for $\widehat{\mathcal{M}}\left(\nu, z^2\right)$
 Note that the tree level result does not depend on the invariant separation $z^2$ and therefore we can set $z^2=0$ in the second equality above.
 
 At one-loop order the self-energy diagram (b) yields the mass and wave function
-renormalization. Its contribution to Eq.~\eqref{eq::LSZ} is  
+renormalization. Its contribution to eq.~\eqref{eq::LSZ} is  
 \begin{align}
         \widehat{\mathcal{M}}_{\text{self}}\left(\nu,z^2\right) 
         &=  R\, \widehat{\mathcal{M}}^{(0)}\left(\nu, 0\right)\, ,
@@ -342,7 +342,7 @@ given by
 \int_{l_4} \frac{ie^{-il_4 \cdot w_2}}{l_4^2-m^2 + i\epsilon} 
 \int_{l_5} \frac{ie^{-il_5 \cdot \left(z_2-w_2\right)}}{l_5^2-m^2 + i\epsilon}.
 \end{align}
-Plugging this into Eq.~\eqref{eq::LSZ}, we have
+Plugging this into eq.~\eqref{eq::LSZ}, we have
 \begin{align}
         \label{eq::M1}
         \widehat{\mathcal{M}}^{(1)}\left(\nu, z^2\right) 
@@ -418,7 +418,7 @@ regularization
         \log\frac{\mu^2}{m^2\left(1-\xi+\xi^2\right)}\right)\, 
         \widehat{\mathcal{M}}^{(0)}\left(\xi \nu, 0\right)\, .
 \end{align}
-The structure of the divergences in Eq.~\eqref{eq::Ioffe1loop} shows that this
+The structure of the divergences in eq.~\eqref{eq::Ioffe1loop} shows that this
 quantity can be renormalized by convolution with a renormalization kernel
 $\mathcal{K}$. Denoting the renormalized matrix element as
 $\widehat{\mathcal{M}}_R\left(\nu,0,\mu^2\right)$, we have
@@ -451,7 +451,7 @@ and the corresponding renormalized quantity is
 \end{align}
 %
 We conclude this derivation with a comment on the form of the renormalization
-kernel $\mathcal{K}$ given in Eq.~\eqref{eq:renormalizationkernel}: the
+kernel $\mathcal{K}$ given in eq.~\eqref{eq:renormalizationkernel}: the
 contribution proportional to a delta function is a multiplicative
 renormalization term, implementing the subtraction of the singularities
 generated by diagram (b) of Fig.~\ref{fig:f_diag_2}, which is basically the wave
@@ -461,7 +461,7 @@ the one-loop diagram (c) of Fig.~\ref{fig:f_diag_2}, and because this contributi
 not proportional to a delta function, the renormalization of this term is not
 multiplicative, but requires a convolution.
 
-Taking the log derivative of Eq.~\eqref{eq::Ioffe1loopren} we obtain
+Taking the log derivative of eq.~\eqref{eq::Ioffe1loopren} we obtain
 \begin{align}
         \label{eq:DGLAPpositionspace}
         \mu^2\frac{d}{d\mu^2}\, \widehat{\mathcal{M}}_R\left(\nu,0,\mu^2\right) 
@@ -486,7 +486,7 @@ The renormalized collinear PDF is defined from the renormalized matrix element,
         \widehat{\mathcal{M}}_R\left(\nu,0,\mu^2\right) = 
         \int_{0}^{1} dx \, e^{ix\nu}\widehat{f}\left(x,\mu^2\right)\, ,
 \end{align}
-and therefore, from Eq.~\eqref{eq:DGLAPpositionspace},
+and therefore, from eq.~\eqref{eq:DGLAPpositionspace},
 \begin{align}
         \label{eq:AP}
         \mu^2\frac{d}{d\mu^2}\, \widehat{f}\left(x, \mu^2\right) = 
@@ -494,7 +494,7 @@ and therefore, from Eq.~\eqref{eq:DGLAPpositionspace},
 \end{align}
 which yields the standard DGLAP evolution equations, which were already obtained
 in ref.~\cite{Collins:1980ui} for the scalar theory. As detailed in sec.~\ref{sec:DGLAP}, the solution of
-Eq.~\eqref{eq:AP} in perturbation theory is given by an evolution kernel
+eq.~\eqref{eq:AP} in perturbation theory is given by an evolution kernel
 $\Gamma\left(x,\mu,\mu_0,\alpha\right)$, which resums the large collinear logarithms and allows the PDF at a generic scale
 $\mu$ to be computed in terms of the PDF at the scale $\mu_0$ as
 \begin{align}
@@ -511,7 +511,7 @@ We now consider the case in which the separation between the fields is purely
 spatial $z_E^2 = z_3^2$. As seen in the previous section, the $z^2$ dependence
 enters only through diagram (c) of Fig.~\ref{fig:f_diag_2}. Considering this
 contribution, the kernel $K\left(z^2,M^2\right) $ defined in
-Eq.~\eqref{eq::kernel} is no longer divergent for $z_3\neq 0$, as the term
+eq.~\eqref{eq::kernel} is no longer divergent for $z_3\neq 0$, as the term
 $\exp\left[-z_E^2/(4T)\right]$ regulates the small-$T$ behaviour. The integral
 can evaluated directly in $d=6$ dimensions, yielding
 \begin{align}
@@ -519,7 +519,7 @@ can evaluated directly in $d=6$ dimensions, yielding
     K\left(-z_3^2, M^2\right) = 
     \frac{1}{64\pi^3}\int_0^{\infty}\frac{dT}{T} e^{-T} e^{-\frac{\left(M z_3\right)^2}{4T}} =\frac{1}{64\pi^3}\, 2K_0\left(M z_3\right),
 \end{align}
-where $K_0$ is the modified Bessel function. Plugging Eq.~\eqref{eq::Bessel} into Eq.~\eqref{eq::M1} we obtain the contribution from diagram (c) in the case of purely spatial separation:
+where $K_0$ is the modified Bessel function. Plugging eq.~\eqref{eq::Bessel} into eq.~\eqref{eq::M1} we obtain the contribution from diagram (c) in the case of purely spatial separation:
 \begin{align}
 \label{eq::1loopcont}
     \widehat{\mathcal{M}}^{(1)}\left(\nu, -z_3^2\right) = 
@@ -558,7 +558,7 @@ renormalized quantity is
     \left[1+ \alpha\left(\frac{1}{6}\log\frac{m^2}{\mu^2} + b\right)  \right]\widehat{\mathcal{M}}^{(0)}\left(\nu, 0\right) \nonumber \\
     &+\alpha \int_0^1 d\xi\,\left(1-\xi\right)2K_0\left(M z_3\right)  \widehat{\mathcal{M}}^{(0)}\left(x \nu, 0\right).
 \end{align}
-Note also that both Eqs.~\eqref{eq::Ioffe1loopren} and \eqref{eq::pIoffe1loopren} contain an infrared (IR) divergence regularized by the mass $m$: 
+Note also that both eqs.~\eqref{eq::Ioffe1loopren} and \eqref{eq::pIoffe1loopren} contain an infrared (IR) divergence regularized by the mass $m$: 
 in the former the mass is manifest in the $\log$, while in the latter the mass appears in the Bessel function, which diverges logarithmically for $m\rightarrow 0$.
 
 \section{Factorization theorem}
@@ -566,7 +566,7 @@ in the former the mass is manifest in the $\log$, while in the latter the mass a
 
 Having defined the renormalized correlators in the previous sections, let us
 investigate the one-loop relation between the light-cone and the equal-time
-correlators. Combining Eqs.~\eqref{eq::Ioffe1loopren} and
+correlators. Combining eqs.~\eqref{eq::Ioffe1loopren} and
 \eqref{eq::pIoffe1loopren} we write
 \begin{align}
 	\label{eq::fact00}
@@ -577,7 +577,7 @@ correlators. Combining Eqs.~\eqref{eq::Ioffe1loopren} and
 	-\log\frac{\mu^2}{M^2}\right)\, 
 	\widehat{\mathcal{M}}_R\left(\xi\nu,0,\mu^2\right)\, ,
 \end{align}
-and using Eq.~\eqref{eq::PDFs} we find
+and using eq.~\eqref{eq::PDFs} we find
 \begin{align}
 	\label{eq::fact0}
 	\widehat{\mathcal{M}}_R\left(\nu, -z_3^2; \mu^2\right) = 
@@ -597,11 +597,11 @@ singularities cancel exactly when taking a specific limit, leaving an expression
 free from IR poles, which therefore has   the form of a proper factorization
 theorem.
 %
-Before discussing this in detail, we recall that, although Eq.~\eqref{eq::fact0}
+Before discussing this in detail, we recall that, although eq.~\eqref{eq::fact0}
 has been worked out in perturbation theory, considering matrix elements between
 on-shell quark states, the renormalization of the bilocal operators discussed so
 far does not depend on our choice of specific external states. It follows that
-Eq.~\eqref{eq::fact0} holds also for external proton states. From now on we will
+eq.~\eqref{eq::fact0} holds also for external proton states. From now on we will
 refer to full proton matrix elements rather than partonic ones, removing the
 symbol `$\,\,\widehat{}\,\,$' used so far to denote partonic quantities.
 
@@ -617,7 +617,7 @@ obtained by expanding the Bessel function as
         2K_0\left(M z_3\right) = - \log\left(M^2 z_3^2\right) 
         + 2 \log\left(2e^{-\gamma_E}\right) + \mathcal{O}\left(M^2 z_3^2\right)\, ,
 \end{align} 
-so that Eq.~\eqref{eq::fact0} becomes
+so that eq.~\eqref{eq::fact0} becomes
 \begin{align}
 	\label{eq::fact2}
 	\mathcal{M}_R\left(\nu, -z_3^2; \, \mu^2\right) &=  
@@ -636,7 +636,7 @@ with
 We note that in this limit the logarithmic behaviour of the Bessel function
 matches that of the light-cone quantity, so that the two matrix elements display
 the same IR behaviour: as a result the coefficient $\tilde{C}$ is IR safe, and
-Eq.~\eqref{eq::fact2} represents a proper factorization theorem connecting a
+eq.~\eqref{eq::fact2} represents a proper factorization theorem connecting a
 lattice computable quantity on the left hand side with a collinear PDF on the
 right hand side. 
 
@@ -649,8 +649,8 @@ in ref.~\cite{Radyushkin:2017cyf}. They were originally defined as
 	\mathfrak{M}\left(\nu,-z_3^2\right) =
 	\frac{\mathcal{M}_R\left(\nu, -z_3^2; \mu^2\right)}{\mathcal{M}_R\left(0, -z_3^2; \mu^2\right)}\,,
 \end{align}
-although a double ratio was proposed in \cite{Orginos:2017kos}. Here we restrict our attention to the ratio defined in Eq.~\eqref{eq::reduced}.
-In the context of our model, using the small-$z_3^2$ limit of Eq.~\eqref{eq::fact00} we have
+although a double ratio was proposed in \cite{Orginos:2017kos}. Here we restrict our attention to the ratio defined in eq.~\eqref{eq::reduced}.
+In the context of our model, using the small-$z_3^2$ limit of eq.~\eqref{eq::fact00} we have
 \begin{align}
 	\mathfrak{M}&\left(\nu,-z_3^2\right) = 
 	\mathcal{M}_R\left(\nu,0, \mu^2\right)   \nonumber\\
@@ -674,10 +674,10 @@ with
 	 \int_0^1 d\xi \, \left(1-\xi\right)_+ e^{i \xi x\nu} + \mathcal{O}\left(m^2 z_3^2\right)\, .
 \end{align}
 Note the absence of any $\mu^2$ dependence on the left hand side of
-Eqs.~\eqref{eq::reduced} and \eqref{eq::factReduced}: the perturbative
+eqs.~\eqref{eq::reduced} and \eqref{eq::factReduced}: the perturbative
 dependence on the renormalization scale $\mu^2$ cancels exactly in the ratio,
 leaving a quantity that depends only on the scale $z_3^2$. More precisely,
-Eqs.~\eqref{eq::factReduced}, \eqref{eq::Cpseudo} show how, in the small-$z_3^2$
+eqs.~\eqref{eq::factReduced}, \eqref{eq::Cpseudo} show how, in the small-$z_3^2$
 limit, the renormalization scale dependence of
 $\mathcal{M}_R\left(\nu,0,\mu^2\right)$ generated by diagram (c) is replaced by
 an equal $z_3^2$ dependence that can be obtained from the former through the
@@ -695,7 +695,7 @@ indeed it was observed in refs.~\cite{Radyushkin:2018cvn, Orginos:2017kos}.
 \label{sec::momentumspace}
 
 A factorization theorem can also be established working in momentum rather than
-in position space. Taking the Fourier transform of Eq.~\eqref{eq::fact2} with
+in position space. Taking the Fourier transform of eq.~\eqref{eq::fact2} with
 respect to $z_3$ and defining
 \begin{align}
 	\label{eq::qpdf}
@@ -724,15 +724,15 @@ with
 	 + \frac{M^2}{x^2P_3^2}}} - 
 	 \delta\left(\xi-\eta\right) \log\frac{\mu^2}{M^2}\right]\, .
 \end{align}
-Note that taking the Fourier transform, as in Eq.~\eqref{eq::qpdf}, involves an
+Note that taking the Fourier transform, as in eq.~\eqref{eq::qpdf}, involves an
 integration of the Bessel function $K_0\left(z_3 M\right)$ through its
 singularity at $z_3=0$, which is discussed in detail in app.~\ref{app:plus}.
-Looking at Eq.~\eqref{eq::C0}, we note that, again, the coefficient $C$ contains
+Looking at eq.~\eqref{eq::C0}, we note that, again, the coefficient $C$ contains
 explicit logarithms of the mass, rendering it infrared divergent. However, these
 divergences cancel when considering the large $P_3$ regime, by expanding the
 Fourier transform of the Bessel function in the limit
 $\frac{M^2}{\xi^2P_3^2}\rightarrow 0$. If $\eta>1$ or $\eta<0$, then looking at
-Eq.~\eqref{eq::C0} we have 
+eq.~\eqref{eq::C0} we have 
 \begin{align}
 	\lim_{P_3\rightarrow \infty} 
 	C\left(\eta,\frac{m^2}{x^2 P_3^2}, \frac{\mu^2}{m^2}\right) &= 
@@ -790,14 +790,14 @@ with
 	\end{split}
 \end{equation}
 
-Factorization in position space, given in Eqs.~\eqref{eq::fact2} and
+Factorization in position space, given in eqs.~\eqref{eq::fact2} and
 \eqref{eq::Cpseudo0}, is equivalent to factorization in momentum space, given in
-Eqs.~\eqref{eq::factmomentum} and \eqref{eq::matching_scalar}. In other words, taking
+eqs.~\eqref{eq::factmomentum} and \eqref{eq::matching_scalar}. In other words, taking
 the small-$z_3^2$ limit in position space is entirely equivalent to taking the
 large-$P_3$ limit in momentum space. This can be easily verified by computing
 the Fourier transfom of the small-$z_3^2$ coefficient $\tilde{C}$ of
-Eq.~\eqref{eq::Cpseudo0}, and checking that it is equal to the high-$P_3$
-coefficient $C$ of Eq.~\eqref{eq::matching_scalar} 
+eq.~\eqref{eq::Cpseudo0}, and checking that it is equal to the high-$P_3$
+coefficient $C$ of eq.~\eqref{eq::matching_scalar} 
 \begin{align}
 	\label{eq::check}
 	\frac{1}{x}\,C\left(\eta,\frac{\mu^2}{x^2 P_3^2}\right) &= 
@@ -855,7 +855,7 @@ the infrared properties of correlation functions. The smeared Ioffe-time matrix
 elements, constructed from fields at finite flow time, therefore satisfy the
 same factorization theorems as the original Ioffe-time matrix
 elements~\cite{Monahan:2016bvm}. In the scalar case, the boundary fields
-$\phi(x)$ in Eq.~\eqref{eq::MEpartonic} are replaced by fields at finite
+$\phi(x)$ in eq.~\eqref{eq::MEpartonic} are replaced by fields at finite
 flow time $\rho(t;x)$, so that the partonic matrix element becomes
 \begin{align}
         \label{eq::MEflow}
@@ -872,7 +872,7 @@ given in Fig.~\ref{fig:f_diag_2}, with $\phi(x)$ replaced by $\rho(t;x)$. Workin
 the small flow-time regime, where contributions of ${\cal O}(t)$ can be
 neglected, the only diagram that must be calculated is diagram (c) of
 Fig.~\ref{fig:f_diag_2}. Therefore, we can deduce the factorization properties of the
-smeared matrix element directly from the analogue of Eq.~\eqref{eq::M1} at
+smeared matrix element directly from the analogue of eq.~\eqref{eq::M1} at
 nonzero flow time
 \begin{align}
    \label{eq::M1t}
@@ -896,7 +896,7 @@ $K_t\left(-\overline{z}_3^2, \overline{M}^2\right)$ is given by
                 \frac{T^2}{(T+2t)^{d/2}}\, e^{-TM^2} 
                 e^{(4\xi t p_{\mathrm{E}} - iz_{\mathrm{E}})^2/(4(T+2t))}\, ,
 \end{equation}
-which reduces to the kernel in Eq.~\eqref{eq::kernel} when $t = 0$.
+which reduces to the kernel in eq.~\eqref{eq::kernel} when $t = 0$.
 
 By introducing the further dimensionless variables $\overline{\mu}^2 = \mu^2 t$,
 $\overline{m}^2 = m^2 t$, and 
@@ -942,7 +942,7 @@ are finite at finite flow time and quark mass. Indeed, one can evaluate these
 integrals numerically by imposing a cutoff. 
 For sufficiently large cutoff, the
 results are independent of the cutoff value. 
-Using Eq.~\eqref{eq:Kndef}, Eq.~\eqref{eq:Ktdimless} can be written as
+Using eq.~\eqref{eq:Kndef}, eq.~\eqref{eq:Ktdimless} can be written as
 \begin{align}
         \label{eq:KtBessel}
         K_t\left(-\overline{z}_3^2, \overline{M}^2\right) = 
@@ -989,8 +989,8 @@ factorization theorem, {\em viz.} data for values of $t$ and $z_3$ that
 correspond to large values of $t^2 m^2/z_E^2$ are not described by the
 factorization theorems discussed here. With this in mind, the only logarithmic
 infrared divergence occurs in the first Bessel function, which has been expanded
-using Eq.~\eqref{eq::besselexpansion}. Thus, in the small flow-time regime
-Eq.~\eqref{eq:KtBessel} becomes
+using eq.~\eqref{eq::besselexpansion}. Thus, in the small flow-time regime
+eq.~\eqref{eq:KtBessel} becomes
 \begin{align}
         \label{eq:Ktlogz}
         K_t\left(-\overline{z}_3^2, \overline{M}^2\right) = {} & 
@@ -1001,10 +1001,10 @@ Eq.~\eqref{eq:KtBessel} becomes
                         \frac{t^2 m^2}{z_E^2},1/\overline{z}^2\right)\,,
 \end{align}
 where the rational function ${\cal R}(Mz_3)$ contains the IR finite contributions 
-generated by the $J$ functions of Eq.~\eqref{eq:J}.
-The logarithmic IR divergence in Eq.~\eqref{eq:Ktlogz}, regularized by the mass $m$, matches those in Eqs.~\eqref{eq::Ioffe1loopren} and \eqref{eq::pIoffe1loopren}. 
+generated by the $J$ functions of eq.~\eqref{eq:J}.
+The logarithmic IR divergence in eq.~\eqref{eq:Ktlogz}, regularized by the mass $m$, matches those in eqs.~\eqref{eq::Ioffe1loopren} and \eqref{eq::pIoffe1loopren}. 
 
-In the short flow-time regime, the one-loop contributions to Eq.~\eqref{eq::MEflow} from diagrams (a) and (b) are just those given in Eq.~\eqref{eq::zmzphi}. The corresponding
+In the short flow-time regime, the one-loop contributions to eq.~\eqref{eq::MEflow} from diagrams (a) and (b) are just those given in eq.~\eqref{eq::zmzphi}. The corresponding
 renormalized quantity at one loop is therefore
 \begin{align}
 \label{eq::tIoffe1loopren}
@@ -1013,7 +1013,7 @@ renormalized quantity at one loop is therefore
     &+\alpha \int_0^1 d\xi\,\left(1-\xi\right)
     \left[-\log\left( M^2 z_3^2\right)+ 2 \log\left(2e^{-\gamma_E}\right) + {\cal R}(Mz_3)\right] \widehat{\mathcal{M}}^{(0)}\left(x \nu, 0\right) .
 \end{align}
-We can now directly relate this quantity, via a factorization relation, to the light-cone quantity $f(x,\mu^2)$ using Eq.~\eqref{eq::PDFs}. We obtain
+We can now directly relate this quantity, via a factorization relation, to the light-cone quantity $f(x,\mu^2)$ using eq.~\eqref{eq::PDFs}. We obtain
 \begin{align}
 	\label{eq::factt}
 	\widehat{\mathcal{M}}_t\left(\nu, -z_3^2; \mu^2\right) = 

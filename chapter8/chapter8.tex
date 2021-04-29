@@ -20,7 +20,7 @@ consists in approximating the quasi-PDFs by mean of a discrete Fourier transform
 starting from the limited number of points for the corresponding equal-time correlator available from numerical simulations. 
 The continuous function resulting from this procedure
 is subsequently convoluted with the perturbative matching coefficients relating euclidean and light-cone distributions,
-(see Eq.~\eqref{eq::matching_scalar}) in order to obtain the final PDF.
+(see eq.~\eqref{eq::matching_scalar}) in order to obtain the final PDF.
 The numerical error introduced by this procedure is rather large and difficult to control,
 so that it generally provides unstable and inaccurate results.
 This problem was first addressed within the lattice community in Ref.~\cite{Karpie2019}
@@ -51,9 +51,9 @@ with
 	\mathcal{M}^\bare_{\Gamma,A}\left(z\right)= \bar{\psi}^\bare\lp z\rp \lambda_A \Gamma \,   
 	U\lp z,0\rp \psi^\bare\lp 0\rp.
 \end{align}
-with $\lambda_A$ denoting the flavour structure and the gauge-link $U\lp z,0\rp$ given by Eq.~\eqref{eq::wilsonline}.
-Eqs.~\eqref{eq:Ioffe}, \eqref{eq:bilocal} represent the QCD generalization of the scalar quantity defined 
-in Eq.~\eqref{eq::ME}.
+with $\lambda_A$ denoting the flavour structure and the gauge-link $U\lp z,0\rp$ given by eq.~\eqref{eq::wilsonline}.
+eqs.~\eqref{eq:Ioffe}, \eqref{eq:bilocal} represent the QCD generalization of the scalar quantity defined 
+in eq.~\eqref{eq::ME}.
 
 The vector bilocal operator obtained for $\Gamma=\gamma^\mu$ can be decomposed  
 in terms of two form factors which only depend on the Lorentz invariants $z^2$ and $\nu \equiv - z\cdot P$ as 
@@ -71,19 +71,19 @@ $\gamma^{\mu}=\gamma^{+}$ and $P=\left(P^+,0,0_{\perp}\right)$ we get
 	= 2 P_+\,\mathcal{M}_A^{(0)}\lp \nu,0 \rp
 	= 2 P_+\, \int_{-1}^{1} dx\, e^{i x\nu} f_A^{(0)}\left(x\right)
 \end{align}
-with $f_A^{(0)}\left(x\right)$ being the bare collinear nonsinglet parton distribution given in Eq.~\eqref{eq:fADef}.
+with $f_A^{(0)}\left(x\right)$ being the bare collinear nonsinglet parton distribution given in eq.~\eqref{eq:fADef}.
 Because of the light-cone separation $z$ involved in its definition,
 $M^\bare_{+}$ is not directly computable on a Euclidean lattice. We can define a
 different quantity that is amenable to lattice simulations  by choosing a purely
 spatial separation, $z=\left(0,0,0,z_3\right)$, together with
 $\gamma^{\mu}=\gamma^{0}$ and $P=\left(E,0,0,P_3\right)$. Then taking the time
-component of Eq.~\eqref{eq:Ioffedec} we get
+component of eq.~\eqref{eq:Ioffedec} we get
 \begin{align}
 	\label{eq:pseudoIoffe}
 	M^\bare_{0,A}\left(z, P\right) 
 	= 2 E\,\mathcal{M}_A^{(0)}\lp \nu,-z_3^2 \rp \, .
 \end{align}
-The correlators defined in Eqs.~\eqref{eq:barePDF} and~\eqref{eq:pseudoIoffe}
+The correlators defined in eqs.~\eqref{eq:barePDF} and~\eqref{eq:pseudoIoffe}
 are known in the literature as (bare) \textit{Ioffe-time} distribution (ITD) and
 pseudodistribution (pseudo-ITD)
 respectively~\cite{Radyushkin:2017cyf,Braun:1994jq}. 
@@ -100,14 +100,14 @@ quasi-PDF
 As in the case of standard PDFs,
 the matrix elements defining the quasi-PDFs contain UV divergences, and need to be renormalized. The
 main features of the perturbative renormalization of a bilocal operator, 
-as the one appearing in Eq.~\eqref{eq::bareqpdf}, have been described in chapter~\ref{ch:scalar_model}
+as the one appearing in eq.~\eqref{eq::bareqpdf}, have been described in chapter~\ref{ch:scalar_model}
 in the context of the scalar theory.
 When considering the QCD case, for $z_3^2  \neq 0$ 
 in addition to usual ultraviolet (UV) divergences described in the scalar QFT case, 
 specific link-related UV divergences arise, which are regularized by a finite lattice spacing $a$. 
 Thus, $\mathcal{M}_A^{(0)}\lp \nu,-z_3^2 \rp$ is in fact $\mathcal{M}_A^{(0)}\lp \nu,-z_3^2; a^2 \rp$.
 As we found out looking at the scalar QFT,
-the position space operator appearing in Eq.~\eqref{eq::bareqpdf} can be multiplicatively
+the position space operator appearing in eq.~\eqref{eq::bareqpdf} can be multiplicatively
 renormalized~\cite{Ishikawa:2017faj}, according to
 \begin{align}
     \mathcal{M}_A\lp z P_z,-z_3^2, \mu \rp = Z_{A}(z_3^2)\,
@@ -150,7 +150,7 @@ mix with singlet quark quasi-PDFs under
 renormalization~\cite{Zhang:2018diq,Li:2018tpe}, mixing under matching is
 inevitable. 
 No mixing of the flavour nonsinglet sector with flavour singlet or
-gluon sectors occurs, as stated in Eq.~\eqref{eq::pdftoqpdf}. Ref.~\cite{Wang:2017qyg} did not, however, address the
+gluon sectors occurs, as stated in eq.~\eqref{eq::pdftoqpdf}. Ref.~\cite{Wang:2017qyg} did not, however, address the
 known issue of self-energy corrections, exhibiting a logarithmic UV divergence.
 This was resolved in Ref.~\cite{Izubuchi:2018srq} by adding terms outside of the
 plus prescription in the matching coefficient. As noticed in
@@ -158,7 +158,7 @@ Ref.~\cite{Alexandrou:2018pbm}, such prescription for renormalizing this
 divergence violates vector current conservation, \ie\ the integral of the
 matched PDF is different from the integral of the input quasi-PDF, and not
 necessarily equal to 1 over the whole integration range. As a remedy, a modified
-matching expression, which is given explicitly in Eq.~\eqref{eq::matching} of
+matching expression, which is given explicitly in eq.~\eqref{eq::matching} of
 app.~\ref{app:coefficients}, was proposed in Ref.~\cite{Alexandrou:2018pbm}. It
 consists in resorting to pure plus functions when subtracting the logarithmic
 divergence in self-energy corrections. However, this is an additional
@@ -174,7 +174,7 @@ conservation was derived in an updated version of Ref.~\cite{Izubuchi:2018srq}.
 This defines the so-called ``ratio'' scheme. In this scheme, only pure plus
 functions are used, like in the $\MMSb$ scheme, but the modification is done
 also for the ``physical'' region of $0<z<1$ (in the notation of
-Eq.~\eqref{eq::matching}). Thus, the expected numerical effect of this
+eq.~\eqref{eq::matching}). Thus, the expected numerical effect of this
 modification is larger, as shown explicitly in Ref.~\cite{Alexandrou:2019lfo}.
 For this reason, we choose to use the $\MMSb$ procedure, with details of the
 lattice computation of the bare matrix elements and the renormalization in the
@@ -506,7 +506,7 @@ defined as
 	\end{cases}
 \end{align} 
 where the support is given by $x\in \left[ -1, 1 \right]$. The factorization
-theorem in Eq.~\eqref{eq::pdftoqpdf} becomes
+theorem in eq.~\eqref{eq::pdftoqpdf} becomes
 \begin{align}
 	\label{eq::factorization}
 	  & \tilde{f}_{3}\left(x,\mu,P_z\right) = \int_{-1}^{+1} \frac{dy}{|y|}\,C_3\left(\frac{x}{y},\frac{\mu}{|y|P_z}\right)\, 
@@ -515,8 +515,8 @@ theorem in Eq.~\eqref{eq::pdftoqpdf} becomes
 where the quasi-PDF is the one given by $\Gamma = \gamma^0$ and the explicit
 expression of the matching coefficients is given in
 app.~\ref{app:coefficients}. Starting from the definition of quasi-PDFs
-given in Eq.~\eqref{eq::bareqpdf}, it is clear that the lattice ME is given by the
-inverse Fourier transform of Eq.~\eqref{eq::factorization}, which yields an
+given in eq.~\eqref{eq::bareqpdf}, it is clear that the lattice ME is given by the
+inverse Fourier transform of eq.~\eqref{eq::factorization}, which yields an
 equation relating the light-cone PDFs on the right hand side to the lattice observable:
 \begin{align}
 	\label{eq:factorisedME}
@@ -566,10 +566,10 @@ where, for simplicity, the $\mu$ dependence has been omitted.
 The equations above relate the position space matrix elements computable on the lattice with
 the collinear PDFs. Similar expressions were worked out in Ref.~\cite{Bali:2017gfr} in the context of
 the pion distribution amplitude.   
-The proof of Eqs.~\eqref{eq::V3factorization}, \eqref{eq::T3factorization} does require some
+The proof of eqs.~\eqref{eq::V3factorization}, \eqref{eq::T3factorization} does require some
 care, and it is fully worked out in app.~\ref{app:coefficients}. The coefficients $\mathcal{C}_3^{\text{Re},\text{Im}}$
 are related to the real and imaginary part of the Fourier transform of the matching coefficient 
-$C_3$ appearing in Eq.~\eqref{eq::factorization}. Since the latter is defined in terms of plus distributions,
+$C_3$ appearing in eq.~\eqref{eq::factorization}. Since the latter is defined in terms of plus distributions,
 the computation is quite involved, and the explicit expression of $\mathcal{C}_3^{\text{Re},\text{Im}}$
 is obtained in app.~\ref{app:coefficients}, making the action of the plus distributions explicit before taking the Fourier transform.  
 A discussion about the convergence of the
@@ -580,9 +580,9 @@ distribution over its full support with a perturbatively computable coefficient.
 We will denote this operation as $\circledast$. 
 
 It is useful at this point to recall the form of the QCD factorization formula
-for the DIS nonsinglet structure function, given in Eq.~\eqref{eq:dis_qcd}.
-Comparing Eqs.~\eqref{eq::V3factorization}, \eqref{eq::T3factorization}  with
-Eq.~\eqref{eq:dis_qcd}, we see that the lattice observables introduced
+for the DIS nonsinglet structure function, given in eq.~\eqref{eq:dis_qcd}.
+Comparing eqs.~\eqref{eq::V3factorization}, \eqref{eq::T3factorization}  with
+eq.~\eqref{eq:dis_qcd}, we see that the lattice observables introduced
 above can be treated on the same footing as experimental data for DIS structure
 functions, as they are related to the nonsinglet distributions through a
 convolution with a coefficient that can be computed in perturbation theory.
@@ -606,7 +606,7 @@ described in chapter~\ref{ch:nnpdf_methodology}: lattice data and the correspond
 are implemented in the code, just as they were data for DIS structure functions, and the fitting code
 can be run using the standard methodology, based on neural network parameterization, Monte Carlo replicas generation,
 numerical minimization of the $\chi^2$ and cross validation.
-The $\chi^2$ minimized during the fit is given by Eq~\eqref{eq:chi2}, where the explicit form of the 
+The $\chi^2$ minimized during the fit is given by eq~\eqref{eq:chi2}, where the explicit form of the 
 covariance matrix is
 \begin{align}
 	\label{eq:covariance}
@@ -651,7 +651,7 @@ written in terms of the nonsinglet distributions at a given reference scale
 $\mu_0^2$, by first evolving the parton distribution up to the scale $\mu^2$,
 and then convoluting it with the coefficents
 $\mathcal{C}_3^{\text{Re},\text{Im}}$ defined in
-Eqs.~\eqref{eq::V3factorization}, \eqref{eq::T3factorization} and worked out in
+eqs.~\eqref{eq::V3factorization}, \eqref{eq::T3factorization} and worked out in
 app.~\ref{app:coefficients}. For the nonsinglet distributions considered in this work, the evolution is given by
 \begin{align}
 	\label{eq::NSevolutionPlus}
@@ -677,7 +677,7 @@ where $p$ is the lowest order neglected in the interpolation.
 In other words, the interpolating functions
 act by picking up the value of the PDF at some point $x_{\beta}$ of a
 predefined $x$-grid. Substituting in the evolution equation
-Eq.~\eqref{eq::NSevolutionPlus} we get
+eq.~\eqref{eq::NSevolutionPlus} we get
 \begin{align}
 	\label{eq::fastevol}
 	T_3 \lp x_{\alpha}, \mu^2 \rp & = 
@@ -692,7 +692,7 @@ with
 \end{align}
 The interpolation basis used at the initial scale can also be used to
 interpolate the parton distributions at the scale $\mu^2$ appearing in
-Eqs.~\eqref{eq::V3factorization}, \eqref{eq::T3factorization}. For the imaginary part of the lattice observable we get
+eqs.~\eqref{eq::V3factorization}, \eqref{eq::T3factorization}. For the imaginary part of the lattice observable we get
 \begin{align}
 	\label{eq::applgrid}             
 	\mathcal{O}_{\gamma^0}^{\mathrm{Im}}\lp z,\mu \rp = 
@@ -705,7 +705,7 @@ with
 	\mathcal{C}_3^{\mathrm{Im}}\lp x, z, \frac{\mu}{P_z}\rp 
 	\mathcal{I}^{(\alpha)}\lp x \rp\, . 
 \end{align}
-Putting together Eqs.~\eqref{eq::fastevol} and~\eqref{eq::applgrid} we get
+Putting together eqs.~\eqref{eq::fastevol} and~\eqref{eq::applgrid} we get
 \begin{align}
 	\mathcal{O}_{\gamma^0}^{\mathrm{Im}}\lp z,\mu \rp = 
 	\sum_{\beta}
@@ -737,7 +737,7 @@ Let us now proceed to presenting and discussing our numerical results. First, we
 study the way the available lattice data might constrain the parton
 distributions in a fit, by mean of closure tests: fake data for the real and
 imaginary part of the ME are generated according to
-Eqs.~\eqref{eq::V3factorization},~\eqref{eq::T3factorization} using as input a
+eqs.~\eqref{eq::V3factorization},~\eqref{eq::T3factorization} using as input a
 chosen PDFs set. The fitting code is then run over these pseudo-data, using
 exactly the same setting used in a common fit. By comparing the output of such
 fits with the known input PDFs sets, we can assess the accuracy we may expect to
@@ -755,7 +755,7 @@ and the {\tt ReportEngine} software \cite{zahari_kassabov_2019_2571601}.
 \label{subsec:CT}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 As shown in sec.~\ref{subsec:thpredictions}, we can relate PDFs to lattice
-observables through the matching convolution of Eq.~\eqref{eq::factorization}
+observables through the matching convolution of eq.~\eqref{eq::factorization}
 followed by a Fourier transform. As already pointed out at the end of
 sec.~\ref{subsec:thpredictions}, the resulting convolution $\circledast$ is
 quite different from the one entering standard QCD fits. In this section, we

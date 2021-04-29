@@ -6,10 +6,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In this appendix we report in detail some of the computations performed in
-Sec.~\ref{sec::momentumspace}, to obtain the coefficient $C$ of
-Eq.~\eqref{eq::C0} and its high momentum limit of Eq.~\eqref{eq::matching_scalar}. In
+sec.~\ref{sec::momentumspace}, to obtain the coefficient $C$ of
+eq.~\eqref{eq::C0} and its high momentum limit of eq.~\eqref{eq::matching_scalar}. In
 order to compute the Fourier transform of the coefficient $\tilde{C}$ entering
-Eq.~\eqref{eq::fact0}, we perform a change variable, $\theta = \xi P_3 z_3 $,
+eq.~\eqref{eq::fact0}, we perform a change variable, $\theta = \xi P_3 z_3 $,
 and define $\eta = \frac{y}{\xi}$, so that
 \begin{align}
     \frac{P_3}{2\pi} 
@@ -28,8 +28,8 @@ and define $\eta = \frac{y}{\xi}$, so that
         \biggl(2 K_0\left(\frac{M\theta}{x P_3}\right)
         -\log\frac{\mu^2}{M^2}\biggr)\biggr]\, .
 \end{align}
-The Fourier transform of the Bessel function, obtained also in Ref.~\cite{Radyushkin:2016hsy}, can be computed using the integral
-representation in Eq.~\eqref{eq::Bessel}, computing the gaussian integral over
+The Fourier transform of the Bessel function, obtained also in ref.~\cite{Radyushkin:2016hsy}, can be computed using the integral
+representation in eq.~\eqref{eq::Bessel}, computing the gaussian integral over
 $\theta$ first:
 \begin{align}
     \int_{-\infty}^{\infty} \frac{d\theta}{2\pi}\,
@@ -47,10 +47,10 @@ can be written as
     \left[ \frac{1}{\sqrt{\left(\eta-\xi\right)^2 + \frac{M^2}{x^2P_3^2}}} 
     - \delta\left(\xi-\eta\right) \log\frac{\mu^2}{M^2}\right]\, .
 \end{align}
-As mentioned in Sec.~\ref{sec::momentumspace}, the computation of the
+As mentioned in sec.~\ref{sec::momentumspace}, the computation of the
 large-$P_3$ limit when $\eta \in \left(0,1\right)$ requires additional care,
 since the integrand develops a non-integrable divergence for $\xi=\eta$ when
-$M^2/(x^2P_3^2) \to 0$. This issue was first addressed and solved in Ref.~\cite{Radyushkin:2017lvu} in the context of QCD.
+$M^2/(x^2P_3^2) \to 0$. This issue was first addressed and solved in ref.~\cite{Radyushkin:2017lvu} in the context of QCD.
 Since in the scalar theory the same kind of Bessel function appears, its Fourier transform leads to an analogous singularity. 
 In order to elucidate this problem, given a generic test
 function $\phi\left(\xi\right)$, we consider the integral
@@ -66,7 +66,7 @@ in the limit where $\kappa\to 0$. Defining
     G\left(\eta, \kappa^2\right) = 
     \int_0^1 \frac{d\xi}{\sqrt{\left(\xi - \eta\right)^2 + \kappa^2}}
 \end{equation}
-allows us to rewrite Eq.~\eqref{eq::limitApp} above as 
+allows us to rewrite eq.~\eqref{eq::limitApp} above as 
 \begin{align}
     \label{eq:IntPlusDecomp}
     \int_0^1 d\xi\,
@@ -84,7 +84,7 @@ $G\left(\eta,\kappa^2\right)$, which can be readily evaluated:
     \log \left(4\eta\left(1-\eta\right)\frac{1}{\kappa^2}\right) +
     \mathcal O\left(\kappa^2\right)\, .
 \end{equation}
-The integral on the RHS of Eq.~\eqref{eq:IntPlusDecomp} is convergent for $\kappa\to
+The integral on the RHS of eq.~\eqref{eq:IntPlusDecomp} is convergent for $\kappa\to
 0$, and we have
 \begin{align}
     \int_0^1 & d\xi\, 
@@ -108,16 +108,16 @@ Therefore, collecting both contributions,
     + \frac{1}{\left|\eta - \xi\right|_+} + \mathcal{O}\left(\kappa^2\right)\, .
 \end{align}
 
-\section{Equivalence between pseudo- and quasi-PDF approaches}
+\section{equivalence between pseudo- and quasi-PDF approaches}
 \label{app:check}
 
-As discussed at the end of Sec.~\ref{sec:factorization}, taking the
+As discussed at the end of sec.~\ref{sec:factorization}, taking the
 small-$z_3^2$ limit in position space is equivalent to taking the large-$P_3$
 limit in momentum space. This can be verified at 1-loop by showing that the
-coefficent functions of Eqs.~\eqref{eq::Cpseudo0} and~\eqref{eq::matching_scalar} are
-related through a Fourier transform, as stated in Eq.~\eqref{eq::check}. Here we
+coefficent functions of eqs.~\eqref{eq::Cpseudo0} and~\eqref{eq::matching_scalar} are
+related through a Fourier transform, as stated in eq.~\eqref{eq::check}. Here we
 report the details of the computation. Taking the Fourier transform of the
-small-$z_3^2$ coefficient of Eq.\eqref{eq::Cpseudo0} and defining $\eta= y/x$ we
+small-$z_3^2$ coefficient of eq.\eqref{eq::Cpseudo0} and defining $\eta= y/x$ we
 have 
 \begin{align}
     \label{eq::checkapp}
@@ -132,7 +132,7 @@ have
     -\alpha\int_0^1 d\xi \left(1-\xi\right)\int_{-\infty}^{\infty} \frac{d\theta}{2\pi} 
     e^{-i \left(\eta-\xi\right) \theta} \,\log\theta^2\biggr]\, .
 \end{align}
-Following Ref.~\cite{Izubuchi:2018srq}, the Fourier transform of $\log\theta^2$
+Following ref.~\cite{Izubuchi:2018srq}, the Fourier transform of $\log\theta^2$
 can be defined as
 \begin{align}
     \label{eq::FTlog}
@@ -154,12 +154,12 @@ with
     \left[\theta\left(\frac{1}{|t|}-a\right)|t| + \delta\left(\frac{1}{|t|}-a\right)\log a\right], \\
     &\delta\left(\frac{1}{|t|}\right) = \lim_{a\rightarrow 0}\delta\left(\frac{1}{|t|} - a\right)\, .
 \end{align}
-The proof of Eq.~\eqref{eq::FTlog} can be found, for example, in the Appendix A
-and C of Ref.~\cite{Izubuchi:2018srq}, to which we refer for more details.
-Setting $t = \eta-\xi $ and plugging everything in Eq.~\eqref{eq::checkapp},
+The proof of eq.~\eqref{eq::FTlog} can be found, for example, in the appendix A
+and C of ref.~\cite{Izubuchi:2018srq}, to which we refer for more details.
+Setting $t = \eta-\xi $ and plugging everything in eq.~\eqref{eq::checkapp},
 remembering that $\xi \in \left[0,1\right]$, we get different answers depending
 on the value of $\eta$. For $\eta \in \left[0,1\right]$, just the first two
-terms in Eq.~\eqref{eq::FTlog} contribute, giving
+terms in eq.~\eqref{eq::FTlog} contribute, giving
 \begin{align}
     \label{eq::cont1}
     \int_0^1 &d\xi \left[2 \gamma_E \, \delta\left(\eta-\xi\right) -
@@ -170,12 +170,12 @@ terms in Eq.~\eqref{eq::FTlog} contribute, giving
     & = \log{e^{2\gamma_E}}\left(1-\eta\right) + 
     \left(1-\eta\right)\log{\eta\left(1-\eta\right)} +2\eta -1\, ,
 \end{align}
-while for $\eta > 1$ or $\eta < 0$ the third contribution in Eq.~\eqref{eq::FTlog} gives simply
+while for $\eta > 1$ or $\eta < 0$ the third contribution in eq.~\eqref{eq::FTlog} gives simply
 \begin{align}
     \label{eq::cont2}
     -\int_0^1 d\xi\, \left(1-\xi\right)\frac{|\eta-\xi|}{\left(\eta-\xi\right)^2}\, .
 \end{align}
-Looking at the last term in Eq.~\eqref{eq::FTlog}, considering its contribution
+Looking at the last term in eq.~\eqref{eq::FTlog}, considering its contribution
 to the convolution integral with the PDF and doing the integral over $x$ first
 we find
 \begin{align}
@@ -184,9 +184,9 @@ we find
     \delta\left(\frac{1}{|\frac{y}{x}-\xi|} - a\right)f\left(x\right) 
     \propto \lim_{a\rightarrow 0} a^2 f\left(a\right) = 0.
 \end{align}
-Using Eqs.~\eqref{eq::cont1}, \eqref{eq::cont2}, \eqref{eq::cont3} in
-Eq.~\eqref{eq::checkapp} we find back the expression for
-$C\left(\eta,\frac{\mu^2}{x^2 P_3^2}\right)$ as in Eq.~\eqref{eq::matching},
+Using eqs.~\eqref{eq::cont1}, \eqref{eq::cont2}, \eqref{eq::cont3} in
+eq.~\eqref{eq::checkapp} we find back the expression for
+$C\left(\eta,\frac{\mu^2}{x^2 P_3^2}\right)$ as in eq.~\eqref{eq::matching},
 which completes our check.
 
 \section{quasi-PDFs and their moments}
@@ -194,25 +194,25 @@ which completes our check.
 
 As mentioned at the beginning of chapter~\ref{ch:scalar_model}, the works where the concept of
 quasi-PDF was first introduced have been criticized in
-Refs.~\cite{Rossi:2017muf, Rossi:2018zkn}, where it was argued that such
+refs.~\cite{Rossi:2017muf, Rossi:2018zkn}, where it was argued that such
 approach does not give access to the full nonperturbative PDF. In support of
 their argument, the Authors have shown that moments of quasi-PDFs are divergent:
 since the moments of parton distributions should reproduce the (finite) matrix
 elements of the renormalized local DIS operator, they conclude that the
 quasi-PDF cannot be considered as an euclidean generalization of the light-cone
 PDF. The problem has been addressed in several independent papers, see e.g.
-Refs.~\cite{Ji:2017rah, Radyushkin:2018nbf, Karpie:2018zaz}. In this appendix we
+refs.~\cite{Ji:2017rah, Radyushkin:2018nbf, Karpie:2018zaz}. In this appendix we
 revise these criticisms in the framework of the scalar model: first we show how
-the points raised in Ref.~\cite{Rossi:2017muf, Rossi:2018zkn} can be easily seen
+the points raised in ref.~\cite{Rossi:2017muf, Rossi:2018zkn} can be easily seen
 and understood within the toy model presented in chapter~\ref{ch:scalar_model}, showing explicitly
 how all the moments of quasi-PDFs are indeed divergent; second we discuss how
 such feature does not invalidate the programme presented in
-Sec.~\ref{sec:conclusions_scalar}, based on the determination of a parametric form of
+sec.~\ref{sec:conclusions_scalar}, based on the determination of a parametric form of
 the light-cone PDF based on a discrete set of data for the euclidean matrix
 element.
 
 We start this section by computing the moments of the quasi-PDF. From
-Eq.~\eqref{eq::1loopcont}, using the integral representation of the Bessel
+eq.~\eqref{eq::1loopcont}, using the integral representation of the Bessel
 function, the $\mathcal{O}\left(\alpha\right)$ contribution to the euclidean
 matrix element reads
  \begin{align}
@@ -288,7 +288,7 @@ and considering $n-k = 2m$, we get
 \end{align}
 where again we have introduced a cutoff $a^2$ for small values of $T$ and
 considered the limit $a^2 \rightarrow 0$. Contributions from odd values of $n-k$
-vanish. Looking at Eqs.~\eqref{eq::logdiv}, \eqref{eq::powerdiv} it is then
+vanish. Looking at eqs.~\eqref{eq::logdiv}, \eqref{eq::powerdiv} it is then
 clear that all the moments of the quasi-PDFs will be at least logarithmically
 divergent with the cutoff $a^2$, with higher moments affected by higher power
 divergences.
@@ -297,10 +297,10 @@ This relatively simple calculation shows that we obtain divergent contributions
 for the moments of the quasi-PDF and therefore quasi-PDFs cannot be considered
 as the proper euclidean generalization of the light-cone parton distribution.
 This, however, does not invalidate the approach described in
-Sec.~\ref{sec:conclusions_scalar}: as mentioned, what really matters is the existence
+sec.~\ref{sec:conclusions_scalar}: as mentioned, what really matters is the existence
 of a factorization theorem connecting the collinear PDF with a renormalizable
 quantity that can be computed on the lattice, which in our case will be the
-euclidean matrix element of Eq.~\eqref{eq::pIoffe1loopren}, computed for fixed
+euclidean matrix element of eq.~\eqref{eq::pIoffe1loopren}, computed for fixed
 values of $P_3$ and $z_3$. As long as $z_3$ is kept small and different from
 $0$, the factorization formula \eqref{eq::fact2} holds, and can be used to fit
 the light-cone PDF using the available lattice data. How well such data can

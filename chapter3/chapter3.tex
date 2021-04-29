@@ -22,7 +22,7 @@ First, PDFs are continuos functions, which makes our problem intrinsically ill-d
 $q\left(x,Q_0^2\right)$ cannot be determine from a discrete set of data, no matter how large such set is.
 Second, the data are not instances of the functions we are trying to determine, but they are related to 
 them through factorization theorems: each point is determined combining a certain subset of PDFs in a non-linear way,
-and integrating over a certain range of $x$, as stated in Eq.~\eqref{eq:hadron_hadron}. 
+and integrating over a certain range of $x$, as stated in eq.~\eqref{eq:hadron_hadron}. 
 As we will extensively discuss in this and the following chapters,
 this fact has several practical and conceptual implications.
 
@@ -189,7 +189,7 @@ at large and small $x$, so that the parameterization for each independent flavou
 	\label{eq::paramEvol}
 	x\,q_j\left(x, Q_0^2\right) = x^{1-\alpha_{j}}\left(1-x\right)^{\beta_{j}}\text{NN}_{j}\left(x\right)\,.
 \end{align}
-Eq.~\eqref{eq::paramEvol} can be supplemented by an additional normalization factor $A_j$ which imposes momentum
+eq.~\eqref{eq::paramEvol} can be supplemented by an additional normalization factor $A_j$ which imposes momentum
 and valence sum rules. The eight flavours independently parameterized in NNPDF3.1 are 
 \begin{align}
     \label{eq:nnpdf31IC_basis}
@@ -211,7 +211,7 @@ which in terms of quarks and antiquarks distributions are given by
 		\includegraphics[scale=0.25]{nn31.pdf}
 	\end{center}
     \caption{Graphical representation of the neural network used in the NNPDF code.
-    For each PDF of Eq.~\eqref{eq:nnpdf31IC_basis} one independent neural network is implemented.}
+    For each PDF of eq.~\eqref{eq:nnpdf31IC_basis} one independent neural network is implemented.}
 	\label{nn}                 
 \end{figure}
 The preprocessing exponents $\alpha_i$ and $\beta_i$ are randomized, by choosing a different value for each replica
@@ -360,9 +360,9 @@ For each dataset entering the fit, a vector of $x$ values is given as input to t
 as in the old methodology, before going through the intermediate layers it is split into $\left(x,\log x\right)$.
 The eight output nodes of the neural network provide the eight independent PDFs parameterized at 
 the reference scale $Q_0$. We denote such set of independent parton distributions as \textit{fit basis}.
-In NNPDF3.1, this is given by Eq.~\eqref{eq:nnpdf31IC_basis}. The new framework allows the user to choose between 
+In NNPDF3.1, this is given by eq.~\eqref{eq:nnpdf31IC_basis}. The new framework allows the user to choose between 
 different options: two standard choices are the so called evolution and flavour basis.
-While the former represents the equivalent of the one given in Eq.~\eqref{eq:nnpdf31IC_basis}, in
+While the former represents the equivalent of the one given in eq.~\eqref{eq:nnpdf31IC_basis}, in
 the latter each quark, antiquark and the gluon are independently parameterized. 
 The choice of the fit basis should not affect the final results, however different choices might be more
 convenient from a numerical point of view, and different architecture setups might be required
@@ -379,7 +379,7 @@ The parton distributions used to build the FK tables are the thirteen PDFs
 	q_i = \Sigma, g, V, V_3, V_8, V_{15}, V_{24}, V_{35}, T_3, T_8, T_{15}, T_{24}, T_{35}.
 \end{align}
 Eight of these are independently parameterized, while the remaining ones, involving heavy quarks,
-are determined by perturbative evolution, using the matching relations given in Eqs.~\eqref{eq:matching_PDFs}.
+are determined by perturbative evolution, using the matching relations given in eqs.~\eqref{eq:matching_PDFs}.
 When QED corrections are considered in the analysis,
 the photon PDF $\gamma$ is also included and independently parameterized.   
 As mentioned before, the {\tt n3fit} environment allows for different fit basis choices. In other 
@@ -392,7 +392,7 @@ The former is defined by the eight dimensional subset of \eqref{eq::fkdistributi
     \label{eq:evolution_basis}
     q_k = \left[g, \Sigma, V, V_3, V_8, T_3, T_8, T_{15} \right]\,.
 \end{align}
-This basis is the equivalent of the one given in Eq.~\eqref{eq:nnpdf31IC_basis}, with the only difference
+This basis is the equivalent of the one given in eq.~\eqref{eq:nnpdf31IC_basis}, with the only difference
 that the distribution $c^+$ has been replaced by $T_{15}$, defined as 
 \begin{align}
     T_{15}     &=  \lp u+\bar{u} +  d+\bar{d} +  s+\bar{s} \rp - 3\lp   c+\bar{c}\rp \, .
@@ -404,7 +404,7 @@ up, down, strange and charm quarks and antiquarks distributions (for charm we co
 	\tilde{q}_k = \left[g, u, \bar{u}, d, \bar{d}, s, \bar{s}, c\right]\,.
 \end{align} 
 When running a fit, the eight PDFs of the chosen basis are first supplemented with the perturbative heavy quarks
-distributions and then rotated back into the FK table basis of Eq.~\eqref{eq::fkdistributions}.
+distributions and then rotated back into the FK table basis of eq.~\eqref{eq::fkdistributions}.
 
 %
 The final result of a PDFs determination should be independent on the specific basis used in the fit
@@ -428,14 +428,14 @@ different fit bases.
 \paragraph{Sum rules.} 
 \label{sec:sumrules}
 As seen in sec.~\ref{sec:parton_model} in the context of the parton model, the valence structure
-of the proton implies the valence sum rules Eq.~\eqref{eq:valence_sumrules_parton_model}.
+of the proton implies the valence sum rules eq.~\eqref{eq:valence_sumrules_parton_model}.
 Additionally, energy conservation implies momentum sum rules, given by
 \begin{align}
     \label{eq:momentum_sumrule}
     \int_0^1 dx\, x\left(g\left(x\right) + \Sigma\left(x\right)\right) = 1\,. 
 \end{align}
 In QCD these sum rules remain valid, and provide additional information to constrain parton distributions.
-We can rewrite Eq.~\eqref{eq:valence_sumrules_parton_model} in terms of the evolution basis
+We can rewrite eq.~\eqref{eq:valence_sumrules_parton_model} in terms of the evolution basis
 \begin{align}
     \label{eq:valence_sumrules}
     \int_0^1& dx\, V\left(x\right) = \int_0^1 dx\, V_8\left(x\right) = 3\,,   \,\,\,
@@ -448,9 +448,9 @@ $A_V$, $A_{V_3}$, $A_{V_8}$ and $A_g$ defined as
     A_{V_3} = \frac{1}{\int_0^1 dx\, V_3\left(x\right)}\,,\,\,
     A_g = \frac{1 - \int_0^1 dx\, x \Sigma\left(x\right)}{\int_0^1 dx\, x g\left(x\right)}\,,
 \end{align} 
-so that Eqs.~\eqref{eq:momentum_sumrule}, \eqref{eq:valence_sumrules} are automatically
+so that eqs.~\eqref{eq:momentum_sumrule}, \eqref{eq:valence_sumrules} are automatically
 satisfied.
-Such multiplication happens after rotating the fit basis back into Eq.~\eqref{eq::fkdistributions},
+Such multiplication happens after rotating the fit basis back into eq.~\eqref{eq::fkdistributions},
 so that the procedure remains the same independently on the choice of the fit basis.
 
 %
@@ -460,7 +460,7 @@ Additional information about PDFs can be obtained by the Gottfried sum rule, giv
     I_G = \int_0^1 \frac{dx}{x} \left[F_2^{lp} - F_2^{ln}\right]\,,
 \end{align}
 where $F_2^{lp}$ and $F_2^{ln}$ are the structure functions of charged lepton-proton and charged lepton-nucleon DIS.
-Eq.~\eqref{eq:gottfried_sumrule} can be expressed as
+eq.~\eqref{eq:gottfried_sumrule} can be expressed as
 \begin{align}
     \label{eq:gottfried_sumrule_1}
     I_G &= \frac{1}{3}\int_0^1 dx\,\left(u_v\left(x\right) - d_v\left(x\right)\right) 
@@ -490,18 +490,18 @@ described before.
 The use of an additional polynomial factor $x^{-\alpha_i}$, controlling the small-$x$ behaviour of each flavour,
 only makes sense when working in the evolution basis. In this case, each flavour is either a singlet or nonsinglet
 distribution, and as such its small-$x$ behaviour can be classified as integrable (nonsinglet) or not integrable (singlet)
-in $x=0$: a parameterization like the one given in Eq.~\eqref{eq::paramEvol} can be used, with $\alpha$
+in $x=0$: a parameterization like the one given in eq.~\eqref{eq::paramEvol} can be used, with $\alpha$
 randomized in intervals such that $\alpha<1$ in the former case and $\alpha>1$ in the latter.
 %
 On the other hand, when working in the flavour basis each distribution (except the gluon) has both a singlet 
 and a nonsinglet component, which makes it impossible to use a polynomial expression 
 to describe in a consistent way its small-$x$ behaviour. Because of this, when working in the flavour basis
-only a large-$x$ preprocessing is implemented, so that each distribution of Eq.~\eqref{eq:flavour_basis} is
+only a large-$x$ preprocessing is implemented, so that each distribution of eq.~\eqref{eq:flavour_basis} is
 parameterized as
 \begin{align}
     x\,\tilde{q}_j\left(x, Q_0^2\right) = \left(1-x\right)^{\beta_{j}}\text{NN}_{j}\left(x\right)\,,
 \end{align}
-with $\text{NN}_{j}\left(x\right)$ denoting the corresponding neural network output, just as in Eq.~\eqref{eq::paramEvol}.
+with $\text{NN}_{j}\left(x\right)$ denoting the corresponding neural network output, just as in eq.~\eqref{eq::paramEvol}.
 
 
 
@@ -534,7 +534,7 @@ on the large-$x$ region of the PDFs.
 
 %
 For each distribution $\tilde{q}_k$ which has to be positive, namely for all the PDFs defining the
-flavour basis of Eq.~\eqref{eq:flavour_basis}, we add to the total $\chi^2$ a contribution defined as  
+flavour basis of eq.~\eqref{eq:flavour_basis}, we add to the total $\chi^2$ a contribution defined as  
 \begin{align}
 	\label{eq:chi2pos_k}
 	\chi^2_{k,pos} = \Lambda_k \,\sum_i \,\text{Elu}_{\alpha}\left(-\tilde{q}_k\left(x_i,Q^2\right)\right)\,,
@@ -555,7 +555,7 @@ When the distribution $\tilde{q}_k\left(x_i, Q^2\right)$ is negative, the total 
 Therefore, during the minimization of $\chi^2_{tot}$ solutions corresponding to positive distributions $q_k$
 will be favoured. Note that such implementation works fine for both the evolution and flavour basis, the only 
 difference being the linear transformation mapping the network outputs to the positive distributions to be 
-used in Eq.~\eqref{eq:chi2pos_k}.
+used in eq.~\eqref{eq:chi2pos_k}.
 
 \paragraph{Integrability.}
 Given the lack of data in the small-$x$ region, when $x<10^{-4}$ the PDFs are left largely unconstrained. 
@@ -578,7 +578,7 @@ such distribution cannot raise faster than $1/x$. In other words the following l
     \lim_{x\rightarrow 0} xq\left(x,Q_0^2\right) = 0\,.
 \end{align}
 %
-In order to satisfy numerically Eq.~\eqref{eq:integrability}
+In order to satisfy numerically eq.~\eqref{eq:integrability}
 we require that, for a given set of points $x^{(i)}_{\text{integ}}$ in the small-$x$ region,
 the function $xq\left(x\right)$ evaluated in these points is much smaller than its peak value,
 \begin{align}
@@ -591,12 +591,12 @@ Eq.~\eqref{eq:integ_def} can be rewritten introducing a numerical parameter $f_q
     \label{eq:integ_def_2}
     \sum_i|xq|_{x=x^{(i)}_{\text{integ}}} < f_q*xq|_{x=x_{\text{peak}}}\,.
 \end{align}
-Despite Eq.~\eqref{eq:integ_def_2} is not mathematically equivalent to Eq.~\eqref{eq:integrability},
+Despite eq.~\eqref{eq:integ_def_2} is not mathematically equivalent to eq.~\eqref{eq:integrability},
  the idea is that,
 if satisfied for small enough $x$ values $x^{(i)}_{\text{integ}}$, the function $xq\left(x\right)$ will 
 decrease to zero as $x$ keeps getting smaller, and the integrals defining the sum rules will be 
-well defined. Also, unlike Eq.~\eqref{eq:integrability}, the condition given
-in Eq.~\eqref{eq:integ_def_2} can be easily verified replica by replica, so that replicas not satisfying it
+well defined. Also, unlike eq.~\eqref{eq:integrability}, the condition given
+in eq.~\eqref{eq:integ_def_2} can be easily verified replica by replica, so that replicas not satisfying it
 can be discarded.
 
 %
@@ -608,7 +608,7 @@ add to the total $\chi^2$ a new bit defined as
 	\chi^2_{k,integ} = \Lambda_k \,\sum_i \,\left[x_i\,q_k\left(x_i,Q^2\right)\right]^2\,,
 \end{align}
 In this way, the fit will favour configurations with smaller values of $|x_i\,q_k\left(x_i,Q^2\right)|$, and should 
-therefore produce distributions satisfying Eq.~\eqref{eq:integ_def_2}. The points $x_i$ are chosen in different ways depending
+therefore produce distributions satisfying eq.~\eqref{eq:integ_def_2}. The points $x_i$ are chosen in different ways depending
 on the specific distribution and fit basis we are considering, as detailed in the next section. 
 
 
@@ -624,7 +624,7 @@ during the fit is
 	\chi^2_{tot} = \chi^2_{exp} + \sum_k\, \chi^2_{k,\text{pos}} + \sum_l\, \chi^2_{l,\text{integ}}
 \end{align}
 with the indices $k$ and $l$ running on the positive and integrable distributions
-and $\chi^2_{k,\text{pos}}$, $\chi^2_{l,\text{integ}}$ defined in Eqs.~\eqref{eq:chi2pos_k}, \eqref{eq:chi2integ_k}.
+and $\chi^2_{k,\text{pos}}$, $\chi^2_{l,\text{integ}}$ defined in eqs.~\eqref{eq:chi2pos_k}, \eqref{eq:chi2integ_k}.
 
 %
 In this section we present results produced with the new {\tt n3fit} methodology,
@@ -660,11 +660,11 @@ datapoints, see ref.~\cite{Ball:2017nwa} for more details.
 
 %
 When working in the evolution basis the small-$x$ behaviour is largely controlled by the preprocessing
-polynomial factor. Eq.~\eqref{eq:integ_def_2}
+polynomial factor. eq.~\eqref{eq:integ_def_2}
 can then be satisfied mainly by choosing the corresponding preprocessing exponents in an interval which ensures integrability.
-Additionally, the Lagrange multiplier term given in Eq.~\eqref{eq:chi2integ_k} is added to the
+Additionally, the Lagrange multiplier term given in eq.~\eqref{eq:chi2integ_k} is added to the
 total $\chi^2$ using a single small-$x$ point $x=10^{-9}$. These choices have been proved to
-produce replicas which mostly satisfy Eq.~\eqref{eq:integ_def_2}. 
+produce replicas which mostly satisfy eq.~\eqref{eq:integ_def_2}. 
 
 %
 In Tab.~\ref{tab:experiments_chi2} we provide values of $\chi^2/N_{\text{dat}}$ for an {\tt n3fit } global fit,
@@ -735,8 +735,8 @@ As mentioned in sec.~\ref{sec:theory_constraints}, when working in the flavour b
 no small-$x$ preprocessing is used. This implies that the small-$x$ behaviour of the PDFs, which is unconstrained 
 by experimental data, can only be controlled through Lagrange multipliers.
 Because of this reason, for integrable distributions more stringent constraints are used than those implemented
-for the evolution basis. In particular, in order to get replicas satisfying Eq.~\eqref{eq:integ_def_2},
-the Lagrange multiplier terms given in Eq.~\eqref{eq:chi2integ_k} are built using the three small-$x$
+for the evolution basis. In particular, in order to get replicas satisfying eq.~\eqref{eq:integ_def_2},
+the Lagrange multiplier terms given in eq.~\eqref{eq:chi2integ_k} are built using the three small-$x$
 points $x_i = 10^{-5}, 10^{-4}, 10^{-3}$. 
 
 %
