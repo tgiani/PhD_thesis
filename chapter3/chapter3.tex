@@ -189,7 +189,7 @@ at large and small $x$, so that the parameterization for each independent flavou
 	\label{eq::paramEvol}
 	x\,q_j\left(x, Q_0^2\right) = x^{1-\alpha_{j}}\left(1-x\right)^{\beta_{j}}\text{NN}_{j}\left(x\right)\,.
 \end{align}
-eq.~\eqref{eq::paramEvol} can be supplemented by an additional normalization factor $A_j$ which imposes momentum
+Eq.~\eqref{eq::paramEvol} can be supplemented by an additional normalization factor $A_j$ which imposes momentum
 and valence sum rules. The eight flavours independently parameterized in NNPDF3.1 are 
 \begin{align}
     \label{eq:nnpdf31IC_basis}
@@ -421,7 +421,7 @@ fit results are independent on the specific PDFs initially parameterized.
 \label{sec:theory_constraints}
 
 As mentioned above, there are several theoretical conditions that can be used to further constrain PDFs.
-In the following we address each of them, discussing the way they are implemented when considering
+In the following we address each of them, discussing the way in which they are implemented when considering
 different fit bases.
 
 %
@@ -459,16 +459,17 @@ Additional information about PDFs can be obtained by the Gottfried sum rule, giv
     \label{eq:gottfried_sumrule}
     I_G = \int_0^1 \frac{dx}{x} \left[F_2^{lp} - F_2^{ln}\right]\,,
 \end{align}
-where $F_2^{lp}$ and $F_2^{ln}$ are the structure functions of charged lepton-proton and charged lepton-nucleon DIS.
-eq.~\eqref{eq:gottfried_sumrule} can be expressed as
+where $F_2^{lp}$ and $F_2^{ln}$ are the structure functions of lepton-proton and lepton-neutron DIS.
+Eq.~\eqref{eq:gottfried_sumrule} can be expressed as
 \begin{align}
     \label{eq:gottfried_sumrule_1}
     I_G &= \frac{1}{3}\int_0^1 dx\,\left(u_v\left(x\right) - d_v\left(x\right)\right) 
     + \frac{2}{3}\int_0^1 dx\,\left(\bar{u}\left(x\right) - \bar{d}\left(x\right)\right) \nonumber \\
     & = \frac{1}{3} + \frac{2}{3}\int_0^1 dx\,\left(\bar{u}\left(x\right) - \bar{d}\left(x\right)\right)\,. 
 \end{align}
-Experimental analyses of the deviation of $I_G$ from the nominal value of $1/3$ \cite{Amaudruz:1991at},
-provide measurements of the quark flavour asymmetry of the sea $\int dx \left(\bar{u} - \bar{d}\right)$.
+Experimental data from th NMC collaboration show a deviation of $I_G$
+from the nominal value of $1/3$ \cite{Amaudruz:1991at},
+and provide measurements of the quark flavour asymmetry of the sea $\int dx \left(\bar{u} - \bar{d}\right)$.
 Unlike the case of the valence sum rules, no specific value for the Gottfried sum rule is imposed
 during the fit.
 However the value of $I_G$ can be directly related to the integral of distribution $T_3$ 
@@ -476,8 +477,9 @@ However the value of $I_G$ can be directly related to the integral of distributi
     \label{eq:T3_integral}
     I_G = \frac{1}{3}\int_0^1 dx\, T_3\left(x\right)\,. 
 \end{align}
-Eq.~\eqref{eq:T3_integral} shows how, in order to have a well defined Gottfried sum rule, the distribution
-$T_3$ has to be integrable in the interval $\left(0,1\right)$, providing information for its small-$x$ behaviour.
+Eq.~\eqref{eq:T3_integral} shows how, in order to have a well defined value for the Gottfried sum rule,
+the distribution $T_3$ has to be integrable in the interval $\left(0,1\right)$, 
+providing information for its small-$x$ behaviour.
 
 
 
@@ -490,7 +492,7 @@ described before.
 The use of an additional polynomial factor $x^{-\alpha_i}$, controlling the small-$x$ behaviour of each flavour,
 only makes sense when working in the evolution basis. In this case, each flavour is either a singlet or nonsinglet
 distribution, and as such its small-$x$ behaviour can be classified as integrable (nonsinglet) or not integrable (singlet)
-in $x=0$: a parameterization like the one given in eq.~\eqref{eq::paramEvol} can be used, with $\alpha$
+in $x=0$, as discussed in the following paragraphs: a parameterization like the one given in eq.~\eqref{eq::paramEvol} can be used, with $\alpha$
 randomized in intervals such that $\alpha<1$ in the former case and $\alpha>1$ in the latter.
 %
 On the other hand, when working in the flavour basis each distribution (except the gluon) has both a singlet 
@@ -569,7 +571,7 @@ As seen in sec.~\ref{sec:sumrules}, in order to have well defined momentum and v
 the distributions $V,\, V_3,\, V_8,\, xg,\, x\Sigma$ have to be integrable when $x$ decrease to zero.
 Moreover, in order to have well defined Gottfried sum rules, also the integral of $T_3$ over the interval
 $\left(0,1\right)$ has to be finite. 
-Assuming an equal small-$x$ behaviour of all the light sea quarks, the same is true also for the distribution $T_8$.
+The same is true also for the distribution $T_8$, assuming the same small-$x$ behaviour for all the light sea quarks.
 
 This means that, denoting as $q\left(x,Q_0^2\right)$ a generic integrable PDF at the fitting scale, as $x$ decreases to zero
 such distribution cannot raise faster than $1/x$. In other words the following limit has to be verified
@@ -660,14 +662,14 @@ datapoints, see ref.~\cite{Ball:2017nwa} for more details.
 
 %
 When working in the evolution basis the small-$x$ behaviour is largely controlled by the preprocessing
-polynomial factor. eq.~\eqref{eq:integ_def_2}
+polynomial factor. Eq.~\eqref{eq:integ_def_2}
 can then be satisfied mainly by choosing the corresponding preprocessing exponents in an interval which ensures integrability.
 Additionally, the Lagrange multiplier term given in eq.~\eqref{eq:chi2integ_k} is added to the
 total $\chi^2$ using a single small-$x$ point $x=10^{-9}$. These choices have been proved to
 produce replicas which mostly satisfy eq.~\eqref{eq:integ_def_2}. 
 
 %
-In Tab.~\ref{tab:experiments_chi2} we provide values of $\chi^2/N_{\text{dat}}$ for an {\tt n3fit } global fit,
+In tab.~\ref{tab:experiments_chi2} we provide values of $\chi^2/N_{\text{dat}}$ for a {\tt n3fit } global fit,
 reporting results also for each experiment included in the analysis.
 These are compared to their {\tt n3fit} counterpart produced without positivity and integrability constraints. 
 Inspection of this table shows how the fit quality is basically unaffected by the introduction of the
@@ -678,7 +680,7 @@ the experimental data.
  
 %
 In fig.~\ref{fig:distances} we show the distance between the two fits, quantifying the effect of theoretical
-constraints at the PDFs level. For the definition of the distance between PDFs sets, see App.~\ref{app:estimators}.
+constraints at the PDFs level. For the definition of the distance between PDFs sets, see app.~\ref{app:estimators}.
 While in the small-$x$ region the difference between the two fits remains below 
 one-sigma, in the medium- and large-$x$ regions we find differences of up to
 two-sigmas. The evolution basis flavours $V$, $V_3$, $V_8$ and $T_8$ are plotted in linear scale in fig.~\ref{fig:pdfs_plots}.
@@ -742,13 +744,13 @@ points $x_i = 10^{-5}, 10^{-4}, 10^{-3}$.
 %
 The fit quality is again basically unchanged, with a total $\chi^2$ which is slightly better than the corresponding 
 value in the evolution basis: $\chi_{\text{flav}}^2=1.13$ to be compared with the value $\chi_{\text{evol}}^2=1.15$ 
-from Tab.~\ref{tab:experiments_chi2}.
+from tab.~\ref{tab:experiments_chi2}.
 The resulting PDFs plotted in the evolution basis are reported in fig.~\ref{fig:pdfs_plots_flav_vs_evol}, 
 where they are compared with the evolution basis fit presented in the previous section.
 The plots are shown in linear scale, in order to highlight the $x$-region where more experimental data are available.
 By inspection of fig.~\ref{fig:pdfs_plots_flav_vs_evol} it is clear that fit basis independence is achieved,
 showing how, as expected, as long as data are present and physical constraints given by positivity, integrability and sum rules
-consistently implemented, different choices for the fit basis do no change the final PDFs.
+consistently implemented, different choices for the fit basis do not change the final PDFs.
 It is worth stressing that this result, even if expected, is not trivial. When we change fit basis a number
 of settings and parameters are changed at the same time. In particular, no small-$x$ preprocessing
 is used for the flavour basis, which therefore presents a lower number of free parameters.
