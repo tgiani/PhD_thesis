@@ -23,14 +23,14 @@ is subsequently convoluted with the perturbative matching coefficients relating 
 (see eq.~\eqref{eq::matching_scalar}) in order to obtain the final PDF.
 The numerical error introduced by this procedure is rather large and difficult to control,
 so that it generally provides unstable and inaccurate results.
-This problem was first addressed within the lattice community in Ref.~\cite{Karpie2019}
+This problem was first addressed within the lattice community in ref.~\cite{Karpie2019}
 where a series of possible approaches to tackle the problem of incomplete and discretized Fourier
 transform has been presented.
 
-In this chapter, based on Ref.~\cite{Cichy:2019ebf}, following the ideas of sec.~\ref{sec:conclusions_scalar}
+In this chapter, based on ref.~\cite{Cichy:2019ebf}, following the ideas of sec.~\ref{sec:conclusions_scalar}
 and the formalism described in sec.~\ref{sec::momentumspace}, we exploit the momentum space factorization
 of quasi-PDFs in PDFs and perturbatively computable coefficients to extract nonsinglet distributions from the data of
-Refs.~\cite{Alexandrou:2018pbm,Alexandrou:2019lfo}, using the {\tt NNPDF} framework described
+refs.~\cite{Alexandrou:2018pbm,Alexandrou:2019lfo}, using the {\tt NNPDF} framework described
 in chapter~\ref{ch:nnpdf_methodology} and treating the lattice data on the same footing as experimental ones.
 
 \section{quasi-PDFs in QCD}
@@ -140,11 +140,11 @@ the power corrections suppressed by the hadron momentum. The functions $C_A$,
 usually called matching coefficients, depend on the choice of the
 renormalization scheme, and on the kind of quasi-PDF under consideration. The
 first matching expressions, for all Dirac structures, were derived in
-Ref.~\cite{Xiong:2013bka}, using a simple transverse momentum cutoff scheme. In
+ref.~\cite{Xiong:2013bka}, using a simple transverse momentum cutoff scheme. In
 later works, matching coefficients were derived that relate the quasi-PDFs in
 different renormalization schemes to light-cone PDFs in the $\MSb$ scheme. The
 matching from $\MSb$ quasi-PDFs was first considered in
-Ref.~\cite{Wang:2017qyg}, both for non-singlet and singlet quark PDFs, as well
+ref.~\cite{Wang:2017qyg}, both for non-singlet and singlet quark PDFs, as well
 as for gluons. Even though one can choose operators for the latter that do not
 mix with singlet quark quasi-PDFs under
 renormalization~\cite{Zhang:2018diq,Li:2018tpe}, mixing under matching is
@@ -152,36 +152,36 @@ inevitable.
 No mixing of the flavour nonsinglet sector with flavour singlet or
 gluon sectors occurs, as stated in eq.~\eqref{eq::pdftoqpdf}. Ref.~\cite{Wang:2017qyg} did not, however, address the
 known issue of self-energy corrections, exhibiting a logarithmic UV divergence.
-This was resolved in Ref.~\cite{Izubuchi:2018srq} by adding terms outside of the
+This was resolved in ref.~\cite{Izubuchi:2018srq} by adding terms outside of the
 plus prescription in the matching coefficient. As noticed in
-Ref.~\cite{Alexandrou:2018pbm}, such prescription for renormalizing this
+ref.~\cite{Alexandrou:2018pbm}, such prescription for renormalizing this
 divergence violates vector current conservation, \ie\ the integral of the
 matched PDF is different from the integral of the input quasi-PDF, and not
 necessarily equal to 1 over the whole integration range. As a remedy, a modified
 matching expression, which is given explicitly in eq.~\eqref{eq::matching} of
-app.~\ref{app:coefficients}, was proposed in Ref.~\cite{Alexandrou:2018pbm}. It
+app.~\ref{app:coefficients}, was proposed in ref.~\cite{Alexandrou:2018pbm}. It
 consists in resorting to pure plus functions when subtracting the logarithmic
 divergence in self-energy corrections. However, this is an additional
 subtraction with respect to the minimal subtraction of the $\MSb$ scheme and
 thus, defines a modified $\MSb$ scheme, the so-called $\MMSb$ scheme. As such,
 it requires the quasi-PDF to be expressed in this modified scheme. The
 expression for the conversion of $\MSb$-renormalized matrix elements to the
-$\MMSb$ scheme was worked out in Ref.~\cite{Alexandrou:2019lfo} and we refer to
+$\MMSb$ scheme was worked out in ref.~\cite{Alexandrou:2019lfo} and we refer to
 it for the details of the procedure. Nevertheless, this modification is
-numerically very small, as also shown in Ref.~\cite{Alexandrou:2019lfo}. An
+numerically very small, as also shown in ref.~\cite{Alexandrou:2019lfo}. An
 alternative modification of the $\MSb$ scheme that guarantees vector current
-conservation was derived in an updated version of Ref.~\cite{Izubuchi:2018srq}.
+conservation was derived in an updated version of ref.~\cite{Izubuchi:2018srq}.
 This defines the so-called ``ratio'' scheme. In this scheme, only pure plus
 functions are used, like in the $\MMSb$ scheme, but the modification is done
 also for the ``physical'' region of $0<z<1$ (in the notation of
 eq.~\eqref{eq::matching}). Thus, the expected numerical effect of this
-modification is larger, as shown explicitly in Ref.~\cite{Alexandrou:2019lfo}.
+modification is larger, as shown explicitly in ref.~\cite{Alexandrou:2019lfo}.
 For this reason, we choose to use the $\MMSb$ procedure, with details of the
 lattice computation of the bare matrix elements and the renormalization in the
 $\MMSb$ scheme outlined in the next section. Yet another possibility of
 performing the matching consists in directly relating the quasi-PDFs in the
 intermediate RI-type scheme to $\MSb$ light-cone PDFs. This was proposed in
-Ref.~\cite{Stewart:2017tvs} for the unpolarized case. Obviously, such
+ref.~\cite{Stewart:2017tvs} for the unpolarized case. Obviously, such
 procedure is equivalent to the one adopted here, with possibly different
 systematic effects. All of the discussed papers considered the matching to only
 first order in perturbation theory, but NNLO results for the matching coefficients have recently become available
@@ -195,7 +195,7 @@ in both position and momentum space \cite{Li:2020xml, Chen:2020ody, Braun:2020ym
 
 In this section, we describe the lattice data we will use in this chapter, presenting
 briefly the quasi-PDFs matrix elements (MEs) computed in
-Refs.~\cite{Alexandrou:2018pbm, Alexandrou:2019lfo}. Using the results recalled
+refs.~\cite{Alexandrou:2018pbm, Alexandrou:2019lfo}. Using the results recalled
 in the previous sections, we show that we can factorize such matrix
 elements into two nonsinglet distributions and a perturbatively computable
 coefficient, just as if they were experimental data for high-energy cross
@@ -211,7 +211,7 @@ transversity -- were performed in
 They used lattice ensembles with non-physical pion masses and the results had
 unsubtracted divergences, due to the lack of a well-defined renormalization
 procedure. The latter was proposed and applied for the first time in
-Refs.~\cite{Constantinou:2017sej,Alexandrou:2017huk}, utilizing a variant of the
+refs.~\cite{Constantinou:2017sej,Alexandrou:2017huk}, utilizing a variant of the
 regularization-independent momentum subtraction scheme
 (RI'-MOM)~\cite{Martinelli:1994ty}. Moreover, another major progress for
 unpolarized PDFs was the identification of a lattice-induced mixing between the
@@ -225,14 +225,14 @@ deteriorated precision, due to the rather poor signal for the scalar operator.
 Instead, it is preferable to define the quark bilinear using the $\gamma_0$
 Dirac matrix, since this procedure does not give rise to mixing. Moreover the
 quasi-PDF computed with it converges faster in powers of $1/P_z^2$ to the
-light-cone PDF, as argued in Ref.~\cite{Radyushkin:2016hsy}. Summarising in just
+light-cone PDF, as argued in ref.~\cite{Radyushkin:2016hsy}. Summarising in just
 one sentence, we could say that the major progresses with respect to the early
 works for unpolarized quasi-PDFs came from: (1) change of the Dirac structure in
 order to avoid the mixing, (2) non-perturbative renormalization procedure, (3)
 simulations at the physical pion mass. Matrix elements corresponding to such
-setup were computed in Refs.~\cite{Alexandrou:2018pbm,Alexandrou:2019lfo,Chen:2018xof} and they are briefly
+setup were computed in refs.~\cite{Alexandrou:2018pbm,Alexandrou:2019lfo,Chen:2018xof} and they are briefly
 described below. For a recent review of other available results for quasi-PDF
-matrix elements, see \eg\ Ref.~\cite{Cichy:2018mum}. 
+matrix elements, see \eg\ ref.~\cite{Cichy:2018mum}. 
 
 The data used in this chapter were computed by the Extended Twisted Mass Collaboration
 (ETMC)\footnote{Until 2018 known as the European Twisted Mass Collaboration.}.
@@ -247,11 +247,11 @@ unpolarized one. The lattice data are available for three nucleon boosts,
 $P_z=6\pi/L,\,8\pi/L$ and $10\pi/L$ (0.83 GeV, 1.11 GeV and 1.38 GeV in physical
 units) and for four values of the temporal separation between the nucleon
 creation and annihilation operators, $t_s/a{=}8,9,10,12$ ($0.75,\, 0.84,\,
-0.94,\, 1.13$~fm). As shown in Refs.~\cite{Alexandrou:2018pbm,Alexandrou:2019lfo}, there are signs
+0.94,\, 1.13$~fm). As shown in refs.~\cite{Alexandrou:2018pbm,Alexandrou:2019lfo}, there are signs
 of convergence in the nucleon momentum (the largest two momenta give compatible
 results), indicating that the boost is already enough to suppress higher-twist
 effects below statistical precision. Moreover, as pointed out in
-Ref.~\cite{Alexandrou:2019lfo}, excited-states contamination at the largest
+ref.~\cite{Alexandrou:2019lfo}, excited-states contamination at the largest
 source-sink separation is small, \ie\ the single-state fits at this $t_s$ are
 compatible with two-state fits including all four values of $t_s$. Hence, for
 the purpose of this study, we consider only the data at the largest nucleon
@@ -263,7 +263,7 @@ They are shown in fig.~\ref{fig::data}.
         \includegraphics[width=0.49\linewidth]{Re_data.pdf}
         \includegraphics[width=0.49\linewidth]{Im_data.pdf}
         \caption{Real (left) and imaginary (right) part 
-        of the quasi-PDF ME for the data used in this Chapter, computed in Refs.~\cite{Alexandrou:2018pbm, Alexandrou:2019lfo}.
+        of the quasi-PDF ME for the data used in this Chapter, computed in refs.~\cite{Alexandrou:2018pbm, Alexandrou:2019lfo}.
         The error band displayed accounts only for statistical uncertainty.
         The separation $z$ is expressed in units of the lattice spacing $a$.} 
         \label{fig::data} 
@@ -279,18 +279,18 @@ operator-independent. The desired renormalization scheme for the final results
 is the $\MSb$ scheme of dimensional regularization. However, obviously, the
 latter is impossible on a lattice, restricted to integer dimensions. Thus, the
 usage of an intermediate lattice renormalization scheme is required. In
-Ref.~\cite{Alexandrou:2017huk}, it was proposed to use an RI'-type prescription.
+ref.~\cite{Alexandrou:2017huk}, it was proposed to use an RI'-type prescription.
 The renormalization conditions are enforced on the amputated vertex functions of
 operators with different Wilson line lengths $z$, setting them to their
 tree-level values. A similar renormalization condition is applied for the quark
 propagator. This results in a set of matrix elements renormalized in the RI'
 scheme. Thus, a perturbative conversion from the RI' to the $\MSb$ scheme is
-needed. Such a conversion was derived in Ref.~\cite{Constantinou:2017sej} to
+needed. Such a conversion was derived in ref.~\cite{Constantinou:2017sej} to
 one-loop order and was applied to the RI'-renormalized matrix elements. As we
 discussed in the previous section, to guarantee vector current conservation, we
 use a modified $\MSb$ scheme, termed the $\MMSb$ scheme. Thus, another
 perturbative conversion of the $\MSb$-renormalized matrix elements is required,
-according to the formula given in Ref.~\cite{Alexandrou:2019lfo}. After this
+according to the formula given in ref.~\cite{Alexandrou:2019lfo}. After this
 conversion, renormalized matrix elements in the $\MMSb$ scheme are the starting
 point of the current analysis.
 
@@ -299,7 +299,7 @@ smallness of the effects of the nucleon momentum and of excited states, matrix
 elements from lattice studies come with a variety of other systematic effects.
 We discuss them in the next subsection. For more details about the lattice
 computation of the matrix elements, we refer the reader to
-Ref.~\cite{Alexandrou:2019lfo}.
+ref.~\cite{Alexandrou:2019lfo}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -315,9 +315,9 @@ lattice regularization, there are theoretical uncertainties intrinsic to the
 quasi-distribution approach whose impact should also be assessed~\footnote{Note
 that theoretical uncertainties can be included in global fits of PDFs as
 detailed in chapter~\ref{ch:th_error}}. For an extensive review of these
-different uncertainties, we refer to Refs.~\cite{Cichy:2018mum,Monahan:2018euv},
+different uncertainties, we refer to refs.~\cite{Cichy:2018mum,Monahan:2018euv},
 while a discussion of the systematic effects in the ETMC quasi-PDFs computation
-can be found in Ref.~\cite{Alexandrou:2019lfo}. The latter contains the analysis
+can be found in ref.~\cite{Alexandrou:2019lfo}. The latter contains the analysis
 of the effects investigated so far and a discussion of directions that need to
 be pursued to fully quantify all the relevant systematics.
 
@@ -345,11 +345,11 @@ that discretization effects are not excessive. This expectation is based on two
 indirect, but related premises. First, one of the manifestations of large
 cut-off effects is the violation of the continuum relativistic dispersion
 relation, which is, however, not observed in the lattice data in
-Ref.~\cite{Alexandrou:2019lfo}. Second, the first moment of the unpolarized
+ref.~\cite{Alexandrou:2019lfo}. Second, the first moment of the unpolarized
 $u-d$ PDF gives the quark momentum fraction $\langle x\rangle_{u-d}$. This
 quantity was intensively investigated on the lattice and we may take the typical
 size of discretization effects found in such studies. Looking at a summary plot
-including data from different lattice groups, such as fig.\ 12 from Ref.\
+including data from different lattice groups, such as fig.\ 12 from ref.\
 \cite{Constantinou:2014tga}, we see that cut-off effects at lattice spacings
 comparable to the one of the present work are typically at the 5-15\% level in a
 fixed lattice setup (same discretization, pion mass, volume etc.). Thus, we
@@ -369,7 +369,7 @@ work, $m_\pi L\approx3$ -- thus, the reasonable assumption about the size of FVE
 is approx.\ 5\%. In addition to these ``standard'' FVE of lattice computations,
 it has been recently pointed out that the usage of a spatially extended
 operator, including a Wilson line, may lead to additional
-FVE~\cite{Briceno:2018lfj}. The analysis of Ref.~\cite{Briceno:2018lfj}
+FVE~\cite{Briceno:2018lfj}. The analysis of ref.~\cite{Briceno:2018lfj}
 pertains to a toy scalar theory and predicts a FVE of the form $\exp(-M (L-z))$
 (possibly with a polynomial amplifying prefactor), with $M$ being the analogue
 of the mass of the investigated hadron in the quasi-PDF approach. Given that the
@@ -413,7 +413,7 @@ renormalization programme has been proposed by ETMC~\cite{Alexandrou:2017huk},
 utilizing a variant of the regularization-independent momentum subtraction
 scheme (RI'-MOM). The renormalization correlators obtianed in this way can then
 be translated perturbatively to the $\MSb$ scheme and finally to the $\MMSb$
-scheme, using formulae derived in Refs.~\cite{Constantinou:2017sej,
+scheme, using formulae derived in refs.~\cite{Constantinou:2017sej,
 Alexandrou:2019lfo}. These formulae are currently available to the one-loop
 level and thus subject to a truncation effect from unknown higher orders. A
 manifestation of this effect is the fact that the $Z$-factors have a
@@ -447,7 +447,7 @@ well as shifts of 0.1, 0.2 and 0.3.
 effect of higher twists, \ie\ the presence of power-like corrections to the
 factorization formula. At this preliminary stage, we are not concerned by their
 effects, but a more precise phenomenological analysis should definitely take
-those into account. In particular, it should be kept in mind that, as argued in Refs.~\cite{Izubuchi:2018srq},
+those into account. In particular, it should be kept in mind that, as argued in refs.~\cite{Izubuchi:2018srq},
 power corrections can be enhanced for both $x\rightarrow 0$ and $x\rightarrow 1$, limiting
 the quasi-PDFs approach in the small-$x$ and large-$x$ regime. We will come back to this point in the conclusions. 
 
@@ -478,7 +478,7 @@ $\mathcal{O}(1\%)$ precision or better.
 
 
 \textbf{Final scenarios}. In the end, we define 6 scenarios of possible impact
-of systematic effects, summarized in Tab.~\ref{tab:systematics}. Scenarios S1-S3
+of systematic effects, summarized in tab.~\ref{tab:systematics}. Scenarios S1-S3
 include uncer\-tain\-ties that are a fixed percentage of the central value of
 the matrix element, while for S4-S6, the uncertainties are additive shifts
 independent from the value of the matrix element. Scenarios S1, S4 can be
@@ -564,7 +564,7 @@ where $V_3$ and $T_3$ are the nonsinglet distributions defined by
 \end{align}
 where, for simplicity, the $\mu$ dependence has been omitted. 
 The equations above relate the position space matrix elements computable on the lattice with
-the collinear PDFs. Similar expressions were worked out in Ref.~\cite{Bali:2017gfr} in the context of
+the collinear PDFs. Similar expressions were worked out in ref.~\cite{Bali:2017gfr} in the context of
 the pion distribution amplitude.   
 The proof of eqs.~\eqref{eq::V3factorization}, \eqref{eq::T3factorization} does require some
 care, and it is fully worked out in app.~\ref{app:coefficients}. The coefficients $\mathcal{C}_3^{\text{Re},\text{Im}}$
@@ -746,7 +746,7 @@ get from the current knowledge of the lattice data and their systematics.
 Then we present results for fits run over the data presented in
 sec.~\ref{subsec:latticedata}, studying the 6 different scenarios for the
 treatment of the systematic errors described in sec.~\ref{subsec:sys} and
-summarized in Tab.~\ref{tab:systematics}. 
+summarized in tab.~\ref{tab:systematics}. 
 The results presented here have been produced using the {\tt NNPDF} fitting code \cite{Ball:2017nwa}
 and the {\tt ReportEngine} software \cite{zahari_kassabov_2019_2571601}.  
 
@@ -760,10 +760,10 @@ followed by a Fourier transform. As already pointed out at the end of
 sec.~\ref{subsec:thpredictions}, the resulting convolution $\circledast$ is
 quite different from the one entering standard QCD fits. In this section, we
 assess how much this operation together with the available lattice data from
-Refs.~\cite{Alexandrou:2018pbm,Alexandrou:2019lfo} are able to constrain parton distributions in a
+refs.~\cite{Alexandrou:2018pbm,Alexandrou:2019lfo} are able to constrain parton distributions in a
 fit, running some preliminary closure tests. For a detailed description of the
-closure test procedure, we refer to sec.~4 of Ref.~\cite{Ball:2014uwa}. We
-generate pseudo-data corresponding to the data of Ref.~\cite{Alexandrou:2018pbm}
+closure test procedure, we refer to sec.~4 of ref.~\cite{Ball:2014uwa}. We
+generate pseudo-data corresponding to the data of ref.~\cite{Alexandrou:2018pbm}
 using {\tt NNPDF31\_nlo\_as\_0118} as our input PDFs set, and we run the fitting
 code over them. The outcome of the closure test fit is then used to assess how
 well the input PDFs can be reconstructed starting from the 16 position space ME
@@ -780,8 +780,8 @@ is kept small. Second, we repeat the exercise but using the real statistical
 uncertainties, to assess how much the real statistics of the current simulations
 affect the conclusions of the previous case. Finally we look at the effect of
 the systematics, considering as a specific example the scenario S2 of
-Table~\ref{tab:systematics}. The three cases are summarized in
-Table~\ref{tab:CT} and the results are shown in
+table~\ref{tab:systematics}. The three cases are summarized in
+table~\ref{tab:CT} and the results are shown in
 figs.~\ref{fig:1},~\ref{fig:2},~\ref{fig:3}.
 %
 \begin{table}[h]
@@ -864,9 +864,9 @@ are available.
 \label{subsec:fits}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In this section, we present our results for fits ran over the data from
-Refs.~\cite{Alexandrou:2018pbm,Alexandrou:2019lfo}, described in sec.~\ref{subsec:latticedata}. As
+refs.~\cite{Alexandrou:2018pbm,Alexandrou:2019lfo}, described in sec.~\ref{subsec:latticedata}. As
 mentioned before, we consider 6 different scenarios for the treatment of the
-systematic errors, summarized in Table~\ref{tab:systematics}. We show results
+systematic errors, summarized in table~\ref{tab:systematics}. We show results
 for "optimistic" (S1,S4), "realistic" (S2,S5) and "pessimistic" (S3,S6)
 scenarios, the difference between the elements of each couple being the nature
 of the systematic errors: an additive shift given by a percentage of the ME for
