@@ -33,7 +33,7 @@ The classical Lagrangian of QCD, describing the interaction of $N_f$ massive spi
 and massless spin-$1$ gluons, is given by
 \begin{align}
     \label{eq:QCD_lagrangian}
-    \mathcal{L}_{classical} = -\frac{1}{4}F^{A}_{\mu\nu}F^{A\mu\nu} + 
+    \mathcal{L}_{\mathrm{classical}} = -\frac{1}{4}F^{A}_{\mu\nu}F^{A\mu\nu} + 
     \sum_{k=1}^{N_f}\,{\overline{\psi}}^{\,k}_a\left(i\gamma^{\mu}D_{\mu} + m_k\right)_{ab}\psi^k_b\,,
 \end{align}
 with the field strength tensor and the covariant derivative defined as
@@ -53,16 +53,16 @@ respectively, and $T^A$ are the eight gauge group generators, satisfying
     \label{eq:algebra}
     &\left[T^A,T^B\right] = i f^{ABC} T^C\,, \\
     \label{eq:normalization_SU3_generators}
-    &\text{Tr}\left[T^A T^B\right] = T_R\, \delta^{AB}\,,
-\end{align}
-with the normalization of the generators conventionally chosen to be $T_R = 1/2$. 
+    &\text{Tr}\left[T^A T^B\right] = T_R\, \delta^{AB}\,.
+\end{align} 
 An explicit expression for the generators $T^A$ in the fundamental representation is given by
-$(T^A)_{ab} = 1/2\,\left(\lambda^A\right)_{ab}$ with $\lambda^A$ representing the eight 3-dimensional Gell-Mann matrices. 
+$(T^A)_{ab} = 1/2\,\left(\lambda^A\right)_{ab}$ with $\lambda^A$ representing the eight 3-dimensional Gell-Mann matrices
+and with the normalization of the generators conventionally chosen to be $T_R = 1/2$.
 Given the equations above, the colour matrices obey
 \begin{align}
     \label{eq:SU3_generators_relations}
-    &\sum_A T^A_{ab} T^A_{bc} = C_F\, \delta_{ac}\,,\\
-    &\sum_{C,D} T^A_{CD} T^B_{DC} = \sum_{C,D} f^{ACD} f^{BCD}  C_A\, \delta^{CD}\,,
+    &\sum_A\sum_b T^A_{ab} T^A_{bc} = C_F\, \delta_{ac}\,,\\
+    &\sum_{C,D} T^A_{CD} T^B_{DC} = \sum_{C,D} f^{ACD} f^{BCD} =  C_A\, \delta^{AB}\,,
 \end{align}
 with $C_F= 4/3$ and $C_A= 3$.
 
@@ -84,7 +84,7 @@ in the theory by adding to the classical Lagrangian the so-called gauge fixing t
     \label{eq:Gauge_fixing_lorents}
     \mathcal{L}_{gauge-fixing} = -\frac{1}{2\xi}\left(G^{\mu}\mathcal{A}_{\mu}^A\right)\,,
 \end{align}
-with $\xi$ representing an arbitrary parameters whose specific values defines the gauge.
+with $\xi$ representing an arbitrary parameter whose specific value defines the gauge.
 Different choices for the gauge fixing term can be done. Taking $G^{\mu}=\partial^{\mu}$ we obtain
 a class of covariant gauges. In this case the gauge fixing term must be supplemented by an additional term,
 known as \textit{ghost Lagrangian} \cite{Faddeev:1967fc},
@@ -99,7 +99,7 @@ Perturbation theory can be formulated starting from the Lagrangian density
     \label{eq:QCD_lagrangian_gauge_fixing}
     \mathcal{L} = \mathcal{L}_{classical} + \mathcal{L}_{gauge-fixing} + \mathcal{L}_{ghost}\, .
 \end{align}
-Another possible gauge fixing term is the one giving the so called axial gauges, fixed
+Another possible gauge fixing term is the one giving the so-called axial gauges, fixed
 in terms of a chosen vector $n$ such that $G^{\mu}=n^{\mu}$. In this case ghost fields decouples
 and can thus be ignored, but the explicit form of the gluon propagator turns out to be more complicated than 
 the one in the covariant gauges.
@@ -110,7 +110,7 @@ The classical Lagrangian given in eq.~\eqref{eq:QCD_lagrangian} is invariant und
 gauge transformations. After gauge fixing gauge invariance is broken, but the resulting Lagrangian of 
 eq.~\eqref{eq:QCD_lagrangian_gauge_fixing} satisfied the BRST symmetry \cite{Becchi:1975nq, Tyutin:1975qk},
 which in turn guarantees the renormalizability of the theory.
-The so called flavour symmetries are also exact symmetries of QCD, 
+The so-called flavour symmetries are also exact symmetries of QCD, 
 acting through a global phase transformation of each quark field separately and giving
 the baryon number conservation. 
 %the conservation of the number of each of the different quark flavours. 
@@ -119,7 +119,7 @@ Finally charge-conjugation is also an exact symmetry of eq.~\eqref{eq:QCD_lagran
 
 Assuming mass degeneracy for the up and down quarks, the U(1) global symmetry associated with quark number 
 can be extended to a global U(2) $=$ U(1) $\otimes$ SU(2). The new symmetry SU(2) is known as isospin symmetry.
-We can further enhanced the symmetry group to U(1) $\otimes$ SU(3) assuming the strange quark to be also 
+We can further enhance the symmetry group to U(1) $\otimes$ SU(3) assuming the strange quark to be also 
 degenerate in mass with the up and the down\footnote{Such approximate flavour symmetry SU(3) is the basis of the Gell-Mann
 quark model \cite{GellMann:1964nj} which was proposed well before the birth of QCD.}.
 In the case of massless quarks, a chiral symmetry
@@ -180,7 +180,7 @@ It is customary to introduce a dimensionful parameter, usually denoted as $\Lamb
 scale at which the perturbative series of the coupling would diverge
 \begin{align}
     \label{eq:lambda_QCD}
-    \frac{1}{\alpha_s\left(\Lambda_{\text{QCD}^2}\right)} = 0\,.
+    \frac{1}{\alpha_s\left(\Lambda_{\text{QCD}}^2\right)} = 0\,.
 \end{align}
 Its specific value will depend on the choice of the renormalization scheme, on the order
 of the $\beta$ function power expansion and on the number of active flavours\footnote{the notion of active flavours will
@@ -196,7 +196,7 @@ dependence on a renormalization scale $\mu$ given by
     \label{eq:renormalization_mass}
     \mu^2\frac{\partial m }{\partial \mu^2} = - \gamma_m\left(\alpha_s\right)m\left(\mu^2\right)\,.
 \end{align}
-The quantity $\gamma_m$ is the mass anomalous dimension which can computed in perturbation theory as
+The quantity $\gamma_m$ is the mass anomalous dimension which can be computed in perturbation theory as
 a power expansion in $\alpha_s$
 \begin{align}
     \gamma_m\left(\alpha_s\right) = c\,\alpha_s\left(1+c'\alpha_s + ...\right)\,,
@@ -204,7 +204,7 @@ a power expansion in $\alpha_s$
 with the explicit expression of the coefficients depending on the choice of the renormalization scheme.
 
 %
-In order to study the impact of the quarks mass on a generic physical observable $R$, let's consider
+In order to study the impact of the quarks mass on a generic physical observable $R$, consider
 the situation in which we have only one quark with mass $m$.
 Writing $R = R\left(Q^2/\mu^2, \alpha_s\left(\mu^2\right),m\left(\mu^2\right)/Q \right)$ 
 and setting the renormalization scale equal to the physical scale $\mu=Q$,
@@ -221,7 +221,7 @@ Given the fact that eq.~\eqref{eq:renormalization_mass} leads to a change of the
 which is at most logarithmic, from eq.~\eqref{eq:R_mass_dependence} it is clear how, when considering 
 high energy scales $Q \gg m$, the mass dependence can be dropped, and the quark can be considered massless.
 %
-On the other hand, when the mass of the quark is much greater of the relevant scale $Q$ it can be shown 
+On the other hand, when the mass of the quark is much greater than the relevant scale $Q$ it can be shown 
 that the heavy quark mass correction to $R$ are suppressed by inverse powers of $m$, and therefore they can be ignored when
 $Q \ll m$. 
 %
@@ -293,14 +293,14 @@ Considering for simplicity a theory containing a single scalar field $\phi$,
 taking a generic correlation function in Minkowski space 
 \begin{align}
     C_n^{(M)}\left(x_1,..., x_n\right) = 
-    \frac{1}{Z} \int \phi\left(x_1\right)...\phi\left(x_n\right)\exp\left(i S^{(M)}\left[\phi\right]\right)\,,
+    \frac{1}{Z} \int \mathcal{D}\phi\, \phi\left(x_1\right)...\phi\left(x_n\right)\exp\left(i S^{(M)}\left[\phi\right]\right)\,,
 \end{align}
 one can define the associated Euclidean correlation function
 by performing a Wick rotation $x_i = \left(x^0_i, \vec{x}_i\right) \rightarrow \bar{x}_i = \left(-i x^0_i, \vec{x}_i\right)$
 \begin{align}
     \label{eq:euclidean_correlator}
     C_n^{(E)}\left(x_1,..., x_n\right) &\equiv C_n^{(M)}\left(\bar{x}_1,..., \bar{x}_n\right) = \nonumber \\
-    &\frac{1}{Z} \int \phi\left(x_1\right)...\phi\left(x_n\right)\exp\left(- S^{(E)}\left[\phi\right]\right)\,,
+    &\frac{1}{Z} \int \mathcal{D}\phi\, \phi\left(x_1\right)...\phi\left(x_n\right)\exp\left(- S^{(E)}\left[\phi\right]\right)\,,
 \end{align}
 where $S^{(E)}$ is the Euclidean action of the theory.
 Such Wick rotation effectively transform the Minkowski metric $\eta_{\mu\nu} = \text{diag}\left(1,-1,-1,-1\right)$
@@ -312,7 +312,7 @@ $D\phi \, \text{exp}\left(-S^{(E)}\left[\phi\right]\right)$ .
 
 %
 In order to write a discrete version of QCD, we need to construct an action for the gauge field and one for the quark fields.
-In the case of the gauge field, the action can be written in terms of gauge links $U_{\mu}$, obtaining the so called Wilson action
+In the case of the gauge field, the action can be written in terms of gauge links $U_{\mu}\left(x\right)$, obtaining the so-called Wilson action
 \begin{align}
     \label{eq:Wilson_action}
     &S_G\left(U_{\mu}\right) = 
@@ -320,7 +320,8 @@ In the case of the gauge field, the action can be written in terms of gauge link
     &P_{\mu\nu}\left(x\right) = U_{\mu}\left(x\right)U_{\nu}\left(x+a\hat{\mu}\right)
     U_{\mu}\left(x+a\hat{\nu}\right)^{\dagger}U_{\nu}\left(x\right)^{\dagger}\,,
 \end{align}
-where $\beta$ is a constant of the theory. It can be shown that in the continuum limit eq.~\eqref{eq:Wilson_action}
+where $\beta$ is a constant of the theory. It can be shown that in the continuum limit,
+using $\beta=2N/g^2$, eq.~\eqref{eq:Wilson_action}
 recovers the Euclidean Yang-Mills action.
 
 %
@@ -376,7 +377,7 @@ where $O_{\text{Wick}}$ denotes the functional obtained from $O$ performing the 
 of the quark fields. Note that this observable depends on the quark propagator $\left(K+M\right)^{-1}$,
 appearing for every $\psi\bar{\psi}$ contraction. Inverting the term $K+M$ in order to obtain the fermionic propagator
 represents the elementary computation in lattice QCD simulations.
-Assuming $\text{det}\left(K+M\right)>0$ \footnote{in a continuum theory it 
+Assuming $\text{det}\left(K+M\right)>0$ \footnote{In a continuum theory it 
 can be shown that this is true thanks to chiral symmetry, as long as we consider non-zero masses.
 On the lattice the situation can be more complicated: in the case of Wilson fermions for example chiral symmetry is lost,
 and the determinant is positive only when the bare masses are bigger than the critical mass.}, the quantity

@@ -1,7 +1,7 @@
 \chapter{Factorization theorems in QCD}
 \label{ch:fact}
 In the previous chapter we have seen how, thanks to asymptotic freedom, the structure of QCD simplifies when considering problems
-involving short-distance or high energy scales: the coupling becomes small and the theory can be solved perturbatively.
+involving short-distance or high-energy scales: the coupling becomes small and the theory can be solved perturbatively.
 However, cross sections for high energy processes are usually a combination of short- and long-distance effects, and cannot
 be fully computed within the framework of perturbation theory. Factorization theorems allows to separate (factorize) a cross section
 or amplitude in separate contributions, each factor containing the dependence of the process on a specific distance scale:
@@ -16,7 +16,7 @@ present work, namely Parton Distribution Functions (PDFs).
 \label{sec:parton_model}
 The basic ideas underlying factorization theorems for high energy processes can 
 be described appealing to Feynman's parton model \cite{PhysRevLett.23.1415,Feynman:1973xc, Bjorken:1969ja}.
-In this picture fundamental particles called \textit{partons} are bounded together to form hadrons.
+In this picture fundamental particles called \textit{partons} are bound together to form hadrons.
 Since the details of the partonic system are unknown, the scattering between a test particle and the hadron 
 as a whole cannot be computed. However we assume that we do know how to describe the scattering with a free parton.
 %
@@ -27,8 +27,8 @@ Such process is known as Deep Inelastic lepton-hadron Scattering (DIS).
 Looking at this scattering in the centre of mass frame, the hadron will be Lorentz contracted 
 in the direction of the collision and the lifetime of the internal partonic states will be lengthened.
 As a consequence, the time the electron takes to cross the hadron will be much shorter than the average lifetime of
-each partonic states. During the time of the interaction the hadron can then be thought as ``frozen'' in 
-a well defined partonic states, with each parton carrying a definite fraction $\xi$ of the hadron momentum
+each partonic state. During the time of the interaction the hadron can then be thought as ``frozen'' in 
+a well defined partonic state, with each parton carrying a definite fraction $\xi$ of the hadron momentum
 and not interacting with the other ones. 
 If the energy of the collision is high enough, the virtual photon mediating the electron-hadron 
 interaction will interact with a single parton having a given momentum fraction. Likewise, interactions
@@ -70,7 +70,7 @@ We specify the discussion to the case of neutral current (NC) unpolarized scatte
 considering only the contribution associated to photon exchange (which is the dominant one as long as
 we consider energy scales below $m_Z^2$).
 The space-like momentum of the photon is given by $q = k - k'$, the centre of mass energy square is $s=\left(P+k\right)^2$ and
-we denote the invariant mass square of the finale states as $W = \left(P+q\right)^2$.
+we denote the invariant mass square of the final states as $W = \left(P+q\right)^2$.
 It is customary to introduce the kinematic variables
 \begin{align}
 	\label{eq:DIS_kinematic}
@@ -110,7 +110,8 @@ the information about the interaction between the virtual photon and the hadron,
 \end{align}
 $F_1 $ and $F_2 $ being scalar functions, called \textit{structure functions}, 
 depending on the invariant quantities of the problem, namely $x$ and $Q^2$. If, more generally,
-we allow $j_{\alpha}$ to be any electroweak current, there will be more than two scalar structure functions $F_i$.
+we allow $j_{\alpha}$ to be any electroweak current, there will be an additional
+parity-violating structure function $F_3$.
 
 %
 Computing explicitly the leptonic tensor and plugging eq.~\eqref{eq:hadronic_tensor} in eq.~\eqref{eq:DIS_xsec} 
@@ -348,8 +349,8 @@ the same ideas and logic apply to inclusive enough high-energy hadron-hadron col
 $$
 H_1\left(p_1\right) + H_2\left(p_2\right) \rightarrow W\left(Q\right) + X\,,
 $$
-where $H_1$ and $H_2$ are the incoming hadrons, having momenta $p_1$ and $p_2$, $H$ represents
-the particle produced in the hard scattering (Higgs or vector bosons, heavy quarks) and $W$
+where $H_1$ and $H_2$ are the incoming hadrons, having momenta $p_1$ and $p_2$, $W$ represents
+the particle produced in the hard scattering (Higgs or vector bosons, heavy quarks) and $X$
 denotes any other particle appearing in the final state. In this case the factorization formula takes the form
 \begin{align}
     \label{eq:hadron_hadron}
@@ -524,7 +525,7 @@ definition of the flavor decomposition. More specifically, we have:
 \end{align}
 
 %
-As mentioned above the bilocal operator products of eq.~\eqref{eq::barepdf} requires renormalization.
+As mentioned above the bilocal operator products of eq.~\eqref{eq::barepdf} require renormalization.
 The corresponding renormalization group equations are the Altarelli-Parisi equations for PDFs, or 
 DGLAP, discussed in the next section.
 Considering on-shell incoming partons, a straightforward 1-loop computation gives
@@ -689,9 +690,9 @@ of splitting function as probability densities implies that they are positivite 
 them starting from the QCD vertices for $q\rightarrow q\,g$, $g\rightarrow q\bar{q}$ and $g\rightarrow gg$.  
 
 %
-The DGLAP equations can be solved perturbatively computing an evolution kernel, which can be subsequently convoluted
+The DGLAP equations can be solved perturbatively by computing an evolution kernel, which can be subsequently convoluted
 with PDFs at a given scale $Q_0$ to evolve them up to the final scale $Q$.
-In such evolution kernel the resummation of the large collinear logarithms mentioned at the end of Sec.~\ref{sec:QCD_corrections}
+In such evolution kernel the resummation of the large collinear logarithms mentioned at the end of sec.~\ref{sec:QCD_corrections}
 is achieved by exponentiating them, allowing a consistent definition of PDFs at a generic scale $Q$.
 In the following we briefly summarise how the QCD evolution equation can be solved in Mellin space for the
 nonsinglet sector, yielding such evolution kernel.
@@ -771,7 +772,7 @@ the $\beta$ function depends on the total number $n_f$ of both light and heavy f
 Alternatively, in a decoupling scheme heavy quarks are treated as massive particles 
 which fully decouple from QCD evolution equations, 
 so that only the $n_l$ light quarks contribute to the DGLAP and running of $\alpha_s$,
-as briefly discussed in Sec.~\ref{sec:quark_masses}.
+as briefly discussed in sec.~\ref{sec:quark_masses}.
 In the first case, often denoted as massless scheme, collinear logarithms of $Q^2/m_h^2$
 are resummed through DGLAP equations and reabsorbed in the corresponding PDF, but corrections
 suppressed by powers of $m_h^2/Q^2$ are neglected.
@@ -833,8 +834,7 @@ that are polynomial in $L$. The sum over $j$ in eq.~\eqref{eq:matching_PDFs}
 runs over the $n_l$ light flavours and anti-flavour plus the gluon, therefore the first $2n_l+1$
 of these equations relate the light quarks and gluon PDFs in the two schemes and can be inverted in
 order to express the massive scheme PDFs in terms of the massless scheme ones. The last two equations
-allow to express the heavy quark PDF in the massless schemes in terms of the gluon and light flavours PDFs of the massive one,
-under the assumption that the heavy quark PDF is generated perturbatively.
+allow to express the heavy quark PDF in the massless schemes in terms of the gluon and light flavours PDFs of the massive one.
 %
 Inverting eqs.~\eqref{eq:matching_alpha},~\eqref{eq:matching_PDFs} and substituting in eq.~\eqref{eq:massive},
 one can obtain the expression of the massive scheme cross-section in terms of $\alpha_s^{(n_l+1)}$
@@ -845,7 +845,7 @@ and $f_i^{(n_l+1)}$, with $i = g,q,\bar{q}$
     f_i^{(n_l+1)}\left(x_1,\mu^2\right)f_j^{(n_l+1)}\left(x_2,\mu^2\right) \nonumber \\
     &\times B_{ij}\left(x_1,x_2,\frac{\mu^2}{m_h^2},\alpha_s^{(n_l+1)}\right)\,,
 \end{align}
-where the coefficient functions $B_[ij]$ can be expressed as a fixed order expansion in $\alpha_s^{(n_l+1)}$
+where the coefficient functions $B_{ij}$ can be expressed as a fixed order expansion in $\alpha_s^{(n_l+1)}$
 \begin{align}
     \label{eq:massive_1}
     B_{ij}\left(x_1,x_2,\frac{\mu^2}{m_h^2},\alpha_s^{(n_l+1)}\left(\mu^2\right)\right)
