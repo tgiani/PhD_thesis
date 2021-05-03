@@ -62,7 +62,7 @@ Given the equations above, the colour matrices obey
 \begin{align}
     \label{eq:SU3_generators_relations}
     &\sum_A\sum_b T^A_{ab} T^A_{bc} = C_F\, \delta_{ac}\,,\\
-    &\sum_{C,D} T^A_{CD} T^B_{DC} = \sum_{C,D} f^{ACD} f^{BCD} =  C_A\, \delta^{AB}\,,
+    &\sum_{A}\sum_C T^A_{BC} T^A_{CD} = \sum_{A,C} f^{ACB} f^{ACD} =  C_A\, \delta_{BD}\,,
 \end{align}
 with $C_F= 4/3$ and $C_A= 3$.
 
@@ -176,16 +176,20 @@ $\mu^2$
 Given the positive sign of $\beta_0$, from eq.~\eqref{eq:ll_coupling} it is evident how, as the scale $Q^2$ becomes very large, 
 the coupling $\alpha_s\left(Q^2\right)$ decreases to zero. This property, which characterizes non-Abelian gauge theories 
 like QCD, is known as asymptotic freedom and the theory is then said to be asymptotically free.
-It is customary to introduce a dimensionful parameter, usually denoted as $\Lambda_{\text{QCD}}$, representing the energy 
-scale at which the perturbative series of the coupling would diverge
+It is customary to introduce a dimensionful parameter directly in the definition of $\alpha_s$,
+usually denoted as $\Lambda$.
+It can be defined as
 \begin{align}
-    \label{eq:lambda_QCD}
-    \frac{1}{\alpha_s\left(\Lambda_{\text{QCD}}^2\right)} = 0\,.
+    \log\frac{\mu^2}{\Lambda^2} = -\int_{\alpha_s\left(\mu^2\right)}^{\infty} \frac{dx}{\beta\left(x\right)}\,,
 \end{align}
-Its specific value will depend on the choice of the renormalization scheme, on the order
-of the $\beta$ function power expansion and on the number of active flavours\footnote{the notion of active flavours will
+with its specific value depending on the choice of the renormalization scheme, on the order
+of the $\beta$ function power expansion and on the number of active flavours\footnote{The notion of active flavours will
 be discussed in sec.~\ref{sec:quark_masses}} entering the theory.
-Qualitatively it represents the scale at which the interaction becomes strong and the perturbative description breaks down.
+Any dimensionful quantity in QCD can be expressed
+in units of $\Lambda$.
+It can be thought as an intrinsic scale of QCD:
+at scales much larger than $\Lambda$ the coupling $\alpha_s$ is small and
+quarks behave as almost free particles.
 
 \section{Quark masses}
 \label{sec:quark_masses}
