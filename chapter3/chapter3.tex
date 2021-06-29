@@ -197,6 +197,7 @@ and valence sum rules. The eight flavours independently parameterized in NNPDF3.
 \end{align} 
 which in terms of quarks and antiquarks distributions are given by
 \begin{align}
+    \label{eq:evol_def}
     \Sigma  &=  u+\bar{u} + d+\bar{d} + s+\bar{s} + 2c  \, ,  \nonumber \\
     V     &= \lp u-\bar{u}\rp + \lp d-\bar{d}\rp + \lp s-\bar{s}\rp   \, ,\nonumber \\
     V_3     &=  \lp u-\bar{u}\rp - \lp  d-\bar{d}  \rp \, , \nonumber\\
@@ -673,10 +674,12 @@ In tab.~\ref{tab:experiments_chi2} we provide values of $\chi^2/N_{\text{dat}}$ 
 reporting results also for each experiment included in the analysis.
 These are compared to their {\tt n3fit} counterpart produced without positivity and integrability constraints. 
 Inspection of this table shows how the fit quality is basically unaffected by the introduction of the
-theoretical constraints, with a slight improvement in the total $\chi^2$. Such mild improvement provides an
-additional confirmation of the validity of our theoretical constraints: despite these represent additional 
-conditions to be satisfied during the fit, they provide meaningful physical hints, making it easier to describe 
-the experimental data.
+theoretical constraints, with a slightly lower total $\chi^2$ when theory constraints are included.
+It should be noted that a deterioration of the $\chi^2$ after introducing additional constraints in the fit would be expected,
+but this is not what observed here, where we observe a slight improvement in the total $\chi^2$. 
+Such mild improvement provides an additional confirmation of the validity of our theoretical constraints: 
+despite these represent additional conditions to be satisfied during the fit, 
+they provide meaningful physical hints, making it easier for the fit to describe the experimental data. 
  
 %
 In fig.~\ref{fig:distances} we show the distance between the two fits, quantifying the effect of theoretical
@@ -699,7 +702,10 @@ and in a non negligible change in their central value.
     \input{tables/chi2_evol.tex}
     \caption{The values of $\chi^2/N_{\rm dat}$ for each experiment included in the global fit, before and
     after the inclusion of positivity and integrability constraints. Values are reported for fits in both the evolution and flavour 
-    basis.}
+    basis. From left to right each column reports: the experiment, the number of datapoints $N_{dat}$, the value of the
+    total $\chi^2$ in the evolution and flavour basis when positivity and integrability constraints
+    are considered and finally the $\chi^2$ for the baseline fit (evolution basis without positivity and integrability
+    constraints).}
     \label{tab:experiments_chi2}
 \end{table}
 
@@ -719,7 +725,8 @@ and in a non negligible change in their central value.
         \includegraphics[width=0.49\linewidth]{plot_pdfs_V3.pdf}
         \includegraphics[width=0.49\linewidth]{plot_pdfs_V8.pdf}
         \includegraphics[width=0.49\linewidth]{plot_pdfs_T8.pdf}
-        \caption{PDFs plots: baseline fit (orange) and fit with positivity and integrability constraints (green).} 
+        \caption{PDFs plots: baseline fit (orange) and fit with positivity and integrability constraints (green).
+        See eq.~\eqref{eq:evol_def} for the definition of the distributions plotted here.} 
         \label{fig:pdfs_plots} 
     \end{center}
 \end{figure}

@@ -201,8 +201,8 @@ quark off the virtual photon, and $q^{\bare}_{a/H}$ denoting the parton model PD
 \footnote{Although here we are introducing this formula starting from the ideas of the parton model, 
 eq.~\eqref{eq:strcuture_function} can be proved in the Bjorken limit, and the bare PDF $q^{\bare}_{a/H}$ can be
 defined in terms of a bilocal operator matrix element. We will get back to this point in the next sections}. 
-Such formula is valid at leading-twist, namely further corrections of non-pertubative origin are suppressed by powers
-of $\Lambda_{QCD}/Q$.
+Such formula is valid up to power corrections, namely up to further terms of non-pertubative origin which are suppressed by powers
+of $\Lambda_{QCD}^2/Q^2$.
 
 %
 From the previous section we know that at Born level $\hat{F}_a$ is proportional
@@ -220,7 +220,12 @@ and for the gluon induced vertex correction, the full result has the following f
 with
 \begin{align}
     \label{eq:splitting_function}
-    P\left(x\right) = \frac{C_F}{2\pi}\left[\frac{1+x^2}{\left(1-x\right)_+} + \frac{3}{2}\delta\left(1-x\right)\right]\,.
+    P\left(x\right) = \frac{C_F}{2\pi}\left[\frac{1+x^2}{\left(1-x\right)_+} + \frac{3}{2}\delta\left(1-x\right)\right]\,
+\end{align}
+with the action of the plus distribution over a generic test function $g\left(\xi\right)$ defined as
+\begin{align}
+	\label{eq:plus}
+	\int_0^1 dx\,\frac{1}{\left(1-x\right)_+}g\left(\xi\right) = \int_0^1 dx\,\frac{1}{\left(1-x\right)}\left[g\left(\xi\right) - g\left(1\right)\right].
 \end{align}
 Two observations can be done. Firstly, as anticipated above, beyond leading order
 Bjorken scaling is broken by logarithms of $Q^2$, and the structure function acquires a $Q^2$ dependence.
@@ -247,7 +252,7 @@ we end up with a contribution of the form
 \end{align}
 where the ellipses stand for finite regular terms.
 It is clear from eq.~\eqref{eq:collinear_div} that such term diverges in the region of small-$k_{\perp}$.
-In order to regularize such pole we can introduce the infrared cutoff $Q_0^2$, getting the logarithmic 
+In order to regulate such pole we can introduce the infrared cutoff $Q_0^2$, getting the logarithmic 
 contribution observed in eq.~\eqref{eq:1_loop_dis}.
 Similarly, when considering multiple gluons emissions from initial state particles, terms of the kind 
 $\left(\alpha_s\left(Q^2\right)\,\log\frac{Q^2}{Q_0^2}\right)^n$ show up.
@@ -318,9 +323,9 @@ as
     \label{eq:dis_qcd}
     F\left(x,Q^2\right) &= 
     \sum_a \int_x^1\frac{d\xi}{\xi}\,C_a\left(\frac{x}{\xi},\frac{Q^2}{\mu_F^2}, \alpha_s\right)q_{a/H}\left(\xi,\mu_F^2\right)
-    +\mathcal{O}\left(\frac{\Lambda_{QCD}}{Q}\right) \nonumber\\
+    +\mathcal{O}\left(\frac{\Lambda_{QCD}^2}{Q^2}\right) \nonumber\\
     & \equiv \sum_a \,C_a\left(\frac{Q^2}{\mu_F^2}, \alpha_s\right) \otimes q_{a/H}\left(\mu_F^2\right)
-    +\mathcal{O}\left(\frac{\Lambda_{QCD}}{Q}\right)\,,
+    +\mathcal{O}\left(\frac{\Lambda_{QCD}^2}{Q^2}\right)\,,
 \end{align}
 where in the second line we have denoted as $\otimes$ the convolution operation.
 The coefficients functions $C_a$ appearing in eq.~\eqref{eq:dis_qcd} correspond to the finite partonic structure 
@@ -358,7 +363,7 @@ denotes any other particle appearing in the final state. In this case the factor
     dx_1 dx_2 \, \nonumber \\ 
     &q_{a/H_1}\left(x_1,\mu_F^2\right)q_{b/H_2}\left(x_2,\mu_F^2\right)
     \hat{\sigma}_{ab}\left(x_1p_1,x_2p_2,\frac{Q^2}{\mu_F^2},\alpha_s\right) 
-    + \mathcal{O}\left(\frac{\Lambda_{QCD}}{Q}\right)\,,
+    + \mathcal{O}\left(\frac{\Lambda_{QCD}^2}{Q^2}\right)\,,
 \end{align}
 where $\tau = \frac{Q^2}{s}$ and $s=\left(p_1+p_2\right)^2$.
 
@@ -462,9 +467,9 @@ It can be readily shown that
     f^\asy_\mathrm{q}(x,\mu^2) &= 
     q(x,\mu^2) + \bar{q}(x,\mu^2) = q^+(x,\mu^2) \, .
 \end{align}
-where $q^+$ and $q^-$ are defined by the equations above. The flavor
-decomposition can be rewritten by collecting the quark fields in a vector, \eg\
-$\psi = \lp \psi_u,\psi_d,\psi_s,\psi_c\rp$, and defining the following nonsinglet bare
+where $q^+$ and $q^-$ are defined by the equations above. 
+Considering a SU(4) flavour symmetry, we can collect the quark fields in a vector, \eg\
+$\psi = \lp \psi_u,\psi_d,\psi_s,\psi_c\rp$, and define the following nonsinglet bare
 PDFs:
 % \begin{eqnarray}
 %     \label{eq:f3Def}
@@ -486,7 +491,7 @@ PDFs:
 	\langle \text{P}|\bar{\psi}^\bare\lp\xi^-\rp \lambda_A \gamma^+ \,   
 	U\lp\xi^-,0\rp \psi^\bare\lp 0\rp  |\text{P}\rangle\, , 
 \end{eqnarray}
-where $A=3,8,15$, and we have used the Gell-Mann matrices
+where $A=3,8,15$, and we have used the 4-dimensional Gell-Mann matrices
 \begin{eqnarray}
     \lambda_3=
     \begin{pmatrix}
@@ -532,9 +537,11 @@ Considering on-shell incoming partons, a straightforward 1-loop computation give
 \begin{align}
     \label{eq:1-loop_bare_partonic_pdf}
     f^{\bare}_{a/b}\left(x,\epsilon\right) = \delta_{ab}\,\delta\left(1-x\right)
-    + \alpha_s\left[\frac{1}{\epsilon_{UV}}-\frac{1}{\epsilon_{IR}}\right] P_{a/b}^{(1)}\left(x\right)
-    + \mathcal{O}\left(\alpha_s^2\right)\,.
+    + \alpha_s\left[\frac{1}{\epsilon_{UV}}-\frac{1}{\epsilon_{IR}}\right] P^{(1)}\left(x\right)
+    + \mathcal{O}\left(\alpha_s^2\right)\,,
 \end{align}
+where $P^{(1)}\left(x\right)$ represent the collinear splitting function, which will be introduced
+in sec.\ref{sec:DGLAP}.
 To obtain such result, one has to work in dimensional regularization to regularize both the UV and IR
 divergences. 
 Working in the $\overline{MS}$ scheme, the UV pole $1/\epsilon_{UV}$ is removed through renormalization,
@@ -542,7 +549,7 @@ and we are left with the renormalized partonic PDFs
 \begin{align}
     \label{eq:1-loop_renormalized_partonic_pdf}
     f_{a/b}\left(x,\epsilon\right) = \delta_{ab}\,\delta\left(1-x\right)
-    + \alpha_s\left(-\frac{1}{\epsilon}\right) P_{a/b}^{(1)}\left(x\right)
+    + \alpha_s\left(-\frac{1}{\epsilon}\right) P^{(1)}\left(x\right)
     + \mathcal{O}\left(\alpha_s^2\right)\,.
 \end{align}
 Such object, despite being UV finite, does contain 
@@ -558,7 +565,7 @@ so that they can be computed with the simplest choice of external parton.}
     \label{eq:partonic_structure_function}
     \hat{F}_{b}\left(x,\epsilon\right) = 
     \sum_a \int_x^1\frac{d\xi}{\xi}\,C_a\left(\frac{x}{\xi}, \alpha_s\right)f_{a/b}\left(\xi,\epsilon\right)
-    +\mathcal{O}\left(\frac{\Lambda_{QCD}}{Q}\right)\,.
+    +\mathcal{O}\left(\frac{\Lambda_{QCD}^2}{Q^2}\right)\,.
 \end{align}
 Considering the coefficient functions power expansions given in eq.~\eqref{eq:coeff_functions_expansion}
 and an analogue expansion for $\hat{F}_{a}$, using the 1-loop expression for the
@@ -566,7 +573,7 @@ renormalized partonic PDF of eq.~\eqref{eq:1-loop_renormalized_partonic_pdf} we 
 \begin{align}
     \label{eq:IR_subtraction_from_formal_definition}
     &C^{(0)}_b\left(x\right) = \hat{F}_b^{(0)}\left(x\right)\,,\\
-    &C^{(1)}_b\left(x\right) = \hat{F}_b^{(1)}\left(x,\epsilon\right) + \frac{1}{\epsilon}\sum_a\int_x^1 \frac{d\xi}{\xi}P_{a/b}^{(1)}\left(\xi\right)
+    &C^{(1)}_b\left(x\right) = \hat{F}_b^{(1)}\left(x,\epsilon\right) + \frac{1}{\epsilon}\sum_a\int_x^1 \frac{d\xi}{\xi}P^{(1)}\left(\xi\right)
     \hat{F}_a^{(0)}\left(\frac{x}{\xi}\right)\,,
 \end{align}
 which recovers the prescription introduced in the previous section: in order to compute
