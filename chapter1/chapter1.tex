@@ -64,7 +64,7 @@ Given the equations above, the colour matrices obey
     &\sum_A\sum_b T^A_{ab} T^A_{bc} = C_F\, \delta_{ac}\,,\\
     &\sum_{A}\sum_C T^A_{BC} T^A_{CD} = \sum_{A,C} f^{ACB} f^{ACD} =  C_A\, \delta_{BD}\,,
 \end{align}
-with $C_F= 4/3$ and $C_A= 3$.
+where, considering the generic case of $SU(N)$, $C_F = \frac{N^2-1}{2N}$ and $C_A = N$.
 
 %
 The classical Lagrangian of eq.~\eqref{eq:QCD_lagrangian} does not allow to formulate quantum
@@ -77,7 +77,9 @@ known as \textit{gauge fixing conditions}, which in general can be expressed as
     \label{eq:gauge_fixing}
     G^{\mu}\mathcal{A}_{\mu}^A = B^A\,,
 \end{align}
-with $G^{\mu}$ and $B^A$ chosen in some convenient way. 
+with $G^{\mu}$ and $B^A$ chosen in some convenient way \footnote{Eq.~\eqref{eq:gauge_fixing} in general admits various solutions, representing different possible
+gauge configurations known as Gribov copies. Their occurrence is known as the \textit{Gribov copies problem},
+or \textit{Gribov ambiguity} \cite{Gribov:1977wm}.}. 
 Upon functional integration over the arbitrary quantity $B^A$, such condition is implemented 
 in the theory by adding to the classical Lagrangian the so-called gauge fixing term
 \begin{align}
@@ -104,17 +106,17 @@ in terms of a chosen vector $n$ such that $G^{\mu}=n^{\mu}$. In this case ghost 
 and can thus be ignored, but the explicit form of the gluon propagator turns out to be more complicated than 
 the one in the covariant gauges.
 
+
 The QCD Lagrangian has a number of important symmetries, both exact and approximate,
 which is worth recalling here.
 The classical Lagrangian given in eq.~\eqref{eq:QCD_lagrangian} is invariant under SU(3)$_{\text{color}}$
 gauge transformations. After gauge fixing gauge invariance is broken, but the resulting Lagrangian of 
 eq.~\eqref{eq:QCD_lagrangian_gauge_fixing} satisfied the BRST symmetry \cite{Becchi:1975nq, Tyutin:1975qk},
-which in turn guarantees the renormalizability of the theory.
+which in turn helps with the renormalizability of the theory.
 The so-called flavour symmetries are also exact symmetries of QCD, 
 acting through a global phase transformation of each quark field separately and giving
 the baryon number conservation. 
-%the conservation of the number of each of the different quark flavours. 
-Other flavour symmetries include the discrete global symmetries of parity and time reversal invariance.
+Other symmetries include the discrete global symmetries of parity and time reversal invariance.
 Finally charge-conjugation is also an exact symmetry of eq.~\eqref{eq:QCD_lagrangian_gauge_fixing}. 
 
 Assuming mass degeneracy for the up and down quarks, the U(1) global symmetry associated with quark number 
@@ -136,10 +138,11 @@ The axial symmetry U(1)$_A$ is actually broken at the quantum level, through the
 which induces a new term in the QCD Lagrangian proportional to 
 $\epsilon_{\alpha\beta\gamma\delta}\, \text{Tr}\, F^{\gamma\delta} F^{\alpha\beta}$ .
 This term would be responsible for a violation of CP in the strong sector and 
-its magnitude is given by the size of the parameter $\theta$, whose values is fixed to be in the range
+its magnitude is given by the size of the angular parameter $\theta$, whose values is fixed to be in the range
 $\theta<10^{-9}$ by experimental measures. The unexplained smallness of such parameter is known as the strong CP-problem.
-Among the proposed solutions, the Peccei-Quinn mechanism was developed \cite{Peccei:1977ur}, proposing a dynamical explanation
-for the $\theta$ values through the introduction of additional particles called axions. 
+Among the proposed solutions, the Peccei-Quinn mechanism was developed \cite{Peccei:1977ur} which,
+together with the introduction of additional particles called axions \cite{PhysRevLett.40.223,PhysRevLett.40.279},
+proposes a dynamical explanation for the $\theta$ values. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The running coupling and asymptotic freedom}
@@ -236,14 +239,14 @@ the physical scale $Q$.
 Considering the situation in which we have $n_l$ light quarks (i.e. quarks whose mass is much smaller than $Q$)
 and a single heavy quark with mass $m$, the two values $\alpha_s^{(n_l+1)}$ and $\alpha_s^{(n_l)}$ 
 measured in the two domains $Q \gg m$ and $Q \ll m$ respectively,
-are usually matched requiring  the coupling $\alpha_s\left(Q^2\right)$
-to be continuos at $Q=m$, getting a matching equation of the form
+are usually matched through matching equation of the form
 \begin{align}
     \alpha_s^{(n_l+1)}\left(Q^2\right) = 
     \alpha_s^{(n_l)}\left(Q^2\right) 
     + \sum_{k=2}^{\infty} c_k\left(L\right) \left(\alpha_s^{(n_l)}\left(m^2\right)\right)^k\,,
 \end{align}
-where the coefficients $c_k\left(L\right)$ are  polynomials in $L=\log Q^2/m^2$.
+where the coefficients $c_k\left(L\right)$ are polynomials in $L=\log Q^2/m^2$ and at the scale $m^2=Q^2$ 
+the $\mathcal{O}\left(\alpha_s^2\right)$ coefficient vanishes, $c_2\left(0\right)=0$.
 Depending on the specific energy scale of interest,
 one can perform the computation of a generic physical observable considering either $n_l$ or $n_l + 1$ active flavours,
 each choice being more convenient in a given kinematic region. 
@@ -308,10 +311,15 @@ by performing a Wick rotation $x_i = \left(x^0_i, \vec{x}_i\right) \rightarrow \
 \end{align}
 where $S^{(E)}$ is the Euclidean action of the theory.
 Such Wick rotation effectively transform the Minkowski metric $\eta_{\mu\nu} = \text{diag}\left(1,-1,-1,-1\right)$
-into the positive Euclidean metric $\delta_{\mu\nu} = \text{diag}\left(1,1,1,1\right)$.
+into the positive Euclidean metric $\delta_{\mu\nu} = \text{diag}\left(1,1,1,1\right)$
+\footnote{The precise conditions under which the Wick rotation works are stated by the 
+Osterwalder-Schrader axioms \cite{cmp/1103858969}. These are a list of properties
+that correlation functions on Euclidean spacetime have to satisfy to be the analytic continuation of
+the correlation functions of the original QFT on Minkowski spacetime.}.
+
 The functional integral of eq.~\eqref{eq:euclidean_correlator} can be estimated
 by averaging the fields product $\phi\left(x_1\right)...\phi\left(x_n\right)$ on the probability density 
-$D\phi \, \text{exp}\left(-S^{(E)}\left[\phi\right]\right)$ .
+$D\phi \, \text{exp}\left(-S^{(E)}\left[\phi\right]\right)$.
 
 
 %
@@ -340,7 +348,8 @@ it turns out that a naive discretization of the Dirac action
 would lead to a theory with the wrong continuum limit, describing 16 independent fermion states all having the same energy.
 This is the so-called \textit{doubling problem}, and it is a consequence of a more general property of 
 fermionic actions known as the Nielsen-Ninomiya no-go theorem~\cite{Nielsen:1981hk}.
-A possible solution to the doubling problem was proposed by Wilson~\cite{PhysRevD.10.2445}, through the addition of another term to the fermionic action
+A possible solution to the doubling problem was proposed by Wilson~\cite{PhysRevD.10.2445}, 
+through the addition of another term to the fermionic action
 to remove the unwanted states
 \begin{align}
     \label{eq:fermions_wilson_action}
@@ -355,7 +364,12 @@ In the presence of a gauge field, eq.~\eqref{eq:fermions_wilson_action} becomes
 where $K\left[U_{\mu}\right]$ is a suitable discretization for the covariant derivative which implements
 the Wilson prescription. 
 The addition of the Wilson term in the action solves the doubling problem, however it explicitly breaks
-chiral symmetry, leading to a more complex UV structure of the theory.
+chiral symmetry, leading to a more complex UV structure of the theory. 
+One example of this appears when looking at the renormalization of the fermion mass:
+when coupled to some gauge interaction the mass shift, which would be zero in the continuum case and in the case 
+of naive lattice fermions, is not zero anymore. This means that a Wilson fermion with zero bare mass is actually not massless.
+Its mass is denoted as \textit{critical mass}.
+
 
 %
 Once the Euclidean action has been defined, the expectation value of a generic observable 
